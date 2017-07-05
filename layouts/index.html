@@ -8,11 +8,11 @@
                 <div class="body-max-width">
                     <main id="content">
                         {{ range (.Paginate ( where .Data.Pages "Type" "article" )).Pages }}
-                            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+                            <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
                             {{ partial "article-date.html" . }}
                             <p>
                                 {{ .Summary }}
-                                <a href="{{ .Permalink }}">Read more...</a>
+                                <a href="{{ .RelPermalink }}">Read more...</a>
                             </p>
                         {{ end }}
 

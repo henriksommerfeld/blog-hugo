@@ -3,7 +3,7 @@
     <ol class="recent-widget widget-content">
         {{- $articles := where .Site.Pages "Type" "article" -}}
         {{- range first 5 (where $articles "UniqueID" "!=" $.UniqueID) -}}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end -}}
     </ol>
 </div>
