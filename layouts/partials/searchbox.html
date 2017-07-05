@@ -1,0 +1,24 @@
+<div id="searchbox-overlay" class="overlay"></div>
+<div id="searchbox-container">
+    <div id="searchbox">
+        <i aria-hidden="true" class="fa fa-search" title="Perform search"></i>
+        <input id="search-input" type="search" placeholder="Search..." class="search-input" 
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <i aria-hidden="true" class="fa fa-remove close-search" title="Close (Esc)"></i>
+    </div>
+    <div class="search-results-container">
+        <div id="search-output">
+            <div id="no-results-message">
+                No matching posts found. You can use wildcards and search only in titles, e.g. <code>title:iot</code>
+            </div>
+            <div id="index-loading-message">
+                <i class="fa fa-spinner fa-pulse fa-2x fa-fw" aria-hidden="true"></i> Loading search index, please try again in a few seconds.
+            </div>
+            <div id="index-loaded-message">
+                Index has completed downloading. Please search again.
+            </div>
+            <div id="number-of-hits-message"></div>
+            <ol class="result-list"></ol>
+        </div>
+    </div>
+</div>

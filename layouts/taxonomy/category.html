@@ -1,0 +1,35 @@
+{{ partial "doctype.html" }}
+<html>
+    {{ partial "head.html" . }}
+    <body class="articles-with-category">
+        <div id="page-wrapper">
+            {{ partial "header.html" . }}
+            <div class="body">
+                <div class="body-max-width">
+                    <main id="content">
+                            <h1><span class="taxonomy-heading">Category:</span> {{ .Title }}</h1>
+                            {{- range .Paginator.Pages }}
+                                <article>
+                                    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                                    {{ partial "article-date.html" . }}
+                                    <p>
+                                        {{ .Summary }}
+                                        <a href="{{ .RelPermalink }}">Read more...</a>
+                                    </p>
+                                </article>
+                            {{- end }}
+                            {{ partial "paging-navigation.html" . }}
+                    </main>
+                    <aside id="sidebar">
+                        {{ partial "recent-articles-widget.html" . }}
+                        {{ partial "tag-cloud.html" . }}
+                        {{ partial "categories-widget.html" . }}
+                    </aside>
+                </div>
+            </div>            
+            {{ partial "footer.html" . }}
+        </div>
+        {{ partial "searchbox.html" . }}
+        <script src="/site.js?{{ now.Unix }}"></script>
+    </body>
+</html>

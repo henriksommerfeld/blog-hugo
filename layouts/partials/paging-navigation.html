@@ -1,0 +1,36 @@
+{{ if gt $.Paginator.TotalPages 1 }}
+    {{ $currentMinDiff := sub .Paginator.PageNumber 1 }}
+    {{ $currentMaxDiff := sub .Paginator.TotalPages .Paginator.PageNumber }}
+    {{ $hasDots := or (gt $currentMinDiff 2) (gt $currentMaxDiff 2) }}
+    {{ $hasMaxPages := and (ge $currentMinDiff 2) (ge $currentMaxDiff 2) }}
+
+    <div class="paging-controls has-prev-{{ .Paginator.HasPrev }} has-next-{{ .Paginator.HasNext }} has-dots-{{ $hasDots }} has-max-pages-{{ $hasMaxPages}}">
+    {{ if .Paginator.HasPrev }}
+        <a class="page-numbers newer" href="{{ .Paginator.Prev.URL }}" role="button">Newer</a>
+        <a class="page-numbers" href="{{ .Paginator.First.URL }}" role="button">1</a>
+    {{ end }}
+
+    {{ if eq $currentMinDiff 2 }}
+        <a class="page-numbers" href="{{ .Paginator.Prev.URL }}" role="button">{{ sub .Paginator.PageNumber 1 }}</a>
+    {{ end }}
+
+    {{ if gt $currentMinDiff 2 }}
+        <span class="page-numbers dots">...</span> 
+    {{ end }}
+
+    <span class="page-numbers current">{{.Paginator.PageNumber}}</span>
+
+    {{ if eq $currentMaxDiff 2 }}
+        <a class="page-numbers" href="{{ .Paginator.Next.URL }}" role="button">{{ add .Paginator.PageNumber 1 }}</a>
+    {{ end }}
+
+    {{ if gt $currentMaxDiff 2 }}
+        <span class="page-numbers dots">...</span> 
+    {{ end -}}
+
+    {{ if .Paginator.HasNext -}}
+        <a class="page-numbers" href="{{ .Paginator.Last.URL }}" role="button">{{ .Paginator.TotalPages }}</a>
+        <a class="page-numbers older" href="{{ .Paginator.Next.URL }}" role="button">Older</a>
+    {{- end }}
+    </div>
+{{ end -}}

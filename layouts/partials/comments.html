@@ -1,0 +1,7 @@
+{{ if and (not (eq .Site.DisqusShortname "")) (not .Params.disable_comments) }}
+{{ partial disqus.html . }}
+<div class="comments">
+    <a href="{{ .Permalink }}#disqus_thread">{{with .Site.Data.l10n.articles.comments}}{{.}}{{end}}
+    </a>
+</div>
+{{ end }}

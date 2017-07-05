@@ -1,0 +1,38 @@
+{{- if gt (len .Site.Taxonomies.tags) 0 -}}
+    {{- $fontUnit := "rem" -}}
+    {{- $largestFontSize := 1.8 -}}
+    {{- $smallestFontSize := 1.0 -}}
+    {{- $fontSizeSpread := sub $largestFontSize $smallestFontSize -}}
+    <!--<div>Font size unit: {{ $fontUnit }}</div>
+    <div>Font min size: {{ $smallestFontSize }}</div>
+    <div>Font max size: {{ $largestFontSize }}</div>
+    <div>Font size spread: {{ $fontSizeSpread }}</div>-->
+
+    {{- $maxCount := len (index $.Site.Taxonomies.tags.ByCount 0).Pages -}}
+    <!--<div>Max tag count: {{ $maxCount }}</div>-->
+
+    {{- $minCount := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages -}}
+    <!--<div>Min tag count: {{ $minCount }}</div>-->
+
+    {{- $countSpread := sub $maxCount $minCount -}}
+    <!--<div>Tag count spread: {{ $countSpread }}</div>-->
+
+    {{- $.Scratch.Set "sizeStep" 0 -}}
+    {{- if gt $countSpread 0 -}}
+        {{- $.Scratch.Set "sizeStep" ( div $fontSizeSpread $countSpread ) -}}
+    {{- end -}}
+    {{- $sizeStep := ( $.Scratch.Get "sizeStep" ) -}}
+    <!--<div>Font step: {{ $sizeStep }}</div>-->
+
+    <div class="widget">
+        <div class="widget-title">Tags</div>
+        <div class="tag-cloud-tags widget-content">
+        {{- range $name, $taxonomy := $.Site.Taxonomies.tags -}} 
+            {{- $currentTagCount := len $taxonomy.Pages -}}
+            {{- $currentFontSize := (add $smallestFontSize (mul (sub $currentTagCount $minCount) $sizeStep) ) -}}
+            <!--Current font size: {{$currentFontSize}}-->
+            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" aria-label="{{ $name }} ({{$currentTagCount}} posts)" style="font-size:{{$currentFontSize}}{{$fontUnit}}">{{- $name -}}</a>
+        {{- end -}}
+        </div>
+    </div>
+{{- end -}}

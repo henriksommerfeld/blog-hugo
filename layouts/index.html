@@ -1,0 +1,32 @@
+{{ partial "doctype.html" }}
+<html>
+    {{ partial "head.html" . }}
+    <body>
+        <div id="page-wrapper">
+            {{ partial "header.html" . }}
+            <div class="body">
+                <div class="body-max-width">
+                    <main id="content">
+                        {{ range (.Paginate ( where .Data.Pages "Type" "article" )).Pages }}
+                            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+                            {{ partial "article-date.html" . }}
+                            <p>
+                                {{ .Summary }}
+                                <a href="{{ .Permalink }}">Read more...</a>
+                            </p>
+                        {{ end }}
+
+                        {{ partial "paging-navigation.html" . }}
+                    </main>
+                    <aside id="sidebar">
+                        {{ partial "tag-cloud.html" . }}
+                        {{ partial "categories-widget.html" . }}
+                    </aside>
+                </div>
+            </div>            
+            {{ partial "footer.html" . }}
+        </div>
+        {{ partial "searchbox.html" . }}
+        <script src="/site.js?{{ now.Unix }}"></script>
+    </body>
+</html>

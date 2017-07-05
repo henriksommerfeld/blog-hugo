@@ -1,0 +1,9 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+node_modules
+public
+static/*.css
+static/*.js
+static/*.js.*
+static/search-index.json
+build/timestamp.txt
+*.log

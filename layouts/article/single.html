@@ -1,0 +1,32 @@
+{{ partial "doctype.html" }}
+<html>
+    {{ partial "head.html" . }}
+    <body>
+        <div id="page-wrapper">
+            {{ partial "header.html" . }}
+            <div class="body">
+                <div class="body-max-width">
+                    <main id="content">
+                        <article>
+                            <h1>{{ .Title }}</h1>
+                            {{ partial "article-date.html" . }}
+                            {{ .Content }}
+                            {{ partial "article-categories-tags.html" . }}
+                            {{ partial "comments.html" . }}
+                        </article>
+                    </main>
+                    <aside id="sidebar">
+                        {{ partial "recent-articles-widget.html" . }}
+                        {{ partial "tag-cloud.html" . }}
+                        {{ partial "categories-widget.html" . }}
+                    </aside>
+                </div>
+            </div>            
+            {{ partial "footer.html" . }}
+        </div>
+        {{ partial "lightbox.html" . }}
+        {{ partial "code-expanded.html" . }}
+        {{ partial "searchbox.html" . }}
+        <script src="/site.js?{{ now.Unix }}"></script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+a
+  color: $light-blue
+  text-decoration: none
+  transition: color, text-shadow 200ms, outline 60ms
+  outline: none
+  display: inline-block
+  &:after
+    display: block
+    content: ""
+    height: 2px
+    width: 0%
+    background-color: $orange
+    transition: width 200ms ease
+  &:visited
+    color: $medium-blue
+  &:focus
+    outline-color: $dark-blue
+    outline-style: dashed
+    outline-width: 0.2em
+    outline-offset: 0.1em
+  &:focus, &:active
+    color: $dark-blue
+    text-shadow: 0 0 1px transparentize($light-blue, 0.2)
+    text-decoration: none
+    outline: none
+    &:after
+      width: 100%
+  &:hover
+    color: $dark-blue
+    text-shadow: 0 0 1px transparentize($light-blue, 0.2)
+    text-decoration: none
+    &:after
+      width: 100%

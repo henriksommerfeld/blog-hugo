@@ -1,0 +1,15 @@
+baseURL = "https://www.henriksommerfeld.se/"
+languageCode = "en-gb"
+title = "Henrik Sommerfeld's blog"
+canonifyURLs = false
+relativeURLs = true
+buildDrafts = true
+paginate = 4
+pygmentsuseclasses = true
+pygmentsstyle = "monokai"
+preserveTaxonomyNames = true
+googleAnalytics = ""
+disqusShortname = ""
+
+[permalinks]
+    article = "/:title/"

@@ -1,0 +1,8 @@
+<div class="widget">
+    <div class="widget-title">Categories</div>
+    <ol class="all-categories widget-content">
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories -}}  
+        <li><a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a> ({{len $taxonomy.Pages}})</li>
+      {{ end }}
+    </ol>
+</div>

@@ -1,0 +1,52 @@
+$background-animation-speed: 300ms
+
+@mixin blur()
+    filter: blur(5px)
+    opacity: 0.5
+
+.blur
+    @include blur()
+    pointer-events: none
+
+#page-wrapper
+    transition: filter $background-animation-speed ease-out
+    overflow: hidden
+
+footer
+    position: relative
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+    background: radial-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8))
+    visibility: hidden
+    opacity: 0
+    &.close
+        animation: overlayClose $background-animation-speed ease-in-out forwards
+    &.open
+        opacity: 1
+        visibility: visible
+        animation: overlayOpen $background-animation-speed ease-in-out forwards
+
+@keyframes overlayOpen
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes overlayClose
+    0%        
+        opacity: 1
+        visibility: visible
+    99%
+        opacity: 0
+    100%
+        visibility: hidden
