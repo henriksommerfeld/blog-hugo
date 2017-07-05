@@ -35,8 +35,7 @@
     "start:local": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve:local",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
-    "timestamp": "node build/save-build-timestamp.js",
-    "install": "pip install pygments"
+    "timestamp": "node build/save-build-timestamp.js"
   },
   "keywords": ["blog", "hugo"],
   "author": "Henrik Sommerfeld",
