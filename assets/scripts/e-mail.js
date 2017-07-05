@@ -7,8 +7,11 @@ export default class EmailCaptcha {
         console.log('E-mail captcha module');
         
         this.atSign = '@';
+        let self = this;
 
-        $('#min-mejl').click(this.onloadCallback);
+        $('#min-mejl').bind('click', () => {
+            self.onloadCallback(self);
+        });
     }
 
     swapper(d) {
@@ -34,21 +37,22 @@ export default class EmailCaptcha {
         console.log('Callback response: ' + response);
         if (response) {
             $('#email-recaptcha').hide('fast');
-            var input = $('#min-mejl').data('mejl').split(',');
-            var address = this.getAddress(input[2],input[0]).substring(0);
-            var link = 'mailto:' + address;      
+            let input = $('#min-mejl').data('mejl').split(',');
+            let address = this.getAddress(input[2],input[0]).substring(0);
+            let link = 'mailto:' + address;
             $('#min-mejl').attr('href', link);
             $('#email-displayed').text(address);
             $('#min-mejl').unbind('click');
         }
     }
 
-    onloadCallback() {
+    onloadCallback(self) {
+        
         if (!$('#email-recaptcha').html()) {
             $('#email-recaptcha').show('fast');
             grecaptcha.render('email-recaptcha', {
                 'sitekey' : '6LeZPQgTAAAAAIM_LHDxd1Y11vQxm4LP-SbrwA8K',
-                'callback' : this.verifyCallback
+                'callback' : self.verifyCallback
             });
         }
     }
