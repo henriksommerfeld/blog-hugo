@@ -31,11 +31,12 @@ export default class EmailCaptcha {
     }
 
     verifyCallback(response) {
+        console.log('Callback response: ' + response);
         if (response) {
             $('#email-recaptcha').hide('fast');
-            let input = $('#min-mejl').data('mejl').split(',');
-            let address = this.getAddress(input[2],input[0]).substring(0);
-            let link = 'mailto:' + address;      
+            var input = $('#min-mejl').data('mejl').split(',');
+            var address = this.getAddress(input[2],input[0]).substring(0);
+            var link = 'mailto:' + address;      
             $('#min-mejl').attr('href', link);
             $('#email-displayed').text(address);
             $('#min-mejl').unbind('click');
