@@ -38,7 +38,7 @@
     "timestamp": "node build/save-build-timestamp.js",
     "install": "pip install pygments"
   },
-  "keywords": [],
+  "keywords": ["blog", "hugo"],
   "author": "Henrik Sommerfeld",
-  "license": "ISC"
+  "license": "MIT"
 }
