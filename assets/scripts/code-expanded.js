@@ -6,7 +6,7 @@ export default class CodeExpanded {
     constructor() {
         console.log('Code expanded module');
 
-        if (window.screen.availWidth < 1024)
+        if (window.screen.availWidth < 1024 || (window.matchMedia && window.matchMedia('print').matches))
             return;
 
         this.addExpander();
