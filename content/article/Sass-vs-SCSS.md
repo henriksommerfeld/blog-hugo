@@ -1,11 +1,11 @@
 +++
 author = "admin"
-categories = ["Uncategorized"]
-date = "1905-05-05T18:35:44+00:00"
+categories = ["Coding"]
+date = "2017-07-07T18:35:44+00:00"
 draft = true
 title = "Sass vs SCSS"
 type = "article"
-url = "/?p=584"
+url = "/sass-vs-scss/"
 
 +++
 

@@ -37,7 +37,13 @@
     "index": "node build/index-search.js static/search-index.json",
     "timestamp": "node build/save-build-timestamp.js"
   },
-  "keywords": ["blog", "hugo"],
+  "keywords": [
+    "blog",
+    "hugo"
+  ],
   "author": "Henrik Sommerfeld",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "sass-lint": "^1.10.2"
+  }
 }

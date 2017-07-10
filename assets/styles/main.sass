@@ -26,78 +26,78 @@
 *,
 *::before,
 *::after
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
 
 ::selection
-  background: $orange
+    background: $orange
 
 body
-  min-width: 300px
-  margin: 0
-  font-size: 16px
-  font-family: $font-family-sans-serif
-  color: $text-color
+    min-width: 300px
+    margin: 0
+    font-size: 16px
+    font-family: $font-family-sans-serif
+    color: $text-color
 
 .hide
-  display: none
+    display: none
 
 #page-wrapper
-  display: flex
-  flex-direction: column
-  height: 100%
-  min-height: 100vh
-  position: relative
+    display: flex
+    flex-direction: column
+    height: 100%
+    min-height: 100vh
+    position: relative
 
 .body
-  background: white
-  z-index: 0
-  width: 100%
-  display: flex
-  flex-direction: column
-  flex-grow: 1
-  align-items: center
-  padding-bottom: $default-spacing
+    background: white
+    z-index: 0
+    width: 100%
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    align-items: center
+    padding-bottom: $default-spacing
 
 .body-max-width
-  display: flex
-  flex-direction: column
-  width: 100%
-  margin: 0 auto
-  padding-top: $default-spacing
-  max-width: $page-max-width
-  @media (min-width: $side-column-min-width)
-    flex-direction: row
+    display: flex
+    flex-direction: column
+    width: 100%
+    margin: 0 auto
+    padding-top: $default-spacing
+    max-width: $page-max-width
+    @media (min-width: $side-column-min-width)
+        flex-direction: row
 
 main
-  width: 100%
-  padding: $default-spacing
-  @media (min-width: $side-column-min-width)
-    width: 71%
+    width: 100%
+    padding: $default-spacing
+    @media (min-width: $side-column-min-width)
+        width: 71%
 
 article
-  width: 100%
-  footer
-    display: flex
+    width: 100%
+    footer
+        display: flex
 
 aside  
-  width: 100%
-  padding: $default-spacing  
-  @media (min-width: $side-column-min-width)
-    width: 29%
+    width: 100%
+    padding: $default-spacing  
+    @media (min-width: $side-column-min-width)
+        width: 29%
 
 .entry-meta
-  margin-top: -1em
+    margin-top: -1em
 
 .result-list .entry-meta
-  margin-top: 0
-  margin-bottom: 0.5em
+    margin-top: 0
+    margin-bottom: 0.5em
 
 .published
-  color: lighten($text-color, 40%)
-  font-size: 0.85em
-  &:before
-    content: '\f133'
-    font-family: 'FontAwesome'
-    padding-right: 0.5em
+    color: lighten($text-color, 40%)
+    font-size: 0.85em
+    &:before
+        content: '\f133'
+        font-family: 'FontAwesome'
+        padding-right: 0.5em    

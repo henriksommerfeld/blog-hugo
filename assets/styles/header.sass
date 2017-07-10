@@ -1,112 +1,112 @@
 header
-  background: $dark-blue
-  display: flex
-  flex-direction: row
-  justify-content: center
-  align-items: center
+    background: $dark-blue
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
 
 .header-content
-  color: white
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
-  text-transform: uppercase
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5)
-  height: $header-height
-  min-height: $header-height
-  width: 100%
-  max-width: $page-max-width
-  z-index: 2
-  perspective: 1000px
-  a, a:link, a:visited
     color: white
-    text-decoration: none
-  .site-title
-    font-weight: normal
-    letter-spacing: .2rem
     display: flex
-    padding: $default-spacing
-    margin: 0
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    text-transform: uppercase
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5)
+    height: $header-height
+    min-height: $header-height
+    width: 100%
+    max-width: $page-max-width
+    z-index: 2
+    perspective: 1000px
+    a, a:link, a:visited
+        color: white
+        text-decoration: none
+    .site-title
+        font-weight: normal
+        letter-spacing: .2rem
+        display: flex
+        padding: $default-spacing
+        margin: 0
 
 nav
-  opacity: 0  
-  pointer-events: none
-  z-index: 1
-  position: absolute
-  top: $header-height
-  right: 0
-  width: 100%
-  background: #fcfcfc
-  word-wrap: break-word
-  box-shadow: 0px 8px 20px #04396c
-  display: none
-  flex-direction: column
-  justify-content: flex-end
-  transform-origin: top center
-  transform: rotateX(-90deg)
-  font-size: 1.1rem
-  letter-spacing: .1rem
-  
-  @media (min-width: $small-size-min-width)
-    flex-direction: row
-
-  a
-    padding: $default-spacing
-    .header-content &, .header-content &:link, .header-content &:visited
-      color: #555
-      border: 1px solid transparent
-      @media (max-width: $medium-size-min-width)
-        &:after
-          display: none
-      @media (min-width: $medium-size-min-width)
-        color: white
-        line-height: 2rem
-    @media (min-width: $medium-size-min-width)      
-      .header-content &:hover, .header-content &:focus, .header-content &:active
-        background-color: transparent
-        text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
-      .header-content &:focus
-        outline: none
-
-    text-shadow: none
-    text-align: center
-    .fa
-      font-size: 1.5em
-      margin-right: 5px
-    &:hover, &:focus, &:active
-      background-color: #ededed 
-    &:focus 
-      text-shadow: 0 0 1px white, 0px 3px 5px rgba(black, 0.5)
-      outline: transparentize(#555, 0.5) solid 1px
-      outline-offset: 0
-    &:hover
-      text-shadow: 0px 3px 5px rgba(black, 0.5)
-  
-  &.open
-    opacity: 1
-    pointer-events: painted
-    animation: slide-in 400ms forwards
-    display: flex
-    @media (min-width: $small-size-min-width)
-      animation: fold-in 400ms forwards
+    opacity: 0  
+    pointer-events: none
+    z-index: 1
+    position: absolute
+    top: $header-height
+    right: 0
+    width: 100%
+    background: #fcfcfc
+    word-wrap: break-word
+    box-shadow: 0px 8px 20px #04396c
+    display: none
+    flex-direction: column
+    justify-content: flex-end
+    transform-origin: top center
+    transform: rotateX(-90deg)
+    font-size: 1.1rem
+    letter-spacing: .1rem
     
-  &.close
-    pointer-events: painted
-    animation: slide-out 500ms forwards
     @media (min-width: $small-size-min-width)
-      animation: fold-out 500ms forwards
+        flex-direction: row
+
+    a
+        padding: $default-spacing
+        .header-content &, .header-content &:link, .header-content &:visited
+            color: #555
+            border: 1px solid transparent
+            @media (max-width: $medium-size-min-width)
+                &:after
+                    display: none
+            @media (min-width: $medium-size-min-width)
+                color: white
+                line-height: 2rem
+        @media (min-width: $medium-size-min-width)      
+            .header-content &:hover, .header-content &:focus, .header-content &:active
+                background-color: transparent
+                text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
+            .header-content &:focus
+                outline: none
+
+        text-shadow: none
+        text-align: center
+        .fa
+            font-size: 1.5em
+            margin-right: 5px
+        &:hover, &:focus, &:active
+            background-color: #ededed 
+        &:focus 
+            text-shadow: 0 0 1px white, 0px 3px 5px rgba(black, 0.5)
+            outline: transparentize(#555, 0.5) solid 1px
+            outline-offset: 0
+        &:hover
+            text-shadow: 0px 3px 5px rgba(black, 0.5)
+        
+    &.open
+        opacity: 1
+        pointer-events: painted
+        animation: slide-in 400ms forwards
+        display: flex
+        @media (min-width: $small-size-min-width)
+            animation: fold-in 400ms forwards
+        
+    &.close
+        pointer-events: painted
+        animation: slide-out 500ms forwards
+        @media (min-width: $small-size-min-width)
+            animation: fold-out 500ms forwards
 
 @media (min-width: $medium-size-min-width)
-  nav, nav.open, nav.close
-    position: relative
-    display: flex
-    top: 0
-    width: auto
-    transform: rotateX(0deg)
-    background-color: transparent
-    color: white
-    opacity: 1
-    pointer-events: painted
-    animation: none
-    box-shadow: none
+    nav, nav.open, nav.close
+        position: relative
+        display: flex
+        top: 0
+        width: auto
+        transform: rotateX(0deg)
+        background-color: transparent
+        color: white
+        opacity: 1
+        pointer-events: painted
+        animation: none
+        box-shadow: none
