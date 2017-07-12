@@ -34,22 +34,11 @@ a
         transition: width 200ms ease
     &:visited
         color: $medium-blue
-    &:focus
-        outline-color: $dark-blue
-        outline-style: dashed
-        outline-width: 0.2em
-        outline-offset: 0.1em
-    &:focus, &:active
+    &:focus, &:active, &:hover
         color: $dark-blue
         text-shadow: 0 0 1px transparentize($light-blue, 0.2)
         text-decoration: none
         outline: none
-        &:after
-            width: 100%
-    &:hover
-        color: $dark-blue
-        text-shadow: 0 0 1px transparentize($light-blue, 0.2)
-        text-decoration: none
         &:after
             width: 100%
 {{</highlight>}}
