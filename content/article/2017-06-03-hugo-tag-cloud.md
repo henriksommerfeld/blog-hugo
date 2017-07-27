@@ -15,6 +15,9 @@ Hugo is written in [Go][3] and thus uses [Go templates][4]. Go is a language I h
 
 _**Update 2017-07-03:** Code is updated to solve an issue that would cause a crash when all posts have the same number of tags (causing a division by 0). Thanks to [@MunifTanjim][8] in the Hugo discussion thread [Weighted tag cloud][6]._
 
+_**Update 2017-07-27:** [Artem Sidorenko posted an improved version of this code][9] where he uses logarithmic distribution for calculation of tag sizes. It doesn't make a big difference with my current content, but clearly does on his, so maybe on yours too._
+
+
 {{<highlight go "linenos=inline">}}
 {{- if gt (len .Site.Taxonomies.tags) 0 -}}
     {{- $fontUnit := "rem" -}}
@@ -66,3 +69,4 @@ You can uncomment the commented lines for debugging. Also, if the tag keys inste
  [6]: https://discuss.gohugo.io/t/weighted-tag-cloud/3491
  [7]: https://discuss.gohugo.io/t/tag-cloud/6335
  [8]: https://discourse.gohugo.io/u/MunifTanjim
+ [9]: https://www.sidorenko.io/post/2017/07/nice-tagcloud-with-hugo/
