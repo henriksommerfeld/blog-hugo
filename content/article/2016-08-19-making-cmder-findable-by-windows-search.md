@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["Administration","User prespective"]
+categories = ["Administration","User perspective"]
 date = "2016-08-19T20:00:37+00:00"
 excerpt = "This is just a short reminder for myself. I just found myself reinstalling Windows and thus also my favourite console, Cmder. I didn’t remember what to do to make it findable by Windows search, so here’s how: 1. Add path to environment variable 2. Log off and on again 3. Voilà!"
 tags = ["Cmder","Windows search"]

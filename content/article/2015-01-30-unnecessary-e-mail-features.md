@@ -1,7 +1,7 @@
 +++
 author = "admin"
 bfa_virtual_template = ["hierarchy"]
-categories = ["User prespective"]
+categories = ["User perspective"]
 date = "2015-01-30T22:30:18+00:00"
 title = "All these Unnecessary E-mail Features"
 type = "article"

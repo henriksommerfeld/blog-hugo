@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["User prespective"]
+categories = ["User perspective"]
 date = "2015-09-21T09:59:55+00:00"
 tags = ["Cmder","Hardware","Windows 10"]
 title = "Lenovo X1 Carbon with Windows 10"

@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["User prespective"]
+categories = ["User perspective"]
 date = "2016-11-06T11:41:01+00:00"
 tags = ["Franz"]
 title = "Switching to Franz"

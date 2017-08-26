@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["Administration","User prespective"]
+categories = ["Administration","User perspective"]
 date = "2016-02-11T21:26:01+00:00"
 tags = ["Chromecast","Hardware","Infuse"]
 title = "Inexpensive Home Media Solution"
