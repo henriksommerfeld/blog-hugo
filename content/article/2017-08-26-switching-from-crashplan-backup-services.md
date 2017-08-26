@@ -31,4 +31,4 @@ Since I already use OneDrive, I chose to extend that storage and move everything
 [1]: https://www.crashplan.com/en-us/consumer/nextsteps/
 [2]: /micro-stuttering-caused-by-crashplan/
 [3]: https://www.cloudwards.net/award/best-online-backup-services/
-[4]: https://www.cloudwards.net/cloud-storage-backup-built-3-2-1-principal/
+[4]: https://www.hanselman.com/blog/TheComputerBackupRuleOfThree.aspx
