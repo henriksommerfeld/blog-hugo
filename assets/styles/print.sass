@@ -8,6 +8,7 @@
 @import ./blockquote
 @import ./links
 @import ./contact-info
+@import ./guide
 
 body
     font-size: 11pt
@@ -43,3 +44,12 @@ h4
 
 .code-expanded-controls
     display: none
+
+.guide
+    font-size: 12pt
+    section
+        page-break-after: always
+    li
+        page-break-inside: avoid
+    .explaination
+        padding-left: 5mm
