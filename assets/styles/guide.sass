@@ -1,4 +1,5 @@
 $key-width: 50px;
+$key-width-print: 40px;
 $keycap-width-diff: 14px;
 $medium-extra-width: 20px;
 $large-extra-width: 100px;
@@ -46,7 +47,11 @@ $large-extra-width: 100px;
     .key
         font-family: 'Average Sans', sans-serif
         width: $key-width
+        @media print
+            width: $key-width-print
         height: $key-width
+        @media print
+            height: $key-width-print
         margin: 2px
         border-width: 3px 7px 10px
         border-style: solid
@@ -56,26 +61,30 @@ $large-extra-width: 100px;
         float: left
         &.medium
             width: $key-width + $medium-extra-width
+            @media print
+                width: $key-width-print + $medium-extra-width
             .keycap
                 width: $key-width - $keycap-width-diff + $medium-extra-width
                 @media print
-                    width: $key-width + $medium-extra-width
+                    width: $key-width-print + $medium-extra-width
         &.large
             width: $key-width + $large-extra-width
+            @media print
+                width: $key-width-print + $large-extra-width
             .keycap
                 width: $key-width - $keycap-width-diff + $large-extra-width
                 @media print
-                    width: $key-width + $large-extra-width
+                    width: $key-width-print + $large-extra-width
         .keycap
             display: flex
             justify-content: center
             align-items: center
             width: $key-width - $keycap-width-diff
             @media print
-                width: $key-width
+                width: $key-width-print
             height: 37px
             @media print
-                height: $key-width
+                height: $key-width-print
             font-size: 22px
             line-height: 1
             background: #f5f3f1
