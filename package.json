@@ -12,7 +12,6 @@
     "lunr": "2.1.2",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
-    "npm-run-all": "4.0.2",
     "onchange": "3.2.1",
     "uglify-js": "3.0.15"
   },
@@ -26,16 +25,17 @@
     "sass:build": "node-sass assets/styles/main.sass static/site.css && node-sass assets/styles/print.sass static/print.css",
     "sass:build:prod": "node-sass assets/styles/main.sass static/site.css --output-style compressed && node-sass assets/styles/print.sass static/print.css --output-style compressed",
     "build:assets": "npm run clean && npm run sass:build:prod && npm run js:build:prod",
-    "build": "npm run build:assets && npm run clean:public && hugo && npm run index:prod && npm run timestamp",
     "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
     "hugo:watch:local": "hugo serve --config config-dev.toml",
     "serve": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch\"",
     "serve:local": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch:localhost\"",
-    "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",
-    "start:local": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve:local",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
-    "timestamp": "node build/save-build-timestamp.js"
+    "timestamp": "node build/save-build-timestamp.js",
+    "start:local": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve:local",
+    
+    "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",    
+    "build": "npm run build:assets && npm run clean:public && hugo && npm run index:prod && npm run timestamp"
   },
   "keywords": [
     "blog",
