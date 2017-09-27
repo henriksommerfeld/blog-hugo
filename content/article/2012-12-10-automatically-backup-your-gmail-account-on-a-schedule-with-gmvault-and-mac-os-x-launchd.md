@@ -18,7 +18,7 @@ My experience with configuring Mac OS X is limited, but I have gained enough kno
 2. Run `gmvault sync youremail@gmail.com` from the shell and wait for as long as it takes. Use the `-d` option if you don't want the backup at `~/gmvault-db`.
 3. Create a small script that runs the GMVault command and does some logging (so you can see if it actually works) 
 
-	{{<highlight bash "hl_lines=6">}}
+{{<highlight bash "hl_lines=6">}}
 #!/bin/bash
 
 logger "Starting gmvault at $(date)"
@@ -29,7 +29,7 @@ echo "Running gmvault at $(date)" &gt; /Users/henrik/backup-gmail.log
 logger "Finished gmvault at $(date)"
 {{</highlight>}}
     
-	Apparently I had to use absolute paths here. The logging is of course optional, but handy. If only it was this simple to write to the Windows logs with PowerShell! I chose to write the output from GMVault to a separate log file after I first made an error (not having absolute paths) in the script and the logging just informed me that GMVault finished in 0 seconds. Run the script once to verify that it works as expected.
+Apparently I had to use absolute paths here. The logging is of course optional, but handy. If only it was this simple to write to the Windows logs with PowerShell! I chose to write the output from GMVault to a separate log file after I first made an error (not having absolute paths) in the script and the logging just informed me that GMVault finished in 0 seconds. Run the script once to verify that it works as expected.
 
 4. I chose a GUI approach and used Lingon to create the agent, but you could just as well use your favourite text editor to create the plist file, this is listed below. Create the agent running as your user, it is necessary for the OAuth authentication to work. Make sure to use a unique name, I chose _se.henrikpalm.gmailBackup_, and use the full path to the script. To test this, it can be good to choose a time for the agent to run that is a few minutes in the future.
 

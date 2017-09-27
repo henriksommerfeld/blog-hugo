@@ -1,7 +1,7 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.Pages "Type" "not in"  (slice "page" "search-index") -}}
     {{- if ne .Title "Articles" -}}
-        {{- $.Scratch.Add "index" (dict "title" .Title "ref" .RelPermalink "tags" .Params.tags "content" .Plain "summary" .Summary "dateformatted" (dateFormat "2, January 2006" .Date) "dateiso" (time .Date)) -}}
+        {{- $.Scratch.Add "index" (dict "title" .Title "ref" .RelPermalink "tags" .Params.tags "content" .Plain "summary" (partial "summary.html" .) "dateformatted" (dateFormat "2, January 2006" .Date) "dateiso" (time .Date)) -}}
     {{- end -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}

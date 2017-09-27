@@ -1,11 +1,12 @@
-code
-    word-wrap: break-word
-    font-family: 'Courier New', 'Courier', monospace
-    color: darken($orange, 10%)
-    text-shadow: 0 0 1px transparentize($orange, 0.2)
-    &::selection
-        background: #000
-        text-shadow: none
+*:not(pre)
+    code
+        word-wrap: break-word
+        font-family: 'Courier New', 'Courier', monospace
+        color: darken($orange, 10%)
+        text-shadow: 0 0 1px transparentize($orange, 0.2)
+        &::selection
+            background: #000
+            text-shadow: none
 
 pre
     overflow: auto
@@ -17,3 +18,5 @@ pre
     border-radius: $border-radius
     code
         word-wrap: normal
+        text-shadow: none
+        color: unset

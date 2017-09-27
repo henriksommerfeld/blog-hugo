@@ -1,10 +1,10 @@
 +++
 author = "admin"
-bfa_virtual_template = ["hierarchy"]
 categories = ["Administration","Coding"]
 date = "2015-03-24T23:05:12+00:00"
 tags = ["PowerShell","Scripting","SharePoint","Windows Server"]
 title = "Inventory of Page Layout Usage in a SharePoint Site"
+summary = "Recently I got a request to find out the usage of page layouts on a large SharePoint site. I Googled and found a few scripts, but none that did all I wanted, e.g. to limit the inventory to a certain sub-site. So I wrote my own one."
 type = "article"
 url = "/inventory-of-page-layout-usage-in-a-sharepoint-site/"
 
