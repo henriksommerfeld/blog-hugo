@@ -1,5 +1,6 @@
 ---
 title: "Switching from CrashPlan and other Backup Services"
+url: "switching-from-crashplan-and-other-backup-services"
 date: 2017-08-26T14:53:58+02:00
 categories: ["User perspective"]
 tags: ["Backup","CrashPlan","OneDrive"]

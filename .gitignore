@@ -7,3 +7,4 @@ static/*.js.*
 static/search-index.json
 build/timestamp.txt
 *.log
+npm-debug.log.*
