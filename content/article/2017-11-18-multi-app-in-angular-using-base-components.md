@@ -1,6 +1,6 @@
 ---
-title: "Code Sharing with Multi-app Angular Project with Base Components"
-url: "code-sharing-with-multi-app-angular-project-with-base-components"
+title: "Code Sharing with Multi-app Angular Project Using Base Components"
+url: "code-sharing-with-multi-app-angular-project-using-base-components"
 date: 2017-11-18T11:51:22+01:00
 categories: ["Coding"]
 tags: ["Angular"]
