@@ -8,7 +8,7 @@ tags: ["Angular"]
 
 I'm building a new version of a web shop in Angular that should be used on three different web sites for three of my client's subsidiary companies. In the current solution, everything but the CSS is common, even the HTML. That has proven to lack the necessary flexibility when the different subsidiaries have different needs and their design agencies are told that they are not allowed change the mark-up. Every change also has to be approved by all three subsidiaries, which takes time.
 
-Since we're using the same REST API for all subsidiaries and the front-end logic should generally be the same, we don't want to create three separate Angular apps, since that would be a lot of code duplication. Code sharing with multiple apps in the same project isn't really top of mind in Angular.  `.angular-cli.json` supports the definition of multiple apps as described here: [stories multiple apps][1], but the Angular CLI still assumes one app named _app_, when generating a new component for example. By the way, I'm using Angular 5.0.1 at the time of writing this.
+Since we're using the same REST API for all subsidiaries and the front-end logic should generally be the same, we don't want to create three separate Angular projects, since that would be a lot of code duplication. Code sharing with multiple apps in the same project isn't really top of mind in Angular.  `.angular-cli.json` supports the definition of multiple apps as described by [stories multiple apps][1], but the Angular CLI still assumes one app named _app_, when generating a new component for example. By the way, I'm using Angular 5.0.1 at the time of writing this.
 
 {{<highlight json>}}
 {
