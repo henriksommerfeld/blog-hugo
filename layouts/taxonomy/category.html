@@ -13,7 +13,7 @@
                                     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                                     {{ partial "article-date.html" . }}
                                     <p>
-                                        {{ .Summary }}
+                                        {{ partial "summary.html" . }}
                                         <a href="{{ .RelPermalink }}">Read more...</a>
                                     </p>
                                 </article>
