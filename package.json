@@ -21,6 +21,7 @@
     "js:build": "browserify assets/scripts/main.js --debug -o static/site.js -t [ babelify --presets [ es2015 ] ]",
     "js:build:prod": "browserify assets/scripts/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs -mc > static/site.js",
     "js:watch": "onchange assets/scripts -- npm run js:build",
+    "sass:lint": "sass-lint -c .sass-lint.yml --no-exit -v",
     "sass:watch": "onchange \"assets/styles/**/*.sass\" -- npm run sass:build",
     "sass:build": "node-sass assets/styles/main.sass static/site.css && node-sass assets/styles/print.sass static/print.css",
     "sass:build:prod": "node-sass assets/styles/main.sass static/site.css --output-style compressed && node-sass assets/styles/print.sass static/print.css --output-style compressed",

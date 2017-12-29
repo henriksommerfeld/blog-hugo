@@ -13,7 +13,7 @@ options:
   max-warnings: 50
 # File Options
 files:
-  include: 'assets/styles/**/*.s+(a|c)ss'
+  include: 'assets/styles/**/*.sass'
   ignore:
    - 'assets/styles/font/awesome/*.*'
 # Rule Configuration
@@ -33,7 +33,7 @@ rules:
   no-ids: 0
   no-important: 1
   property-sort-order:
-    - 1
+    - 0
     -
       order:
         - display
