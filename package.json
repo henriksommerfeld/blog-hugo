@@ -4,16 +4,16 @@
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
     "babel-cli": "6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-es2015": "6.24.1",
     "babelify": "8.0.0",
     "browserify": "14.5.0",
     "concurrently": "3.5.1",
     "jquery": "3.2.1",
     "lunr": "2.1.5",
-    "node-sass": "4.7.2",
-    "normalize.css": "7.0.0",
-    "onchange": "3.3.0",
-    "uglify-js": "3.3.3"
+    "node-sass": "4.9.0",
+    "normalize.css": "8.0.0",
+    "uglify-js": "3.4.1"
   },
   "scripts": {
     "clean": "rm -f static/*.js static/*.css",
@@ -34,8 +34,7 @@
     "index": "node build/index-search.js static/search-index.json",
     "timestamp": "node build/save-build-timestamp.js",
     "start:local": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve:local",
-    
-    "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",    
+    "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",
     "build": "npm run build:assets && npm run clean:public && hugo && npm run index:prod && npm run timestamp"
   },
   "keywords": [
@@ -45,6 +44,7 @@
   "author": "Henrik Sommerfeld",
   "license": "MIT",
   "devDependencies": {
+    "onchange": "4.0.0",
     "sass-lint": "1.12.1"
   }
 }
