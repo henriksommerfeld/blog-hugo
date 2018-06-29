@@ -1,8 +1,8 @@
 ---
 title: "Getting a Divorce From SharePoint 💔"
-date: 2018-06-29T14:16:39+02:00
+date: 2018-06-29T23:18:39+02:00
 url: "getting-a-divorce-from-sharepoint"
-draft: true
+draft: false
 categories: ["Thoughts"]
 tags: ["SharePoint"]
 ---
@@ -33,11 +33,11 @@ I mean, seriously? It was sold to our team as a format in which a design agency 
 
 ### Display templates
 
-Yet another weird format with large chunks of commented XML in an HTML file, this time for showing search results. Even [Microsoft's documentation page uses Notepad++ for editing the files][9], since using Visual Studio will mess up the files' indentation. As you can imagine, the debugging experience isn't exactly "great" 😕 Of course the web part used to show the search results didn't work for anonymous users (quite common on a public web site), so we had to do some strange hack to make _that_ work first. One of the best descisions we made in our team was to finally build our own web interface talking directly to the search API.
+Yet another weird format with large chunks of commented XML in an HTML file, this time for showing search results. Even [Microsoft's documentation page uses Notepad++ for editing the files][9], since using Visual Studio will mess up the files' indentation. As you can imagine, the debugging experience isn't exactly "great" 😕 Of course the web part used to show the search results didn't work for anonymous users (quite common on a public web site), so we had to do some strange hack to make _that_ work first. One of the best decisions we made in our team was to finally build our own web interface talking directly to the search API.
 
 ### Managed navigation
 
-Having worked with _[Managed navigation][4]_ is another "interesing" experience, especially trying to apply it on an existing large web site. This is a way of trying to decouple the site structure from the URL and to hide the ugly `/pages/default.aspx` format. A deep site structure might have been created to achieve a certian URL, but that can cause a database migration to take several days (like when applying a service pack or cumulative update). The _Managed navigation_ API must also be one of the worst I have worked with. Reading a property can result in several database calls in the background, trashing performance completely. The admin GUI that the editors need to use is also...challenging. 
+Having worked with _[Managed navigation][4]_ is another "interesting" experience, especially trying to apply it on an existing large web site. This is a way of trying to decouple the site structure from the URL and to hide the ugly `/pages/default.aspx` format. A deep site structure might have been created to achieve a certain URL, but that can cause a database migration to take several days (like when applying a service pack or cumulative update). The _Managed navigation_ API must also be one of the worst I have worked with. Reading a property can result in several database calls in the background, trashing performance completely. The admin GUI that the editors need to use is also...challenging. 
 
 ## Workaround-Driven Development (WDD)
 
@@ -47,9 +47,9 @@ Even though SharePoint development has taken a very sane turn in the last couple
 
 ## Poor Developer Experience
 
-In addition to the shortcomings mentioned above, I think the biggest drawback and frustration with developing on the SharePoint platform is the overall "heaviness" or "slowness". Being forced to have your custom assemblies in the GAC is just so cumbersum. Unit testing your code when you have to constantly copy your assembly to the GAC for the test runner to notice the change, alternatively remove it from the GAC and have a broken web site while testing, is slow. 
+In addition to the shortcomings mentioned above, I think the biggest drawback and frustration with developing on the SharePoint platform is the overall "heaviness" or "slowness". Being forced to have your custom assemblies in the GAC is just so cumbersome. Unit testing your code when you have to constantly copy your assembly to the GAC for the test runner to notice the change, alternatively remove it from the GAC and have a broken web site while testing, is slow. 
 
-Despite SharePoint being such a success for Microsoft, the tooling for development has been quite bad before SPFx came along (which doesn't apply here). Seeing _Visual Studio (Not responding)™_ freezing with a message _"Communicating with SharePoint..."_ as soon as you try to open a file from Solution Explorer is devastating. Anyone who has experienced both this _and_ [Hot Module Replacement][10] can testify what big of a difference it makes to have a short feedback loop when writing code.
+Despite SharePoint being such a success for Microsoft, the tooling for development has been quite bad before SPFx came along (which doesn't apply here). Seeing _Visual Studio (Not responding)™_ freezing with a message _"Communicating with SharePoint..."_ as soon as you try to open a file from Solution Explorer, is devastating. Anyone who has experienced both this _and_ [Hot Module Replacement][10] can testify what big of a difference it makes to have a short feedback loop when coding.
 
 The overall "heaviness" also means you need a multi-kilo laptop with loads of RAM and disk space to run a local SharePoint farm in virtual machines.
 
@@ -57,9 +57,9 @@ The overall "heaviness" also means you need a multi-kilo laptop with loads of RA
 
 ## Brave New World
 
-So, I finally descided to get a divorce from SharePoint. It will cost me a significant decrease in salary and all the uncertainties of jumping in to something where I will be a complete novice on the technology used, but I just had to do it. To spice it up a bit, I will also leave the consulting business and take a job at an IT department, with staff liability.
+So, I finally decided to get a divorce from SharePoint. It will cost me a significant decrease in salary and all the uncertainties of jumping in to something where I will be a complete novice on the technology used, but I just had to do it. To spice it up a bit, I will also leave the consulting business and take a job at an IT department, with staff liability.
 
-So, after my vacation I will join Academic Work as a team manager for an internal development team. At this point I'm feeling a bit scared of all I have to learn: React, Elasticsearch, managing staff, Docker, internal politics, DotNet Core, lot of Azure things etc. Heck, even Git isn't something I know properly. But I'm still convinced that I will grow both personally and professionally and become a better developer in the next comming years. 🤩
+After my summer vacation I will join [Academic Work][11] as a team manager for an internal development team. At this point I'm feeling a bit scared of all the things I have to learn: React, Elasticsearch, managing staff, Docker, internal politics, DotNet Core, lot of Azure things etc. Heck, even Git isn't something I know properly. But I'm still convinced that I will grow both personally and professionally and become a better developer in the next coming years. 🤩
 
 [1]: http://requirejs.org/
 [2]: http://www.ilovesharepoint.com/2010/08/sharepoint-scripts-on-demand-spsod.html
@@ -71,3 +71,4 @@ So, after my vacation I will join Academic Work as a team manager for an interna
 [8]: https://docs.microsoft.com/en-gb/sharepoint/dev/general-development/how-to-convert-an-html-file-into-a-master-page-in-sharepoint
 [9]: https://docs.microsoft.com/en-gb/sharepoint/search/understanding-how-item-display-templates-and-hit-highlighting-work
 [10]: https://webpack.js.org/concepts/hot-module-replacement/
+[11]: https://www.academicwork.com/
