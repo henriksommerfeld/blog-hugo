@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["User perspective"]
+categories = ["Thoughts"]
 tags = ["Backup", "CrashPlan"]
 date = "2017-03-20T06:50:51+00:00"
 title = "Micro Stuttering Caused by CrashPlan"

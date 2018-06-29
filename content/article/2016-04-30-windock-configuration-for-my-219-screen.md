@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["User perspective"]
+categories = ["Thoughts"]
 date = "2016-04-30T16:59:15+00:00"
 tags = ["Hardware","WinDock"]
 title = "WinDock Configuration for my 21:9 Screen"

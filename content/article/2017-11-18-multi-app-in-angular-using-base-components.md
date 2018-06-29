@@ -44,7 +44,7 @@ For services, pipes and plain classes code sharing isn't a problem since they ca
 
 ## Base components to the rescue
 
-By creating base components at the project level that aren't rendered directly and don't have any mark-up or styling, we can create child components in the respective subsidiary apps that extends a base component and defines the template and CSS. 
+By creating base components at the project level that aren't rendered directly and don't have any mark-up or styling, we can create child components in the respective subsidiary apps that extend a base component and defines the template and CSS. 
 
 {{<figure src="/images/base-component-angular-project-tree.png" link="/images/base-component-angular-project-tree.png" caption="Angular project tree (simplified)." alt="Angular project tree">}}
 

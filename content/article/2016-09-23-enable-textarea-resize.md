@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["User perspective"]
+categories = ["Thoughts"]
 date = "2016-09-23T10:10:21+00:00"
 title = "Enable Textarea Resize"
 type = "article"

@@ -1,7 +1,7 @@
 +++
 author = "admin"
 bfa_virtual_template = ["hierarchy"]
-categories = ["User perspective"]
+categories = ["Thoughts"]
 date = "2014-09-11T05:31:08+00:00"
 tags = ["Brix","Hardware"]
 title = "Building a Mini-PC in 2014"
