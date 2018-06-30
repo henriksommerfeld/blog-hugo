@@ -25,7 +25,7 @@ I remember attending a course where a Microsoft representative in real earnest c
 
 ### Variations
 
-SharePoint's way of supporting multi-language web sites is called _Variations_. The limitations of this feature, made the developers before me in my last SharePoint assignment, implement an entire separate translation flow in addition to what _Variations_ could do, to be able to support the business requirements. Variations also "break" every now and then, that's why there is something called _[variationsfixuptool][7]_. When you programmatically ask the system to give you all the _variations_ (languages) of a page, it gives you as many as it feels like (sometimes correct, sometimes not).
+SharePoint's way of supporting multi-language web sites is called _Variations_. The limitations of this feature, made the developers before me in my last SharePoint assignment, implement an entire separate translation flow in addition to what _Variations_ could do, to be able to support the business requirements. Variations also "break" every now and then, that's why there is something called _[variationsfixuptool][7]_. When you programmatically ask the system to give you all the (language) _variations_ of a page, it gives you as many as it feels like (sometimes correct, sometimes not).
 
 ### HTML master pages
 
@@ -41,15 +41,17 @@ Having worked with _[Managed navigation][4]_ is another "interesting" experience
 
 ## Workaround-Driven Development (WDD)
 
-All of the above adds up. At one time it struck me that I spent more time on workarounds to compensate for inflexible out-of-the-box features than it would have taken to write the thing from scratch. 
+All of the above adds up. At one time it struck me that I spent more time on workarounds to compensate for inflexible out-of-the-box features than it would have taken to write the thing from scratch. Having worked in a great team with creative people, we have solved most of these problems by avoiding to make changes to code tightly coupled with SharePoint. But even though we've built new REST API's and Angular apps for new things, it was still hosted on this ginormous SharePoint installation. 
 
-Even though SharePoint development has taken a very sane turn in the last couple of years with the birth of the [SharePoint Framework (SPFx)][3], that hasn't been reflected by the market need where I work. Dev jobs are still circling around old and heavily customised on-prem installations.
+When I saw a new requirement in the _"Ready 4 sprint planning"_ column in our board that said _"Platform modernization"_, I thought: wow finally! It turned out to be a product upgrade work for SharePoint, SQL Server, Windows Server and the like. We had already spent two months trying to assess the implications of such an upgrade, which I had forgot about at that moment. Keeping up to date with product versions is of course a good thing, but I didn't really believe the immediate security risks with running a slightly older version of SQL Server that some corporate security person claimed (as it came across to me). Upgrading SharePoint would provide _no_ benefits for our ability to meet the business needs, yet constituting a big risk of downtime, a tremendous cost and blocking new features from being delivered.
 
 ## Poor Developer Experience
 
 In addition to the shortcomings mentioned above, I think the biggest drawback and frustration with developing on the SharePoint platform is the overall "heaviness" or "slowness". Being forced to have your custom assemblies in the GAC is just so cumbersome. Unit testing your code when you have to constantly copy your assembly to the GAC for the test runner to notice the change, alternatively remove it from the GAC and have a broken web site while testing, is slow. 
 
-Despite SharePoint being such a success for Microsoft, the tooling for development has been quite bad before SPFx came along (which doesn't apply here). Seeing _Visual Studio (Not responding)™_ freezing with a message _"Communicating with SharePoint..."_ as soon as you try to open a file from Solution Explorer, is devastating. Anyone who has experienced both this _and_ [Hot Module Replacement][10] can testify what big of a difference it makes to have a short feedback loop when coding.
+Despite SharePoint being such a success for Microsoft, the tooling for development has been quite bad before [SharePoint Framework (SPFx)][3] came along (which doesn't apply here). Seeing _Visual Studio (Not responding)™_ freezing with a message _"Communicating with SharePoint..."_ as soon as you try to open a file from Solution Explorer, is devastating. Anyone who has experienced both this _and_ [Hot Module Replacement][10] can testify what big of a difference it makes to have a short feedback loop when coding.
+
+Even though SharePoint development has taken a very sane turn in the last couple of years with the birth of the SPFx, that hasn't been reflected by the market need where I work. Dev jobs are still circling around old and heavily customised on-prem installations.
 
 The overall "heaviness" also means you need a multi-kilo laptop with loads of RAM and disk space to run a local SharePoint farm in virtual machines.
 
