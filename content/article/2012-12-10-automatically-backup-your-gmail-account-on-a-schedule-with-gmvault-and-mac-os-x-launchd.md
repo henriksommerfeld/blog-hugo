@@ -22,9 +22,9 @@ My experience with configuring Mac OS X is limited, but I have gained enough kno
 #!/bin/bash
 
 logger "Starting gmvault at $(date)"
-echo "Running gmvault at $(date)" &gt; /Users/henrik/backup-gmail.log
+echo "Running gmvault at $(date)" > /Users/henrik/backup-gmail.log
 
-/opt/local/bin/gmvault sync -t quick youremail@gmail.com &gt;&gt; /Users/henrik/backup-gmail.log
+/opt/local/bin/gmvault sync -t quick youremail@gmail.com >> /Users/henrik/backup-gmail.log
 
 logger "Finished gmvault at $(date)"
 {{</highlight>}}
