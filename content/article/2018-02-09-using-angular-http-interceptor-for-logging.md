@@ -3,7 +3,7 @@ title: "Using Angular HTTP Interceptor for Logging"
 url: "using-angular-http-interceptor-for-logging"
 date: 2018-02-09T11:35:22+01:00
 categories: ["Coding"]
-tags: ["Angular"]
+tags: ["Angular", "TypeScript"]
 ---
 
 A thing we've found handy in the Angular application I'm currently working on, is the console logging of HTTP requests and 

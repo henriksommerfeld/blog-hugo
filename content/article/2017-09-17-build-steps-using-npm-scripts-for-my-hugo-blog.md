@@ -4,7 +4,7 @@ url: "build-steps-using-npm-scripts-for-my-hugo-blog"
 date: 2017-09-17T17:15:54+02:00
 draft: false
 categories: ["Coding"]
-tags: ["Hugo","NodeJS"]
+tags: ["Hugo","NodeJS", "JavaScript", "CSS"]
 ---
 
 Quite recently [I migrated this blog from WordPress to Hugo][1]. Since I didn't want to use a theme built by someone else, I had to add things like CSS and JavaScript myself. To be able to work with this locally in an efficient way and to be able to produce a complete build output in a reproducible manner, I had to automate the build steps. With WordPress I used [Gulp][9] for this, but I thought that might not be needed, so I made an attempt to do this using only npm scripts. 

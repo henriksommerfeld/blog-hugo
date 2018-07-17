@@ -3,7 +3,7 @@ title: "Replacing Web Compiler With Node Sass"
 url: "replacing-webcompiler-with-node-sass"
 date: 2017-10-30T05:48:41+01:00
 categories: ["Coding"]
-tags: ["NodeJS"]
+tags: ["NodeJS", "CSS", "JavaScript"]
 ---
 
 After a long time of unreliable results with [Web Compiler][1], especially in TFS, I decided to replace it with `node-sass`.

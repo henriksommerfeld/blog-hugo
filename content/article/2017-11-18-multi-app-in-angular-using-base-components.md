@@ -3,7 +3,7 @@ title: "Code Sharing with Multi-App Angular Project Using Base Components"
 url: "code-sharing-with-multi-app-angular-project-using-base-components"
 date: 2017-11-18T11:51:22+01:00
 categories: ["Coding"]
-tags: ["Angular"]
+tags: ["Angular", "TypeScript", "Unit testing"]
 ---
 
 I'm building a new version of a web shop in Angular that should be used on three different web sites for three of my client's subsidiary companies. In the current solution, everything but the CSS is common, even the HTML. That has proven to lack the necessary flexibility when the different subsidiaries have different needs and their design agencies are told that they are not allowed change the mark-up. Every change also has to be approved by all three subsidiaries, which takes time.

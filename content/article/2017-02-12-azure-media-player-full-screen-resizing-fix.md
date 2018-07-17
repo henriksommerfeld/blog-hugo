@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Coding"]
 date = "2017-02-12T21:46:47+00:00"
-tags = ["Azure Media Player"]
+tags = ["Azure Media Player", "JavaScript"]
 title = "Azure Media Player Full Screen Resizing Fix"
 type = "article"
 url = "/azure-media-player-full-screen-resizing-fix/"

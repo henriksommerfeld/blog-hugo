@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Coding"]
 date = "2016-12-09T14:29:49+00:00"
-tags = ["Chutzpah","Jasmine"]
+tags = ["Chutzpah","Jasmine", "Unit testing", "JavaScript"]
 title = "Easier Debugging of JS tests in Visual Studio with Chutzpah 4.3.0+"
 type = "article"
 url = "/easier-debugging-of-js-tests-in-visual-studio-with-chutzpah-4-3-0/"

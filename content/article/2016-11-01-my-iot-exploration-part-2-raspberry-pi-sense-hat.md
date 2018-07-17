@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Coding"]
 date = "2016-11-01T05:38:21+00:00"
-tags = ["Hardware","Internet of Things","Raspberry Pi"]
+tags = ["Hardware","Internet of Things","Raspberry Pi", "Python"]
 title = "My IoT Exploration – Part 2 – Raspberry Pi Sense HAT"
 type = "article"
 url = "/my-iot-exploration-part-2-raspberry-pi-sense-hat/"

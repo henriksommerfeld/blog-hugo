@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Thoughts"]
 date = "2016-04-30T16:59:15+00:00"
-tags = ["Hardware","WinDock"]
+tags = ["Hardware","WinDock", "Windows 10"]
 title = "WinDock Configuration for my 21:9 Screen"
 type = "article"
 url = "/windock-configuration-for-my-219-screen/"

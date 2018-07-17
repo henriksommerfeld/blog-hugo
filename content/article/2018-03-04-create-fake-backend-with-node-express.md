@@ -3,7 +3,7 @@ title: "Create Fake Backend with Node Express"
 url: "create-fake-backend-with-node-express"
 date: 2018-03-04T18:16:00+01:00
 categories: ["Coding"]
-tags: ["NodeJS"]
+tags: ["NodeJS", "JavaScript"]
 ---
 
 The thing I'm most satisfied with in a long time is the introduction of a fake backend for my team's frontend development. When you have another system that you depend on and that you have no control over, it's always worth considering if that system can be replaced with a fake version for development. 

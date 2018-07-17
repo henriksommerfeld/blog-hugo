@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Coding"]
 date = "2016-08-15T19:06:27+00:00"
-tags = ["SharePoint"]
+tags = ["SharePoint", "JavaScript"]
 title = "Storing Configuration Data in SharePoint Lists"
 type = "article"
 url = "/storing-configuration-data-in-sharepoint-lists/"

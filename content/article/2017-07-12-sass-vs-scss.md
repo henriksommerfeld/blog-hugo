@@ -1,6 +1,7 @@
 +++
 author = "admin"
 categories = ["Coding"]
+tags = ["CSS"]
 date = "2017-07-12T11:03:44+00:00"
 title = "Sass vs SCSS"
 type = "article"
@@ -18,7 +19,7 @@ The Sassy Way's old post [Sass vs. SCSS: which syntax is better?][1] has a good 
 
 This is the `link.sass` file I currently have for general link styling on this blog (as an example).
 
-{{<highlight sass>}}
+{{<highlight css>}}
 a
     color: $light-blue
     text-decoration: none

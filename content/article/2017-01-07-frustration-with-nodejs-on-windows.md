@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Coding"]
 date = "2017-01-07T11:22:55+00:00"
-tags = ["Bash on Windows","NodeJS","Ubuntu on Windows"]
+tags = ["Windows Subsystem for Linux","NodeJS","Windows 10"]
 title = "Frustration with NodeJS on Windows"
 type = "article"
 url = "/frustration-with-nodejs-on-windows/"
