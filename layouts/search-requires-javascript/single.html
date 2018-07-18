@@ -1,0 +1,30 @@
+{{ partial "doctype.html" }}
+<html lang="en">
+    {{ partial "head.html" . }}
+    <body>
+        <div id="page-wrapper">
+            {{ partial "header.html" . }}
+            <div class="body">
+                <div class="body-max-width">
+                    <main id="content">
+                        <h1>Search Requires JavaScript</h1>
+                        <img class="bitmoji" src="/images/oops.png" alt="oops">
+                        <p>Sorry, but the search feature requires JavaScript. Enable that or find what you are looking for 
+                            by browsing the <em>tags</em> or <em>categories</em>. Alternatively you can 
+                            <em><a href="https://www.google.com/search?q=site%3Awww.henriksommerfeld.se" target="_blank" rel="nofollow">search my site with Google</a></em>
+                             (add you search phrase to the searchbox).
+                        </p>
+                    </main>
+                    <aside id="sidebar">
+                        {{ partial "recent-articles-widget.html" . }}
+                        {{ partial "tag-cloud.html" . }}
+                        {{ partial "categories-widget.html" . }}
+                    </aside>
+                </div>
+            </div>            
+            {{ partial "footer.html" . }}
+        </div>
+        {{ partial "searchbox.html" . }}
+        <script src="/site.js?{{ now.Unix }}"></script>
+    </body>
+</html>
