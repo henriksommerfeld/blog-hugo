@@ -1,7 +1,7 @@
 +++
 author = "admin"
 bfa_virtual_template = ["hierarchy"]
-categories = ["Administration"]
+categories = ["Tooling"]
 date = "2012-12-17T19:57:04+00:00"
 tags = ["Internet Information Server","PowerShell","Scripting","SharePoint","Warm-up","Windows Server"]
 title = "Setting up an IIS Warm-up Script in an automated fashion"

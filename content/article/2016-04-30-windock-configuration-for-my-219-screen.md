@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["Administration"]
+categories = ["Tooling"]
 date = "2016-04-30T16:59:15+00:00"
 tags = ["Hardware","WinDock", "Windows 10"]
 title = "WinDock Configuration for my 21:9 Screen"
@@ -9,7 +9,7 @@ url = "/windock-configuration-for-my-219-screen/"
 
 +++
 
-Hi have recently bought an ultra-wide monitor for my desk at home, a [Dell U3415W][1]. I'm using it both for work as a coder and for my personal needs such as photo editing, web browsing and watching movies. I have previously used a dual monitor setup, so I wanted to find a way of organising windows to be used side-by-side in a productive manner.
+Hi have recently bought an ultra-wide monitor for my desk at home, a [Dell U3415W][1]. I'm using it both for work as a coder and for my personal needs such as photo editing, web browsing and watching films. I have previously used a dual monitor setup, so I wanted to find a way of organising windows to be used side-by-side in a productive manner.
 
 {{<figure src="/images/2016-04-30_HPA_9723-1024x684.jpg" link="/images/2016-04-30_HPA_9723.jpg" class="image-border" caption="Dell U3415W Monitor, 34″ 3440×1440">}}
 

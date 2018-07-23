@@ -1,7 +1,7 @@
 +++
 author = "admin"
 bfa_virtual_template = ["hierarchy"]
-categories = ["Administration"]
+categories = ["Tooling"]
 date = "2015-03-01T09:32:04+00:00"
 tags = ["Mac OS X","Networking","PowerShell","Proxy","Scripting"]
 title = "Bypassing a Corporate Proxy"
