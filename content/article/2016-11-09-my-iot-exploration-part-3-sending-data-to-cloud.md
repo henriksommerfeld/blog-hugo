@@ -2,7 +2,7 @@
 author = "admin"
 categories = ["Coding"]
 date = "2016-11-09T08:48:02+00:00"
-excerpt = "In part 3 of my IoT exploration I connect my Raspberry Pi to Azure IoT Hub and create a NodeJS app that relays data from my Python program to Azure."
+summary = "In part 3 of my IoT exploration I connect my Raspberry Pi to Azure IoT Hub and create a NodeJS app that relays data from my Python program to Azure."
 tags = ["Internet of Things","NodeJS","Raspberry Pi","TypeScript"]
 title = "My IoT Exploration – Part 3 – Sending Data to Cloud"
 type = "article"
