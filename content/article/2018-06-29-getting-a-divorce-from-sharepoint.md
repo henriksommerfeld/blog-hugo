@@ -17,7 +17,7 @@ The combination of SharePoint's release cycles of about every third year and the
 
 ## Over-promising of Out-of-the-Box Features
 
-When adding successfull sales efforts from Microsoft (at least here in the Nordic countries) for using SharePoint for public facing web sites and the SharePoint product team's neglection of standards for HTML, CSS and JavaScript, this gap between common best practices and how things had to be done in SharePoint, became even more frustrating. No feature seemed simple enough to prevent a really complicated implementation in SharePoint. Let me rant a bit...
+When adding successful sales efforts from Microsoft (at least here in the Nordic countries) for using SharePoint for public facing web sites and the SharePoint product team's neglection of standards for HTML, CSS and JavaScript, this gap between common best practices and how things had to be done in SharePoint, became even more frustrating. No feature seemed simple enough to prevent a really complicated implementation in SharePoint. Let me rant a bit...
 
 ### Themes
 
