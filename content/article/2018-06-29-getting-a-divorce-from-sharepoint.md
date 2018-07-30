@@ -13,9 +13,9 @@ This specialisation got me into interesting development projects and I learned a
 
 As time went by, I more and more missed the ability to take advantage of progress that was made in the industry. What was presented at development conferences didn't apply to my work, because I was stuck in this bubble called SharePoint, where special limitations applied. 
 
-The combination of SharePoint's release cycles of about every third year and the goal to be backwards compatible with the Iron Age, was a bad recepie for developer experience. For the product team, this meant constantly re-inventing thier own wheels instead of using what others had already created, always resulting in slightly oval wheels (compare [Require.js][1] to SharePoint's [SP.SOD][2]). 
+The combination of SharePoint's release cycles of about every third year and the goal to be backwards compatible with the Iron Age, was a bad recipe for developer experience. For the product team, this meant constantly re-inventing their own wheels instead of using what others had already created, always resulting in slightly oval wheels (compare [Require.js][1] to SharePoint's [SP.SOD][2]). 
 
-## Overpromising of Out-of-the-Box Features
+## Over-promising of Out-of-the-Box Features
 
 When adding successfull sales efforts from Microsoft (at least here in the Nordic countries) for using SharePoint for public facing web sites and the SharePoint product team's neglection of standards for HTML, CSS and JavaScript, this gap between common best practices and how things had to be done in SharePoint, became even more frustrating. No feature seemed simple enough to prevent a really complicated implementation in SharePoint. Let me rant a bit...
 
