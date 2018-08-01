@@ -27,7 +27,7 @@
     "sass:build:prod": "node-sass assets/styles/main.sass static/site.css --output-style compressed && node-sass assets/styles/print.sass static/print.css --output-style compressed",
     "build:assets": "npm run clean && npm run sass:build:prod && npm run js:build:prod",
     "image:compress": "jpegoptim static/images/*.jpg && optipng static/images/*.png",
-    "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
+    "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0 --disableFastRender",
     "hugo:watch:local": "hugo serve --config config-dev.toml",
     "serve": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch\"",
     "serve:local": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch:localhost\"",
