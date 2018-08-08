@@ -75,7 +75,7 @@ chmod +x /jffs/scripts/update-notification
 exit
 ```
 
-I think updating your router software is just as important as keeping your computer or phone updated, so now i don't have to remember to manually check for updates. I just got the first "real" update notification and made the manual upgrade before writing this, works great 😎.
+I think updating your router software is just as important as keeping your computer or phone updated, so now i don't have to remember to manually check for updates. I just got the first "real" update notification and made the manual upgrade before writing this, works great 😎
 
 {{<figure link="/images/pushover-router-notifications.jpg" src="/images/pushover-router-notifications.jpg" alt="Router firmware update notifications in Pushover app on iPhone" class="image-border" caption="Router firmware update notification on my phone">}}
 
