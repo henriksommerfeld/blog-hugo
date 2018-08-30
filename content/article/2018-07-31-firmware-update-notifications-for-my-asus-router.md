@@ -2,7 +2,7 @@
 title: "Firmware Update Notifications for My Asus Router"
 date: 2018-07-31T11:14:58+02:00
 url: "firmware-update-notifications-for-my-asus-router"
-categories: ["Tools"]
+categories: ["Tooling"]
 tags: ["Networking", "Scripting"]
 ---
 
