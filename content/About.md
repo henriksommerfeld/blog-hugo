@@ -7,7 +7,7 @@ disable_comments = true
 
 # Hi, I'm Henrik! 
 
-{{<figure src="/images/henrik-1.jpg" class="image-border" width="300" alt="Bald guy smiling">}}
+{{<figure src="/images/henrik-1.jpg" class="image-border" width="400" alt="Bald guy smiling">}}
 
 I enjoy exploring computer stuff for business and pleasure. 
 
