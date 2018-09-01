@@ -29,13 +29,10 @@
     "build:assets": "npm run clean && npm run sass:build:prod && npm run js:build:prod",
     "image:compress": "jpegoptim static/images/*.jpg && optipng static/images/*.png",
     "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0 --disableFastRender",
-    "hugo:watch:local": "hugo serve --config config-dev.toml",
     "serve": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch\"",
-    "serve:local": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch:localhost\"",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
     "timestamp": "node build/save-build-timestamp.js",
-    "start:local": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve:local",
     "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",
     "build": "npm run build:assets && npm run clean:public && hugo && npm run index:prod && npm run timestamp"
   },
