@@ -2,6 +2,7 @@
 date = "2017-05-28T17:58:32+02:00"
 title = "About"
 type = "about"
+url = "about"
 disable_comments = true
 +++
 
