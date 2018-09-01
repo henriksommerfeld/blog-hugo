@@ -11,7 +11,7 @@
     "concurrently": "3.5.1",
     "del-cli": "^1.1.0",
     "jquery": "3.2.1",
-    "lunr": "2.1.5",
+    "lunr": "2.3.2",
     "node-sass": "^4.9.3",
     "normalize.css": "8.0.0",
     "uglify-js": "3.4.1"
