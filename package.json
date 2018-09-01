@@ -51,7 +51,7 @@
     "index": "node build/index-search.js static/search-index.json",
     "timestamp": "node build/save-build-timestamp.js",
     "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",
-    "build": "npm run build:assets && npm run clean:public && hugo && npm run index:prod && npm run timestamp"
+    "build": "npm run build:assets && npm run clean:public && hugo version && hugo && npm run index:prod && npm run timestamp"
   },
   "keywords": [
     "blog",
