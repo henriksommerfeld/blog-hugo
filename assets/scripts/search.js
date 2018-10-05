@@ -85,15 +85,6 @@ export default class Search {
         });
     }
 
-    isCrashPhrase (phrase) {
-        // Phrases that makes lunr hang browser
-        if (phrase.trim() === '*')
-            return false;
-            
-        phrase = phrase.replace('title:', '').replace(' ', '').toLowerCase();
-        return phrase.startsWith('*');
-    }
-
     showSearchError(errorText) {
         $('#search-output').removeClass('has-hits').addClass('has-error');
         let errorHtml = `<img class="bitmoji" src="/images/oops.png" alt="oops"><p>${errorText}</p>`;
@@ -121,9 +112,6 @@ export default class Search {
             this.showIndexLoadFailed();
             return;
         }
-        
-        if (!phrase || (phrase.length < 2 && phrase !== '*') || this.isCrashPhrase(phrase))
-            return;
         
         var result = this.index.search(phrase);
 

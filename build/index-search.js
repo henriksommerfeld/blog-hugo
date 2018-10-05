@@ -34,7 +34,7 @@ var searchIndex = lunr(function () {
 console.log('Saving index at ' + outputFilePath);
 
 var dataToSave = JSON.stringify({
-    index: searchIndex.toJSON(),
+    index: searchIndex,
     store: store
 });
 
