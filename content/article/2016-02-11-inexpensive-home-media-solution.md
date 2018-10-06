@@ -19,7 +19,7 @@ As my Mac Mini from 2010 has gotten slower and slower I've been thinking about a
 For this I bought the [Chromecast][1] that is connected to the TV (or actually to the sound system that in turn is connected to the TV). Then it's easy to cast from any of the streaming apps that supports Google Cast.
 
 <figure class="image-border">
-  <img src="../images/21867299155_84354a3d5e_k-1024x683.jpg" alt="Hejsan">
+  <img src="../images/21867299155_84354a3d5e_k-1024x683.jpg" alt="Chromecast">
     <figcaption>
       <p>Photo by TechStage <a href="https://www.flickr.com/photos/bestboyzde/21867299155/in/photostream/">published on Flickr</a> under <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC license</a></p> 
     </figcaption>    
