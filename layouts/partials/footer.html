@@ -4,8 +4,14 @@
             <div class="footer-text"><i class="fa fa-github"></i>Blog code</div>
         </a>
         
-        <a href="#page-wrapper" title="Go to top">
+        <a href="#page-wrapper" title="Go to top" id="go-to-top-link">
             <div class="footer-text">To top<i class="fa fa-arrow-circle-up"></i></div>
         </a>
+        <script>
+            document.getElementById("go-to-top-link").onclick = function() {
+                window.scroll(0,0);
+                return false;
+            };
+        </script>
     </div>
 </footer>
