@@ -12,45 +12,24 @@
     "del-cli": "^1.1.0",
     "jquery": "3.3.1",
     "lunr": "2.3.3",
-    "node-sass": "^4.9.3",
-    "normalize.css": "8.0.0",
+    "normalize.css": "8.0.1",
     "uglify-js": "3.4.9"
   },
   "scripts": {
-    "clean": "npx del -f static/*.js static/*.css",
+    "clean": "npx del -f static/*.js",
     "clean:public": "npx del -rf public",
     "js:build": "browserify assets/scripts/main.js --debug -o static/site.js -t [ babelify --presets [ es2015 ] ]",
     "js:build:prod": "browserify assets/scripts/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs -mc > static/site.js",
     "js:watch": "onchange assets/scripts -- npm run js:build",
-    "sass:lint": "sass-lint -c .sass-lint.yml --no-exit -v",
-    "sass:watch": "onchange \"assets/styles/**/*.sass\" -- npm run sass:build",
     
-    "sass:build": "npm run sass:build:main && npm run sass:build:print && npm run sass:build:about && npm run sass:build:guide && npm run sass:build:post",
-    "sass:build:prod": "npm run sass:build:main:prod && npm run sass:build:print:prod && npm run sass:build:about:prod && npm run sass:build:guide:prod && npm run sass:build:post:prod",
-    
-    "sass:build:main": "node-sass assets/styles/main-bundle.sass static/site.css",
-    "sass:build:main:prod": "node-sass assets/styles/main-bundle.sass static/site.css --output-style compressed",
-
-    "sass:build:print": "node-sass assets/styles/print-bundle.sass static/print.css",
-    "sass:build:print:prod": "node-sass assets/styles/print-bundle.sass static/print.css --output-style compressed",
-    
-    "sass:build:about": "node-sass assets/styles/about-bundle.sass static/about.css",
-    "sass:build:about:prod": "node-sass assets/styles/about-bundle.sass static/about.css --output-style compressed",
-
-    "sass:build:post": "node-sass assets/styles/post-bundle.sass static/post.css",
-    "sass:build:post:prod": "node-sass assets/styles/post-bundle.sass static/post.css --output-style compressed",
-
-    "sass:build:guide": "node-sass assets/styles/guide-bundle.sass static/guide.css",
-    "sass:build:guide:prod": "node-sass assets/styles/guide-bundle.sass static/guide.css --output-style compressed",
-
-    "build:assets": "npm run clean && npm run sass:build:prod && npm run js:build:prod",
+    "build:assets": "npm run clean && npm run js:build:prod",
     "image:compress": "jpegoptim static/images/*.jpg && optipng static/images/*.png",
-    "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0 --disableFastRender",
-    "serve": "concurrently --kill-others \"npm run js:watch\" \"npm run sass:watch\" \"npm run hugo:watch\"",
+    "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
+    "serve": "concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
     "timestamp": "node build/save-build-timestamp.js",
-    "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",
+    "start": "npm run clean && npm run js:build && hugo && npm run serve",
     "build": "npm run build:assets && npm run clean:public && hugo version && hugo && npm run index:prod && npm run timestamp"
   },
   "keywords": [
@@ -60,7 +39,6 @@
   "author": "Henrik Sommerfeld",
   "license": "MIT",
   "devDependencies": {
-    "onchange": "4.0.0",
-    "sass-lint": "1.12.1"
+    "onchange": "5.2.0"
   }
 }

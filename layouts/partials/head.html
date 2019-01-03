@@ -4,8 +4,10 @@
     <meta name="description" content="Henrik Sommerfeld's blog. Mostly about computer related stuff.">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <link rel="stylesheet" type="text/css" href="/site.css" media="screen, tv, projection">
-    <link rel="stylesheet" type="text/css" href="/print.css" media="print">
+    {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $mainStyles.Permalink }}" media="screen, tv, projection">
+    {{ $printStyles := resources.Get "styles/print-bundle.sass" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $printStyles.Permalink }}" media="print">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

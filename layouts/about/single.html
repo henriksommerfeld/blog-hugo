@@ -3,7 +3,8 @@
 {{ partial "head.html" . }}
 
 <body>
-    <link rel="stylesheet" type="text/css" href="/about.css" media="screen, tv, projection">
+    {{ $aboutStyles := resources.Get "styles/about-bundle.sass" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.Permalink }}" media="screen, tv, projection">
     <div id="page-wrapper">
         {{ partial "header.html" . }}
         <div class="body">
