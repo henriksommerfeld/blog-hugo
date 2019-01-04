@@ -4,7 +4,7 @@
 
 <body>
     {{ $aboutStyles := resources.Get "styles/about-bundle.sass" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.Permalink }}" media="screen, tv, projection">
+    <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.RelPermalink }}" media="screen, tv, projection">
     <div id="page-wrapper">
         {{ partial "header.html" . }}
         <div class="body">

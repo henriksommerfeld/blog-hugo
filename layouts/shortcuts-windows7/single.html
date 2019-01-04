@@ -2,7 +2,7 @@
 <html lang="sv">
 {{ partial "head.html" . }}
 {{ $guideStyles := resources.Get "styles/guide-bundle.sass" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" type="text/css" href="{{ $guideStyles.Permalink }}" media="screen, tv, projection">
+<link rel="stylesheet" type="text/css" href="{{ $guideStyles.RelPermalink }}" media="screen, tv, projection">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Average+Sans" media="all">
 <body class="guide">
     <main>    
