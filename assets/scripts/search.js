@@ -5,7 +5,7 @@ import lunr from 'lunr';
 
 export default class Search {
     constructor() {
-        console.log('Search module');
+        console.log('%c 🔍 Search module loaded', 'font-size:1.5em');
 
         this.index = null;
         this.store = null;

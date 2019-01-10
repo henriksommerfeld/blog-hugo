@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class Hamburger {
     constructor() {
-        console.log('Hamburger module');
+        console.log('%c 🍔 Hamburger module loaded', 'font-size:1.5em');
         
         this.addCloseOnTouchEvent();
         this.addCloseOnEscEvent();

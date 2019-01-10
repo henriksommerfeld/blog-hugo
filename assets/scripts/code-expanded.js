@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class CodeExpanded {
     constructor() {
-        console.log('Code expanded module');
+        console.log('%c 👨‍💻 Code expanded module loaded', 'font-size:1.5em');
 
         if (window.screen.availWidth < 1024 || (window.matchMedia && window.matchMedia('print').matches))
             return;

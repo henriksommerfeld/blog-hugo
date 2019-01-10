@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class LightBox {
     constructor() {
-        console.log('Lightbox module');
+        console.log('%c 🖼️ Lightbox module loaded', 'font-size:1.5em');
 
         this.cancelShowImage = false;
 

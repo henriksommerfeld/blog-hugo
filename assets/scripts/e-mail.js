@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 export default class EmailCaptcha {
     constructor() {
-        console.log('E-mail captcha module');
+        console.log('%c 📧 E-mail captcha module loaded', 'font-size:1.5em');
         
         var swapper = function(d) {
             var s = '';
