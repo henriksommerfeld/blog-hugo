@@ -13,7 +13,7 @@ The switch was by no means necessary, I had cheap hosting at a web hotel I will 
 
 ## Benefits
 
-**Simpler development environment**. I no longer need to have WordPress installed on my local machines and sync content between environments. Since I have my own desktop PC, a laptop from my employer and a laptop from my customer that i switch between depending on where I am, it's a hassle to have to install the WAMP stack on them and have the content databases somewhat synced. Docker or traditional virtual machines makes this a bit easier, but it's still something don't have to deal with anymore. Hugo is just a single binary. If you want your own theme and adjustments you will of course need tools for that, but that's equal between WordPress and Hugo in my case.
+**Simpler development environment**. I no longer need to have WordPress installed on my local machines and sync content between environments. Since I have my own desktop PC, a laptop from my employer and a laptop from my customer that I switch between depending on where I am, it's a hassle to have to install the WAMP stack on them and have the content databases somewhat synced. Docker or traditional virtual machines makes this a bit easier, but it's still something don't have to deal with anymore. Hugo is just a single binary. If you want your own theme and adjustments you will of course need tools for that, but that's equal between WordPress and Hugo in my case.
 
 > _Hugo is just a single binary_
 

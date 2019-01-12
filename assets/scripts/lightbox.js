@@ -37,7 +37,7 @@ export default class LightBox {
     }
 
     addOpenEvent() {
-        $('body').on('click', 'figure a', (e) => {
+        $('body').on('click', 'figure > a', (e) => {
             this.cancelShowImage = false;
 
             let imageUrl = e.currentTarget.href;
