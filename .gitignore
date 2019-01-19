@@ -4,8 +4,9 @@ public
 static/*.css
 static/*.js
 static/*.js.*
-static/search-index.json
+**/search-index.json
 build/timestamp.txt
 *.log
 npm-debug.log.*
 .inputrc
+assets/site-bundle.js

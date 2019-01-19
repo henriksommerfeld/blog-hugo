@@ -1,0 +1,2 @@
+{{ $secureJS := resources.Get "site-bundle.js" | resources.Fingerprint "sha512" }}
+<script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>

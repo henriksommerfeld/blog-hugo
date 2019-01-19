@@ -3,8 +3,8 @@
 {{ partial "head.html" . }}
 
 <body>
-    {{ $aboutStyles := resources.Get "styles/about-bundle.sass" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.RelPermalink }}" media="screen, tv, projection">
+    {{ $aboutStyles := resources.Get "styles/about-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.RelPermalink }}" integrity="{{ $aboutStyles.Data.Integrity }}" media="screen, tv, projection">
     <div id="page-wrapper">
         {{ partial "header.html" . }}
         <div class="body">
@@ -21,7 +21,7 @@
         {{- partial "footer.html" . -}}
     </div>
     {{- partial "searchbox.html" . -}}
-    <script src="/site.js"></script>
+    {{- partial "add-js.html" . -}}
 </body>
 
 </html>
