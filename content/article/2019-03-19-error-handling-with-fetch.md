@@ -68,7 +68,7 @@ export const useOurApi = (initialUrl, initialData) => {
   const [fetchedData, setFetchedData] = useState(initialData);
 
   useEffect(() => {
-    let didCancel = false;
+    let unmounted = false;
 
     const handleFetchResponse = response => {
       setHasError(!response.ok);
@@ -77,15 +77,15 @@ export const useOurApi = (initialUrl, initialData) => {
     };
 
     const fetchData = () => {
-      return fetch(url, , { credentials: 'include' })
+      return fetch(url, { credentials: 'include' })
         .then(handleFetchResponse)
         .catch(handleFetchResponse);
     };
 
-    fetchData().then(data => !didCancel && setFetchedData(data));
+    fetchData().then(data => !unmounted && setFetchedData(data));
 
     return () => {
-      didCancel = true;
+      unmounted = true;
     };
   }, [url]);
 
