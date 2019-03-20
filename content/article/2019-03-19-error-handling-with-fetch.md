@@ -46,13 +46,12 @@ function fetchData() {
     .catch(handleFetchResponse);
 }
 
-fetchData().then(data => 
-{
+fetchData().then(data => {
   // do something useful here with data...
 });
 {{</highlight>}}
 
-Of course it all depends on your application, but to me this is minimal error handling. To have it be used throughout an application, I've found it neccessary to encapsulate it into a reusable function. I'm currently working in a React code base, so this is the custom hook I wrote.
+Of course it all depends on your application, but to me this is minimal error handling. To have it be used by the team throughout an application, I've found it necessary to encapsulate it into a reusable function. I'm currently working in a React code base, so this is the custom hook I wrote.
 
 {{<highlight javascript>}}
 import { useEffect, useState } from "react";
