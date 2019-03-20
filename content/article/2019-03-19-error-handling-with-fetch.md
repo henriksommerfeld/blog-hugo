@@ -11,7 +11,7 @@ draft: false
 <figure class="image-border" style="margin-top: 2em">
   <img src="../images/david-kovalenko-414249-unsplash_1500.jpg" alt="airplane on ground surrounded with trees">
     <figcaption>
-      <p>Photo by <a href="https://unsplash.com/photos/G85VuTpw6jg">David Kovalenko</a> on <a href="https://unsplash.com/">Unsplash</a>. Importance of error handling.</p>
+      <p>Photo by <a href="https://unsplash.com/photos/G85VuTpw6jg">David Kovalenko</a> on <a href="https://unsplash.com/">Unsplash</a>. Importance of error handling - how did we end up here?</p>
     </figcaption>    
 </figure>
 
@@ -25,7 +25,7 @@ fetch('/something.json')
   });
 {{</highlight>}}
 
-When I see the same thing in a pull request, I'm not overly impressed. No, just because this works on a sunny day doesn't mean you're done. You need error handling as well!
+When I see the same thing in a pull request, I'm not overly impressed. No, just because this works on a sunny day doesn't mean you're done. You need error handling as well! Being explicit about how to handle errors is so much better than giving users an infinite spinner to stare at.
 
 Since `fetch` doesn't throw you into the `catch` clause for non-2xx responses, you need to check the `ok` property or check `status` for a specific status code. But both `then` and `catch` can use the same function for error handling.
 
@@ -93,11 +93,11 @@ export const useOurApi = (initialUrl, initialData) => {
 };
 {{</highlight>}}
 
-This way, you get an error indicator and a loading indicator out-of-the-box when using this data fetching function. Used like this in a (simplified) `Jobs.jsx`.
+This way, you get an error indicator and a loading indicator out-of-the-box when using this data fetching function. Used like this in a (simplified) _Jobs.jsx_.
 
 {{<highlight jsx>}}
 import React from "react";
-import { useHomeApi } from "../Common/Services/HttpService";
+import { useOurApi } from "../Common/Services/HttpService";
 import { Spinner } from "../Common/Components/Spinner";
 import { ErrorMessage } from "../Common/Components/ErrorMessage";
 import { JobFeed } from "./JobFeed";
