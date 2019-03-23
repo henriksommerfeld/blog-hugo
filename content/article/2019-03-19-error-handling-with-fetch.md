@@ -76,12 +76,14 @@ export const useOurApi = (initialUrl, initialData) => {
     };
 
     const fetchData = () => {
+      setIsLoading(true);
       return fetch(url, { credentials: 'include' })
         .then(handleFetchResponse)
         .catch(handleFetchResponse);
     };
 
-    fetchData().then(data => !unmounted && setFetchedData(data));
+    if (initialUrl)
+      fetchData().then(data => !unmounted && setFetchedData(data));
 
     return () => {
       unmounted = true;
