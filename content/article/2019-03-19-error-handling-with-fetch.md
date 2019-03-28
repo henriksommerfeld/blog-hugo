@@ -70,6 +70,8 @@ export const useOurApi = (initialUrl, initialData) => {
     let unmounted = false;
 
     const handleFetchResponse = response => {
+      if (didCancel) return initialData;
+
       setHasError(!response.ok);
       setIsLoading(false);
       return response.ok && response.json ? response.json() : initialData;
