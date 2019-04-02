@@ -70,7 +70,7 @@ export const useOurApi = (initialUrl, initialData) => {
     let unmounted = false;
 
     const handleFetchResponse = response => {
-      if (didCancel) return initialData;
+      if (unmounted) return initialData;
 
       setHasError(!response.ok);
       setIsLoading(false);
@@ -84,7 +84,7 @@ export const useOurApi = (initialUrl, initialData) => {
         .catch(handleFetchResponse);
     };
 
-    if (initialUrl)
+    if (initialUrl && !unmounted)
       fetchData().then(data => !unmounted && setFetchedData(data));
 
     return () => {
