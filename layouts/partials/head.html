@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Henrik Sommerfeld's blog. Mostly about computer related stuff.">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' www.google-analytics.com https://code.jquery.com https://disqus.com https://*.disqus.com https://*.disquscdn.com https://*.cloudinary.com http://www.gravatar.com;">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $mainStyles.RelPermalink }}" integrity="{{ $mainStyles.Data.Integrity }}" media="screen, tv, projection">
