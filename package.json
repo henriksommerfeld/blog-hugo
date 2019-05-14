@@ -6,14 +6,14 @@
     "babel-cli": "6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "6.24.1",
-    "babelify": "^8.0.0",
+    "babelify": "8",
     "browserify": "16.2.3",
     "concurrently": "4.1.0",
     "del-cli": "^1.1.0",
-    "jquery": "3.3.1",
-    "lunr": "2.3.5",
+    "jquery": "3.4.1",
+    "lunr": "2.3.6",
     "normalize.css": "8.0.1",
-    "uglify-js": "3.4.9"
+    "uglify-js": "3.5.12"
   },
   "scripts": {
     "clean": "npx del -f static/*.js",
@@ -21,7 +21,6 @@
     "js:build": "browserify assets/scripts/main.js --debug -o assets/site-bundle.js -t [ babelify --presets [ es2015 ] ]",
     "js:build:prod": "browserify assets/scripts/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs -mc > assets/site-bundle.js",
     "js:watch": "onchange assets/scripts -- npm run js:build",
-    
     "build:assets": "npm run clean && npm run js:build:prod",
     "image:compress": "jpegoptim static/images/*.jpg && optipng static/images/*.png",
     "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
