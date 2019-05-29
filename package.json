@@ -9,7 +9,7 @@
     "babelify": "8",
     "browserify": "16.2.3",
     "concurrently": "4.1.0",
-    "del-cli": "^1.1.0",
+    "del-cli": "^2.0.0",
     "jquery": "3.4.1",
     "lunr": "2.3.6",
     "normalize.css": "8.0.1",
