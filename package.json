@@ -37,6 +37,6 @@
   "author": "Henrik Sommerfeld",
   "license": "MIT",
   "devDependencies": {
-    "onchange": "5.2.0"
+    "onchange": "6.0.0"
   }
 }
