@@ -13,7 +13,7 @@
     "jquery": "3.4.1",
     "lunr": "2.3.6",
     "normalize.css": "8.0.1",
-    "uglify-js": "3.5.15"
+    "uglify-js": "3.6.0"
   },
   "scripts": {
     "clean": "npx del -f static/*.js",
