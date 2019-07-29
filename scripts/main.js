@@ -8,7 +8,7 @@ import Hamburger from './hamburger';
 import LightBox from './lightbox';
 import Search from './search';
 import CodeExpanded from './code-expanded';
-import EmailCaptcha from './e-mail'
+import EmailCaptcha from './e-mail' 
 
 $(() => {
   try {

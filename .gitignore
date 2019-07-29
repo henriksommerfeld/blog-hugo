@@ -9,4 +9,5 @@ build/timestamp.txt
 *.log
 npm-debug.log.*
 .inputrc
-assets/site-bundle.js
+assets/site-bundle.js*
+resources

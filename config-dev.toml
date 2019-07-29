@@ -10,6 +10,7 @@ pygmentsstyle = "monokai"
 preserveTaxonomyNames = true
 googleAnalytics = ""
 disqusShortname = ""
+minifyBundles = false
 
 [permalinks]
     article = "/:title/"
