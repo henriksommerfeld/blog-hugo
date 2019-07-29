@@ -3,31 +3,31 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
-    "babel-cli": "6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "6.24.1",
-    "babelify": "8",
+    "jquery": "3.4.1",
+    "lunr": "2.3.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babelify": "10",
     "browserify": "16.3.0",
     "concurrently": "4.1.1",
     "del-cli": "^2.0.0",
-    "jquery": "3.4.1",
-    "lunr": "2.3.6",
-    "normalize.css": "8.0.1",
-    "uglify-js": "3.6.0"
+    "onchange": "6.0.0"
   },
   "scripts": {
     "clean": "npx del -f static/*.js",
     "clean:public": "npx del -rf public",
-    "js:build": "browserify assets/scripts/main.js --debug -o assets/site-bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "js:build:prod": "browserify assets/scripts/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs -mc > assets/site-bundle.js",
-    "js:watch": "onchange assets/scripts -- npm run js:build",
+    "js:build": "browserify scripts/main.js --debug -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
+    "js:build:prod": "browserify scripts/main.js -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
+    "js:watch": "onchange scripts -- npm run js:build && npm run index",
     "build:assets": "npm run clean && npm run js:build:prod",
     "image:compress": "jpegoptim static/images/*.jpg && optipng static/images/*.png",
     "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
-    "serve": "npm run js:build && concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
-    "start": "npm run clean && npm run js:build && hugo && npm run serve",
+    "start": "npm run js:build && concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
     "build": "npm run build:assets && npm run clean:public && hugo version && hugo && npm run index:prod"
   },
   "keywords": [
@@ -35,8 +35,5 @@
     "hugo"
   ],
   "author": "Henrik Sommerfeld",
-  "license": "MIT",
-  "devDependencies": {
-    "onchange": "6.0.0"
-  }
+  "license": "MIT"
 }

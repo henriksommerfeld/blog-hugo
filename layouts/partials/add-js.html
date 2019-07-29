@@ -1,2 +1,7 @@
+{{ if .Site.Params.MinifyBundles }}
+{{ $minifiedJS := resources.Get "site-bundle.js" | minify | resources.Fingerprint "sha512" }}
+<script src="{{ $minifiedJS.RelPermalink }}" integrity="{{ $minifiedJS.Data.Integrity }}"></script>
+{{ else }}
 {{ $secureJS := resources.Get "site-bundle.js" | resources.Fingerprint "sha512" }}
 <script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+{{ end }}
