@@ -1,0 +1,16 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "e2e": "cypress run",
+    "e2e:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "Henrik Sommerfeld",
+  "license": "MIT",
+  "dependencies": {
+    "@testing-library/cypress": "^4.0.5",
+    "cypress": "^3.4.1"
+  }
+}
