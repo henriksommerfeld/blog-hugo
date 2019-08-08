@@ -1,3 +1,4 @@
 {
-    "baseUrl": "https://www.henriksommerfeld.se"
+    "baseUrl": "https://www.henriksommerfeld.se",
+    "chromeWebSecurity": false
 }

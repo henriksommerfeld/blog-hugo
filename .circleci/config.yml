@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: cypress/base
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -31,7 +31,22 @@ jobs:
       - save_cache:
           paths:
             - node_modules
+            - ~/.npm
+            - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: 
+        name: E2E testing against deployed preview
+        command: |
+          if [[ -v CYPRESS_baseUrl ]]; then
+            echo Testing external url $CYPRESS_baseUrl
+            npm run e2e
+          else
+            echo CYPRESS_baseUrl not specified, skipping.
+          fi
+
+      - store_artifacts:
+        path: ~/repo/e2e/cypress/screenshots
+      - store_artifacts:
+        path: ~/repo/e2e/cypress/videos
