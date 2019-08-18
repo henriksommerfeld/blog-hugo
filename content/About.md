@@ -1,5 +1,5 @@
 +++
-date = "2017-05-28T17:58:32+02:00"
+date = "2019-08-18T10:43:00+02:00"
 title = "About"
 type = "about"
 url = "about"
@@ -12,6 +12,6 @@ disable_comments = true
 
 I enjoy exploring computer stuff for business and pleasure. 
 
-I live in Stockholm, Sweden and since 2015 (when I got married) my last name is _Sommerfeld_. I am a programmer working at [Academic Work][1] where I manage a small development team working on various internal systems. When writing this I'm new to the job and really looking forward to it.
+I live in Stockholm, Sweden and am currently on parental leave 👶🏻 from my work at [Academic Work](1) as a programmer and team manager.
 
 [1]: https://www.academicwork.com/
