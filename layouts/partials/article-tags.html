@@ -3,6 +3,6 @@
   {{ $isLast := lt $index (sub (len $tags) 1) }}
   {{ $isFirst := eq $index 0 -}}
   
-  {{ if ($isFirst) }}<i class="fa fa-tags"></i>{{ end }}
+  {{ if ($isFirst) }}<i class="fas fa-tags"></i>{{ end }}
   <a class="article-tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ $tag }}</a>{{ if ($isLast) }}, {{- end -}}
 {{ end }}
