@@ -6,12 +6,12 @@ url = "about"
 disable_comments = true
 +++
 
-# Hi, I'm Henrik! 
+# Hi, I'm Henrik!
 
 {{<figure src="/images/henrik-1.jpg" class="image-border" width="400" alt="Bald guy smiling">}}
 
-I enjoy exploring computer stuff for business and pleasure. 
+I enjoy exploring computer stuff for business and pleasure.
 
-I live in Stockholm, Sweden and am currently on parental leave 👶🏻 from my work at [Academic Work](1) as a programmer and team manager.
+I live in Stockholm, Sweden and am currently on parental leave 👶🏻 from my work at [Academic Work][1] as a programmer and team manager.
 
 [1]: https://www.academicwork.com/
