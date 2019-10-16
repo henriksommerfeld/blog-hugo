@@ -4,7 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Henrik Sommerfeld's blog. Mostly about computer related stuff.">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    {{ if eq .Title .Site.Title }}
+    <title>{{ .Title }}</title>
+    {{ else }}
     <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
     {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true ) }}
     {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS $options | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $mainStyles.RelPermalink }}" integrity="{{ $mainStyles.Data.Integrity }}" media="screen, tv, projection">
