@@ -6,7 +6,7 @@ context('Search', () => {
     })
 
     it('Should open searchbox', ()=> {
-        cy.get('nav').getByText('Search').click().get('#search-input').should('be.visible')
+        cy.get('nav').findByText('Search').click().get('#search-input').should('be.visible')
     })
 
     const expectedPostTitle = 'Firmware Update Notifications for My Asus Router';
@@ -16,7 +16,7 @@ context('Search', () => {
           .type('asus firmware')
           .get('#search-output .result-list')
           .within(() => {
-            cy.getByText(expectedPostTitle)
+            cy.findByText(expectedPostTitle)
             .should('be.visible')
           })
     })
@@ -24,14 +24,14 @@ context('Search', () => {
     it(`Should navigate to post when clicked`, ()=> {
         cy.get('#search-output .result-list')
           .within(() => {
-            cy.getByText(expectedPostTitle)
+            cy.findByText(expectedPostTitle)
             .click()
             .url(`/firmware-update-notifications-for-my-asus-router/`)
           })
     })
 
     it('Should close on ESC key', ()=> {
-        cy.get('nav').getByText('Search').click().get('#search-input')
+        cy.get('nav').findByText('Search').click().get('#search-input')
             .type('{esc}')
             .get('#search-input').should('not.be.visible')
 

@@ -6,6 +6,6 @@ context('About', () => {
     })
 
     it('Should open about page', ()=> {
-        cy.get('nav').getByText('About').click().url(`/about/`)
+        cy.get('nav').findByText('About').click().url(`/about/`)
     })
 })

@@ -22,7 +22,7 @@ context('Post', () => {
     })
 
     it('Should open image lighbox on click', ()=> {
-      cy.getByAltText('Asus router web interface for uploading and applying a firmware update')
+      cy.findByAltText('Asus router web interface for uploading and applying a firmware update')
         .click()
         .get('#lightbox').should('have.class', 'open')
     })
@@ -33,23 +33,23 @@ context('Post', () => {
     })
 
     it('Should open expanded code view', ()=> {
-      cy.getByText('$TMPVERS').scrollIntoView()
-        .getByTitle('Expand').click()
+      cy.findByText('$TMPVERS').scrollIntoView()
+        .findByTitle('Expand').click()
         .get('#code-container').within(() => {
-          cy.getByTitle('Close (Esc)').should('exist')
+          cy.findByTitle('Close (Esc)').should('exist')
         })
     })
 
     it('Should close expanded code view', ()=> {
       cy.get('#code-container').within(() => {
-        cy.getByTitle('Close (Esc)').click()        
+        cy.findByTitle('Close (Esc)').click()        
       })
       cy.get('#code-container').should('not.have.class', 'open')
     })
 
     it('Should show tag Networking', ()=> {
       cy.get('article footer').within(() => {
-        cy.getByText('Networking')
+        cy.findByText('Networking')
           .should('be.visible')
           .should('have.attr', 'href', '/tags/networking')
       })
@@ -57,18 +57,18 @@ context('Post', () => {
 
     it('Should show category Tooling', ()=> {
       cy.get('article footer').within(() => {
-        cy.getByText('Tooling')
+        cy.findByText('Tooling')
           .should('be.visible')
           .should('have.attr', 'href', '/categories/tooling')
       })
     })
 
     it('Should have comments button', ()=> {
-      cy.getByText('Show Comments').should('be.visible')
+      cy.findByText('Show Comments').should('be.visible')
     })
 
     it('Should load comments on button click', ()=> {
-      cy.getByText('Show Comments').click()
+      cy.findByText('Show Comments').click()
         .get("#disqus_thread iframe").should('be.visible')
     })
 })
