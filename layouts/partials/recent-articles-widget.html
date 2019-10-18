@@ -1,8 +1,11 @@
 <div class="widget">
     <div class="widget-title">Recent posts</div>
     <ol class="recent-widget widget-content">
-        {{- $articles := where .Site.Pages "Type" "article" -}}
-        {{- range first 5 (where $articles "UniqueID" "!=" $.UniqueID) -}}
+        {{ $currentPage := . }}
+        {{ $articles := where .Site.Pages "Type" "article" }}
+        {{ $others := $articles | complement (slice $currentPage) }}
+
+        {{- range first 5 $others -}}
             <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end -}}
     </ol>
