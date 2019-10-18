@@ -42,7 +42,7 @@ Hmm, okay, the error message could be a bit friendlier but an error is expected 
 
 ### File download wierdness
 
-Sort of the same thing happened when I tried to download a large image (there are press images on the site). I chose to save the file and then...no feedback at all. When I looked in _Pictures_, the image was there, but how to get out of the "download mode"? 
+Sort of the same thing happened when I tried to download a large image (there are press images on the site). I chose to save the file and then...no feedback at all. When I looked in _Photos_, the image was there, but how to get out of the "download mode"? 
 
 {{<figure src="/images/20191017_211351000_iOS.png" alt="pressbild-2-0c3....jpg. JPEG image 10.7 MB Open in iMovie, More..." class="image-border" width="400">}}
 
