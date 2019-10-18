@@ -1,0 +1,23 @@
+name: Blog tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.2.2
+        with:
+          hugo-version: '0.54'
+          # extended: true
+      - name: Install
+        run: |
+          yarn install      
+      - name: Integration tests
+        run: |
+          npm run test:ci

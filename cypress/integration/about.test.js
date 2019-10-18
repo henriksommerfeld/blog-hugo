@@ -6,6 +6,8 @@ context('About', () => {
     })
 
     it('Should open about page', ()=> {
-        cy.get('nav').findByText('About').click().url(`/about/`)
+        cy.get('nav').findByText('About').click().url()
+          .should('equal', Cypress.config().baseUrl +  '/about/')
+        
     })
 })

@@ -26,7 +26,8 @@ context('Search', () => {
           .within(() => {
             cy.findByText(expectedPostTitle)
             .click()
-            .url(`/firmware-update-notifications-for-my-asus-router/`)
+            .url()            
+            .should('equal', Cypress.config().baseUrl + `/firmware-update-notifications-for-my-asus-router/`)
           })
     })
 

@@ -7,12 +7,7 @@
 <script type="text/javascript">
 function loadDisqus() {
     document.getElementById('comments-button-container').style.display = 'none';
-
-    if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168.")) {
-        alert("No comments are loaded on this host");
-        return;
-    }
-
+    
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     var disqus_shortname = '{{ .Site.DisqusShortname }}';
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
