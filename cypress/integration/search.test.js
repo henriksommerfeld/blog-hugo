@@ -12,7 +12,7 @@ context('Search', () => {
     const expectedPostTitle = 'Firmware Update Notifications for My Asus Router';
     it(`Should find post with title '${expectedPostTitle}' search for "asus firmware"`, ()=> {
         cy.get('#search-input')
-          .wait(3000) // give some time for index file to download
+          .wait(5000) // give some time for index file to download
           .type('asus firmware')
           .get('#search-output .result-list')
           .within(() => {
