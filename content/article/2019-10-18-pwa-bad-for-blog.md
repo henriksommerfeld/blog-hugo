@@ -18,7 +18,7 @@ Then I tried the PWA on my iPhone 🙁 I discovered [there are a number of serio
 * Navigation is different
 * No address bar
 * No reload. Errors persist
-* File download wierdness
+* File download weirdness
 
 ### External links
 External links are always opened in an in-app browser rather than Safari, Chrome, Firefox or whatever you prefer. For a PWA that's perceived as a website rather than an _app_, even though it technically is an app, this is strange and confusing.
@@ -38,7 +38,7 @@ Hmm, okay, the error message could be a bit friendlier but an error is expected 
 
 {{<figure src="/images/20191017_211100000_iOS.png" alt="Safari cannot open the page. Error: FetchEvent.respondWith received an error: TypeError: Internet connection seems down." class="image-border" width="400">}}
 
-...no difference. How do I reload the page? Force-quit the app and reopened - still the same thing. After quitting and reopening a few times I evetually got to the start page, but if I wasn't the developer of this I would have given up earlier.
+...no difference. How do I reload the page? Force-quit the app and reopened - still the same thing. After quitting and reopening a few times I eventually got to the start page, but if I wasn't the developer of this I would have given up earlier.
 
 ### File download wierdness
 
@@ -50,7 +50,7 @@ I tried the same thing in Chrome and that just worked like I expected, like on e
 
 ## Conclusion
 My ignorance around PWA's became apparent as soon as I tried it and I certainly didn't expect it to work this poorly.
-I guess this works better on Android, but in my opinion a website should not only work on one platform. So, my conclusion is that a PWA might be a good option if you really have an _app_, where you can use the things that _do work_ on both Andriod and iOS, but for a regular website I will avoid it.
+I guess this works better on Android, but in my opinion a website should not only work on one platform. So, my conclusion is that a PWA might be a good option if you really have an _app_, where you can use the things that _do work_ on both Android and iOS, but for a regular website I will avoid it.
 
 
 
