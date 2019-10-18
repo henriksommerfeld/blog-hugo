@@ -35,7 +35,8 @@
     "test": "npx cypress run",
     "test:open": "npx cypress open",
     "cy": "start-server-and-test start http://localhost:1313 test:open",
-    "test:ci": "start-server-and-test start http://localhost:1313 test"
+    "serve": "npx serve public -l 1313",
+    "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
   },
   "keywords": [
     "blog",
