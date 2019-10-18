@@ -9,7 +9,7 @@ pygmentsuseclasses = true
 pygmentsstyle = "monokai"
 preserveTaxonomyNames = true
 googleAnalytics = ""
-disqusShortname = ""
+disqusShortname = "henrik-sommerfeld"
 minifyBundles = false
 
 [permalinks]

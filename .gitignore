@@ -11,5 +11,5 @@ npm-debug.log.*
 .inputrc
 assets/site-bundle.js*
 resources
-e2e/cypress/screenshots
-e2e/cypress/videos
+cypress/screenshots
+cypress/videos
