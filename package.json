@@ -4,6 +4,7 @@
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
     "jquery": "3.4.1",
+    "lazysizes": "^5.1.2",
     "lunr": "2.3.7"
   },
   "devDependencies": {

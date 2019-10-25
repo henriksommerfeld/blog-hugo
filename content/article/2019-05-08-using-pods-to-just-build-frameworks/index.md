@@ -11,6 +11,8 @@ draft: false
 I recently built a new personal website/blog for my wife using GatsbyJS and I really enjoyed all the cool stuff you can do easily with available plugins. Since didn't really have any idea about the disadvantages with _Progressive Web Apps_ (PWA), I naively just installed the [manifest][1]
 and [offline][2] plugins and verified my success with [Lighthouse][3]. Boom, I had a PWA! 🎉
 
+{{% post-image "default-dialog.png" %}}
+
 Then I tried the PWA on my iPhone 🙁 I discovered [there are a number of serious issues with PWA's on iOS][4], since Apple doesn't like the web, I suppose. I am using iOS 13.1.3 at the time of writing this.
 
 ## iOS PWA issues for me

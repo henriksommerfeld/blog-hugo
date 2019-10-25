@@ -4,6 +4,7 @@
 'use strict';
 
 import $ from 'jquery';
+import 'lazysizes';
 import Hamburger from './hamburger';
 import LightBox from './lightbox';
 import Search from './search';

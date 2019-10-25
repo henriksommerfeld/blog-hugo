@@ -1,7 +1,36 @@
 {{ if .Site.Params.MinifyBundles }}
 {{ $minifiedJS := resources.Get "site-bundle.js" | minify | resources.Fingerprint "sha512" }}
-<script src="{{ $minifiedJS.RelPermalink }}" integrity="{{ $minifiedJS.Data.Integrity }}"></script>
+  <script src="{{ $minifiedJS.RelPermalink }}" integrity="{{ $minifiedJS.Data.Integrity }}"></script>
 {{ else }}
 {{ $secureJS := resources.Get "site-bundle.js" | resources.Fingerprint "sha512" }}
-<script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+  <script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 {{ end }}
+<!-- <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("hej");
+
+  document.querySelectorAll('div.placeholder').forEach(div => {
+    if (!div.hasAttribute("data-large")) {
+      return;
+    }
+
+    const original = div.getAttribute("data-large");
+    console.log("TCL: original", original)
+    fetch(original)
+      .then(function (response) {
+      console.log("TCL: response", response)
+        if (response && response.status == 200){                    
+            var image = new Image();
+            image.setAttribute("src", original)
+            image.onload = function () {
+                image.classList.add('loaded');
+            };
+            div.append(image);
+        }
+      })
+      .catch(function(err) {
+          console.error('lazy error: ', err);
+      });
+  });
+});
+</script> -->
