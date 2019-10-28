@@ -1,6 +1,8 @@
 {{ $image := (.Page.Resources.GetMatch  (index .Params.image)) }}
 {{ $alt := .Get "alt" }}
 {{ $width := .Get "width" }}
+{{ $borderless := .Get "borderless" }}
+{{ $noresize := .Get "noresize" }}
 {{ $placeholder := $image.Resize "48x q20" }}
 {{ $placeholder = $placeholder.Filter (images.GaussianBlur 4) }}
 {{ $x_small := $image.Resize "500x" }}
@@ -21,9 +23,16 @@
 {{$src_set = (print $src_set ", " $medium.RelPermalink " 1200w") }}
 {{ end }}
 
-{{ if ge $image.Width "1500"}}
-{{$src_set = (print $src_set ", " $large.RelPermalink " 1500w") }}
+{{ if $noresize}}
+{{$src_set = (print $image.RelPermalink " auto") }}
 {{ end }}
+
+{{ $border_class := "image-border" }}
+{{ if $borderless}}
+{{ $border_class = "" }}
+{{ end }}
+
+
 
 
 <noscript>
@@ -32,7 +41,7 @@
       display: none;
     }
   </style>
-  <figure class="image-border">
+  <figure class="{{ $border_class }}">
     {{ if .Get "lightbox" }}
     <a href='{{ $image.RelPermalink }}'>
       {{ end }}
@@ -46,7 +55,7 @@
   </figure>
 </noscript>
 
-<figure class="image-border lazy">
+<figure class="{{ $border_class }} lazy">
   {{ if .Get "lightbox" }}
   <a href='{{ $image.RelPermalink }}'>
     {{ end }}
