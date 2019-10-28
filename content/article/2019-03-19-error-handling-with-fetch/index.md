@@ -8,12 +8,9 @@ summary: "One thing that has struck me javascript's fetch function is that it of
 draft: false
 ---
 
-<figure class="image-border" style="margin-top: 2em">
-  <img src="../images/david-kovalenko-414249-unsplash_1500.jpg" alt="airplane on ground surrounded with trees">
-    <figcaption>
-      <p>Photo by <a href="https://unsplash.com/photos/G85VuTpw6jg">David Kovalenko</a> on <a href="https://unsplash.com/">Unsplash</a>. Importance of error handling - how did we end up here?</p>
-    </figcaption>    
-</figure>
+{{<post-image image="david-kovalenko-414249-unsplash_1500.jpg" alt="airplane on ground surrounded with trees">}}
+<p>Photo by <a href="https://unsplash.com/photos/G85VuTpw6jg">David Kovalenko</a> on <a href="https://unsplash.com/">Unsplash</a>. Importance of error handling - how did we end up here?</p>
+{{</post-image>}}
 
 One thing that has struck me javascript's `fetch` function is that it often looks so simple. 
 

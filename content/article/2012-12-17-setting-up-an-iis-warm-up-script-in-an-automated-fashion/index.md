@@ -18,7 +18,7 @@ Automatic recycling of application pools in IIS may be necessary, but it can ann
 
 The application I'm maintaining is on the Internet and uses SharePoint 2010. Configuration is automated with a bunch of scripts and I have therefore extended our existing "script infrastructure" with this warm-up script, thus this may seem somewhat overkill for your needs. In the _Post-SharePoint-Installation-Scripts_ folder we have one folder that holds the environment specific settings and one folder for general helper scripts as shown below.
 
-{{<figure src="/images/ScheduleWarmup_WindowsExplorer.png" alt="Windows Explorer showing Schedule Warmup Scripts">}}
+{{<post-image image="ScheduleWarmup_WindowsExplorer.png" alt="Windows Explorer showing Schedule Warmup Scripts" borderless="true" />}}
 
 I have cleaned up these folders from the scripts aren't relevant for this blog post, but what they have in common is that they load the `LoadDependencies.ps1` file that loads the needed helper scripts and settings for the current environment (like dev, test, prod). The help script I have kept in the _Helpers_ folder is the `Security.ps1` from the [Carbon][1] package to check for administrative permissions.
 
@@ -167,7 +167,7 @@ SCHTASKS /Create /TN $jobName /RU $EnvWarmupJobAccount /RP /TR $command /SC ONEV
 
 The trigger doesn't look for `IISRESET` and doesn't look for a specific application pool, so feel free to add that to your script. Now we can copy this folder structure (in the screenshot above) to any of our web servers and easily keep the sites warm (it's snowing outside my window), even our dev environment if we want to.
 
-{{<figure src="/images/ScheduleWarmup_console.png" link="/images/ScheduleWarmup_console.png" alt="Console executing schedule warm-up script">}}
+{{<post-image image="ScheduleWarmup_console.png" alt="Console executing schedule warm-up script" borderless="true" lightbox="true" noresize="true" />}}
 
 Now you should have a job scheduled in _Task Scheduler_ that you can try by recycling an application pool manually in IIS. Make sure you wait for the job to finish before you call it a failure, the history tab in Task Scheduler says _Action Completed_ when it's done. All scripts used in this post can be downloaded as a ZIP file here: [ScheduledWarmupScript_1.zip][5]
 

@@ -2,37 +2,37 @@
 {{ $alt := .Get "alt" }}
 {{ $width := .Get "width" }}
 {{ $borderless := .Get "borderless" }}
-{{ $noresize := .Get "noresize" }}
-{{ $placeholder := $image.Resize "48x q20" }}
-{{ $placeholder = $placeholder.Filter (images.GaussianBlur 4) }}
-{{ $x_small := $image.Resize "500x" }}
-{{ $small := $image.Resize "800x" }}
-{{ $medium := $image.Resize "1200x" }}
-{{ $large := $image.Resize "1500x" }}
+{{ $placeholder := ($image.Resize "48x q20") | images.Filter (images.GaussianBlur 6) }}
+{{ $src := $image }}
+{{ $src_set := ""}}
 
-{{$src_set := ""}}
+{{ $src_set = (print $image.RelPermalink " " $image.Width "w") }}
+{{ $src := $image }}
+
 {{ if ge $image.Width "500"}}
-{{$src_set = (print $x_small.RelPermalink " 500w") }}
+{{ $x_small := $image.Resize "500x" }}
+{{ $src_set = (print $src_set ", "  $x_small.RelPermalink " 500w") }}
 {{ end }}
 
 {{ if ge $image.Width "800"}}
-{{$src_set = (print $src_set ", " $small.RelPermalink " 800w") }}
+{{ $small := $image.Resize "800x" }}
+{{ $src_set = (print $src_set ", " $small.RelPermalink " 800w") }}
 {{ end }}
 
 {{ if ge $image.Width "1200"}}
-{{$src_set = (print $src_set ", " $medium.RelPermalink " 1200w") }}
+{{ $medium := $image.Resize "1200x" }}
+{{ $src_set = (print $src_set ", " $medium.RelPermalink " 1200w") }}
 {{ end }}
 
-{{ if $noresize}}
-{{$src_set = (print $image.RelPermalink " auto") }}
+{{ if gt $image.Width "1500"}}
+{{ $large := $image.Resize "1500x" }}
+{{ $src_set = (print $src_set ", " $large.RelPermalink " 1500w") }}
 {{ end }}
 
 {{ $border_class := "image-border" }}
 {{ if $borderless}}
 {{ $border_class = "" }}
 {{ end }}
-
-
 
 
 <noscript>
@@ -45,7 +45,7 @@
     {{ if .Get "lightbox" }}
     <a href='{{ $image.RelPermalink }}'>
       {{ end }}
-      <img src="{{ $large.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} />
+      <img src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} />
       {{ if .Get "lightbox" }}
     </a>
     {{ end }}
@@ -59,8 +59,8 @@
   {{ if .Get "lightbox" }}
   <a href='{{ $image.RelPermalink }}'>
     {{ end }}
-    <img class="lazyload" data-sizes="auto" src="{{ $large.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }}
-      srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $large.RelPermalink }}"
+    <img class="lazyload" data-sizes="auto" src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }}
+      srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $src.RelPermalink }}"
       data-srcset="{{ $src_set }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
     {{ if .Get "lightbox" }}
   </a>

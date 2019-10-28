@@ -33,7 +33,7 @@ Apparently I had to use absolute paths here. The logging is of course optional, 
 
 4. I chose a GUI approach and used Lingon to create the agent, but you could just as well use your favourite text editor to create the plist file, this is listed below. Create the agent running as your user, it is necessary for the OAuth authentication to work. Make sure to use a unique name, I chose _se.henrikpalm.gmailBackup_, and use the full path to the script. To test this, it can be good to choose a time for the agent to run that is a few minutes in the future.
 
-    {{<post-image image="Lingon-Basic-GmailBackup.png" alt="Configure Gmail backup script with Lingon" borderless="true" noresize="true" />}}
+    {{<post-image image="Lingon-Basic-GmailBackup.png" alt="Configure Gmail backup script with Lingon" borderless="true" />}}
   
     The result of the GUI approach above is a file located at `~/Library/LaunchAgents/se.henrikpalm.gmailBackup.plist`, containing the following:
 	{{<highlight xml>}}
