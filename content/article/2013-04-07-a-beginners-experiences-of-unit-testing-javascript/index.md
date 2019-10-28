@@ -117,7 +117,7 @@ describe("MAN", function () {
 
 Now I’m at the point where I actually dare to change some stuff, and that’s where I want to be with code. If I make a mistake like in the original code, overriding an existing function with a parameter, my tests would tell me. So, the barrier to unit testing Javascript is indeed low and does not require expensive tools (I used Notepad++ and Chrome initially for this before I integrated it into our Visual Studio project). Green makes one happy, get started testing if you haven’t already! You can download this if you want to try it out: [js-tests_henrikpalm.se_2013-04-07.zip][2]
 
-{{<figure src="/images/man-getqueryvariable-jasmine.png" alt="Passing unit tests with Jasmine" class="image-border">}}
+{{<post-image image="man-getqueryvariable-jasmine.png" alt="Passing unit tests with Jasmine" />}}
 
  [1]: http://pivotal.github.io/jasmine/
  [2]: /files/js-tests_henrikpalm.se_2013-04-07.zip

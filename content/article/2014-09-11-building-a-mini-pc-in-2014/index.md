@@ -14,10 +14,10 @@ Recently I helped my sister with a new computer. Her previous one was typical lo
 
 I have previously built a few desktop machines for myself (with performance in mind rather than low price), but that has also taught me the possible hassle with ordering motherboard, CPU, RAM and so on separately if the machine doesn't boot up when you're done. I wanted to avoid those kind of warranty issues where I have to prove to the store which of the components that is faulty and that I didn't cause the malfunctioning. I also found it frustrating when looking through the assortment range of the on-line stores I use to buy from &#8211; a surprisingly large number of machines still have HDD's as their only drive, many of them include very little RAM and some still have USB 2.0 ports (in addition to some USB 3.0 ports). The latter is more of an annoyance than a big problem, but I still cannot understand why on earth you would put USB 2.0 ports in a new machine today, are they really that much cheaper?
 
-{{<figure src="/images/Brix_with_pen-1024x718.jpg" link="/images/Brix_with_pen.jpg" alt="Brix mini PC" class="image-border">}}
+{{<post-image image="Brix_with_pen.jpg" lightbox="true" alt="Brix mini PC">}}
 
 So, I ended up buying the [Gigabyte GB-BXi7H-4500][1] barebone mini-pc. A really small machine that could still fit a 2.5" SSD I had lying around. The assembling is very easy with clear instructions included. I installed Windows 8.1 on it and the drivers were easy to find on the Gigabyte web site, which isn't always the case. That on the other hand is a must, because the drivers included in the package are on a DVD and this device doesn't have an optical drive (better luck with the thinking next time Gigabyte).
 
 With 8 GB RAM, an SSD and a Core i7 CPU I think my sister's computer needs will be satisfied for a few years to come.
 
- [1]: http://www.gigabyte.com/products/product-page.aspx?pid=4857#ov
+[1]: http://www.gigabyte.com/products/product-page.aspx?pid=4857#ov
