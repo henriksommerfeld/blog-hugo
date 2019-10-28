@@ -21,7 +21,7 @@ To be able to see what my Raspberry Pi is monitoring when I'm not home, I need a
 
 I used the Azure Portal to set up the IoT Hub service like this:
 
-{{<figure src="/images/Create_hub.png" link="/images/Create_hub.png" alt="Registering Azure IoT Hub in Azure Portal" class="image-border limit-width">}}
+{{<post-image image="Create_hub.png" alt="Registering Azure IoT Hub in Azure Portal" lightbox="true" />}}
 
 Once it was created I went back to the console to get a connection string for my Raspberry. This can be done from any computer, by the way.
 
@@ -38,7 +38,7 @@ iothub-explorer [Connection string to IoT Hub that you find in the portal] creat
 
 When this is done I have a connection string to the device, that I will use later.
 
-{{<figure src="/images/creating-raspberry-connectionstring-smudged_cut.png" link="/images/creating-raspberry-connectionstring-smudged_cut.png" alt="Creating Raspberry connection string" class="image-border">}}
+{{<post-image image="creating-raspberry-connectionstring-smudged_cut.png" alt="Creating Raspberry connection string" lightbox="true" />}}
 
 ## Creating a data relay in NodeJS
 
@@ -80,7 +80,7 @@ To avoid this and also to avoid having to check everything into source control, 
 
 At this point I'm successfully sending data to Azure and the LED on the Raspberry Pi shows a green light.
 
-{{<figure src="/images/Sense-hat-ok.jpg" class="image-border">}}
+{{<post-image image="Sense-hat-ok.jpg" />}}
 
 Next post: [My IoT Exploration – Part 4 – Presenting the Data][9]
 

@@ -21,13 +21,10 @@ My conclusion is that using sensors is hard. They need to be accurate enough and
 
 Also, many of the sensors I found when I started looking, are not intended for more than experimentation, i.e. connecting it to a breadboard with a mess of wires to connect it to the Arduino. Of course this is fine for when you are actually trying it out, but I had the goal of doing something "real" — something more rugged, without having custom circuits manufactured for me.
 
-<figure class="image-border">    
-    <img src="/images/6325347372_07f1d6846f_b.jpg">
-    <figcaption>
-        <h4>Messy Arduino setup</h4>
-        <p>Photo by Gaël Chardon, <a href="https://www.flickr.com/photos/gael/6325347372/">published on Flickr</a> under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC license</a></p>
-    </figcaption>    
-</figure>
+{{<post-image image="6325347372_07f1d6846f_b.jpg" >}}
+    <h4>Messy Arduino setup</h4>
+    <p>Photo by Gaël Chardon, <a href="https://www.flickr.com/photos/gael/6325347372/">published on Flickr</a> under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC license</a></p>
+{{</post-image>}}
 
 So, short version:
 

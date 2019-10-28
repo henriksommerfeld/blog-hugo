@@ -13,7 +13,7 @@ Some time ago I got the idea to ramp up my skills in front-end web development a
 
 [Sage][1] got my attention, so I downloaded that and started to look into its components. This was all new territory for me with Bower, Gulp, PHP, NodeJS and so on.
 
-{{<figure src="/images/gulp.png" link="/images/gulp.png" alt="Console running Gulp">}}
+{{<post-image image="gulp.png" lightbox="true" alt="Console running Gulp" borderless="true" />}}
 
 One thing I had noticed with my previous WordPress site was that the number of script and styling references (js and css files) grew as plug-ins were added. By having my own theme and taking control of the HTML being generated I hoped to be able to bundle the Javascript and CSS files to reduce the number of resources that visitors had to download.
 

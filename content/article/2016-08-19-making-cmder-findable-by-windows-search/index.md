@@ -15,16 +15,16 @@ This is just a short reminder for myself. I just found myself reinstalling Windo
 
 This can be either for your specific user or for the whole system.
 
-{{<figure src="/images/Cmder_path_variable_selection.png" alt="Environment variables dialogue">}}
+{{<post-image image="Cmder_path_variable_selection.png" alt="Environment variables dialogue" borderless="true" />}}
 
-{{<figure src="/images/Cmder_path_variable.png" alt="Path variable edit dialogue">}}
+{{<post-image image="Cmder_path_variable.png" alt="Path variable edit dialogue" borderless="true" />}}
 
 ## 2. Log off and on again
 
 ## 3. Voilà!
 
-<i class="fa fa-windows"><span class="sr-only">Win</span></i> + cmder
+<i class="fab fa-windows"><span class="sr-only">Win</span></i> + cmder
   
-{{<figure src="/images/Cmder_search_windows.png" alt="Windows start menu showing Cmder">}}
+{{<post-image image="Cmder_search_windows.png" alt="Windows start menu showing Cmder" borderless="true" />}}
 
  [1]: http://cmder.net/

@@ -11,7 +11,7 @@ url = "/lenovo-x1-carbon-with-windows-10/"
 
 I have recently got the chance to upgrade my work computer from an old, heavy and ugly machine with almost no battery life and a terrible screen to something new and shiny. I ended up getting the third generation Lenovo X1 Carbon (unfortunately without touch screen for budget reasons). This is my experience so far of that machine running Windows 10.
 
-{{<figure src="/images/x1_carbon.jpg" link="/images/x1_carbon.jpg" alt="Lenovo X1 Carbon" class="image-border">}}
+{{<post-image image="x1_carbon.jpg" lightbox="true" alt="Lenovo X1 Carbon" />}}
 
 I really like the X1 Carbon. Lightweight with a good screen and good keyboard, and good performance for an ultrabook. Even my MacBook loving wife thought it looked cool.
 

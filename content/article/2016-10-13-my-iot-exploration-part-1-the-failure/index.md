@@ -37,7 +37,9 @@ One of the main purposes of our aquarium is aesthetics. After looking at the ima
 
 The second problem was the Wi-Fi module I had. I was able to connect it to my home Wi-Fi by sending commands directly to it from my laptop, but to have it connect automatically was harder. There was not even a function in the Wi-Fi library for detecting connectivity, you would need to put in the delays of the right length between commands and hope that the connection was successful. I found [a forum thread][5] by someone who eventually got it working, but the hassle, including attaching and detaching the shields for every small adjustment to the code, just didn't make sense to me. At this point, I gave up and had to call it a failure.
 
-{{<figure src="/images/arduino-3-1024x684.jpg" class="image-border" alt="Arduino with Wi-Fi module" caption="Arduino with Wi-Fi module">}}
+{{<post-image image="arduino-3-1024x684.jpg" alt="Arduino with Wi-Fi module">}}
+Arduino with Wi-Fi module
+{{</post-image>}}
 
 ## Changing approach
 
