@@ -3,10 +3,11 @@
     <ol class="recent-widget widget-content">
         {{ $currentPage := . }}
         {{ $articles := where .Site.Pages "Type" "article" }}
+        {{ $articles = where $articles "Title" "!=" "Articles" }}
         {{ $others := $articles | complement (slice $currentPage) }}
 
         {{- range first 5 $others -}}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end -}}
     </ol>
 </div>
