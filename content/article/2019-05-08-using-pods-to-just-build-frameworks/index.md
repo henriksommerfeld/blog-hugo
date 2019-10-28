@@ -11,8 +11,6 @@ draft: false
 I recently built a new personal website/blog for my wife using GatsbyJS and I really enjoyed all the cool stuff you can do easily with available plugins. Since didn't really have any idea about the disadvantages with _Progressive Web Apps_ (PWA), I naively just installed the [manifest][1]
 and [offline][2] plugins and verified my success with [Lighthouse][3]. Boom, I had a PWA! 🎉
 
-{{< post-image image="test.jpg" alt="testbild" >}}
-
 Then I tried the PWA on my iPhone 🙁 I discovered [there are a number of serious issues with PWA's on iOS][4], since Apple doesn't like the web, I suppose. I am using iOS 13.1.3 at the time of writing this.
 
 ## iOS PWA issues for me
@@ -37,11 +35,13 @@ The worst flaw I experienced was related to the offline support. After the issue
 
 I activated _Flight mode_ and clicked a few links, worked great. Then a few more links.
 
-{{<figure src="/images/20191017_211100000_iOS.png" alt="Safari cannot open the page. Error: FetchEvent.respondWith received an error: TypeError: Internet connection seems down." class="image-border" width="400" caption="Safari cannot open the page (screenshot in Swedish)">}}
+{{<post-image image="20191017_211100000_iOS.png" width="400"
+alt="Safari cannot open the page. Error: FetchEvent.respondWith received an error: TypeError: Internet connection seems down."  >}}Safari cannot open the page (screenshot in Swedish)
+{{</post-image>}}
 
 Hmm, okay, the error message could be a bit friendlier but an error is expected since not all resources can be prefetched. So I toggled off flight mode and...
 
-{{<figure src="/images/20191017_211100000_iOS.png" alt="Safari cannot open the page. Error: FetchEvent.respondWith received an error: TypeError: Internet connection seems down." class="image-border" width="400">}}
+{{<post-image image="20191017_211100000_iOS.png" width="400" alt="Safari cannot open the page. Error: FetchEvent.respondWith received an error: TypeError: Internet connection seems down."  />}}
 
 ...no difference. How do I reload the page? Force-quit the app and reopened - still the same thing. After quitting and reopening a few times I eventually got to the start page, but if I wasn't the developer of this I would have given up earlier.
 
@@ -49,7 +49,7 @@ Hmm, okay, the error message could be a bit friendlier but an error is expected 
 
 Sort of the same thing happened when I tried to download a large image (there are press images on the site). I chose to save the file and then...no feedback at all. When I looked in _Photos_, the image was there, but how to get out of the "download mode"?
 
-{{<figure src="/images/20191017_211351000_iOS.png" alt="pressbild-2-0c3....jpg. JPEG image 10.7 MB Open in iMovie, More..." class="image-border" width="400">}}
+{{<post-image image="20191017_211351000_iOS.png" width="400" alt="pressbild-2-0c3....jpg. JPEG image 10.7 MB Open in iMovie, More..." />}}
 
 I tried the same thing in Chrome and that just worked like I expected, like on every web page.
 

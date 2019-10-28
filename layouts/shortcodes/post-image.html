@@ -1,5 +1,6 @@
 {{ $image := (.Page.Resources.GetMatch  (index .Params.image)) }}
 {{ $alt := .Get "alt" }}
+{{ $width := .Get "width" }}
 {{ $placeholder := $image.Resize "48x q20" }}
 {{ $placeholder = $placeholder.Filter (images.GaussianBlur 4) }}
 {{ $x_small := $image.Resize "500x" }}
@@ -32,12 +33,32 @@
     }
   </style>
   <figure class="image-border">
-    <img src="{{ $large.RelPermalink }}" />
+    {{ if .Get "lightbox" }}
+    <a href='{{ $image.RelPermalink }}'>
+      {{ end }}
+      <img src="{{ $large.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} />
+      {{ if .Get "lightbox" }}
+    </a>
+    {{ end }}
+    <figcaption>
+      <em>{{ .Inner }}</em>
+    </figcaption>
   </figure>
 </noscript>
 
 <figure class="image-border lazy">
-  <img class="lazyload" data-sizes="auto" src="{{ $large.RelPermalink }}"
-    srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $large.RelPermalink }}"
-    data-srcset="{{ $src_set }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
+  {{ if .Get "lightbox" }}
+  <a href='{{ $image.RelPermalink }}'>
+    {{ end }}
+    <img class="lazyload" data-sizes="auto" src="{{ $large.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }}
+      srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $large.RelPermalink }}"
+      data-srcset="{{ $src_set }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
+    {{ if .Get "lightbox" }}
+  </a>
+  {{ end }}
+  {{ if .Inner }}
+  <figcaption>
+    <em>{{ .Inner }}</em>
+  </figcaption>
+  {{ end }}
 </figure>
