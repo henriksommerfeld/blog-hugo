@@ -1,66 +1,43 @@
-{{ $image := (.Page.Resources.GetMatch  (index .Params 0)) }}
-{{ $placeholder := $image.Resize "48x q20" }} 
+{{ $image := (.Page.Resources.GetMatch  (index .Params.image)) }}
+{{ $alt := .Get "alt" }}
+{{ $placeholder := $image.Resize "48x q20" }}
+{{ $placeholder = $placeholder.Filter (images.GaussianBlur 4) }}
 {{ $x_small := $image.Resize "500x" }}
 {{ $small := $image.Resize "800x" }}
 {{ $medium := $image.Resize "1200x" }}
 {{ $large := $image.Resize "1500x" }}
 
-<!-- <div class="image_placeholder" style="max-width: {{ if index .Params 1 }}{{index .Params 1}}{{ else }}{{$image.Width}}px{{end}}">
-  <div class="placeholder" data-large="{{ $image.RelPermalink }}">  
-    <img  src="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode  }}" 
-      width="{{$image.Width}}" height="{{$image.Height}}" class="img-small loaded">
-    <div style="padding-bottom: {{ div (mul $image.Height 100.0) $image.Width }}%;"></div>
-  </div>
-</div> -->
+{{$src_set := ""}}
+{{ if ge $image.Width "500"}}
+{{$src_set = (print $x_small.RelPermalink " 500w") }}
+{{ end }}
 
-<div class="img" style="background: url(data:image/jpeg;base64,{{ $lqip.Content | base64Encode  }}); background-size: cover">
-  <svg width="{{ $img.Width }}" height="{{ $img.Height }}" aria-hidden="true"></svg>
-  <img
-    class="lazyload"
-    data-sizes="auto"
-    data-srcset='
-    {{ if ge $src.Width "500" }}
-      {{ with $tiny.RelPermalink }}{{.}} 500w{{ end }}
-    {{ end }}
-    {{ if ge $src.Width "800" }}
-      {{ with $small.RelPermalink }}, {{.}} 800w{{ end }}
-    {{ end }}
-    {{ if ge $src.Width "1200" }}
-      {{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}
-    {{ end }}
-    {{ if ge $src.Width "1500" }}
-      {{ with $large.RelPermalink }}, {{.}} 1500w {{ end }}
-    {{ end }}'
-    {{ if .Get $medium }}
-      data-src="{{ $medium.RelPermalink }}"
-    {{ else }}
-      data-src="{{ $src.RelPermalink }}"
-    {{ end }}
-    width="{{ $img.Width }}" height="{{ $img.Height }}"
-    {{ with .Get "alt" }}alt='{{.}}'{{ end }}>
-  <noscript>
-    <img
-      loading="lazy"
-      {{ with .Get "sizes" }}sizes='{{.}}'{{ else }}{{ end }}
-      srcset='
-      {{ if ge $src.Width "500" }}
-        {{ with $tiny.RelPermalink }}{{.}} 500w{{ end }}
-      {{ end }}
-      {{ if ge $src.Width "800" }}
-        {{ with $small.RelPermalink }}, {{.}} 800w{{ end }}
-      {{ end }}
-      {{ if ge $src.Width "1200" }}
-        {{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}
-      {{ end }}
-      {{ if ge $src.Width "1500" }}
-        {{ with $large.RelPermalink }}, {{.}} 1500w {{ end }}
-      {{ end }}'
-      {{ if .Get $medium }}
-        src="{{ $medium.RelPermalink }}"
-      {{ else }}
-        src="{{ $src.RelPermalink }}"
-      {{ end }}
-      width="{{ $img.Width }}" height="{{ $img.Height }}"
-      {{ with .Get "alt" }}alt='{{.}}'{{ end }}>
-  </noscript>
-</div>
+{{ if ge $image.Width "800"}}
+{{$src_set = (print $src_set ", " $small.RelPermalink " 800w") }}
+{{ end }}
+
+{{ if ge $image.Width "1200"}}
+{{$src_set = (print $src_set ", " $medium.RelPermalink " 1200w") }}
+{{ end }}
+
+{{ if ge $image.Width "1500"}}
+{{$src_set = (print $src_set ", " $large.RelPermalink " 1500w") }}
+{{ end }}
+
+
+<noscript>
+  <style>
+    figure.lazy {
+      display: none;
+    }
+  </style>
+  <figure class="image-border">
+    <img src="{{ $large.RelPermalink }}" />
+  </figure>
+</noscript>
+
+<figure class="image-border lazy">
+  <img class="lazyload" data-sizes="auto" src="{{ $large.RelPermalink }}"
+    srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $large.RelPermalink }}"
+    data-srcset="{{ $src_set }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
+</figure>
