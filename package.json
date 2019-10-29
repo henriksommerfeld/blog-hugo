@@ -39,6 +39,10 @@
     "serve": "npx serve public -l 1313",
     "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henriksommerfeld/blog-hugo.git"
+  },
   "keywords": [
     "blog",
     "hugo"
