@@ -2,13 +2,32 @@
     <meta charset="utf-8">
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="Henrik Sommerfeld's blog. Mostly about computer related stuff.">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
     {{ if eq .Title .Site.Title }}
     <title>{{ .Title }}</title>
+    <meta name="description" content="Henrik Sommerfeld's blog. Mostly about computer related stuff.">
     {{ else }}
     <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}    
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:locale" content="en_GB" />
+
+    {{ if .Summary }}
+    <meta property="og:description" content="{{ .Summary }}" />
     {{ end }}
+
+    <meta property="og:image" content='{{ (print .Site.BaseURL "images/og-image.png") }}' />
+  
+    <link rel="canonical" href="{{ .Permalink }}" />  
+
+    <meta name="twitter:card" content="summary"></meta>
+    <meta name="twitter:site" content="@p4lm"></meta>
+    
+
     {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true ) }}
     {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS $options | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $mainStyles.RelPermalink }}" integrity="{{ $mainStyles.Data.Integrity }}" media="screen, tv, projection">
