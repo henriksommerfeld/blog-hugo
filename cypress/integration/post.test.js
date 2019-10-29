@@ -68,7 +68,8 @@ context('Post', () => {
     })
 
     it('Should load comments on button click', ()=> {
+      cy.get("#disqus_thread").should('not.be.visible')
       cy.findByText('Show Comments').click()
-        .get("#disqus_thread iframe").should('be.visible')
+        .get("#disqus_thread").should('be.visible')
     })
 })
