@@ -31,7 +31,7 @@ One of the things I have been missing in Windows is a calendar application that 
 
 The PowerShell console has been vastly improved in Windows 10 with the possibility to resize the window and have persisted command history between sessions. Of course it’s laughable if you come from a UNIX based system that these are new features released in 2015, but it’s still a great improvement. However, I still prefer [Cmder][2] that has everything in one console. [One-Get][3] is also looking promising, but as long as it doesn’t have and update command I’ll stick with Chocolatey and its command line tools. Installing and upgrading programs through the command line feels so much simpler to me than visiting a web site, finding the right download link and doing the next, next, finish routine.
 
-{{<figure src="/images/cinst_paint.png" link="/images/cinst_paint.png" alt="Installing Paint.NET through command line">}}
+{{<post-image image="cinst_paint.png" lightbox="true" alt="Installing Paint.NET through command line" />}}
 
 I found [Setup Windows 10 for Modern/Hipster Development][5] to be a good resource for finding some nice tools.
 

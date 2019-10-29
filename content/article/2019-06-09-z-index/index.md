@@ -8,12 +8,9 @@ summary: "Ever found a z-index of 999 in CSS and wondered if there really are 99
 draft: false
 ---
 
-<figure class="image-border" style="margin-top: 2em">
-  <img src="../images/sabri-tuzcu-182685-unsplash_1500.jpg" alt="Handles for standing subway passengers, from close to far away.">
-    <figcaption>
-      <p>Photo by <a href="https://unsplash.com/photos/6rV9tBFL5SA">Sabri Tuzcu</a> on <a href="https://unsplash.com/">Unsplash</a>. Creating depth with z-index. Mine is most important, so I set it to 999999.</p>
-    </figcaption>    
-</figure>
+{{<post-image image="sabri-tuzcu-182685-unsplash_1500.jpg" alt="Handles for standing subway passengers, from close to far away.">}}
+<p>Photo by <a href="https://unsplash.com/photos/6rV9tBFL5SA">Sabri Tuzcu</a> on <a href="https://unsplash.com/">Unsplash</a>. Creating depth with z-index. Mine is most important, so I set it to 999999.</p>
+{{</post-image>}}
 
 Ever found a `z-index` of `999` in CSS and wondered if there really are 998 other elements below it? 
 

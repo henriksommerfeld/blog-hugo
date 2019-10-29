@@ -55,7 +55,9 @@ Even though SharePoint development has taken a very sane turn in the last couple
 
 The overall "heaviness" also means you need a multi-kilo laptop with loads of RAM and disk space to run a local SharePoint farm in virtual machines.
 
-{{<figure src="/images/heavy-ride.jpg" alt="Very overweight man riding a very small motorbike" class="image-border" caption="Running SharePoint on a laptop">}}
+{{<post-image image="heavy-ride.jpg" alt="Very overweight man riding a very small motorbike">}}
+Running SharePoint on a laptop
+{{</post-image>}}
 
 ## Brave New World
 

@@ -8,6 +8,10 @@ summary: "My experiences of making a website a Progressive Web App. Not a good i
 draft: false
 ---
 
+{{<post-image image="wrong-way2-zXn-zUztOhU-unsplash.jpg" alt="Handles for standing subway passengers, from close to far away.">}}
+<p>Photo by <a href="https://unsplash.com/@freetousesoundscom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Free To Use Sounds</a> on <a href="https://unsplash.com/">Unsplash</a>.</p>
+{{</post-image>}}
+
 I recently built a new personal website/blog for my wife using GatsbyJS and I really enjoyed all the cool stuff you can do easily with available plugins. Since didn't really have any idea about the disadvantages with _Progressive Web Apps_ (PWA), I naively just installed the [manifest][1]
 and [offline][2] plugins and verified my success with [Lighthouse][3]. Boom, I had a PWA! 🎉
 

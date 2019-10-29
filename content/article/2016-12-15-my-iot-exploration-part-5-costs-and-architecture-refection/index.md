@@ -19,7 +19,7 @@ The monthly bill from Microsoft was 851.98 SEK (90.11 EUR or 100.60 USD). 64% of
 
 Looking at the architecture from the perspective of what this solution does, it's easy to claim that it's over-engineered. I think this is a good question to ask in any project: _Could this be simplified?_
 
-{{<figure src="/images/Office-Monitoring-Azure.png" link="/images/Office-Monitoring-Azure.png" class="image-border">}}
+{{<post-image image="Office-Monitoring-Azure.png" lightbox="true" />}}
 
 For simply showing sensor data on a web page, I could have run a web server (preferably in Python) on the Raspberry Pi itself. Applying as many design patterns and new technologies as possible isn't necessary helping my clients at work. Having that said, this was a hobby project, so it's fine to apply some _Learning-Driven Development_.
 

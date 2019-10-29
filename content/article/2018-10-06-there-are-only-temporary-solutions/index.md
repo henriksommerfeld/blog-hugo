@@ -7,12 +7,9 @@ tags: []
 summary: "This is a reflection from an earlier job I had. It was at one of those large enterprises with monthly deploys and a development process documentation taking up 5 meters on a wall. For 8 years, consultants from one of the largest IT companies, had failed to deliver a company-wide..."
 ---
 
-<figure class="image-border" style="margin-top: 2em">
-  <img src="../images/rawpixel-749480-unsplash-w1500.jpg" alt="Women with post it notes in wall">
-    <figcaption>
-      <p>Photo by <a href="https://unsplash.com/photos/KFIjzXYg1RM">Jeremy Bishop</a> on <a href="https://unsplash.com/">Unsplash</a></p>
-    </figcaption>    
-</figure>
+{{<post-image image="rawpixel-749480-unsplash-w1500.jpg" alt="Women with post it notes in wall">}}
+<p>Photo by <a href="https://unsplash.com/photos/KFIjzXYg1RM">Jeremy Bishop</a> on <a href="https://unsplash.com/">Unsplash</a></p>
+{{</post-image>}}
 
 This is a reflection from an earlier job I had. It was at one of those large enterprises with monthly deploys and a development process documentation taking up 5 meters on a wall.
 

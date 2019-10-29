@@ -15,13 +15,13 @@ If you have a Visual Studio project that uses [Chutzpah][1] for JavaScript tests
 
 When all tests pass with the Chutzpah test runner everything is fine, but when you need to debug a test, things haven't been as easy. Debugging the JS code in Visual Studio is something I never got working and never really cared about anyway. The best debugging tool for JavaScript is of course the web browser, but when selecting _Open in browser_ in Visual Studio, Chutzpah has served the HTML test page (Jasmine in my case) through the `FILE:///` protocol. If you use fixtures, json files or similar, you've had to run the web browser with disabled security.
 
-{{< figure src="/images/chutzpah-open-in-browser.png" >}}
+{{<post-image image="chutzpah-open-in-browser.png" borderless="true" />}}
 
 The path opened in the browser has looked something like this: `file:///C:/Workspaces/Development/Apps/CoolProject/JavascriptSpecs/_Chutzpah.32ac122b2d7b8f062865a46153b768fde2c181d4.test.html`
 
 As a result of this more tests failed when I started debugging in the browser compared to what the test runner in Visual Studio complained about.
 
-{{<figure src="/images/Chutzpah-running-over-file-protocol.png">}}
+{{<post-image image="Chutzpah-running-over-file-protocol.png" borderless="true" />}}
 
 ## Solution
 
@@ -39,11 +39,11 @@ As of the 4.3.0 release of Chutzpah you can enable the tests to be served throug
 
 Now the _Open in browser_ opens a path similar to this: `http://localhost:39597/Workspaces/Development/Apps/CoolProject/JavascriptSpecs/_Chutzpah.35722df6731f3d62f68cbf6a873ca82068c8446e.test.html` and only the test that should fail, fails.
 
-{{< figure src="/images/Chutzpah-running-over-http-protocol-one-error.png" >}}
+{{<post-image image="Chutzpah-running-over-http-protocol-one-error.png" borderless="true" />}}
 
 So, make sure you have the latest version and enable the server mode in Chutzpah.json, then it's all good. Thank you Matthew for this great improvement!
 
-{{< figure src="/images/Chutzpah-test-adapter-version.png" >}}
+{{<post-image image="Chutzpah-test-adapter-version.png" borderless="true" />}}
 
  [1]: https://github.com/mmanela/chutzpah/releases
  [2]: http://matthewmanela.com/blog/chutzpah-4-3-0-web-server-mode

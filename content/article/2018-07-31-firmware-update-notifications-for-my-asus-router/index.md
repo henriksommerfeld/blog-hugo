@@ -15,19 +15,25 @@ One thing about downloading though, you will need to do a manual download and in
 
 After installing the Merlin firmware you should see a new logo in the web interface (which otherwise looks pretty much the same).
 
-{{<figure link="/images/asus-firmware-upload.png" src="/images/asus-firmware-upload.png" alt="Asus router web interface for uploading and applying a firmware update" class="image-border" caption="Install custom router firmware">}}
+{{<post-image image="asus-firmware-upload.png" lightbox="true" alt="Asus router web interface for uploading and applying a firmware update">}}
+Install custom router firmware
+{{</post-image>}}
 
 ## Enabling New Firmware Version Check
 
 The router's firmware can check for updates itself, but that needs to be enabled. Do it under the _Tools_ menu.
 
-{{<figure link="/images/asus-update-notification-enabling.png" src="/images/asus-update-notification-enabling.png" alt="Asus router web interface for enabling firmware version check" class="image-border" caption="Enable firmware version check">}}
+{{<post-image image="asus-update-notification-enabling.png" alt="Asus router web interface for enabling firmware version check" lightbox="true">}}
+Enable firmware version check
+{{</post-image>}}
 
 ## Adding Notification Script
 
 I found a sample notification script, _[Update Notification Example][2] (the script I copied)_, but to be able to put that in the router, we first need to enable SSH. I changed it from _No_ to _LAN only_.
 
-{{<figure src="/images/asus-enable-sshd.png" alt="Asus router web interface for enabling SSHD" class="image-border" caption="Enable router SSH access">}}
+{{<post-image image="asus-enable-sshd.png" alt="Asus router web interface for enabling SSHD" lightbox="true">}}
+Enable router SSH access
+{{</post-image>}}
 
 After enabling SSH I can log in with the same user as in the web interface and add the script. Note that the script needs to have this exact name and path (`/jffs/scripts/update-notification`). Also note that the script only handles the notification, the router firmware itself will call this script when an update is available.
 
@@ -77,7 +83,9 @@ exit
 
 I think updating your router software is just as important as keeping your computer or phone updated, so now i don't have to remember to manually check for updates. I just got the first "real" update notification and made the manual upgrade before writing this, works great 😎
 
-{{<figure link="/images/pushover-router-notifications.jpg" src="/images/pushover-router-notifications.jpg" alt="Router firmware update notifications in Pushover app on iPhone" class="image-border" caption="Router firmware update notification on my phone">}}
+{{<post-image image="pushover-router-notifications.jpg" alt="Router firmware update notifications in Pushover app on iPhone" lightbox="true">}}
+Router firmware update notification on my phone
+{{</post-image>}}
 
 [1]: https://asuswrt.lostrealm.ca/
 [2]: https://github.com/RMerl/asuswrt-merlin/wiki/Update-Notification-Example

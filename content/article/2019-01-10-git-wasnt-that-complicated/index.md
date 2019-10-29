@@ -7,13 +7,9 @@ tags: []
 summary: "When I was about to quit my previous job for the job I have now, I mentioned a few things that I anticipated I would have to learn at the new job. One of the most obvious things was Git...."
 draft: false
 ---
-
-<figure class="image-border" style="margin-top: 2em">
-  <img src="../images/tomas-malik-1185809-unsplash_1500.jpg" alt="Stopped car on Icelandic road from above">
-    <figcaption>
-      <p>Photo by <a href="https://unsplash.com/photos/KFIjzXYg1RM">Tomáš Malík</a> on <a href="https://unsplash.com/">Unsplash</a>. My modern development journey, pausing to reflect on Git.</p>
-    </figcaption>    
-</figure>
+{{<post-image image="tomas-malik-1185809-unsplash_1500.jpg" alt="Stopped car on Icelandic road from above">}}
+<p>Photo by <a href="https://unsplash.com/photos/KFIjzXYg1RM">Tomáš Malík</a> on <a href="https://unsplash.com/">Unsplash</a>. My modern development journey, pausing to reflect on Git.</p>
+{{</post-image>}}
 
 When I was about to quit my previous job for the job I have now, [I mentioned a few things that I anticipated I would have to learn at the new job][1]. One of the most obvious things was Git. 
 
@@ -26,7 +22,7 @@ My conclusion so far is that I haven't been forced to learn that much at all abo
 
 A combination of CLI and GUI works best for me, but I haven't yet needed anything more than what VS Code provides me with in terms of GUI. What I _do_ find useful is a "Git aware" command line. Since I work in several different repositories on a daily basis and we use feature branching, I like the ability to see which branch I'm on and if I'm up to date.
 
-{{<figure src="/images/ConEmu-Git-update-post.png" class="image-border" alt="ConEmu with Git info">}}
+{{<post-image image="ConEmu-Git-update-post.png" alt="ConEmu with Git info" borderless="true" />}}
 
 To get this decent console experience on Windows I've used [oh-my-posh][4].
 

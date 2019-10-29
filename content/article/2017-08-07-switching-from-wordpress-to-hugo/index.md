@@ -26,7 +26,7 @@ The switch was by no means necessary, I had cheap hosting at a web hotel I will 
 
 I now use Netlify for hosting, which also offers building and deploying my site, all for free. Hugo creates all my pages, currently 255 in total, in 487 ms. The full build, including Hugo page creation, Sass compilation, Javascript transpilation and creating a complete search index takes about 14 seconds. Everything except Hugo itself is using Node. Of course, not all of this have to be done when working with the site locally and using live reload, but this is what Netlify does for the build part. So my deploy flow is as follows.
 
-{{<figure src="/images/hugo-deploy-pipeline.png" link="/images/hugo-deploy-pipeline.png" class="image-border" alt="Deploy pipeline with VS Code, GitHub and Netlify">}}
+{{<post-image image="hugo-deploy-pipeline.png" lightbox="true" alt="Deploy pipeline with VS Code, GitHub and Netlify" />}}
 
 **Utilising CDN and SSL** is also a benefit of using any of the services that will host your static content. With my old hosting company I would either have to pay a premium fee to get SSL with my custom domain name, or do a lot of manual work on a regular basis with certs from Let's Encrypt. With Netlify it's just a checkbox. If you have visitors from different parts of the world, a CDN is gold and with static content you can have your entire site served from a CDN.
 
