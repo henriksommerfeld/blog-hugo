@@ -40,8 +40,7 @@ body
     margin: 0
     font-size: 16px
     font-family: $font-family-sans-serif
-    color: $text-color   
-
+    color: $text-color
 
 .hide
     display: none
@@ -83,10 +82,13 @@ article
     width: 100%
     footer
         display: flex
+    &.full-article .entry-meta
+        margin-bottom: 2em
+            
 
-aside  
+aside
     width: 100%
-    padding: $default-spacing  
+    padding: $default-spacing
     @media (min-width: $side-column-min-width)
         width: 29%
 
@@ -103,4 +105,4 @@ aside
     &:before
         content: '\f073'
         font-family: 'Font Awesome 5 Free'
-        padding-right: 0.5em    
+        padding-right: 0.5em

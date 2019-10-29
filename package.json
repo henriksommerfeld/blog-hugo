@@ -4,6 +4,7 @@
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
     "jquery": "3.4.1",
+    "lazysizes": "^5.1.2",
     "lunr": "2.3.7"
   },
   "devDependencies": {
@@ -37,6 +38,10 @@
     "cy": "start-server-and-test start http://localhost:1313 test:open",
     "serve": "npx serve public -l 1313",
     "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henriksommerfeld/blog-hugo.git"
   },
   "keywords": [
     "blog",
