@@ -24,9 +24,8 @@
   
     <link rel="canonical" href="{{ .Permalink }}" />  
 
-    <meta name="twitter:card" content="summary"></meta>
-    <meta name="twitter:site" content="@p4lm"></meta>
-    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@p4lm" />   
 
     {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true ) }}
     {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS $options | fingerprint "sha512" }}
