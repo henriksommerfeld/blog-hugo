@@ -24,7 +24,7 @@ _An important and maybe obvious reflection is that reading tweets at build time 
 
 I tried [gatsby-source-twitter][1], which fetches data from [Twitter's API][5] at build time and makes it available through GraphQL. This worked liked promised, but I found a couple deal breaking flaws:
 
-* Breaks build if no Twitter tokens are available
+* Breaks build if no Twitter credentials are available
 * Breaks build if data changes (dynamic GQL schema)
 * Only fetches links, not the actual content (images etc.)
 
@@ -32,7 +32,7 @@ My way of tackling these flaws wouldn't work in a reusable plugin, so I just mad
 
 <blockquote>I should mention that this site I was building was my first ever encounter with Gatsby</blockquote>
 
-### Breaks build if no Twitter tokens are available
+### Breaks build if no Twitter credentials are available
 
 Twitter's API requires authentication, so credentials must be provided in the plugin's config. But since you don't want to include credentials in version control, it means that you can't simply clone a repo that uses this plugin and build the project (without going through the app registration process on [Twitter's Developer site][5]). 
 
@@ -66,6 +66,40 @@ If any of the three required Twitter API credentials (key, secret, token) isn't 
 
 ### Enriching tweets
 After fetching the data from Twitter's API, [unfurl.js][10] is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so that they later can be served with [gatsby-image][11].
+
+{{<highlight js>}}
+exports.sourceNodes = async (
+  { actions, createContentDigest, reporter },
+  { query, credentials }
+) => {
+  if (!query) {
+    reporter.warn(`No Twitter query found. Please check your configuration`);
+    return Promise.resolve();
+  }
+
+  const tweetsQueryResult = await getTweets(query, credentials, reporter);
+
+  const enrichedTweets = await fetchMetadataFromLinkedSites(
+    tweetsQueryResult.results,
+    reporter
+  );
+
+  await fetchImagesFromTweets(enrichedTweets, reporter);
+
+  const resultsWithDummy = [dummyTweet, ...enrichedTweets];
+  tweetsQueryResult.results = resultsWithDummy;
+
+  await createNodesForTweets(
+    tweetsQueryResult,
+    actions,
+    createContentDigest,
+    reporter
+  );
+
+  return Promise.resolve();
+};
+{{</highlight>}}
+_Core of plugin's `gatsby-node.js`_
 
 <i class="fab fa-github"></i> The repo of the entire site can be found at https://github.com/henriksommerfeld/isabel-blog
  
