@@ -1,10 +1,10 @@
 ---
-title: "Twitter Source Plugin for Gatsby"
-date: 2019-10-30T14:54:10+01:00
-url: "gatsby-twitter"
+title: "Gatsby Source Plugin for Twitter"
+date: 2019-10-31T00:20:10+01:00
+url: "gatsby-source-plugin-for-twitter"
 categories: ["Coding"]
-tags: [GatsbyJS]
-summary: ""
+tags: [GatsbyJS, JavaScript, TypeScript]
+summary: "Description of my local Gatsby Source Plugin for Twitter with linked source code."
 draft: true
 ---
 
@@ -14,7 +14,9 @@ draft: true
 
 ## Intro
 
-I was re-writing a [WordPress][3] site in [Gatsby][4] that had embedded tweets using an embed script (WordPress plugin). The product owner (my wife), required the new site to also show her tweets. I didn't like the idea of an embed script (that would slow down the site and spy on visitors), so I started to look into Gatsby source plugins. I ended up [writing my own][9].
+I was rewriting a [WordPress][3] site in [Gatsby][4] that had embedded tweets using an embed script (WordPress plugin). The product owner (my wife), required the new site to also show her tweets. I didn't like the idea of an embed script (that would slow down the site and spy on visitors), so I started to look into [Gatsby source plugins][7]. I ended up [writing my own](#my-local-plugin).
+
+_An important and maybe obvious reflection is that reading tweets at build time will require a lot of builds if you're a frequent tweeter. Then a simple embed code might be a better option and you save yourself some development time._
 
 <blockquote>unfurl.js is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so that they later can be served with gatsby-image</blockquote>
 
@@ -47,7 +49,7 @@ I guess this could be a [transformer plugin][6] and not the responsibility of a 
 
 <blockquote>The site builds fine without the tweets section</blockquote>
 
-## My Local Plugin 🎈
+<h2 id="my-local-plugin">My Local Plugin 🎈</h2>
 
 I should mention that this site I was building was my first ever encounter with Gatsby, so I consider myself an enthusiastic beginner. I'd be happy for any corrections of my possible misunderstandings.
 
