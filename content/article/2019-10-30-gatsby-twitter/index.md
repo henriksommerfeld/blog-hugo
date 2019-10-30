@@ -5,7 +5,7 @@ url: "gatsby-source-plugin-for-twitter"
 categories: ["Coding"]
 tags: [GatsbyJS, JavaScript, TypeScript]
 summary: "Description of my local Gatsby Source Plugin for Twitter with linked source code."
-draft: true
+draft: false
 ---
 
 {{<post-image image="tweet-component-screenshot.png" alt="Skewed screenshot of resulting Tweets section of web page. ">}}
