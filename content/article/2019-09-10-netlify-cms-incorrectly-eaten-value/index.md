@@ -4,7 +4,6 @@ date: 2019-09-10T07:36:10+02:00
 url: "netlify-cms-incorrectly-eaten-value"
 categories: ["Coding"]
 tags: [Netlify CMS]
-summary: ""
 draft: false
 ---
 

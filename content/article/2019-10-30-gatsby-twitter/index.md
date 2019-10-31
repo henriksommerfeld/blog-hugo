@@ -3,12 +3,13 @@ title: "Gatsby Source Plugin for Twitter"
 date: 2019-10-31T00:20:10+01:00
 url: "gatsby-source-plugin-for-twitter"
 categories: ["Coding"]
-tags: [GatsbyJS, JavaScript, TypeScript]
-summary: "Description of my local Gatsby Source Plugin for Twitter with linked source code."
+tags: [GatsbyJS, JavaScript, TypeScript, NodeJS]
+summary: "I was rewriting a WordPress site in Gatsby that had embedded tweets using an embed script (WordPress plugin). The product owner (my wife), required the new site to also show her tweets. I didn’t like the idea of an embed script (that would slow down the site and spy on visitors), so I started to look into Gatsby source plugins."
+description: "Description of my local Gatsby Source Plugin for Twitter with linked source code."
 draft: false
 ---
 
-{{<post-image image="tweet-component-screenshot.png" alt="Skewed screenshot of resulting Tweets section of web page. ">}}
+{{<post-image image="tweet-component-screenshot.png" alt="Skewed screenshot of resulting Tweets section of web page.">}}
 <p>Screenshot of the end result.</p>
 {{</post-image>}}
 
