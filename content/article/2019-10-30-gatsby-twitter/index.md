@@ -18,7 +18,7 @@ I was rewriting a [WordPress][3] site in [Gatsby][4] that had embedded tweets us
 
 _An important and maybe obvious reflection is that reading tweets at build time will require a lot of builds if you're a frequent tweeter. Then a simple embed code might be a better option and you save yourself some development time._
 
-<blockquote>unfurl.js is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so that they later can be served with gatsby-image</blockquote>
+<blockquote>unfurl.js is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so they can be served with gatsby-image</blockquote>
 
 ## Initial Attempt
 
@@ -65,7 +65,7 @@ By always returning one hard-coded dummy tweet that has all the properties I que
 If any of the three required Twitter API credentials (key, secret, token) isn't provided, only the dummy tweet is returned and the site builds fine without the tweets section.
 
 ### Enriching tweets
-After fetching the data from Twitter's API, [unfurl.js][10] is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so that they later can be served with [gatsby-image][11].
+After fetching the data from Twitter's API, [unfurl.js][10] is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so they can be served with [gatsby-image][11].
 
 {{<highlight js>}}
 exports.sourceNodes = async (
