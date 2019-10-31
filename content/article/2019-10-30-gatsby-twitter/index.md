@@ -18,7 +18,7 @@ I was rewriting a [WordPress][3] site in [Gatsby][4] that had embedded tweets us
 
 _An important and maybe obvious reflection is that reading tweets at build time will require a lot of builds if you're a frequent tweeter. Then a simple embed code might be a better option and you save yourself some development time._
 
-<blockquote>unfurl.js is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so they can be served with gatsby-image</blockquote>
+> unfurl.js is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so they can be served with gatsby-image
 
 ## Initial Attempt
 
@@ -30,7 +30,7 @@ I tried [gatsby-source-twitter][1], which fetches data from [Twitter's API][5] a
 
 My way of tackling these flaws wouldn't work in a reusable plugin, so I just made different decisions about pros and cons.
 
-<blockquote>I should mention that this site I was building was my first ever encounter with Gatsby</blockquote>
+> I should mention that this site I was building was my first ever encounter with Gatsby
 
 ### Breaks build if no Twitter credentials are available
 
@@ -43,11 +43,11 @@ Furthermore I like to be able to disable this data fetching, like when developin
 This is a real deal breaker that I've struggled with even when querying markdown content (not at all related to this plugin). The [GraphQL schema is created dynamically][2] based on the content, so if you query a property for uploaded images in a tweet and none of the returned tweets have an image, the query fails and you have a broken build. When querying an external data source that you have no control over, this is unbearable.
 
 ### Only fetches links, not the actual content (images etc.)
-This last point is by no means a criticism, but what I found when I got it all working (a working Tweets React component) was that a tweet that is only a link, e.g. `https://t.co/DM6et4kaZP`, doesn't say that much. If you look at the same tweet at twitter.com, it automatically includes the linked site's Twitter card/Open Graph data (title, description and image). 
+This last point is by no means a criticism, but what I found when I got it all working (a working Tweets React component) was that a tweet that is only a link, e.g. htt<span>ps://t</span>.co/DM6et4kaZP, doesn't say that much. If you look at the same tweet at twitter.com, it automatically includes the linked site's Twitter card/Open Graph data (title, description and image). 
 
 I guess this could be a [transformer plugin][6] and not the responsibility of a [source plugin][7], but I felt I needed this (more details below).
 
-<blockquote>The site builds fine without the tweets section</blockquote>
+> The site builds fine without the tweets section
 
 <h2 id="my-local-plugin">My Local Plugin 🎈</h2>
 
