@@ -2,11 +2,18 @@
     font-size: 1.1rem
     margin-top: $default-spacing
     margin-bottom: $default-spacing
+    display: grid
+    grid-template-rows: auto auto
+    grid-row-gap: 1em
+
+    @media (min-width: $medium-size-min-width)
+        display: unset
 
     .fas
         color: $grey
     .fa-tags
-        padding-left: 1em
+        @media (min-width: $medium-size-min-width)
+            padding-left: 1em
 
 .articles-with-tag, .articles-with-category
     article
