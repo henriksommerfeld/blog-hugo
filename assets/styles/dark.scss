@@ -1,5 +1,8 @@
+@import "./_colors";
+
 :root {
   --color: rgb(250, 250, 250);
+  --color-published: #{$gray100};
   --background-color: #333;
   --link-color: rgb(0, 188, 212);
   --main-headline-color: rgb(233, 30, 99);

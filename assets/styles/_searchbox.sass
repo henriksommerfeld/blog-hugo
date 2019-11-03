@@ -20,15 +20,15 @@ $search-bg: transparentize(#fff, 0.1)
         flex-direction: row
         align-items: flex-start
         margin-left: 3em
-    align-items: center
+        align-items: center
     @media (min-height: $searchbox-breakpoint)
         padding-top: 3em
-    height: 100%
-    width: 100%
-    padding-bottom: 15px
-    opacity: 0
-    visibility: hidden
-    perspective: 80rem
+        height: 100%
+        width: 100%
+        padding-bottom: 15px
+        opacity: 0
+        visibility: hidden
+        perspective: 80rem
     &.open
         opacity: 1
         visibility: visible
@@ -44,19 +44,19 @@ $search-bg: transparentize(#fff, 0.1)
     max-width: calc(100% - 20px)
     @media (min-width: $search-min-wide)
         width: 55em
-    display: flex
-    justify-content: center
-    align-items: center
-    opacity: 0
-    visibility: hidden
-    margin: $default-spacing
-    padding: $default-spacing
-    font-size: 1.5rem
-    border-radius: 0.5rem
-    border: 1px solid $dark-blue
-    box-shadow: 0 4px 15px 5px rgba(black,0.6)
-    background-color: $search-bg
-    color: $dark-blue
+        display: flex
+        justify-content: center
+        align-items: center
+        opacity: 0
+        visibility: hidden
+        margin: $default-spacing
+        padding: $default-spacing
+        font-size: 1.5rem
+        border-radius: 0.5rem
+        border: 1px solid $dark-blue
+        box-shadow: 0 4px 15px 5px rgba(black,0.6)
+        background-color: $search-bg
+        color: $dark-blue
     &.open
         transform-origin: scale(0)
         visibility: visible
@@ -82,7 +82,7 @@ $search-bg: transparentize(#fff, 0.1)
         appearance: none
         &::-ms-clear, &::-ms-reveal
             display: none
-            width: 0 
+            width: 0
             height: 0
         &::-webkit-search-decoration,
         &::-webkit-search-cancel-button,
@@ -96,7 +96,7 @@ $search-bg: transparentize(#fff, 0.1)
     width: 100%
     height: 100%
     @-moz-document url-prefix()
-        height: calc(100% - 5rem)
+    height: calc(100% - 5rem)
     display: flex
     justify-content: center
     align-content: flex-start
@@ -109,27 +109,27 @@ $search-bg: transparentize(#fff, 0.1)
         display: table
         &.has-hits
             display: flex
-    flex-direction: column
-    width: calc(100% - 20px)
+            flex-direction: column
+            width: calc(100% - 20px)
     @media (min-width: $searchbox-breakpoint)
         max-width: calc(100% - 5rem)
     @media (min-width: $side-column-min-width)
         max-width: $side-column-min-width
     @media (min-width: $search-min-wide)
         max-width: 80rem
-    margin: 0
+        margin: 0
     @media (min-width: $searchbox-breakpoint)
         margin: 2em $default-spacing $default-spacing $default-spacing
     @media (min-width: $search-min-wide)
         margin-top: $default-spacing
-    padding: $default-spacing
-    transition: all 300ms ease
-    border-radius: 0.5rem
-    border: 1px solid $dark-blue
-    box-shadow: 0 4px 15px 5px rgba(black,0.6)
-    background-color: $search-bg
-    color: $dark-blue
-    &.search-performed:not(.has-hits), &.has-error 
+        padding: $default-spacing
+        transition: all 300ms ease
+        border-radius: 0.5rem
+        border: 1px solid $dark-blue
+        box-shadow: 0 4px 15px 5px rgba(black,0.6)
+        background-color: $search-bg
+        color: $dark-blue
+    &.search-performed:not(.has-hits), &.has-error
         #no-results-message
             display: block
     &.has-error
@@ -142,7 +142,7 @@ $search-bg: transparentize(#fff, 0.1)
         margin: 0
         overflow: auto
         width: 100%
-        color: $text-color
+        color: var(--color)
         list-style-position: inside
         padding-left: 0
         @media (min-width: $searchbox-breakpoint)
@@ -190,11 +190,11 @@ $search-bg: transparentize(#fff, 0.1)
 @keyframes searchboxParentClose
     0%
         visibility: visible
-        opacity: 1 
+        opacity: 1
     99%
         opacity: 1
         visibility: visible
-    100%        
+    100%
         opacity: 0
         visibility: hidden
 
@@ -206,7 +206,7 @@ $search-bg: transparentize(#fff, 0.1)
     80%
         transform: scale(1.05)
         opacity: 1
-    100%    
+    100%
         transform: scale(1)
 
 @keyframes searchboxClose
@@ -216,7 +216,7 @@ $search-bg: transparentize(#fff, 0.1)
         transform: scale(1) translateX(0%)
     30%
         transform: scale(1.05) rotateZ(-1deg)
-    80% 
+    80%
         opacity: 0.7
     100%
         transform: scale(0.5) translateX(0%) translateY(200vh) rotateZ(90deg)
@@ -235,7 +235,7 @@ $search-bg: transparentize(#fff, 0.1)
     50%
         transform: translateY(0.1rem) scale(1.05) rotateX(1deg) rotateZ(-2deg) rotateY(5deg) skew(-1deg)
         opacity: 1
-    100%    
+    100%
         transform: translateY(0) scale(1) rotateX(0deg) rotateZ(0deg) rotateY(0deg) skew(0deg)
 
 @keyframes searchboxCloseFancy
@@ -245,9 +245,9 @@ $search-bg: transparentize(#fff, 0.1)
         transform: translateY(0%) scale(1)
     20%
         transform: translateY(-3rem) scale(1.05) rotateX(-1deg) rotateZ(5deg) rotateY(40deg) skew(10deg)
-    80% 
+    80%
         opacity: 0.7
-    100%        
+    100%
         transform: translateX(-50vw) translateY(100vh) scale(0.1) rotateX(90deg) rotateZ(-90deg) rotateY(-40deg) skew(0)
         opacity: 0
         visibility: hidden
@@ -257,7 +257,7 @@ $search-bg: transparentize(#fff, 0.1)
         visibility: visible
         opacity: 1
         transform: translateY(0%) scale(1)
-    80% 
+    80%
         opacity: 0.7
     99%
         transform: translateY(100vh) scale(0.1)

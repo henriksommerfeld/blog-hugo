@@ -3,6 +3,7 @@
 @import './fontawesome/solid'
 @import './fontawesome/brands'
 @import './_variables'
+@import './_colors'
 @import './_screen-reader'
 @import './_headings'
 @import './_font-sizes'
@@ -20,13 +21,12 @@
 @import './_blockquote'
 @import './_links'
 
-\:root 
-  color-scheme: light dark
+// \:root
+// color-scheme: light dark
 
 body
-  color: var(--color)
-  background-color: var(--background-color)
-
+    color: var(--color)
+    background-color: var(--background-color)
 
 // Box sizing partial styles:
 // Apply a natural box layout model to all elements
@@ -48,7 +48,7 @@ body
     margin: 0
     font-size: 16px
     font-family: $font-family-sans-serif
-    //color: $text-color
+    color: var(--color)
 
 .hide
     display: none
@@ -92,7 +92,6 @@ article
         display: flex
     &.full-article .entry-meta
         margin-bottom: 2em
-            
 
 aside
     width: 100%
