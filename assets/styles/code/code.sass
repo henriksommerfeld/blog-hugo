@@ -1,6 +1,6 @@
 code
     word-wrap: break-word
-    font-family: 'Courier New', 'Courier', monospace, serif
+    font-family: Consolas, 'Courier New', 'Courier', monospace, serif
 
 p code
     padding: 2px 4px
@@ -14,14 +14,14 @@ pre
     overflow: auto
     padding: 1.1em
     font-size: 1rem
-    background-color: darken(white, 8%)
-    color: var(--color)
-    border-left: 4px solid $light-blue
+    background-color: var(--highlight-bg-color)
+    color: var(--highlight-color)
+    border-left: 4px solid var(--accent-color)
     border-radius: $border-radius
     code
         word-wrap: normal
         text-shadow: none
         color: unset
         &::selection
-            background: $orange
+            background: var(--highlight-selection-color)
             text-shadow: none

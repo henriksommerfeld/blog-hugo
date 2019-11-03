@@ -1,0 +1,39 @@
+@import "../_variables";
+
+figure {
+  margin: 0;
+  padding-bottom: 1em;
+
+  &.limit-width img {
+    width: 40em;
+  }
+
+  &.limit-width-200 img {
+    width: 200px;
+  }
+
+  & > a {
+    max-width: 100%;
+  }
+
+  img {
+    filter: var(--image-filter);
+  }
+}
+
+figcaption {
+  padding-left: 0.3rem;
+  margin-top: 0.3rem;
+  color: var(--caption-color);
+
+  p {
+    font-style: italic;
+    font-size: 1em;
+    margin: 0;
+  }
+
+  h4 {
+    margin: 0;
+    font-style: normal;
+  }
+}

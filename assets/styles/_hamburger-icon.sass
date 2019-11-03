@@ -3,7 +3,7 @@ $bar-height: 4px
 $bar-spacing: $bar-height * 2
 $animation-speed: 150ms
 
-.hamburger-menu 
+.hamburger-menu
     margin: auto
     width: $bar-width
     height: $bar-height + $bar-spacing*2
@@ -20,7 +20,7 @@ $animation-speed: 150ms
     position: relative
     transform: translateY($bar-spacing)
     background: rgba(255, 255, 255, 1)
-    
+
     &.animate
         background: rgba(255, 255, 255, 0)
 
@@ -31,24 +31,22 @@ $animation-speed: 150ms
     align-content: center
     align-items: center
     padding: $default-spacing
-    outline: none  
+    outline: none
     border-bottom: transparent solid 1px
     transition: border 400ms ease
     font-size: 1.1rem
     letter-spacing: .1rem
-    &:hover, &:active
-      text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
-      background: none
+    &:hover, &:active, &:focus
+        text-shadow: 0 0 2px var(--header-text-shadow), 0 0 30px var(--white)
+        background: none
     &:focus
-      text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
-      background: none
-      color: white
+        color: var(--white)
     &:hover, &:active
-      .bar, .bar::before, .bar::after
+    .bar, .bar::before, .bar::after
         box-shadow: 0 0 30px transparentize(white, 0.4)
 
     @media (min-width: $medium-size-min-width)
-        display: none 
+        display: none
 
 .bar::before
     content: ""

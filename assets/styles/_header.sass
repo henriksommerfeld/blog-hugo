@@ -1,12 +1,13 @@
 header
-    background: $dark-blue
+    background: var(--header-bg-color)
     display: flex
     flex-direction: row
     justify-content: center
     align-items: center
+    box-shadow: 0 0 15px var(--header-bg-color)
 
 .header-content
-    color: white
+    color: var(--color)
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -20,7 +21,7 @@ header
     z-index: 2
     perspective: 1000px
     a, a:link, a:visited
-        color: white
+        color: var(--color)
         text-decoration: none
     .site-title
         font-weight: normal
@@ -30,7 +31,7 @@ header
         margin: 0
 
 nav
-    opacity: 0  
+    opacity: 0
     pointer-events: none
     z-index: 1
     position: absolute
@@ -46,8 +47,8 @@ nav
     transform-origin: top center
     transform: rotateX(-90deg)
     font-size: 1.1rem
-    letter-spacing: .1rem    
-    
+    letter-spacing: .1rem
+
     @media (min-width: $small-size-min-width)
         flex-direction: row
 
@@ -60,18 +61,18 @@ nav
                 &:after
                     display: none
             @media (min-width: $medium-size-min-width)
-                color: white
+                color: var(--color)
                 line-height: 2rem
-        
+
         @media (min-width: $medium-size-min-width)      
             .header-content &:hover, .header-content &:focus, .header-content &:active
                 background-color: transparent
-                text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
+                text-shadow: 0 0 2px var(--header-text-shadow), 0 0 30px var(--color)
             .header-content &:focus
                 outline: none
 
-        text-shadow: none
-        text-align: center
+                text-shadow: none
+                text-align: center
         .fas
             font-size: 1.5em
             margin-right: 5px
@@ -79,13 +80,13 @@ nav
             background-color: #ededed
             @media (max-width: $medium-size-min-width)
                 background-size: 0 0
-        &:focus 
-            text-shadow: 0 0 1px white, 0px 3px 5px rgba(black, 0.5)
+        &:focus
+            text-shadow: 0 0 1px var(--color), 0px 3px 5px rgba(black, 0.5)
             outline: transparentize(#555, 0.5) solid 1px
             outline-offset: 0
         &:hover
             text-shadow: 0px 3px 5px rgba(black, 0.5)
-        
+
     &.open
         opacity: 1
         pointer-events: painted
@@ -93,7 +94,7 @@ nav
         display: flex
         @media (min-width: $small-size-min-width)
             animation: fold-in 400ms forwards
-        
+
     &.close
         pointer-events: painted
         animation: slide-out 500ms forwards

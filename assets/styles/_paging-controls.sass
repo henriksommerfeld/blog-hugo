@@ -17,10 +17,10 @@ $paging-bg-color: #eee
     &:hover:after
         width: initial
         display: initial
-        background: none        
+        background: none
     &.current
-        background: $medium-blue
-        border-color: $medium-blue
+        background: var(--medium-bg-color)
+        border-color: var(--medium-bg-color)
         color: #fff
         box-shadow: none
     &.dots
@@ -94,7 +94,7 @@ a.page-numbers:hover:after, a.page-numbers:focus:after, a.page-numbers:active:af
     justify-content: flex-start
     .page-numbers
         display: inline-flex
-    
+
 @media (max-width: 22em)
     .paging-controls.has-prev-true.has-next-false.has-dots-true
         .page-numbers:not(.newer)

@@ -41,7 +41,7 @@ body {
 }
 
 ::selection {
-  background: $orange;
+  background: var(--accent-color);
 }
 
 html {
@@ -127,7 +127,7 @@ aside {
 }
 
 .published {
-  color: lighten($text-color, 40%);
+  color: var(--color-published);
   font-size: 0.85em;
   &:before {
     content: "\f073";
