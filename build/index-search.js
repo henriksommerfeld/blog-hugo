@@ -1,19 +1,19 @@
 'use strict'
 
-var lunr = require('lunr');
-var fs = require('fs');
-var path = require('path');
+const lunr = require('lunr');
+const fs = require('fs');
+const path = require('path');
 
-var outputFilePathParameter = process.argv && process.argv.slice(2)[0];
+const outputFilePathParameter = process.argv && process.argv.slice(2)[0];
 
-var inputFilePath = path.resolve(__dirname, '../public/data-to-index.json');
-var outputFilePath =  outputFilePathParameter || path.resolve(__dirname, '../public/search-index.json');
+const inputFilePath = path.resolve(__dirname, '../public/data-to-index.json');
+const outputFilePath =  outputFilePathParameter || path.resolve(__dirname, '../public/search-index.json');
 console.log('Reading ' + inputFilePath);
-var documentsToIndex = require(inputFilePath);
-var store = {};
+const documentsToIndex = require(inputFilePath);
+const store = {};
 
 console.log('Indexing ' + inputFilePath);
-var searchIndex = lunr(function () {
+const searchIndex = lunr(function () {
   this.ref('ref')
   this.field('title', {boost:10}),
   this.field('tags', {boost:5}),
@@ -33,7 +33,7 @@ var searchIndex = lunr(function () {
 
 console.log('Saving index at ' + outputFilePath);
 
-var dataToSave = JSON.stringify({
+const dataToSave = JSON.stringify({
     index: searchIndex,
     store: store
 });
@@ -43,7 +43,7 @@ fs.unlink(outputFilePath, function(err){
     if (err && err.code !== 'ENOENT')
         throw err;
 
-    var options = { flag : 'w' };
+    const options = { flag : 'w' };
     fs.writeFile(outputFilePath, dataToSave, options, function(err) {
         if (err) 
             console.error(err);

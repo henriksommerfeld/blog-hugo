@@ -15,8 +15,7 @@ export default class Hamburger {
         $(document).keyup((e) => {
             const escapeKeyCode = 27;
             if (e.keyCode === escapeKeyCode) {
-                var activeElement = $(e.target);
-                var navParent = activeElement.closest('nav');
+                const activeElement = $(e.target);
                 if (activeElement.hasClass('hamburger-trigger') || activeElement.length) {
                     this.closeMenu();
                 }

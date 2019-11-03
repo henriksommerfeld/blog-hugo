@@ -113,7 +113,7 @@ export default class Search {
             return;
         }
         
-        var result = this.index.search(phrase);
+        const result = this.index.search(phrase);
 
         $('#search-output').removeClass('index-not-loaded');
         $('#search-output').removeClass('index-loaded');
@@ -151,7 +151,7 @@ export default class Search {
     };
 
     keyUpInSearchbox(e) {
-        var currentTime = Date.now();
+        const currentTime = Date.now();
         if (currentTime - 100 > this.lastSearch) {
             this.lastSearch = currentTime;
             let phrase = $(e.target).val().trim();

@@ -20,13 +20,13 @@ export default class CodeExpanded {
 
   addExpander() {
     $(".highlight").each(function() {
-      var expanderMarkup =
+      const expanderMarkup =
         '<div class="code-expanded-controls"><a title="Expand" aria-expanded="false" href="javascript:void(\'Expand/collapse code view\')"><i class="fa fa-expand"></i></a></div>';
-      var highlightElement = $(this);
-      var codeElement = highlightElement.find("code:first");
+      const highlightElement = $(this);
+      const codeElement = highlightElement.find("code:first");
       codeElement.attr("tabindex", 0);
-      var code = codeElement.text();
-      var lines = code.split("\n");
+      const code = codeElement.text();
+      const lines = code.split("\n");
       if (lines.length > 4) {
         highlightElement.prepend(expanderMarkup);
         highlightElement
@@ -39,8 +39,8 @@ export default class CodeExpanded {
 
   addExpanderOpenEvent() {
     $("#content").on("click", ".code-expanded-controls a", evt => {
-      let codeToExpand = $(evt.target).closest(".highlight");
-      let clonedElement = codeToExpand.clone();
+      const codeToExpand = $(evt.target).closest(".highlight");
+      const clonedElement = codeToExpand.clone();
       clonedElement
         .find(".fa-expand")
         .addClass("fa-compress")

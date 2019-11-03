@@ -27,10 +27,33 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@p4lm" />   
 
-    {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true ) }}
-    {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS $options | fingerprint "sha512" }}
+    {{ $sassOptions := (dict "outputStyle" "compressed" "enableSourceMap" true ) }}
+    <script>
+        // If `prefers-color-scheme` is not supported, fall back to light mode.
+        // In this case, light.css will be downloaded with `highest` priority.
+        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+          document.documentElement.style.display = 'none';
+          document.head.insertAdjacentHTML(
+              'beforeend',
+              '<link rel="stylesheet" href="/light.css" onload="document.documentElement.style.display = \'\'">'
+          );
+        }
+    </script>
+    <!--
+    Conditionally either load the light or the dark stylesheet. The matching file
+    will be downloaded with `highest`, the non-matching file with `lowest`
+    priority. If the browser doesn't support `prefers-color-scheme`, the media
+    query is unknown and the files are downloaded with `lowest` priority (but
+    above I already force `highest` priority for my default light experience).
+    -->
+    {{ $darkStyles := resources.Get "styles/dark.scss" | toCSS $sassOptions | fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ $darkStyles.RelPermalink }}" integrity="{{ $darkStyles.Data.Integrity }}"  media="(prefers-color-scheme: dark)">
+    {{ $lightStyles := resources.Get "styles/light.scss" | toCSS $sassOptions | fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ $lightStyles.RelPermalink }}" integrity="{{ $lightStyles.Data.Integrity }}"  media="(prefers-color-scheme: light)">
+    
+    {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS $sassOptions | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $mainStyles.RelPermalink }}" integrity="{{ $mainStyles.Data.Integrity }}" media="screen, tv, projection">
-    {{ $printStyles := resources.Get "styles/print-bundle.sass" | toCSS $options | fingerprint "sha512" }}
+    {{ $printStyles := resources.Get "styles/print-bundle.sass" | toCSS $sassOptions | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $printStyles.RelPermalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

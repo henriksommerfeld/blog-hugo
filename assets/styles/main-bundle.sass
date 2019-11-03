@@ -20,6 +20,14 @@
 @import './_blockquote'
 @import './_links'
 
+\:root 
+  color-scheme: light dark
+
+body
+  color: var(--color)
+  background-color: var(--background-color)
+
+
 // Box sizing partial styles:
 // Apply a natural box layout model to all elements
 *,
@@ -40,7 +48,7 @@ body
     margin: 0
     font-size: 16px
     font-family: $font-family-sans-serif
-    color: $text-color
+    //color: $text-color
 
 .hide
     display: none
@@ -53,7 +61,7 @@ body
     position: relative
 
 .body
-    background: white
+    //background: white
     z-index: 0
     width: 100%
     display: flex
