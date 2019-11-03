@@ -1,0 +1,137 @@
+// Import Modules
+@import "./fontawesome/fontawesome";
+@import "./fontawesome/solid";
+@import "./fontawesome/brands";
+@import "./_variables";
+@import "./_colors";
+@import "./_screen-reader";
+@import "./_headings";
+@import "./_font-sizes";
+@import "./_header";
+@import "./_footer";
+@import "./_article-categories-tags";
+@import "./_overlay";
+@import "./_searchbox";
+@import "./_hamburger-icon";
+@import "./_animations";
+@import "./_sidebar";
+@import "./_bitmoji";
+@import "./_paging-controls";
+@import "./_bullets";
+@import "./_blockquote";
+@import "./_links";
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  color: var(--color);
+  background-color: var(--background-color);
+}
+
+// Box sizing partial styles:
+// Apply a natural box layout model to all elements
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: $orange;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 300px;
+  margin: 0;
+  font-size: 16px;
+  font-family: $font-family-sans-serif;
+  color: var(--color);
+}
+
+.hide {
+  display: none;
+}
+
+#page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.body {
+  //background: white
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  padding-bottom: $default-spacing;
+}
+
+.body-max-width {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: $default-spacing;
+  max-width: $page-max-width;
+  @media (min-width: $side-column-min-width) {
+    flex-direction: row;
+  }
+}
+
+main {
+  width: 100%;
+  padding: $default-spacing;
+  @media (min-width: $side-column-min-width) {
+    width: 71%;
+  }
+}
+
+article {
+  width: 100%;
+  footer {
+    display: flex;
+  }
+  &.full-article .entry-meta {
+    margin-bottom: 2em;
+  }
+}
+
+aside {
+  width: 100%;
+  padding: $default-spacing;
+  @media (min-width: $side-column-min-width) {
+    width: 29%;
+  }
+}
+
+.entry-meta {
+  margin-top: -1em;
+}
+
+.result-list .entry-meta {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.published {
+  color: lighten($text-color, 40%);
+  font-size: 0.85em;
+  &:before {
+    content: "\f073";
+    font-family: "Font Awesome 5 Free";
+    padding-right: 0.5em;
+  }
+}

@@ -51,7 +51,7 @@
     {{ $lightStyles := resources.Get "styles/light.scss" | toCSS $sassOptions | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $lightStyles.RelPermalink }}" integrity="{{ $lightStyles.Data.Integrity }}"  media="(prefers-color-scheme: light)">
     
-    {{ $mainStyles := resources.Get "styles/main-bundle.sass" | toCSS $sassOptions | fingerprint "sha512" }}
+    {{ $mainStyles := resources.Get "styles/main-bundle.scss" | toCSS $sassOptions | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $mainStyles.RelPermalink }}" integrity="{{ $mainStyles.Data.Integrity }}" media="screen, tv, projection">
     {{ $printStyles := resources.Get "styles/print-bundle.sass" | toCSS $sassOptions | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $printStyles.RelPermalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">
