@@ -43,7 +43,7 @@ $animation-speed: 150ms
         color: var(--white)
     &:hover, &:active
     .bar, .bar::before, .bar::after
-        box-shadow: 0 0 30px transparentize(white, 0.4)
+        box-shadow: 0 0 30px var(--hamburger-shadow-color)
 
     @media (min-width: $medium-size-min-width)
         display: none
@@ -53,7 +53,7 @@ $animation-speed: 150ms
     position: absolute
     left: 0
     bottom: $bar-spacing
-    background: rgba(255, 255, 255, 1)
+    background: var(--white)
     transition: bottom $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1), transform $animation-speed cubic-bezier(0.23, 1, 0.32, 1)
 
 .bar::after
@@ -61,7 +61,7 @@ $animation-speed: 150ms
     position: absolute
     left: 0
     top: $bar-spacing
-    background: rgba(255, 255, 255, 1)
+    background: var(--white)
     transition: top $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1), transform $animation-speed cubic-bezier(0.23, 1, 0.32, 1)
 
 .bar.animate
