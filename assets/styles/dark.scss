@@ -1,12 +1,13 @@
 @import "./_colors";
 $light-color: $blue400;
-$white: $gray200;
+$white: $gray400;
 $background-color: $gray800;
 $header-text-shadow: transparentize($gray900, 0.5);
 $link-text-shadow-color: transparentize($light-color, 0.2);
 $hamburger-shadow-color: transparentize($white, 0.4);
 $inline-code-bg-color: lighten($background-color, 5%);
 $inline-code-border-color: lighten($background-color, 10%);
+$paging-bg-color: $blue700;
 
 :root {
   --white: #{$white};
@@ -21,6 +22,19 @@ $inline-code-border-color: lighten($background-color, 10%);
 
   --header-bg-color: #{$gray900};
   --header-text-shadow: #{$header-text-shadow};
+
+  --footer-bg-color: #{$blue700};
+
+  --paging-color: var(--color);
+  --paging-bg-color: #{$paging-bg-color};
+  --paging-border-color: #{darken($paging-bg-color, 8%)};
+  --paging-text-shadow: #{darken($paging-bg-color, 30%)};
+  --paging-box-shadow-color: #{transparentize(black, 0.8)};
+  --paging-button-border-color: var(
+    --accent-color
+  ); //#{darken($paging-bg-color, 26%)};
+  --paging-focus-bg-color: #{$blue800};
+  --paging-focus-color: var(--paging-color);
 
   --link-color: #{$light-color};
   --link-focus-color: #{$blue500};
