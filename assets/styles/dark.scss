@@ -30,9 +30,7 @@ $paging-bg-color: $blue700;
   --paging-border-color: #{darken($paging-bg-color, 8%)};
   --paging-text-shadow: #{darken($paging-bg-color, 30%)};
   --paging-box-shadow-color: #{transparentize(black, 0.8)};
-  --paging-button-border-color: var(
-    --accent-color
-  ); //#{darken($paging-bg-color, 26%)};
+  --paging-button-border-color: var(--accent-color);
   --paging-focus-bg-color: #{$blue800};
   --paging-focus-color: var(--paging-color);
 
