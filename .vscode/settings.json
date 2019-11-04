@@ -1,3 +1,5 @@
 {
-    "sasslint.enable": true
+    "sasslint.enable": true,
+    "prettier.requireConfig": true,
+    "prettier.singleQuote": true
 }

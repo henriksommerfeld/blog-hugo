@@ -1,6 +1,6 @@
 .page-numbers
     cursor: default
-    padding: 0.3em 0.9em 0.4em 0.9em
+    padding: 0.3em 0.9em 0.3em 0.9em
     margin: 1em 0.5em
     width: auto
     min-width: 2em
@@ -63,8 +63,9 @@ a.page-numbers
         box-shadow: none
         background-color: var(--paging-focus-bg-color)
         color: var(--paging-focus-color)
-        border-color: var(--paging-button-border-color)
         text-shadow: 0 0 1px var(--paging-text-shadow)
+    &:focus
+        border-color: var(--paging-button-border-color)
 
 a.page-numbers:hover:after, a.page-numbers:focus:after, a.page-numbers:active:after
     width: initial

@@ -8,6 +8,7 @@ $hamburger-shadow-color: transparentize($white, 0.4);
 $inline-code-bg-color: lighten($background-color, 5%);
 $inline-code-border-color: lighten($background-color, 10%);
 $paging-bg-color: $blue700;
+$modal-bg: transparentize($gray900, 0.1);
 
 :root {
   --white: #{$white};
@@ -22,8 +23,9 @@ $paging-bg-color: $blue700;
 
   --header-bg-color: #{$gray900};
   --header-text-shadow: #{$header-text-shadow};
-
   --footer-bg-color: #{$blue700};
+
+  --modal-bg-color: #{$modal-bg};
 
   --paging-color: var(--color);
   --paging-bg-color: #{$paging-bg-color};

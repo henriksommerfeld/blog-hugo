@@ -1,0 +1,18 @@
+.overlay {
+    display: none;
+}
+
+$blur: 15px;
+@mixin background {
+    z-index: 2;
+    background: rgba(0,0,0,0.9);
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: blur($blur);
+        backdrop-filter: blur($blur);
+        background: rgba(0,0,0,0.6);
+    }
+}
+
+body.modal-open {
+    overflow: hidden;
+}

@@ -15,8 +15,8 @@ export default class Search {
         this.indexLoadingShowed = false;
         this.indexLoadedShowed = false;
 
-        this.addOpenDialogEvent(); 
-        this.addCloseDialogEvent();       
+        this.addOpenDialogEvent();
+        this.addCloseDialogEvent();
         this.addSearchClickEvent();
         this.addKeyUpEvent();
         this.addEscKeyEvent();
@@ -37,7 +37,7 @@ export default class Search {
     }
 
     addSearchClickEvent() {
-         $('body').on('click touchstart', '#searchbox .fa-search', (e) => {
+        $('body').on('click touchstart', '#searchbox .fa-search', (e) => {
             this.search($('#search-input').val());
         });
     }
@@ -50,7 +50,7 @@ export default class Search {
 
     addEscKeyEvent() {
         $(document).keyup((e) => {
-            const  escapeKeyCode = 27;
+            const escapeKeyCode = 27;
             if (e.keyCode === escapeKeyCode && $('#searchbox-container').hasClass('open')) {
                 this.closeModal();
                 this.resetFocus();
@@ -63,7 +63,7 @@ export default class Search {
             return $.Deferred().resolve().promise();
         }
         else {
-            this.indexLoading = true;    
+            this.indexLoading = true;
             return $.getJSON('/search-index.json', (response) => {
                 this.index = lunr.Index.load(response.index);
                 this.store = response.store;
@@ -72,7 +72,7 @@ export default class Search {
     }
 
     ensureIndex() {
-        this.downloadIndex().done(() => { 
+        this.downloadIndex().done(() => {
             if (this.indexLoadingShowed && !this.indexLoadedShowed) {
                 this.indexLoadedShowed = true;
                 this.showIndexLoadedMessage();
@@ -87,18 +87,18 @@ export default class Search {
 
     showSearchError(errorText) {
         $('#search-output').removeClass('has-hits').addClass('has-error');
-        let errorHtml = `<img class="bitmoji" src="/images/oops.png" alt="oops"><p>${errorText}</p>`;
+        const errorHtml = `<img class="bitmoji" src="/images/oops.png" alt="oops"><p>${errorText}</p>`;
         $('#no-results-message').html(errorHtml);
     }
 
     showIndexLoadFailed() {
-        let sendTweetMessage = "I'm probably not even aware of this, so I'll appreciate if you <a href='https://twitter.com/p4lm' target='_blank'>send me a tweet to @p4lm</a> to let me know about it. Thank you.";
-        let message = `Failed to load search index 😕 ${sendTweetMessage}`;
+        const sendTweetMessage = "I'm probably not even aware of this, so I'll appreciate if you <a href='https://twitter.com/p4lm' target='_blank'>send me a tweet to @p4lm</a> to let me know about it. Thank you.";
+        const message = `Failed to load search index 😕 ${sendTweetMessage}`;
         this.showSearchError(message);
     }
 
     search(phrase) {
-        let resultContainer = $('#search-output ol');
+        const resultContainer = $('#search-output ol');
         $('#search-output .result-list li').remove();
         $('#search-output').removeClass('close').removeClass('has-hits')
         $('#search-output').removeClass('has-hits');
@@ -112,27 +112,28 @@ export default class Search {
             this.showIndexLoadFailed();
             return;
         }
-        
+
         const result = this.index.search(phrase);
 
         $('#search-output').removeClass('index-not-loaded');
         $('#search-output').removeClass('index-loaded');
-        $('#search-output').addClass('search-performed');            
-        
+        $('#search-output').addClass('search-performed');
+
         if (result && result.length > 0) {
             console.log(`=== Search results for ${phrase} === \n\n`);
             try {
-            $('#search-output').addClass('has-hits');
-            $('#number-of-hits-message').text(`Search phrase matching ${result.length} pages`);
-            $.each(result, (index, value) => {
-                console.log(value.ref);
-                let hit = this.store[value.ref];
-                let dateHtml = `<div class="entry-meta">
+                $('#search-output').addClass('has-hits');
+                $('#number-of-hits-message').text(`Search phrase matching ${result.length} pages`);
+                $.each(result, (index, value) => {
+                    console.log(value.ref);
+                    let hit = this.store[value.ref];
+                    let dateHtml = `<div class="entry-meta">
                     <time class="published" datetime='${hit.dateiso}'>${hit.dateformatted}</time>
                 </div>`;
-                let hitHtml = `<li><h2><a href='${value.ref}'>${hit.title}</a></h2>${dateHtml}<p>${hit.summary}</p></li>`;
-                resultContainer.append(hitHtml);
-            });}
+                    let hitHtml = `<li><h2><a href='${value.ref}'>${hit.title}</a></h2>${dateHtml}<p>${hit.summary}</p></li>`;
+                    resultContainer.append(hitHtml);
+                });
+            }
             catch (error) {
                 this.showIndexLoadFailed();
             }
@@ -164,24 +165,24 @@ export default class Search {
         }
     }
 
-    resetFocus () {
+    resetFocus() {
         $('#search-input').blur();
         $('a.search').focus();
     }
 
     closeModal() {
-        $('#searchbox, .search-results-container, #searchbox-container, #searchbox-overlay')
+        $('#searchbox, .search-results-container, #searchbox-container')
             .removeClass('open').addClass('close');
         $('#search-output').removeClass('search-performed').removeClass('has-hits')
             .removeClass('has-error').removeClass('index-loading').removeClass('index-loaded');
-        $('#page-wrapper').removeClass('blur');
-        
+        $('body').removeClass('modal-open');
+
         return false;
     }
 
     openSearchDialog() {
-        $('#page-wrapper').addClass('blur');
-        $('#searchbox-overlay, #searchbox-container, #searchbox').removeClass('close').addClass('open');
+        $('body').addClass('modal-open');
+        $('#searchbox-container, #searchbox').removeClass('close').addClass('open');
         $('#search-input').val('');
         $('#search-input').focus();
         this.indexLoadFailed = false;

@@ -19,10 +19,10 @@ $animation-speed: 150ms
 .bar
     position: relative
     transform: translateY($bar-spacing)
-    background: rgba(255, 255, 255, 1)
+    background: var(--white)
 
     &.animate
-        background: rgba(255, 255, 255, 0)
+        background: transparent
 
 .hamburger-trigger
     display: flex
@@ -42,8 +42,8 @@ $animation-speed: 150ms
     &:focus
         color: var(--white)
     &:hover, &:active
-    .bar, .bar::before, .bar::after
-        box-shadow: 0 0 30px var(--hamburger-shadow-color)
+        .bar, .bar::before, .bar::after
+            box-shadow: 0 0 30px var(--hamburger-shadow-color)
 
     @media (min-width: $medium-size-min-width)
         display: none
