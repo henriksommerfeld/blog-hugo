@@ -27,6 +27,7 @@ export default class CodeExpanded {
       codeElement.attr("tabindex", 0);
       const code = codeElement.text();
       const lines = code.split("\n");
+
       if (lines.length > 4) {
         highlightElement.prepend(expanderMarkup);
         highlightElement
@@ -45,7 +46,6 @@ export default class CodeExpanded {
       const leftOffset = $(codeToExpand).offset().left + ($(codeToExpand).outerWidth() / 2);
       const clonedElement = codeToExpand.clone();
 
-
       clonedElement
         .find(".fa-expand")
         .addClass("fa-compress")
@@ -54,10 +54,9 @@ export default class CodeExpanded {
         .find("a")
         .attr("aria-expanded", true)
         .attr("title", "Close (Esc)");
+      $('body').addClass('modal-open');
       $("#code-placeholder").html(clonedElement);
-      //evt.preventDefault();
       $("#code-placeholder code:first").focus();
-      //$("#page-wrapper").addClass("blur");
       $("#code-container-inner").css('transform-origin', leftOffset + 'px ' + topOffset + 'px');
       $("#code-container, #code-container-inner")
         .removeClass("close")
@@ -73,9 +72,8 @@ export default class CodeExpanded {
 
   addCloseOnEscEvent() {
     $(document).keyup(e => {
-      const escapeKeyCode = 27;
       if (
-        e.keyCode === escapeKeyCode &&
+        e.key === 'Escape' &&
         $("#code-container").hasClass("open")
       ) {
         this.closeExpandedView();
@@ -84,9 +82,9 @@ export default class CodeExpanded {
   }
 
   closeExpandedView() {
-    $("#page-wrapper").removeClass("blur");
     $("#code-container, #code-container-inner")
       .removeClass("open")
       .addClass("close");
+    $('body').removeClass('modal-open');
   }
 }

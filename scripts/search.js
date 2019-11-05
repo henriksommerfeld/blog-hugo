@@ -50,8 +50,7 @@ export default class Search {
 
     addEscKeyEvent() {
         $(document).keyup((e) => {
-            const escapeKeyCode = 27;
-            if (e.keyCode === escapeKeyCode && $('#searchbox-container').hasClass('open')) {
+            if (e.key === 'Escape' && $('#searchbox-container').hasClass('open')) {
                 this.closeModal();
                 this.resetFocus();
             }
