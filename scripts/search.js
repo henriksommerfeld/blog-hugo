@@ -171,10 +171,9 @@ export default class Search {
     }
 
     closeModal() {
-        $('#searchbox, .search-results-container, #searchbox-container')
+        $('#searchbox, #searchbox-container')
             .removeClass('open').addClass('close');
-        $('#search-output').removeClass('search-performed').removeClass('has-hits')
-            .removeClass('has-error').removeClass('index-loading').removeClass('index-loaded');
+        $('#search-output').removeClass('search-performed', 'has-hits', 'has-error', 'index-loading', 'index-loaded');
         $('body').removeClass('modal-open');
 
         return false;

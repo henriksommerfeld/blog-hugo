@@ -1,14 +1,9 @@
-$searchbox-open-speed: 300ms;
-$searchbox-close-speed: 500ms;
-$searchbox-open-speed-fancy: 800ms;
-$searchbox-close-speed-fancy: 800ms;
-$background-animation-speed: 300ms;
 $searchbox-breakpoint: 880px;
 $search-min-wide: 150em;
 
 
 #searchbox-container {
-    display: none;
+    display: flex;
     visibility: hidden;
     opacity: 0;
     flex-direction: column;
@@ -20,29 +15,33 @@ $search-min-wide: 150em;
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
     width: 100%;
     min-width: 100vw;
     height: 100%;
     min-height: 100vh;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
 
-    @include background;
+    @media (min-height: $searchbox-breakpoint) {
+        padding-bottom: 0rem;
+    }
+
+    @media (min-width: $medium-size-min-width) {
+        padding-left: $default-spacing;
+        padding-right: $default-spacing;
+    }
     
     &.open {
         opacity: 1;
         visibility: visible;
-        display: flex;
+        @include background;
+        animation: searchboxParentOpen 300ms ease-in-out;
     }
     &.close {
         visibility: hidden;
         opacity: 0;
-        animation: searchboxParentClose $searchbox-close-speed-fancy linear;
-
-        @media (min-height: $searchbox-breakpoint) {
-            animation: searchboxParentClose $searchbox-close-speed-fancy linear;
-        }
+        @include background;
+        animation: searchboxParentClose 150ms ease-in-out;
     }
 }
 
@@ -62,16 +61,12 @@ $search-min-wide: 150em;
         transform-origin: scale(0);
         visibility: visible;
         opacity: 1;
-        animation: searchboxOpen $searchbox-open-speed ease-in-out forwards;
+        animation: searchboxOpen 300ms ease-in-out forwards;
     }
     &.close {
         transform-origin: 0% 0% scale(1);
         visibility: hidden;
         opacity: 0;
-        animation: searchboxClose $searchbox-close-speed ease-in-out forwards;
-        @media (min-height: $searchbox-breakpoint) {
-            animation: searchboxCloseFancy $searchbox-close-speed-fancy ease-in-out forwards;
-        }
     }
 
     .search-input {
@@ -114,7 +109,7 @@ $search-min-wide: 150em;
     display: none;
     color: var(--color);  
     padding-top: 2 * $default-spacing;  
-    max-width: $page-max-width;
+    max-width: $side-column-min-width;
 
     &.search-performed, &.has-error, &.index-loading, &.index-loaded {
         display: flex;
@@ -137,31 +132,13 @@ $search-min-wide: 150em;
     &.has-error {
         color: red;
     }
-    &.close {
-        visibility: hidden;
-        opacity: 0;
-        animation: searchResultClose $searchbox-close-speed ease-in-out forwards;
-    }
     ol.result-list {
         margin: 0;
         overflow: auto;
         width: 100%;
         color: var(--color);
         list-style-position: outside;
-        padding-left: 0;
-
-        &::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        &::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-        }
-        
-        &::-webkit-scrollbar-thumb {
-            background-color: var(--color);
-            outline: 1px solid slategrey;
-        }
+        padding-left: 0;        
 
         @media (min-width: $searchbox-breakpoint) {
             list-style-position: outside;
@@ -220,6 +197,19 @@ $search-min-wide: 150em;
         display: block;
     }
 }
+
+@keyframes searchboxParentOpen {
+    0% {
+        visibility: visible;
+        opacity: 1;
+        backdrop-filter: blur(0);
+        background: transparent;
+    }
+    100% {
+        backdrop-filter: blur($blur);
+        background: rgba(0,0,0,0.6);
+    }
+}
 @keyframes searchboxParentClose {
     0% {
         visibility: visible;
@@ -228,11 +218,12 @@ $search-min-wide: 150em;
     99% {
         visibility: visible;
         opacity: 1;
+        backdrop-filter: blur(0);
+        background: transparent;
     }
     100% {
         visibility: hidden;
         opacity: 0;
-        display: none;
     }
 }
 @keyframes searchboxOpen {
@@ -242,84 +233,10 @@ $search-min-wide: 150em;
         opacity: 0;
     }
     80% {
-
         transform: scale(1.05);
         opacity: 1;
     }
     100% {
-
         transform: scale(1);
-    }
-}
-@keyframes searchboxClose {
-    0% {
-        visibility: visible;
-        opacity: 1;
-        transform: scale(1) translateX(0%);
-    }
-    30% {
-        transform: scale(1.05) rotateZ(-1deg);
-    }
-    80% {
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(0.5) translateX(0%) translateY(200vh) rotateZ(90deg);
-        filter: blur(5px);
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-@keyframes searchboxOpenFancy {
-    0% {
-        transform: scale(0.5);
-        visibility: visible;
-        opacity: 0;
-        transform: translateX(50vw) translateY(-50vh) scale(0.3) rotateX(-10deg) rotateZ(90deg) rotateY(-40deg) skew(10deg);
-    }
-    20% { 
-        opacity: 0.7;
-    }
-    50% {
-        transform: translateY(0.1rem) scale(1.05) rotateX(1deg) rotateZ(-2deg) rotateY(5deg) skew(-1deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0) scale(1) rotateX(0deg) rotateZ(0deg) rotateY(0deg) skew(0deg);
-    }
-}
-@keyframes searchboxCloseFancy {
-    0% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0%) scale(1);
-    }
-    20% {
-        transform: translateY(-3rem) scale(1.05) rotateX(-1deg) rotateZ(5deg) rotateY(40deg) skew(10deg);
-    }
-    80% {
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateX(-50vw) translateY(100vh) scale(0.1) rotateX(90deg) rotateZ(-90deg) rotateY(-40deg) skew(0);
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-@keyframes searchResultClose {
-    0% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0%) scale(1);
-    }
-    80% {
-        opacity: 0.7;
-    }
-    99% {
-        transform: translateY(100vh) scale(0.1);
-    }
-    100% {
-        opacity: 0;
-        visibility: hidden;
     }
 }
