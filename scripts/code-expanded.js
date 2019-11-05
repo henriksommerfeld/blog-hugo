@@ -19,7 +19,7 @@ export default class CodeExpanded {
   }
 
   addExpander() {
-    $(".highlight").each(function() {
+    $(".highlight").each(function () {
       const expanderMarkup =
         '<div class="code-expanded-controls"><a title="Expand" aria-expanded="false" href="javascript:void(\'Expand/collapse code view\')"><i class="fa fa-expand"></i></a></div>';
       const highlightElement = $(this);
@@ -39,8 +39,13 @@ export default class CodeExpanded {
 
   addExpanderOpenEvent() {
     $("#content").on("click", ".code-expanded-controls a", evt => {
+      const scrollTop = $(window).scrollTop();
       const codeToExpand = $(evt.target).closest(".highlight");
+      const topOffset = $(codeToExpand).offset().top + ($(codeToExpand).outerHeight() / 2) - scrollTop;
+      const leftOffset = $(codeToExpand).offset().left + ($(codeToExpand).outerWidth() / 2);
       const clonedElement = codeToExpand.clone();
+
+
       clonedElement
         .find(".fa-expand")
         .addClass("fa-compress")
@@ -50,8 +55,10 @@ export default class CodeExpanded {
         .attr("aria-expanded", true)
         .attr("title", "Close (Esc)");
       $("#code-placeholder").html(clonedElement);
+      //evt.preventDefault();
       $("#code-placeholder code:first").focus();
-      $("#page-wrapper").addClass("blur");
+      //$("#page-wrapper").addClass("blur");
+      $("#code-container-inner").css('transform-origin', leftOffset + 'px ' + topOffset + 'px');
       $("#code-container, #code-container-inner")
         .removeClass("close")
         .addClass("open");

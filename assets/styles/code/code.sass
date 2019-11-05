@@ -4,9 +4,8 @@ code
 
 p, li
     code
-        padding: 2px 4px
-        border-radius: 3px
-
+        padding: 0 4px
+        border-radius: $border-radius
         background: var(--inline-code-bg-color)
         border: 1px solid var(--inline-code-border-color)
         white-space: pre-wrap
@@ -19,6 +18,7 @@ pre
     color: var(--highlight-color)
     border-left: 4px solid var(--accent-color)
     border-radius: $border-radius
+    line-height: 1.3em
     code
         word-wrap: normal
         text-shadow: none
