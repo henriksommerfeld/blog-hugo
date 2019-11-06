@@ -64,11 +64,15 @@ $spinner-color: #0c5aa6
         visibility: visible
         @include background
         animation: searchboxParentOpen 300ms ease-in-out
+        @media screen and (prefers-reduced-motion: reduce)
+            animation: none
     &.close
         visibility: hidden
         opacity: 0
         @include background
         animation: searchboxParentClose 300ms ease-in-out
+        @media screen and (prefers-reduced-motion: reduce)
+            animation: none
 
 #lightbox
     position: fixed
@@ -81,10 +85,18 @@ $spinner-color: #0c5aa6
     padding: 0
     margin: 0
     transition: transform 300ms ease-in-out
+    @media screen and (prefers-reduced-motion: reduce)
+        transition: opacity 300ms ease-in-out
     &.open
         transform: scale(1)
+        @media screen and (prefers-reduced-motion: reduce)
+            opacity: 1
+            transform: none
     &.close
         transform: scale(0)
+        @media screen and (prefers-reduced-motion: reduce)
+            opacity: 0
+            transform: none
     img
         max-width: 100vw
         max-height: 100vh

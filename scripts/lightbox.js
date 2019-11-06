@@ -49,8 +49,12 @@ export default class LightBox {
             $('#lightbox-container').removeClass('close').addClass('open');
 
             if ($('#lightbox img').attr('src') !== imageUrl) {
-                $('#lightbox-loading-container').show();
+                $('#lightbox img').remove();
                 $('#lightbox img').attr('src', '');
+                setTimeout(() => {
+                    if ($('#lightbox').has('img'))
+                        $('#lightbox-loading-container').show();
+                }, 500);
                 let downloadingImage = new Image();
                 downloadingImage.onload = () => {
                     if (!this.cancelShowImage) {
@@ -69,6 +73,7 @@ export default class LightBox {
     }
 
     closeModal(e) {
+        $('#lightbox-loading-container').hide();
         $('#lightbox-container, #lightbox, #lightbox-loading').removeClass('open').addClass('close');
         $('body').removeClass('modal-open');
         e.preventDefault();
