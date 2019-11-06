@@ -3,7 +3,6 @@ $lightbox-close-speed: 500ms
 $background-animation-speed: 300ms
 $spinner-diameter: 60px
 $spinner-thickness: 3px
-$spinner-color: #0c5aa6
 
 #lightbox-loading-container
     display: flex
@@ -18,7 +17,7 @@ $spinner-color: #0c5aa6
     align-items: center
     align-self: center
     position: relative
-    background: white
+    background: var(--spinner-bg-color)
     box-shadow: 0 0 15px 5px rgba(0,0,0,0.5)
     opacity: 1
     border-radius: 100%
@@ -42,7 +41,7 @@ $spinner-color: #0c5aa6
         height: 100%
         width: 100%
         animation: rotation 1s linear infinite
-        border: $spinner-thickness solid $spinner-color
+        border: $spinner-thickness solid var(--spinner-color)
         border-top-color: transparent
         border-radius: 100%
         background: transparent

@@ -26,6 +26,8 @@ $modal-bg: transparentize($gray900, 0.1);
   --footer-bg-color: #{$blue700};
 
   --modal-bg-color: #{$modal-bg};
+  --spinner-color: var(--accent-color);
+  --spinner-bg-color: #{$gray900};
 
   --paging-color: var(--color);
   --paging-bg-color: #{$paging-bg-color};
@@ -46,6 +48,11 @@ $modal-bg: transparentize($gray900, 0.1);
   --light-color: #{$light-color};
   --heading-color: var(--light-color);
   --hamburger-shadow-color: #{$hamburger-shadow-color};
+
+  --mobile-nav-bg-color: #{$blue900};
+  --mobile-nav-bg-hover-color: #{transparentize(black, 0.8)};
+  --mobile-nav-color: var(--color);
+  --mobile-nav-box-shadow-color: #{transparentize(black, 0.8)};
 
   --highlight-bg-color: #{$gray900};
   --highlight-color: #{$gray200};
