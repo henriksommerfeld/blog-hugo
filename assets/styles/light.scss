@@ -73,4 +73,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --inline-code-border-color: #{$inline-code-border-color};
 
   --image-filter: none;
+
+  --scrollbar-color: #{$gray500};
+  --scrollbar-bg-color: #{$gray300};
 }
