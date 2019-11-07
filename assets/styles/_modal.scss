@@ -5,10 +5,60 @@
 
 $blur: 10px;
 
+#page-wrapper {
+    filter: blur(0);
+
+    body.modal-open & {
+        filter: blur($blur);
+    }    
+}
+
 body.modal-open {
     overflow: hidden;
+}
 
-    #page-wrapper {
-        filter: blur($blur);
+@mixin modal-open {
+    opacity: 1;
+    visibility: visible;
+    @include background;
+    animation: modalOpen 300ms ease-in-out;
+    @media screen and (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
+}
+
+@mixin modal-close {
+    visibility: hidden;
+    opacity: 0;
+    @include background;
+    animation: modalClose 300ms ease-in-out;
+    @media screen and (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
+}
+
+@keyframes modalOpen {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+@keyframes modalClose {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    99% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        background: transparent;
+        visibility: hidden;
+        opacity: 0;
     }
 }

@@ -30,13 +30,10 @@ $search-min-wide: 150em;
     }
     
     &.open {
-        opacity: 1;
-        visibility: visible;
-        @include background;
+        @include modal-open;
     }
     &.close {
-        visibility: hidden;
-        opacity: 0;
+        @include modal-close;
     }
 }
 

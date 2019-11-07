@@ -46,19 +46,9 @@ article .highlight
     visibility: hidden
     backface-visibility: hidden
     &.open
-        opacity: 1
-        visibility: visible
-        @include background
-        animation: searchboxParentOpen 300ms ease-in-out
-        @media screen and (prefers-reduced-motion: reduce)
-            animation: none
+        @include modal-open
     &.close
-        visibility: hidden
-        opacity: 0
-        @include background
-        animation: searchboxParentClose 300ms ease-in-out
-        @media screen and (prefers-reduced-motion: reduce)
-            animation: none
+        @include modal-close
 #code-container-inner
     position: fixed
     width: 100%
