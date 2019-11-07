@@ -9,6 +9,7 @@ $inline-code-bg-color: lighten($background-color, 5%);
 $inline-code-border-color: lighten($background-color, 10%);
 $paging-bg-color: $blue700;
 $modal-bg: transparentize($gray900, 0.1);
+$modal-bg-for-blur: transparentize($gray900, 0.4);
 
 :root {
   --white: #{$white};
@@ -22,12 +23,20 @@ $modal-bg: transparentize($gray900, 0.1);
   --taxonomy-icon-color: var(--color);
 
   --header-bg-color: #{$gray900};
+  --header-color: var(--color);
   --header-text-shadow: #{$header-text-shadow};
   --footer-bg-color: #{$blue700};
 
   --modal-bg-color: #{$modal-bg};
+  --modal-bg-color-for-blur: #{$modal-bg-for-blur};
   --spinner-color: var(--accent-color);
   --spinner-bg-color: #{$gray900};
+  --search-output-bg-color: var(--modal-bg-color);
+
+  --search-container-bg-color: #{transparentize($background-color, 0.2)};
+  --searchbox-bg-color: var(--modal-bg-color);
+  --searchbox-icon-color: var(--color);
+  --search-output-color: var(--color);
 
   --paging-color: var(--color);
   --paging-bg-color: #{$paging-bg-color};
@@ -37,13 +46,15 @@ $modal-bg: transparentize($gray900, 0.1);
   --paging-button-border-color: var(--accent-color);
   --paging-focus-bg-color: #{$blue800};
   --paging-focus-color: var(--paging-color);
+  --paging-currnt-bg-color: #{$blue800};
+  --paging-current-color: var(--color);
 
   --link-color: #{$light-color};
   --link-focus-color: #{$blue500};
   --link-text-shadow-color: #{$link-text-shadow-color};
   --link-underline: var(--accent-color);
 
-  --medium-bg-color: #{$blue800};
+  --widget-bg-color: #{$blue800};
   --medium-color: var(--white);
   --light-color: #{$light-color};
   --heading-color: var(--light-color);
@@ -52,7 +63,7 @@ $modal-bg: transparentize($gray900, 0.1);
   --mobile-nav-bg-color: #{$blue900};
   --mobile-nav-bg-hover-color: #{transparentize(black, 0.8)};
   --mobile-nav-color: var(--color);
-  --mobile-nav-box-shadow-color: #{transparentize(black, 0.8)};
+  --mobile-nav-box-shadow-color: #{transparentize(black, 0.5)};
 
   --highlight-bg-color: #{$gray900};
   --highlight-color: #{$gray200};

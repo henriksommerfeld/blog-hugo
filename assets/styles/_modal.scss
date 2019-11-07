@@ -1,14 +1,14 @@
-$blur: 15px;
 @mixin background {
     z-index: 2;
-    background: rgba(0,0,0,0.9);
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        -webkit-backdrop-filter: blur($blur);
-        backdrop-filter: blur($blur);
-        background: rgba(0,0,0,0.6);
-    }
+    background: var(--modal-bg-color-for-blur);
 }
+
+$blur: 10px;
 
 body.modal-open {
     overflow: hidden;
+
+    #page-wrapper {
+        filter: blur($blur);
+    }
 }
