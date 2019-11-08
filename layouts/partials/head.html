@@ -36,7 +36,7 @@
           document.documentElement.style.display = 'none';
           document.head.insertAdjacentHTML(
               'beforeend',
-              '<link rel="stylesheet" type="text/css" href="{{ $lightStyles.RelPermalink }}" integrity="{{ $lightStyles.Data.Integrity }}"  onload="document.documentElement.style.display=\'\'">'
+              '<link data-theme="light" rel="stylesheet" type="text/css" href="{{ $lightStyles.RelPermalink }}" integrity="{{ $lightStyles.Data.Integrity }}"  onload="document.documentElement.style.display=\'\'">'
           );
         }
     </script>
@@ -48,8 +48,8 @@
     above I already force `highest` priority for my default light experience).
     -->
     {{ $darkStyles := resources.Get "styles/dark.scss" | toCSS $sassOptions | fingerprint "sha512" }}
-    <link rel="stylesheet" type="text/css" href="{{ $darkStyles.RelPermalink }}" integrity="{{ $darkStyles.Data.Integrity }}"  media="(prefers-color-scheme: dark)">
-    <link rel="stylesheet" type="text/css" href="{{ $lightStyles.RelPermalink }}" integrity="{{ $lightStyles.Data.Integrity }}"  media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+    <link data-theme="dark" rel="stylesheet" type="text/css" href="{{ $darkStyles.RelPermalink }}" integrity="{{ $darkStyles.Data.Integrity }}"  media="(prefers-color-scheme: dark)">
+    <link data-theme="light" rel="stylesheet" type="text/css" href="{{ $lightStyles.RelPermalink }}" integrity="{{ $lightStyles.Data.Integrity }}"  media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
     
     {{ $mainStyles := resources.Get "styles/main-bundle.scss" | toCSS $sassOptions | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $mainStyles.RelPermalink }}" integrity="{{ $mainStyles.Data.Integrity }}" media="screen, tv, projection">
@@ -74,4 +74,6 @@
 
     </script>
     {{ end }}
+
+    {{- partial "theme.html" -}}
 </head>

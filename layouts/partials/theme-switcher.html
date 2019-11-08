@@ -1,0 +1,11 @@
+<form class="theme-switcher">
+    <input type="radio" name="theme-switcher" onclick="handleClick(this)" id="theme-light" value="light" >
+    <input type="radio" name="theme-switcher" onclick="handleClick(this)" id="theme-auto" value="auto" checked>
+    <input type="radio" name="theme-switcher" onclick="handleClick(this)" id="theme-dark" value="dark">
+</form>
+<script>
+    function handleClick(element) {
+        window.localStorage.setItem('theme', element.value);
+        window.updateTheme();
+    }
+</script>

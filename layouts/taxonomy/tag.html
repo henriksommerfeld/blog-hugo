@@ -6,6 +6,7 @@
             {{ partial "header.html" . }}
             <div class="body">
                 <div class="body-max-width">
+                    {{- partial "theme-switcher.html"  -}}
                     <main id="content">
                             <h1><span class="taxonomy-heading">Tag:</span> {{ .Title }}</h1>
                             {{- range .Paginator.Pages }}

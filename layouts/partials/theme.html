@@ -1,0 +1,55 @@
+<script>
+    window.updateTheme = ()=> {
+        const theme = window.localStorage.getItem('theme');
+        console.log('theme', theme);
+        if (theme === 'light' || theme === 'dark') {
+            const darkStyles = document.querySelectorAll("link[data-theme=dark]");
+            const lightStyles = document.querySelectorAll("link[data-theme=light]");
+
+            if (theme === 'dark') {
+                lightStyles.forEach(link => {
+                    link.media = 'not all';
+                    link.disabled = true;
+                });
+                darkStyles.forEach(link => {
+                    link.media = 'all';
+                    link.disabled = false;
+                });
+            }
+            else {
+                console.log('🌞 applying light theme');
+                darkStyles.forEach(link => {
+                    console.log('disabling dark mode');
+                    link.media = 'not all';
+                    link.disabled = true;
+                });
+                lightStyles.forEach(link => {
+                    console.log('enabling light mode');
+                    link.media = 'all';
+                    link.disabled = false;
+                });
+            }
+        }
+        else {
+            console.log("theme: auto");
+            const autoDarkMedia = '(prefers-color-scheme: dark)';
+            const autoLightMedia = '(prefers-color-scheme: no-preference), (prefers-color-scheme: light)';
+
+            const darkStyles = document.querySelectorAll("link[data-theme=dark]");
+            const lightStyles = document.querySelectorAll("link[data-theme=light]");
+
+            darkStyles.forEach(link => {
+                link.media = autoDarkMedia;
+                link.disabled = false;
+            });
+            lightStyles.forEach(link => {
+                link.media = autoLightMedia;
+                link.disabled = false;
+            });
+        }
+    }
+    window.addEventListener('storage', event => {
+        window.updateTheme();
+    });
+    console.log('%c 🌞 🌗 🌙 Light/Dark switcher active', 'font-size:1.5em');
+</script>
