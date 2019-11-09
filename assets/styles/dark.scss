@@ -61,6 +61,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --hamburger-shadow-color: #{$hamburger-shadow-color};
 
   --mobile-nav-bg-color: #{$blue900};
+  --mobile-nav-border-color: #{$gray800};
   --mobile-nav-bg-hover-color: #{transparentize(black, 0.8)};
   --mobile-nav-color: var(--color);
   --mobile-nav-box-shadow-color: #{transparentize(black, 0.5)};

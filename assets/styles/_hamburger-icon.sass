@@ -4,7 +4,6 @@ $bar-spacing: $bar-height * 2
 $animation-speed: 150ms
 
 .hamburger-menu
-    margin: auto
     width: $bar-width
     height: $bar-height + $bar-spacing*2
     cursor: pointer
@@ -44,9 +43,6 @@ $animation-speed: 150ms
     &:hover, &:active
         .bar, .bar::before, .bar::after
             box-shadow: 0 0 30px var(--hamburger-shadow-color)
-
-    @media (min-width: $medium-size-min-width)
-        display: none
 
 .bar::before
     content: ""

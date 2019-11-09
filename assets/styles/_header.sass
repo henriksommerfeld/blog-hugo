@@ -7,11 +7,10 @@ header
     box-shadow: 0 0 10px var(--header-bg-color)
 
 .header-content
+    display: grid
+    grid-template-columns: [col] auto [col]
+    grid-template-rows: [row] auto [row]
     color: var(--header-color)
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
     text-transform: uppercase
     text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5)
     height: $header-height
@@ -20,15 +19,43 @@ header
     max-width: $page-max-width
     z-index: 2
     perspective: 1000px
+
+    @media (min-width: $medium-size-min-width)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        height: auto
+        min-height: 80px
+
     a, a:link, a:visited
         color: var(--header-color)
         text-decoration: none
     .site-title
+        grid-column: col 1 / span 1
+        grid-row: row 1 / span 1
         font-weight: normal
         letter-spacing: .2rem
         display: flex
+        align-items: center
         padding: $default-spacing
         margin: 0
+
+    .theme-switcher
+        grid-column: col 1 / span 2
+        grid-row: row 2 / span 1
+        border-top: 1px solid var(--mobile-nav-border-color)
+        @media (min-width: $medium-size-min-width)
+            border-top: none
+
+    .hamburger-trigger
+        grid-column: col 2 / span 1
+        grid-row: row 1 / span 1
+        display: flex
+        justify-content: flex-end
+
+        @media (min-width: $medium-size-min-width)
+            display: none
 
 nav
     opacity: 0
@@ -93,6 +120,7 @@ nav
         pointer-events: painted
         animation: slide-in 400ms forwards
         display: flex
+        border-bottom: 1px solid var(--mobile-nav-border-color)
         @media (min-width: $small-size-min-width)
             animation: fold-in 400ms forwards
 

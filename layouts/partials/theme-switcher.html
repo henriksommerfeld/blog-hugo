@@ -1,11 +1,15 @@
-<form class="theme-switcher">
-    <input type="radio" name="theme-switcher" onclick="handleClick(this)" id="theme-light" value="light" >
-    <input type="radio" name="theme-switcher" onclick="handleClick(this)" id="theme-auto" value="auto" checked>
-    <input type="radio" name="theme-switcher" onclick="handleClick(this)" id="theme-dark" value="dark">
-</form>
+<div class="theme-switcher" aria-hidden="true">
+    <div class="switch">
+        <input type="checkbox" name="toggle">
+        <label for="toggle"><i></i></label>
+        <span></span> 
+    </div>
+</div>
 <script>
     function handleClick(element) {
-        window.localStorage.setItem('theme', element.value);
-        window.updateTheme(element.value);
+        const theme = element.value;
+        window.localStorage.setItem('theme', theme);
+        window.updateTheme(theme);
+        const switcher = document.getElementById('theme-switcer-indicator');
     }
 </script>

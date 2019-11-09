@@ -20,6 +20,7 @@
 @import "./_bullets";
 @import "./_blockquote";
 @import "./_links";
+@import "./_theme-switcher";
 
 :root {
   color-scheme: light dark;
@@ -86,16 +87,6 @@ html {
   @media (min-width: $side-column-min-width) {
     flex-direction: row;
   }
-}
-
-.theme-switcher {
-  background: mediumaquamarine;
-  display: flex;  
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: $default-spacing;  
 }
 
 main {
