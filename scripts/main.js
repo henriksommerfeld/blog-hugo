@@ -5,6 +5,7 @@
 
 import $ from 'jquery';
 import 'lazysizes';
+import ThemeSwitcher from './theme-switcher'
 import Hamburger from './hamburger';
 import LightBox from './lightbox';
 import Search from './search';
@@ -19,6 +20,7 @@ $(() => {
 
   } catch (error) { }
 
+  new ThemeSwitcher();
   new Hamburger();
   new LightBox();
   new Search();

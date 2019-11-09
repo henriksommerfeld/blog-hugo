@@ -5,10 +5,10 @@ import $ from 'jquery';
 export default class Hamburger {
     constructor() {
         console.log('%c 🍔 Hamburger module loaded', 'font-size:1.5em');
-        
+
         this.addCloseOnTouchEvent();
         this.addCloseOnEscEvent();
-        this.addCloseOnTouchMoveEvent();     
+        this.addCloseOnTouchMoveEvent();
     }
 
     addCloseOnEscEvent() {
@@ -47,7 +47,7 @@ export default class Hamburger {
         });
     }
 
-    closeMenu () {
+    closeMenu() {
         if ($('.hamburger-menu .bar').hasClass('animate')) {
             $('.hamburger-menu .bar').toggleClass('animate');
             let navElement = $('nav');
@@ -62,8 +62,8 @@ export default class Hamburger {
         let closedTime = new Date().getTime();
         setTimeout(() => {
             let currentTime = new Date().getTime();
-            if (element && element.hasClass('open') && element.hasClass('close') 
-                && currentTime-timeToWait >= closedTime) {
+            if (element && element.hasClass('open') && element.hasClass('close')
+                && currentTime - timeToWait >= closedTime) {
                 element.removeClass('open');
                 element.removeClass('close');
             }

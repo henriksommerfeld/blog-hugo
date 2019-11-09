@@ -26,7 +26,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --medium-color: var(--white);
   --light-color: #{$light-color};
 
-  --header-bg-color: #04396C;
+  --header-bg-color: #{$gray800};
   --header-color: var(--white);
   --header-text-shadow: #{$header-text-shadow};
   --footer-bg-color: #{$blue500};

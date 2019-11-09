@@ -1,54 +1,40 @@
 <script>
-    window.updateTheme = (theme)=> {        
-        if (theme === 'light' || theme === 'dark') {
-            const darkStyles = document.querySelectorAll("link[data-theme=dark]");
-            const lightStyles = document.querySelectorAll("link[data-theme=light]");
+    window.updateTheme = (theme) => {
+        if (!theme === 'light' || !theme === 'dark')
+            return;
 
-            if (theme === 'dark') {
-                console.log('🌙 applying dark theme');
-                lightStyles.forEach(link => {
-                    link.media = 'not all';
-                    link.disabled = true;
-                });
-                darkStyles.forEach(link => {
-                    link.media = 'all';
-                    link.disabled = false;
-                });
-            }
-            else {
-                console.log('🌞 applying light theme');
-                darkStyles.forEach(link => {
-                    link.media = 'not all';
-                    link.disabled = true;
-                });
-                lightStyles.forEach(link => {
-                    link.media = 'all';
-                    link.disabled = false;
-                });
-            }
-        }
-        else {
-            console.log('🌗 applying auto theme');
-            const autoDarkMedia = '(prefers-color-scheme: dark)';
-            const autoLightMedia = '(prefers-color-scheme: no-preference), (prefers-color-scheme: light)';
+        const darkStyles = document.querySelectorAll("link[data-theme=dark]");
+        const lightStyles = document.querySelectorAll("link[data-theme=light]");
 
-            const darkStyles = document.querySelectorAll("link[data-theme=dark]");
-            const lightStyles = document.querySelectorAll("link[data-theme=light]");
-
+        if (theme === 'dark') {
+            console.info('🌙 Setting dark mode');
             darkStyles.forEach(link => {
-                link.media = autoDarkMedia;
+                link.media = 'all';
                 link.disabled = false;
             });
             lightStyles.forEach(link => {
-                link.media = autoLightMedia;
+                link.media = 'not all';
+                link.disabled = true;
+            });
+        }
+        else {
+            console.info('🌞 Setting light mode');
+
+            darkStyles.forEach(link => {
+                link.media = 'not all';
+                link.disabled = true;
+            });
+            lightStyles.forEach(link => {
+                link.media = 'all';
                 link.disabled = false;
             });
         }
     }
-    window.addEventListener('storage', event => {
-        const theme = window.localStorage.getItem('theme') || 'auto';
-        window.updateTheme(theme);
-        document.getElementById(`theme-${theme}`).checked = true;
-    });
-    console.log('%c 🌞 🌗 🌙 Light/Dark switcher active', 'font-size:1.5em');
+
+    const savedTheme = window.localStorage.getItem('theme');
+    if (savedTheme !== 'light' || savedTheme !== 'dark') {
+        const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const theme = darkModePreferredQuery.matches ? 'dark' : 'light';
+        window.localStorage.setItem('theme', theme);
+    }
 </script>
