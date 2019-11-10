@@ -30,11 +30,15 @@
             });
         }
     }
-
-    const savedTheme = window.localStorage.getItem('theme');
-    if (savedTheme !== 'light' || savedTheme !== 'dark') {
-        const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const theme = darkModePreferredQuery.matches ? 'dark' : 'light';
-        window.localStorage.setItem('theme', theme);
-    }
+    
+    (function() {
+        let theme = window.localStorage.getItem('theme');
+        if (theme !== 'light' &&  theme !== 'dark') {
+            const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            theme = darkModePreferredQuery.matches ? 'dark' : 'light';
+            window.localStorage.setItem('theme', theme);
+        } else {
+            window.updateTheme(theme);
+        }    
+    }());
 </script>
