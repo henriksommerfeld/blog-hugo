@@ -1,0 +1,22 @@
+<div class="theme-switcher" aria-hidden="true">
+    <script>
+        const handleClick = (element) => {
+            const theme = element.checked ? 'light' : 'dark';
+            window.localStorage.setItem('theme', theme);
+            window.updateTheme(theme);
+        }
+    </script>
+    <div class="switch">
+        <input type="checkbox" name="toggle" id="theme-switcer-indicator" onclick="handleClick(this)" checked>
+        <label for="theme-switcer-indicator"><i></i></label>
+        <span></span> 
+    </div>
+</div>
+<script>
+    (function() {
+        const theme = window.localStorage.getItem('theme');
+        if (theme === 'dark') {
+            document.getElementById('theme-switcer-indicator').checked = false;
+        }
+    }());
+</script>

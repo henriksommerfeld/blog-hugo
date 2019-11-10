@@ -1,27 +1,30 @@
 code
     word-wrap: break-word
-    font-family: 'Courier New', 'Courier', monospace, serif        
+    font-family: Consolas, 'Courier New', 'Courier', monospace, serif
 
-p code
-    padding: 2px 4px;
-    border-radius: 3px;
-
-    background: darken(white, 2%);
-    border: 1px solid darken(white, 12%);
-    white-space: pre-wrap;
+p, li
+    code
+        padding: 0 4px
+        border-radius: $border-radius
+        background: var(--inline-code-bg-color)
+        border: 1px solid var(--inline-code-border-color)
+        white-space: pre-wrap
 
 pre
     overflow: auto
     padding: 1.1em
     font-size: 1rem
-    background-color: darken(white, 8%)
-    color: $text-color
-    border-left: 4px solid $light-blue
+    background-color: var(--highlight-bg-color)
+    color: var(--highlight-color)
+    border-left: 4px solid var(--accent-color)
     border-radius: $border-radius
+    line-height: 1.3em
     code
         word-wrap: normal
         text-shadow: none
         color: unset
+        background-color: unset
+        border: unset
         &::selection
-            background: $orange
+            background: var(--highlight-selection-color)
             text-shadow: none

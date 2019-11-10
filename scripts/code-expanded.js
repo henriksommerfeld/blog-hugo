@@ -19,14 +19,15 @@ export default class CodeExpanded {
   }
 
   addExpander() {
-    $(".highlight").each(function() {
-      var expanderMarkup =
+    $(".highlight").each(function () {
+      const expanderMarkup =
         '<div class="code-expanded-controls"><a title="Expand" aria-expanded="false" href="javascript:void(\'Expand/collapse code view\')"><i class="fa fa-expand"></i></a></div>';
-      var highlightElement = $(this);
-      var codeElement = highlightElement.find("code:first");
+      const highlightElement = $(this);
+      const codeElement = highlightElement.find("code:first");
       codeElement.attr("tabindex", 0);
-      var code = codeElement.text();
-      var lines = code.split("\n");
+      const code = codeElement.text();
+      const lines = code.split("\n");
+
       if (lines.length > 4) {
         highlightElement.prepend(expanderMarkup);
         highlightElement
@@ -39,8 +40,12 @@ export default class CodeExpanded {
 
   addExpanderOpenEvent() {
     $("#content").on("click", ".code-expanded-controls a", evt => {
-      let codeToExpand = $(evt.target).closest(".highlight");
-      let clonedElement = codeToExpand.clone();
+      const scrollTop = $(window).scrollTop();
+      const codeToExpand = $(evt.target).closest(".highlight");
+      const topOffset = $(codeToExpand).offset().top + ($(codeToExpand).outerHeight() / 2) - scrollTop;
+      const leftOffset = $(codeToExpand).offset().left + ($(codeToExpand).outerWidth() / 2);
+      const clonedElement = codeToExpand.clone();
+
       clonedElement
         .find(".fa-expand")
         .addClass("fa-compress")
@@ -49,9 +54,10 @@ export default class CodeExpanded {
         .find("a")
         .attr("aria-expanded", true)
         .attr("title", "Close (Esc)");
+      $('body').addClass('modal-open');
       $("#code-placeholder").html(clonedElement);
       $("#code-placeholder code:first").focus();
-      $("#page-wrapper").addClass("blur");
+      $("#code-container-inner").css('transform-origin', leftOffset + 'px ' + topOffset + 'px');
       $("#code-container, #code-container-inner")
         .removeClass("close")
         .addClass("open");
@@ -66,9 +72,8 @@ export default class CodeExpanded {
 
   addCloseOnEscEvent() {
     $(document).keyup(e => {
-      const escapeKeyCode = 27;
       if (
-        e.keyCode === escapeKeyCode &&
+        e.key === 'Escape' &&
         $("#code-container").hasClass("open")
       ) {
         this.closeExpandedView();
@@ -77,9 +82,9 @@ export default class CodeExpanded {
   }
 
   closeExpandedView() {
-    $("#page-wrapper").removeClass("blur");
     $("#code-container, #code-container-inner")
       .removeClass("open")
       .addClass("close");
+    $('body').removeClass('modal-open');
   }
 }

@@ -1,7 +1,7 @@
 #page-footer
     padding: $default-spacing
-    background-color: $light-blue
-    color: white
+    background-color: var(--footer-bg-color)
+    color: var(--white)
     text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2)
     font-size: 1.2rem
     .footer-content
@@ -15,20 +15,20 @@
             justify-content: center
             a
                 margin-left: $default-spacing
-                margin-right: $default-spacing    
-          
+                margin-right: $default-spacing
+
     .footer-text
         display: flex
 
     a, a:link, a:visited
         outline: none
-        color: white
+        color: var(--white)
         text-decoration: none
         text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2)
         &:hover, &:focus
-            text-shadow: 0 0 2px transparentize(black, 0.5), 0 0 30px white
+            text-shadow: 0 0 2px transparentize(black, 0.5), 0 0 30px var(--white)
     .fa-arrow-circle-up
-        font-size: 1.8rem    
+        font-size: 1.8rem
         padding-left: $default-spacing
     .fa-github
         font-size: 1.8rem

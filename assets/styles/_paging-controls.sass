@@ -1,27 +1,25 @@
-$paging-bg-color: #eee
-
 .page-numbers
     cursor: default
-    padding: 0.3em 0.9em 0.4em 0.9em
+    padding: 0.3em 0.9em 0.3em 0.9em
     margin: 1em 0.5em
     width: auto
     min-width: 2em
     display: none
     align-items: baseline
     border-radius: $border-radius
-    background: $paging-bg-color
-    border: 1px solid darken($paging-bg-color, 8)
-    color: #000
+    background: var(--paging-bg-color)
+    border: 1px solid var(--paging-border-color)
+    color: var(--color)
     transition: all 200ms ease, margin 150ms ease
-    box-shadow: 0 5px 10px transparentize(#000, 0.92)
+    box-shadow: 0 2px 6px var(--paging-box-shadow-color)
     &:hover:after
         width: initial
         display: initial
-        background: none        
+        background: none
     &.current
-        background: $medium-blue
-        border-color: $medium-blue
-        color: #fff
+        background: var(--paging-currnt-bg-color)
+        border-color: var(--paging-currnt-bg-color)
+        color: var(--paging-current-color)
         box-shadow: none
     &.dots
         border: 1px solid transparent
@@ -58,13 +56,16 @@ $paging-bg-color: #eee
 
 a.page-numbers
     &:link, &:visited
-        color: lighten(#000, 30)
+        color: var(--paging-color)
+        text-shadow: 0 0 1px var(--paging-text-shadow)
     &:focus, &:active, &:hover
         cursor: pointer
         box-shadow: none
-        text-shadow: 0 0 1px darken($paging-bg-color, 30)
-        background-color: darken($paging-bg-color, 1)
-        border-color: darken($paging-bg-color, 26)
+        background-color: var(--paging-focus-bg-color)
+        color: var(--paging-focus-color)
+        text-shadow: 0 0 1px var(--paging-text-shadow)
+    &:focus
+        border-color: var(--paging-button-border-color)
 
 a.page-numbers:hover:after, a.page-numbers:focus:after, a.page-numbers:active:after
     width: initial
@@ -94,7 +95,7 @@ a.page-numbers:hover:after, a.page-numbers:focus:after, a.page-numbers:active:af
     justify-content: flex-start
     .page-numbers
         display: inline-flex
-    
+
 @media (max-width: 22em)
     .paging-controls.has-prev-true.has-next-false.has-dots-true
         .page-numbers:not(.newer)

@@ -3,7 +3,13 @@ $lightbox-close-speed: 500ms
 $background-animation-speed: 300ms
 $spinner-diameter: 60px
 $spinner-thickness: 3px
-$spinner-color: #0c5aa6
+
+#lightbox-loading-container
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
 
 #lightbox-loading
     display: flex
@@ -11,7 +17,7 @@ $spinner-color: #0c5aa6
     align-items: center
     align-self: center
     position: relative
-    background: white
+    background: var(--spinner-bg-color)
     box-shadow: 0 0 15px 5px rgba(0,0,0,0.5)
     opacity: 1
     border-radius: 100%
@@ -19,7 +25,7 @@ $spinner-color: #0c5aa6
     height: $spinner-diameter*1.5
     cursor: pointer
     transition: all $background-animation-speed ease-in-out
-    &.close        
+    &.close
         animation: overlayClose $background-animation-speed ease-in-out forwards
 
 .spinner
@@ -29,13 +35,13 @@ $spinner-color: #0c5aa6
     display: flex
     align-items: center
     justify-content: center
-    &::before 
+    &::before
         content: ""
         display: block
         height: 100%
         width: 100%
         animation: rotation 1s linear infinite
-        border: $spinner-thickness solid $spinner-color
+        border: $spinner-thickness solid var(--spinner-color)
         border-top-color: transparent
         border-radius: 100%
         background: transparent
@@ -51,40 +57,40 @@ $spinner-color: #0c5aa6
     height: 100%
     opacity: 0
     visibility: hidden
+    backface-visibility: hidden
     &.open
-        opacity: 1
-        visibility: visible
+        @include modal-open
     &.close
-        visibility: hidden
-        opacity: 0
-        animation: lightboxClose $lightbox-close-speed ease-in-out forwards
-    #lightbox
-        position: fixed
-        width: 100%
-        height: 100%
-        display: flex
-        justify-content: center
-        align-items: center
-        overflow: hidden
-        padding: 0
-        margin: 0
-        opacity: 0
-        visibility: hidden
-        &.open
-            transform-origin: 50% -10% scale(0)
-            visibility: visible
+        @include modal-close
+
+#lightbox
+    position: fixed
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    padding: 0
+    margin: 0
+    transition: transform 300ms ease-in-out
+    @media screen and (prefers-reduced-motion: reduce)
+        transition: opacity 300ms ease-in-out
+    &.open
+        transform: scale(1)
+        @media screen and (prefers-reduced-motion: reduce)
             opacity: 1
-            animation: lightboxOpen $lightbox-open-speed ease-in-out forwards
-        &.close
-            transform-origin: 50% 50% scale(1)
-            visibility: hidden
+            transform: none
+    &.close
+        transform: scale(0)
+        @media screen and (prefers-reduced-motion: reduce)
             opacity: 0
-            animation: lightboxClose $lightbox-close-speed ease-in-out forwards
-        img
-            max-width: 100vw
-            max-height: 100vh
-            cursor: pointer
-            box-shadow: 0 4px 15px 5px rgba(0,0,0,0.6)
+            transform: none
+    img
+        max-width: 100vw
+        max-height: 100vh
+        cursor: pointer
+        box-shadow: 0 4px 15px 5px rgba(0,0,0,0.6)
 
 @media (min-width: 800px) and (min-height: 800px)
     #lightbox
@@ -93,35 +99,8 @@ $spinner-color: #0c5aa6
             max-width: calc(100vw - 50px)
             max-height: calc(100vh - 30px)
 
-@keyframes lightboxOpen
-    0%
-        transform: translateY(-100%) scale(0.001)
-        visibility: visible
-        opacity: 0
-    80%
-        opacity: 1
-    95%
-        transform: scale(1.001)
-    100%
-        transform: translateY(0%) scale(1)
-
-@keyframes lightboxClose
-    0%
-        visibility: visible
-        opacity: 1
-        transform: translateY(0%) scale(1)
-    20%
-        transform: translateY(-1%) scale(1.001)
-    80% 
-        opacity: 0.7
-    99%
-        transform: translateY(100%) scale(0.0001)
-    100%
-        opacity: 0
-        visibility: hidden
-
 @keyframes rotation
-  from
-    transform: rotate(0deg)
-  to
-    transform: rotate(359deg)
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(359deg)

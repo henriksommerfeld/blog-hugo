@@ -3,8 +3,7 @@ $bar-height: 4px
 $bar-spacing: $bar-height * 2
 $animation-speed: 150ms
 
-.hamburger-menu 
-    margin: auto
+.hamburger-menu
     width: $bar-width
     height: $bar-height + $bar-spacing*2
     cursor: pointer
@@ -19,10 +18,10 @@ $animation-speed: 150ms
 .bar
     position: relative
     transform: translateY($bar-spacing)
-    background: rgba(255, 255, 255, 1)
-    
+    background: var(--white)
+
     &.animate
-        background: rgba(255, 255, 255, 0)
+        background: transparent
 
 .hamburger-trigger
     display: flex
@@ -31,31 +30,26 @@ $animation-speed: 150ms
     align-content: center
     align-items: center
     padding: $default-spacing
-    outline: none  
+    outline: none
     border-bottom: transparent solid 1px
     transition: border 400ms ease
     font-size: 1.1rem
     letter-spacing: .1rem
-    &:hover, &:active
-      text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
-      background: none
+    &:hover, &:active, &:focus
+        text-shadow: 0 0 2px var(--header-text-shadow), 0 0 30px var(--white)
+        background: none
     &:focus
-      text-shadow: 0 0 2px transparentize($dark-blue, 0.5), 0 0 30px white
-      background: none
-      color: white
+        color: var(--white)
     &:hover, &:active
-      .bar, .bar::before, .bar::after
-        box-shadow: 0 0 30px transparentize(white, 0.4)
-
-    @media (min-width: $medium-size-min-width)
-        display: none 
+        .bar, .bar::before, .bar::after
+            box-shadow: 0 0 30px var(--hamburger-shadow-color)
 
 .bar::before
     content: ""
     position: absolute
     left: 0
     bottom: $bar-spacing
-    background: rgba(255, 255, 255, 1)
+    background: var(--white)
     transition: bottom $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1), transform $animation-speed cubic-bezier(0.23, 1, 0.32, 1)
 
 .bar::after
@@ -63,7 +57,7 @@ $animation-speed: 150ms
     position: absolute
     left: 0
     top: $bar-spacing
-    background: rgba(255, 255, 255, 1)
+    background: var(--white)
     transition: top $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1), transform $animation-speed cubic-bezier(0.23, 1, 0.32, 1)
 
 .bar.animate
