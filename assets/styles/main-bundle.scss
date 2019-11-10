@@ -36,7 +36,7 @@ body {
 }
 
 * {
-  transition: background-color 1s ease;
+  transition: background-color 1s ease, border-color 1s ease;
 }
 // Box sizing partial styles:
 // Apply a natural box layout model to all elements
@@ -76,6 +76,7 @@ html {
   flex-grow: 1;
   align-items: center;
   padding-bottom: $default-spacing;
+  padding-top: $default-spacing;
 }
 
 .body-max-width {

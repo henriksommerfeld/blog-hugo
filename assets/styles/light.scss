@@ -14,7 +14,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
 :root {
   --white: #{$white};
   --color: black;
-  --accent-color: #{$orange600};
+  --accent-color: #{$orange500};
   --color-published: #{$gray700};
   --background-color: #{$background-color};
   --blockquote-color: #{$gray600};
@@ -22,7 +22,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --taxonomy-heading-color: var(--accent-color);
   --taxonomy-icon-color: #{$gray600};
   
-  --widget-bg-color: #0c5aa6;
+  --widget-bg-color: #{$blue700};
   --medium-color: var(--white);
   --light-color: #{$light-color};
 
@@ -62,7 +62,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --hamburger-shadow-color: #{$hamburger-shadow-color};
 
   --mobile-nav-bg-color: #{$gray300};
-  --mobile-nav-border-color: #{$gray800};
+  --mobile-nav-border-color: #{$gray700};
   --mobile-nav-bg-hover-color: #{transparentize($blue800, 0.9)};
   --mobile-nav-color: #{$gray700};
   --mobile-nav-box-shadow-color: #{transparentize(black, 0.5)};
