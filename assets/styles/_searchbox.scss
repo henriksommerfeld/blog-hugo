@@ -131,6 +131,7 @@ $search-min-wide: 150em;
     ol.result-list {
         margin: 0;
         overflow: auto;
+        overflow: overlay;
         width: 100%;
         color: var(--search-output-color);
         list-style-position: outside;
