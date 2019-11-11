@@ -1,22 +1,18 @@
 'use strict';
 
-import $ from 'jquery';
-
 export default class Hamburger {
     constructor() {
         console.log('%c 🍔 Hamburger module loaded', 'font-size:1.5em');
 
         this.addCloseOnTouchEvent();
         this.addCloseOnEscEvent();
-        this.addCloseOnTouchMoveEvent();
     }
 
     addCloseOnEscEvent() {
-        $(document).keyup((e) => {
-            const escapeKeyCode = 27;
-            if (e.keyCode === escapeKeyCode) {
-                const activeElement = $(e.target);
-                if (activeElement.hasClass('hamburger-trigger') || activeElement.length) {
+        document.addEventListener('keyup', (e) => {
+            if (e.key === 'Escape') {
+                const activeElement = e.target;
+                if (activeElement.classList.contains('hamburger-trigger') || activeElement.length) {
                     this.closeMenu();
                 }
             }
@@ -24,34 +20,37 @@ export default class Hamburger {
     }
 
     addCloseOnTouchEvent() {
-        $('body').on('click touch', '.hamburger-trigger', () => {
-            $('.hamburger-menu .bar').toggleClass('animate');
-            let navElement = $('nav');
-            if (navElement.hasClass('open') && navElement.hasClass('close')) {
-                navElement.removeClass('close');
+        const closeMenu = () => {
+            document.querySelector('.hamburger-menu .bar').classList.toggle('animate');
+            let navElement = document.querySelector('nav');
+            if (navElement.classList.contains('open') && navElement.classList.contains('close')) {
+                navElement.classList.remove('close');
                 this.removeOpenCloseClassesDelayed(navElement);
             }
-            else if (navElement.hasClass('open')) {
-                navElement.addClass('close');
+            else if (navElement.classList.contains('open')) {
+                navElement.classList.add('close');
                 this.removeOpenCloseClassesDelayed(navElement);
             }
             else {
-                navElement.addClass('open');
+                navElement.classList.add('open');
             }
-        });
-    }
 
-    addCloseOnTouchMoveEvent() {
-        $('body').on('click touchmove', '.body, nav.open>a', () => {
-            this.closeMenu();
-        });
+            if (navElement.classList.contains("open")) {
+                navElement.querySelectorAll("a").forEach(element => {
+                    element.addEventListener('click', this.closeMenu);
+                    element.addEventListener('touchmove', this.closeMenu);
+                });
+            }
+        };
+        document.querySelector('.hamburger-trigger').addEventListener('click', closeMenu);
+        document.querySelector('.hamburger-trigger').addEventListener('touch', closeMenu);
     }
 
     closeMenu() {
-        if ($('.hamburger-menu .bar').hasClass('animate')) {
-            $('.hamburger-menu .bar').toggleClass('animate');
-            let navElement = $('nav');
-            navElement.addClass('close');
+        if (document.querySelector('.hamburger-menu .bar').classList.contains('animate')) {
+            document.querySelector('.hamburger-menu .bar').classList.toggle('animate');
+            let navElement = document.querySelector('nav');
+            navElement.classList.add('close');
             this.removeOpenCloseClassesDelayed(navElement);
         }
     }
@@ -62,10 +61,10 @@ export default class Hamburger {
         let closedTime = new Date().getTime();
         setTimeout(() => {
             let currentTime = new Date().getTime();
-            if (element && element.hasClass('open') && element.hasClass('close')
+            if (element && element.classList.contains('open') && element.classList.contains('close')
                 && currentTime - timeToWait >= closedTime) {
-                element.removeClass('open');
-                element.removeClass('close');
+                element.classList.remove('open');
+                element.classList.remove('close');
             }
         }, timeToWait);
     }
