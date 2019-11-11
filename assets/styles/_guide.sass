@@ -1,8 +1,9 @@
-$key-width: 50px;
-$key-width-print: 40px;
-$keycap-width-diff: 14px;
-$medium-extra-width: 20px;
-$large-extra-width: 100px;
+@import './_colors'
+$key-width: 50px
+$key-width-print: 40px
+$keycap-width-diff: 14px
+$medium-extra-width: 20px
+$large-extra-width: 100px
 
 .guide
     main
@@ -46,6 +47,7 @@ $large-extra-width: 100px;
         padding-top: 0.2em
     .key
         font-family: 'Average Sans', sans-serif
+        color: $gray800
         width: $key-width
         @media print
             width: $key-width-print
