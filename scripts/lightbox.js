@@ -36,10 +36,28 @@ export default class LightBox {
     }
 
     addOpenEvent() {
-        $('body').on('click', 'figure > a', (e) => {
-            e.preventDefault();
+        const openLightbox = event => {
+            event.preventDefault();
             this.cancelShowImage = false;
-            const imageElement = $(e.currentTarget).find('img');
+            const imageElement = event.currentTarget.querySelector('img');
+            const imageUrl = event.currentTarget.href;
+            const topOffset = imageElement.offsetTop + (imageElement.clientHeight / 2) - window.pageYOffset;
+            const leftOffset = imageElement.offsetLeft + (imageElement.clientWidth / 2);
+
+
+
+        };
+
+
+        const figureAnchors = document.querySelectorAll('figure > a');
+        figureAnchors.forEach(element => {
+            element.addEventListener('click', openLightbox);
+        });
+
+        $('body').on('click', 'figure > a', (e) => {
+            // e.preventDefault();
+            // this.cancelShowImage = false;
+            // const imageElement = $(e.currentTarget).find('img');
             const scrollTop = $(window).scrollTop();
             const topOffset = $(imageElement).offset().top + ($(imageElement).outerHeight() / 2) - scrollTop;
             const leftOffset = $(imageElement).offset().left + ($(imageElement).outerWidth() / 2);
