@@ -2,6 +2,9 @@
 
 export default class LightBox {
     constructor() {
+        const hasLightbox = document.querySelector('#lightbox-container');
+        if (!hasLightbox) return;
+
         console.log('%c 🖼️ Lightbox module loaded', 'font-size:1.5em');
 
         this.cancelShowImage = false;

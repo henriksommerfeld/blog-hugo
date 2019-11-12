@@ -2,6 +2,9 @@
 
 export default class CodeExpanded {
   constructor() {
+    const hasCode = document.querySelector('#code-container');
+        if (!hasCode) return;
+
     console.log("%c 👨‍💻 Code expanded module loaded", "font-size:1.5em");
 
     if (

@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", function() {
   new LightBox();
   new Search();
   new CodeExpanded();
-  new EmailCaptcha();
+  //new EmailCaptcha();
 });
