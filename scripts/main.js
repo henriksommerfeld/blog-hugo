@@ -6,7 +6,6 @@ import Hamburger from './hamburger';
 import LightBox from './lightbox';
 import Search from './search';
 import CodeExpanded from './code-expanded';
-import EmailCaptcha from './e-mail'
 
 document.addEventListener("DOMContentLoaded", function() {
   try {
@@ -24,5 +23,4 @@ document.addEventListener("DOMContentLoaded", function() {
   new LightBox();
   new Search();
   new CodeExpanded();
-  //new EmailCaptcha();
 });
