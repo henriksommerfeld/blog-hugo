@@ -181,8 +181,8 @@ $search-min-wide: 150em;
     width: auto;
     margin: 0;
     #search-output.index-loading:not(.index-loaded):not(.search-performed) & {
-        display: block;
-
+        display: flex;
+        align-items: center;
     }
 
 }

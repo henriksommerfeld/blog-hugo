@@ -18,11 +18,12 @@
     "cypress": "^3.6.1",
     "del-cli": "^3.0.0",
     "onchange": "6.1.0",
+    "serve": "^11.2.0",
     "start-server-and-test": "^1.10.6"
   },
   "scripts": {
-    "clean": "npx del -f static/*.js",
-    "clean:public": "npx del -rf public",
+    "clean": "del -f static/*.js",
+    "clean:public": "del -rf public",
     "js:build": "browserify scripts/main.js --debug -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
     "js:build:prod": "browserify scripts/main.js -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
     "js:watch": "onchange scripts -- npm run js:build && npm run index",
@@ -33,10 +34,10 @@
     "index": "node build/index-search.js static/search-index.json",
     "start": "npm run js:build && concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
     "build": "npm run build:assets && npm run clean:public && hugo version && hugo && npm run index:prod",
-    "test": "npx cypress run",
-    "test:open": "npx cypress open",
+    "test": "cypress run",
+    "test:open": "cypress open",
     "cy": "start-server-and-test start http://localhost:1313 test:open",
-    "serve": "npx serve public -l 1313",
+    "serve": "serve public -l 1313",
     "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
   },
   "repository": {

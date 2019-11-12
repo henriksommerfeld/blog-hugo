@@ -1,11 +1,9 @@
 'use strict';
 
-import $ from 'jquery';
 import lunr from 'lunr';
 
 export default class Search {
     constructor() {
-        console.log('%c 🔍 Search module loaded', 'font-size:1.5em');
 
         this.index = null;
         this.store = null;
@@ -18,38 +16,46 @@ export default class Search {
         this.addOpenDialogEvent();
         this.addCloseDialogEvent();
         this.addSearchClickEvent();
-        this.addKeyUpEvent();
+        this.addKeyDownEvent();
         this.addEscKeyEvent();
     }
 
     addOpenDialogEvent() {
-        $('body').on('click', 'a.search', (e) => {
+        const searchLink = document.querySelector('a.search');
+        searchLink.addEventListener('click', (e) => {
+            e.preventDefault();
             this.openSearchDialog();
-            return false;
         });
     }
 
     addCloseDialogEvent() {
-        $('body').on('click touchstart', '#searchbox .close-search', (e) => {
+        const closeEvent = (e) => {
             this.closeModal();
             this.resetFocus();
-        });
+        };
+        const closeButton = document.querySelector('#searchbox .close-search');
+        
+        closeButton.addEventListener('click', closeEvent);
+        closeButton.addEventListener('touchstart', closeEvent);
     }
 
     addSearchClickEvent() {
-        $('body').on('click touchstart', '#searchbox .fa-search', (e) => {
-            this.search($('#search-input').val());
-        });
+        const doSearch = (e) => {
+            const searchPhrase = document.getElementById('search-input').value;
+            this.search(searchPhrase);
+        };
+        const searchButton = document.querySelector('#searchbox .fa-search');
+        searchButton.addEventListener('click', doSearch);
+        searchButton.addEventListener('touchstart', doSearch);
     }
 
-    addKeyUpEvent() {
-        $('body').on('keyup', '#search-input', (e) => {
-            this.keyUpInSearchbox(e);
-        });
+    addKeyDownEvent() {
+        const searchbox = document.getElementById('search-input');
+        searchbox.addEventListener('keyup', e => this.keyPressedInSearchbox(e));
     }
 
     addEscKeyEvent() {
-        $(document).keyup((e) => {
+        $(document).keydown((e) => {
             if (e.key === 'Escape' && $('#searchbox-container').hasClass('open')) {
                 this.closeModal();
                 this.resetFocus();
@@ -57,31 +63,26 @@ export default class Search {
         });
     }
 
-    downloadIndex() {
-        if (this.index) {
-            return $.Deferred().resolve().promise();
-        }
-        else {
-            this.indexLoading = true;
-            return $.getJSON('/search-index.json', (response) => {
-                this.index = lunr.Index.load(response.index);
-                this.store = response.store;
-            });
-        }
+    handleFetchResponse(response) {
+        this.indexLoadFailed = !response.ok;
+        this.indexLoading = false;
+        return response.ok && response.json ? response.json() : this.index;
     }
 
-    ensureIndex() {
-        this.downloadIndex().done(() => {
-            if (this.indexLoadingShowed && !this.indexLoadedShowed) {
-                this.indexLoadedShowed = true;
-                this.showIndexLoadedMessage();
-            }
-        }).fail((error) => {
-            this.indexLoadFailed = true;
+    fetchIndex() {
+        return fetch('/search-index.json')
+          .then(res => this.handleFetchResponse(res))
+          .catch(res => this.handleFetchResponse(res));
+    }
 
-        }).always(() => {
-            this.indexLoading = false;
-        });
+    downloadIndex() {
+        if (this.index) return;        
+        
+        this.indexLoading = true;
+        this.fetchIndex().then(response => {
+            this.index = lunr.Index.load(response.index);
+            this.store = response.store;
+        });        
     }
 
     showSearchError(errorText) {
@@ -119,12 +120,10 @@ export default class Search {
         $('#search-output').addClass('search-performed');
 
         if (result && result.length > 0) {
-            console.log(`=== Search results for ${phrase} === \n\n`);
             try {
                 $('#search-output').addClass('has-hits');
                 $('#number-of-hits-message').text(`Search phrase matching ${result.length} pages`);
                 $.each(result, (index, value) => {
-                    console.log(value.ref);
                     let hit = this.store[value.ref];
                     let dateHtml = `<div class="entry-meta">
                     <time class="published" datetime='${hit.dateiso}'>${hit.dateformatted}</time>
@@ -136,7 +135,6 @@ export default class Search {
             catch (error) {
                 this.showIndexLoadFailed();
             }
-            console.log(`=== End of search results for ${phrase} === \n\n`);
         }
     }
 
@@ -150,40 +148,56 @@ export default class Search {
         $('#search-output').removeClass('index-loading').addClass('index-loaded');
     };
 
-    keyUpInSearchbox(e) {
+    keyPressedInSearchbox(e) {
         const currentTime = Date.now();
         if (currentTime - 100 > this.lastSearch) {
             this.lastSearch = currentTime;
-            let phrase = $(e.target).val().trim();
-            this.search(phrase);
+            const phrase = e.target.value.trim();
+            
+            if (phrase.length > 1 || phrase === '*')
+                this.search(phrase);
+            else {
+                document.querySelector('.result-list').innerHTML = '';
+            }
 
-            const enterKeyCode = 13;
-            if (e.keyCode === enterKeyCode) {
-                $('#search-output .result-list li a').first().focus();
+            if (e.key === 'Enter' || e.key === 'DownArrow') {
+                const hits = document.querySelectorAll('#search-output .result-list li a');
+                hits && hits.length > 0 && hits[0].focus();
             }
         }
     }
 
     resetFocus() {
-        $('#search-input').blur();
-        $('a.search').focus();
+        document.getElementById('search-input').blur();
+        document.querySelector('a.search').focus();
     }
 
     closeModal() {
-        $('#searchbox, #searchbox-container')
-            .removeClass('open').addClass('close');
-        $('#search-output').removeClass('search-performed', 'has-hits', 'has-error', 'index-loading', 'index-loaded');
-        $('body').removeClass('modal-open');
+        const containers = document.querySelectorAll('#searchbox, #searchbox-container');
+        containers.forEach(element => {
+            element.classList.remove('open');
+            element.classList.add('close');
+        });
+        const searchResultsElement = document.getElementById('search-output');
+        ['search-performed', 'has-hits', 'has-error', 'index-loading', 'index-loaded'].forEach(className => {
+            searchResultsElement.classList.remove(className);
+        });
+        document.querySelector('body').classList.remove('modal-open');
 
         return false;
     }
 
     openSearchDialog() {
-        $('body').addClass('modal-open');
-        $('#searchbox-container, #searchbox').removeClass('close').addClass('open');
-        $('#search-input').val('');
-        $('#search-input').focus();
+        document.querySelector('body').classList.add('modal-open');
+        const searchElements = document.querySelectorAll('#searchbox-container, #searchbox');
+        searchElements.forEach(element => {
+            element.classList.remove('close');
+            element.classList.add('open');
+        });
+        const searchInput = document.getElementById('search-input');
+        searchInput.value = '';
+        searchInput.focus();
         this.indexLoadFailed = false;
-        this.ensureIndex();
+        this.downloadIndex();
     }
 }
