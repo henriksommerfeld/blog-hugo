@@ -34,7 +34,7 @@ export default class Search {
             this.resetFocus();
         };
         const closeButton = document.querySelector('#searchbox .close-search');
-        
+
         closeButton.addEventListener('click', closeEvent);
         closeButton.addEventListener('touchstart', closeEvent);
     }
@@ -55,12 +55,15 @@ export default class Search {
     }
 
     addEscKeyEvent() {
-        $(document).keydown((e) => {
-            if (e.key === 'Escape' && $('#searchbox-container').hasClass('open')) {
-                this.closeModal();
-                this.resetFocus();
-            }
-        });
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+
+            if (!document.getElementById('searchbox-container').classList.contains('open'))
+                return;
+
+            this.closeModal();
+            this.resetFocus();
+        }); 44444448
     }
 
     handleFetchResponse(response) {
@@ -71,24 +74,26 @@ export default class Search {
 
     fetchIndex() {
         return fetch('/search-index.json')
-          .then(res => this.handleFetchResponse(res))
-          .catch(res => this.handleFetchResponse(res));
+            .then(res => this.handleFetchResponse(res))
+            .catch(res => this.handleFetchResponse(res));
     }
 
     downloadIndex() {
-        if (this.index) return;        
-        
+        if (this.index) return;
+
         this.indexLoading = true;
         this.fetchIndex().then(response => {
             this.index = lunr.Index.load(response.index);
             this.store = response.store;
-        });        
+        });
     }
 
     showSearchError(errorText) {
-        $('#search-output').removeClass('has-hits').addClass('has-error');
+        const searchOutput = document.getElementById('search-output');
+        searchOutput.classList.remove('has-hits');
+        searchOutput.classList.add('has-error');
         const errorHtml = `<img class="bitmoji" src="/images/oops.png" alt="oops"><p>${errorText}</p>`;
-        $('#no-results-message').html(errorHtml);
+        document.getElementById('no-results-message').innerHTML = errorHtml;
     }
 
     showIndexLoadFailed() {
@@ -98,10 +103,11 @@ export default class Search {
     }
 
     search(phrase) {
-        const resultContainer = $('#search-output ol');
-        $('#search-output .result-list li').remove();
-        $('#search-output').removeClass('close').removeClass('has-hits')
-        $('#search-output').removeClass('has-hits');
+        const resultContainer = document.querySelector('#search-output ol');
+        document.querySelector('#search-output .result-list').innerHTML = '';
+        const searchOutput = document.getElementById('search-output');
+        searchOutput.classList.remove('close');
+        searchOutput.classList.remove('has-hits');
 
         if (this.indexLoading && !this.indexLoadingShowed) {
             this.showIndexLoadingMessage();
@@ -115,21 +121,24 @@ export default class Search {
 
         const result = this.index.search(phrase);
 
-        $('#search-output').removeClass('index-not-loaded');
-        $('#search-output').removeClass('index-loaded');
-        $('#search-output').addClass('search-performed');
+        searchOutput.classList.remove('index-not-loaded');
+        searchOutput.classList.remove('index-loaded');
+        searchOutput.classList.add('search-performed');
 
         if (result && result.length > 0) {
             try {
-                $('#search-output').addClass('has-hits');
-                $('#number-of-hits-message').text(`Search phrase matching ${result.length} pages`);
-                $.each(result, (index, value) => {
-                    let hit = this.store[value.ref];
-                    let dateHtml = `<div class="entry-meta">
-                    <time class="published" datetime='${hit.dateiso}'>${hit.dateformatted}</time>
-                </div>`;
-                    let hitHtml = `<li><h2><a href='${value.ref}'>${hit.title}</a></h2>${dateHtml}<p>${hit.summary}</p></li>`;
-                    resultContainer.append(hitHtml);
+                searchOutput.classList.add('has-hits');
+                const numberOfHits = document.getElementById('number-of-hits-message');
+                numberOfHits.textContent = `Search phrase matching ${result.length} pages`;
+                result.forEach(value => {
+                    const hit = this.store[value.ref];
+                    const dateHtml = `<div class="entry-meta">
+                        <time class="published" datetime='${hit.dateiso}'>${hit.dateformatted}</time>
+                    </div>`;
+
+                    const li = document.createElement('li');
+                    li.innerHTML = `<h2><a href='${value.ref}'>${hit.title}</a></h2>${dateHtml}<p>${hit.summary}</p>`;
+                    resultContainer.appendChild(li);
                 });
             }
             catch (error) {
@@ -140,12 +149,13 @@ export default class Search {
 
     showIndexLoadingMessage() {
         this.indexLoadingShowed = true;
-        $('#search-output').addClass('index-loading');
+        document.getElementById('search-output').classList.add('index-loading');
     }
 
     showIndexLoadedMessage() {
         this.indexLoadedShowed = true;
-        $('#search-output').removeClass('index-loading').addClass('index-loaded');
+        document.getElementById('search-output').classList.remove('index-loading');
+        document.getElementById('search-output').classList.add('index-loaded');
     };
 
     keyPressedInSearchbox(e) {
@@ -153,7 +163,7 @@ export default class Search {
         if (currentTime - 100 > this.lastSearch) {
             this.lastSearch = currentTime;
             const phrase = e.target.value.trim();
-            
+
             if (phrase.length > 1 || phrase === '*')
                 this.search(phrase);
             else {
