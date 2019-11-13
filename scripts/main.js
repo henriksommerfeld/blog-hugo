@@ -1,15 +1,13 @@
 'use strict';
 
-import $ from 'jquery';
 import 'lazysizes';
 import ThemeSwitcher from './theme-switcher'
 import Hamburger from './hamburger';
 import LightBox from './lightbox';
 import Search from './search';
 import CodeExpanded from './code-expanded';
-import EmailCaptcha from './e-mail'
 
-$(() => {
+document.addEventListener("DOMContentLoaded", function() {
   try {
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     if (!isSafari) {
@@ -25,5 +23,4 @@ $(() => {
   new LightBox();
   new Search();
   new CodeExpanded();
-  new EmailCaptcha();
 });

@@ -22,7 +22,7 @@ export default class ThemeSwitcher {
             });
 
             window.addEventListener('storage', () => {
-                const theme = window.localStorage.getItem('theme');
+                let theme = window.localStorage.getItem('theme');
                 if (theme !== 'dark')
                     theme = 'light';
                 window.updateTheme(theme);
