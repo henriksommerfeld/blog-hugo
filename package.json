@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
-    "jquery": "3.4.1",
     "lazysizes": "^5.1.2",
     "lunr": "2.3.8"
   },
@@ -19,11 +18,12 @@
     "del-cli": "^3.0.0",
     "onchange": "6.1.0",
     "serve": "^11.2.0",
+    "shx": "^0.3.2",
     "start-server-and-test": "^1.10.6"
   },
   "scripts": {
-    "clean": "del -f static/*.js",
-    "clean:public": "del -rf public",
+    "clean": "shx rm -f static/*.js",
+    "clean:public": "shx rm -rf public",
     "js:build": "browserify scripts/main.js --debug -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
     "js:build:prod": "browserify scripts/main.js -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
     "js:watch": "onchange scripts -- npm run js:build && npm run index",
