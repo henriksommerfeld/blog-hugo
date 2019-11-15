@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: [Dark mode, CSS]
 summary: "So, I decided to implement dark mode on my website (to tackle parental leave boredom). I'll describe what I did and what I could have done differently in hindsight."
 description: "I decided to implement dark mode on my website. This is what I learned."
-draft: true
+draft: false
 ---
 
 {{<post-image image="jay-wennington-loAgTdeDcIU-unsplash.jpg" alt="Laptop on bed in dark room with bright white screen">}}
