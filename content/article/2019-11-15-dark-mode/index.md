@@ -1,5 +1,5 @@
 ---
-title: "Dark Mode Learnings"
+title: "Dark Mode Learnings 🌙"
 date: 2019-11-15T14:14:10+01:00
 url: "dark-mode-learnings"
 categories: ["Coding"]
