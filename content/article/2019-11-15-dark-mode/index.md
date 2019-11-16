@@ -34,7 +34,7 @@ Of course the web has evolved a bit since the Web's youth. The basic techniques 
     <figcaption><em>This shows how toggling between light and dark mode in Windows 10 changes the theme on my website as well. </em></figcaption>
 </figure>
 
-My starting point was the extensive blog post named [_Hello darkness, my old friend_][2]. I gives a background and describes an implementation that I pretty much followed. 
+My starting point was the extensive blog post named [_Hello darkness, my old friend_][2]. It gives a background and describes an implementation that I pretty much followed. 
 
 It uses a `light.css` and a `dark.css` which are conditionally loaded with media queries. These files define the same set of [CSS variables][1] that are then used in a `main.css`.
 
