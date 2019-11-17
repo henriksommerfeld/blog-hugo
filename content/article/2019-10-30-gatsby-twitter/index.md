@@ -6,6 +6,7 @@ categories: ["Coding"]
 tags: [GatsbyJS, JavaScript, TypeScript, NodeJS]
 summary: "I was rewriting a WordPress site in Gatsby that had embedded tweets using an embed script (WordPress plugin). The product owner (my wife), required the new site to also show her tweets. I didn’t like the idea of an embed script (that would slow down the site and spy on visitors), so I started to look into Gatsby source plugins."
 description: "Description of my local Gatsby Source Plugin for Twitter with linked source code."
+ogimage: "tweet-component-screenshot.png"
 draft: false
 ---
 

@@ -6,6 +6,7 @@ categories: ["Coding"]
 tags: [Progressive Web App, GatsbyJS]
 summary: "I recently built a new personal website/blog for my wife using GatsbyJS and I really enjoyed all the cool stuff you can do easily with available plugins. Since didn’t really have any idea about the disadvantages with Progressive Web Apps (PWA), I naively just installed the manifest and offline plugins and verified my success with Lighthouse. Boom, I had a PWA! 🎉"
 description: "My experiences of making a website a Progressive Web App. Not a good idea when it's truly a website rather than an app."
+ogimage: "wrong-way2-zXn-zUztOhU-unsplash.jpg"
 draft: false
 ---
 

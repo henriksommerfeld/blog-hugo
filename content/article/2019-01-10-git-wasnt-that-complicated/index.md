@@ -5,6 +5,7 @@ url: "git-wasnt-that-complicated"
 categories: ["Thoughts"]
 tags: []
 summary: "When I was about to quit my previous job for the job I have now, I mentioned a few things that I anticipated I would have to learn at the new job. One of the most obvious things was Git...."
+ogimage: "tomas-malik-1185809-unsplash_1500.jpg"
 draft: false
 ---
 {{<post-image image="tomas-malik-1185809-unsplash_1500.jpg" alt="Stopped car on Icelandic road from above">}}

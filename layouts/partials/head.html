@@ -19,9 +19,8 @@
     {{ if .Description }}
     <meta property="og:description" content="{{ .Description }}" />
     {{ end }}
+    {{ partial "meta-og-image.html" . }}
 
-    <meta property="og:image" content='{{ (print .Site.BaseURL "images/og-image.png") }}' />
-  
     <link rel="canonical" href="{{ .Permalink }}" />  
 
     <meta name="twitter:card" content="summary" />
