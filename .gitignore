@@ -13,3 +13,4 @@ assets/site-bundle.js*
 resources
 cypress/screenshots
 cypress/videos
+.DS_Store

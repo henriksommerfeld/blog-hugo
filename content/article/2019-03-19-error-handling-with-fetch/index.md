@@ -3,7 +3,7 @@ title: "Error Handling with Fetch (and custom React hook)"
 date: 2019-03-19T21:35:58+01:00
 url: "error-handling-with-fetch"
 categories: ["Coding"]
-tags: [JavaScript, React]
+tags: [JavaScript, ReactJS]
 summary: "One thing that has struck me javascript's fetch function is that it often looks so simple. When I see the same thing in a pull request, I'm not overly impressed. No, just because this works on a sunny day doesn't mean you're done. You need error handling as well!"
 ogimage: "david-kovalenko-414249-unsplash_1500.jpg"
 draft: false
