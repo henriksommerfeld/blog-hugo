@@ -1,3 +1,5 @@
+@import "./_notch-mixin"
+
 header
     background: var(--header-bg-color)
     display: flex
@@ -19,6 +21,7 @@ header
     max-width: $page-max-width
     z-index: 2
     perspective: 1000px
+    @include notch-padding
 
     @media (min-width: $medium-size-min-width)
         display: flex
@@ -75,6 +78,7 @@ nav
     transform: rotateX(-90deg)
     font-size: 1.1rem
     letter-spacing: .1rem
+    @include notch-padding
 
     @media (min-width: $small-size-min-width)
         flex-direction: row

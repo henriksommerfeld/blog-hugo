@@ -1,3 +1,5 @@
+@import "./_notch-mixin";
+
 $searchbox-breakpoint: 880px;
 $search-min-wide: 150em;
 
@@ -18,7 +20,7 @@ $search-min-wide: 150em;
     height: 100%;
     min-height: 100vh;
     padding-top: 1rem;
-    padding-bottom: 6rem;
+    @include notch-padding;
 
     @media (min-height: $searchbox-breakpoint) {
         padding-bottom: 0rem;
