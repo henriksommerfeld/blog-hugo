@@ -21,6 +21,7 @@
 @import "./_blockquote";
 @import "./_links";
 @import "./_theme-switcher";
+@import "./_notch-mixin";
 
 :root {
   color-scheme: light dark;
@@ -77,6 +78,7 @@ html {
   align-items: center;
   padding-bottom: $default-spacing;
   padding-top: $default-spacing;
+  @include notch-padding;
 }
 
 .body-max-width {
