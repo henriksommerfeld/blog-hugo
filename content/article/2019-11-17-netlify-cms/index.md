@@ -8,6 +8,7 @@ summary: "When I needed a CMS for a Gatsby site, my choice became Netlify CMS. I
 
 This was a personal website made for a non-technical person (why I needed a CMS at all in the first place) who associates websites with WordPress. She, my wife, is fairly tech savvy, but wouldn’t accept editing markdown or other “complicated things” 🙃 My hypothesis was that I could somewhat compensate for unintuitive features with some “on-site training”."
 description: "When I needed a CMS for a Gatsby site, my choice became Netlify CMS. I’ll talk about my criteria, pros and cons."
+ogimage: "hero-image.png"
 draft: false
 ---
 
