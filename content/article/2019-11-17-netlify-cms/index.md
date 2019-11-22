@@ -64,11 +64,11 @@ Pages and their fields can be configured in a YAML file, see [the documentation 
 
 ### Bad Default DX
 
-There are a couple of downsides as well. The first and most obvious one is that by default all changes done through the CMS´ UI, even running on localhost, is done against your remote Git repository. This was a big hurdle for me initially before I got the local configuration to work and I seriously started to look for other alternatives. I cannot see how anyone could live with this during development, I think it's very unintuitive and [I'm not alone][10]. 
+There are a couple of downsides as well. The first and most obvious one is that by default all changes done through the CMS's UI, even running on localhost, is done against your remote Git repository. This was a big hurdle for me initially before I got the local configuration to work and I seriously started to look for other alternatives. I cannot see how anyone could live with this during development, I think it's very unintuitive and [I'm not alone][10]. 
 
 There are a fairly high number of open issues on GitHub for this code base. Some things are small and can be worked around in Gatsby, but it absolutely doesn't feel as polished as some of the commercial alternatives. 
 
-Example: I have a _tags_ field which is entered as a comma separated list and saved as a list in markdown. If I don't have any tags in a post, Netlify CMS saves this as a list of one item with the value of an empty string. When Gatsby then tries to create a route for each tag and the tags provided are `[""]`, it's a problem. Of course, it's possible to compensate for such things, but small things like this is something you will need to handle.
+_Example_: I have a _tags_ field which is entered as a comma separated list and saved as a list in markdown. If I don't have any tags in a post, Netlify CMS saves this as a list of one item with the value of an empty string. When Gatsby then tries to create a route for each tag and the tags provided are `[""]`, it's a problem. Of course, it's possible to compensate for such things, but small things like this is something you will need to handle.
 
 ### Rich Text Editor
 
