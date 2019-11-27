@@ -1,12 +1,12 @@
 ---
 title: "I ❤️ My \"New\" 2013 MacBook Pro"
 date: 2019-11-25T00:02:10+01:00
-url: ""
+url: "i-love-my-new-2013-macbook-pro"
 categories: ["Coding"]
 tags: [Mac OS]
 summary: ""
-description: ""
-ogimage: ""
+description: "This is a story about my personal computing experience, from the 1990's up to my new love for a six year old laptop."
+ogimage: "2019-11-26_HPA_2184.jpg"
 draft: false
 ---
 
@@ -18,7 +18,7 @@ In November 2019 my wife bought a new laptop (MacBook Air) and I took over the o
 
 ## History
 
-I grew up with DOS (_Disk Operating System_, not _Denial of Service_) and Windows during Microsoft's glory days of total dominance in desktop computing. Computers were fascinating by themselves without thinking about alternatives to _Windows 3.11 for Workgroups_. 
+I grew up with DOS (_Disk Operating System_, not _Denial of Service_) and Windows during Microsoft's glory days of total dominance in desktop computing. Computers were fascinating by themselves without thinking about alternatives to _[Windows for Workgroups 3.11][9]_. 
 
 > It strikes me that we sometimes talk about Desktop and Mobile nowadays. By Desktop we then mean Laptop. Those were once two different things. 
 
@@ -54,13 +54,9 @@ autoload -U compinit
 compinit
 ```
 
-The verbosity of PowerShell is good for scripts, but cumbersome for typing in the terminal. I have a similar setup in [WSL][6], but it's not as nice as I have to remember if I ran `npm install` in Windows (PowerShell) or WSL (1).
-
 Text in the terminal also look great (I've always wondered who at Microsoft decided that red error messages on dark blue background was the way to go). 
 
 Even emojis work! I had to pause for a moment after my first Homebrew installation and admire the beer mug 🍺 The emojis _look good_ too, there is no thick black border around them, amazing!
-
-<!-- I truly hope the new Windows Terminal and WSL 2 will be great, but it isn't yet available for Windows 10 Enterprise on [_the several-years-behind ring_][7], that my work laptop is on. -->
 
 ### Aesthetics
 
@@ -68,19 +64,31 @@ It's not just emojis, _everything_ look good. It's like there is only one design
 
 ### Package Manager
 
-Hombrew is great and the given option. Being able to install and uninstall both CLI tools and GUI apps of current versions through the command-line is great. I've only used Homebrew for about two weeks now, but I haven't once seen a big chunk of red XML in the console (like I occasionally do with Chocolatey).
+[Hombrew][8] is great and the given option. Being able to install and uninstall both CLI tools and GUI apps of current versions through the command-line is great. I've only used Homebrew for about two weeks now, but I haven't once seen a big chunk of red XML in the console (like I occasionally do with Chocolatey).
+
+I've saved my currently installed apps in a [Brewfile](https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b) (with `brew bundle dump`) as a reference. If I install from scratch next time, I guess I'll copy that file, make some changes and run `brew bundle` - all done.
 
 ### Performance
-* WMI Provider Host
-* Antimalware Service Executable
+
+Performance is better than I expected, CPU load is lower than on my HP laptop, doing roughly the same things. I have a few Electron apps running and I've mostly been fiddling with a Gatsby project. I was a bit worried about RAM, since the Mac has 8 gb and the HP has 16, but so far so good. I even installed _Adobe Photoshop 2020_ and have used it for simpler edits. I'm sure it will be slow for heavier use, but since I have a licence, I might as well use it. What I'm _not_ running on the Mac is _WMI Provider Host_ and _Antimalware Service Executable_, which is using a significant amount of resources on my Windows machine.
 
 ### Trackpad
 
+Have you heard a reviewer on YouTube reviewing a Windows laptop and not comparing the trackpad to the Mac's? I haven't, and there's a reason for that - it's great!
+
 ### Screen
+
+The screen on my 2013 MacBook Pro is _so_ much better than on my 2018 HP EliteBook. Colour, sharpness, brightness, everything. Sure there are Windows laptops with great screens, but the plethora of Windows laptops with non-great screens often attract those responsible of budget (maybe at your employer).
 
 ### iMessage
 
-### Keyboard Shortcuts
+Since I was already an iPhone user, having iMessage on the computer is great. I've been trying to get people to write to me through WhatsApp or Facebook Messenger before, so that I could reply from my computer, but iPhone users keep going back to iMessage.
+
+## The Future
+
+Looking ahead, I can see myself continuing with Macs. The high prices, brittle keyboards, dongle dependency, replacing Esc and Fn keys with _Touch Bar_ etc, have kept me away from Macs. None of those problems exist on my 2013 MacBook, and if Apple continue in the direction set by the 16" MacBook Pro of making their products _better_, I might buy one when this 2013 one goes to its final rest.
+
+
 
 [1]: https://www.suse.com/
 [2]: https://upload.wikimedia.org/wikipedia/commons/3/39/17-03-16-J%C3%A4germeister-Miniaturen-RR7_8310.jpg
@@ -89,3 +97,6 @@ Hombrew is great and the given option. Being able to install and uninstall both 
 [5]: https://github.com/JanDeDobbeleer/oh-my-posh
 [6]: https://docs.microsoft.com/en-us/windows/wsl/faq
 [7]: https://en.wikipedia.org/wiki/Windows_Insider#Rings
+[8]: https://brew.sh/
+[9]: https://en.wikipedia.org/wiki/Windows_3.1x
+[10]: https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b
