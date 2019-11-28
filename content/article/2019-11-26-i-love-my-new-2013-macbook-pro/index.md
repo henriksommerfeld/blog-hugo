@@ -10,7 +10,7 @@ ogimage: "2019-11-26_HPA_2184.jpg"
 draft: false
 ---
 
-This is a story about my personal computing experience, from the 1990's up to my new love for a six year old laptop.
+This is a story about my personal computer (PC) experience, from the 1990's up to my new love for a six year old laptop.
 
 {{<post-image image="2019-11-26_HPA_2184.jpg" alt="Photo of the laptop I'm writing about in this post" />}}
 
@@ -22,7 +22,7 @@ I grew up with DOS (_Disk Operating System_, not _Denial of Service_) and Window
 
 > It strikes me that we sometimes talk about Desktop and Mobile nowadays. By Desktop we then mean Laptop. Those were once two different things. 
 
-At university, a new world of Solaris and Linux came to my awareness. I ran Slackware as my primary OS for quite some time when the computer was mostly used to learn computers. For that use, it was perfectly fine to spend most of the time in config files and compiling custom kernels.
+At university, a new world of Solaris and Linux came to my awareness. I ran [Slackware][11] as my primary OS for quite some time when the computer was mostly used to learn computers. For that use, it was perfectly fine to spend most of the time in config files and compiling custom kernels.
 
 {{<post-image image="mittrum.png" width="700" lightbox="true" alt="Student room in yearly 21 century with 14 inch computer monitor and 14 inch TV">}}
 My student room with a computer on the floor, a "full tower", and some other important equipment.
@@ -36,7 +36,7 @@ I found this image of my student room, probably from 2002 when I was moving in. 
 * Large number of CD's for...2002's version of a _film offline watch list_.
 * A bottle of [Jägermeister][2] 
 
-As I started working after graduation, Windows was again the default choice and still is where I work. Especially as a [.Net developer specialised in SharePoint][3], Windows was a requirement, not a choice.
+As I started working after graduation, Windows was again the default choice and still is where I work today. Especially as a [.Net developer specialised in SharePoint][3], Windows was a requirement, not a choice.
 
 ## My New Mac 🤩
 
@@ -44,7 +44,7 @@ My new MacBook Pro is fantastic. It runs the latest version of macOS (Catalina) 
 
 ### Shell
 
-I use [Oh My Zsh][4] which is unsurprisingly quite like its PowerShell counterpart [oh-my-posh][5], that I'm used to. With just a couple of lines (below) in my `~/.zshrc`, ZSH feels great. 
+I use [Oh My Zsh][4] which is unsurprisingly quite like its PowerShell counterpart [oh-my-posh][5], that I'm used to. With just a couple of lines (below) in my `~/.zshrc`, ZSH feels like an upgrade. 
 
 ```
 plugins=(git zsh-nvm zsh-autosuggestions)
@@ -64,9 +64,9 @@ It's not just emojis, _everything_ look good. It's like there is only one design
 
 ### Package Manager
 
-[Hombrew][8] is great and the given option. Being able to install and uninstall both CLI tools and GUI apps of current versions through the command-line is great. I've only used Homebrew for about two weeks now, but I haven't once seen a big chunk of red XML in the console (like I occasionally do with Chocolatey).
+[Hombrew][8] is great and the given choice. Being able to install and uninstall both CLI tools and GUI apps of current versions through the command-line is great. I've only used Homebrew for about two weeks now, but I haven't once seen a big chunk of red XML in the console (like I occasionally do with Chocolatey).
 
-I've saved my currently installed apps in a [Brewfile](https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b) (with `brew bundle dump`) as a reference. If I install from scratch next time, I guess I'll copy that file, make some changes and run `brew bundle` - all done.
+I've saved my currently installed apps in a [Brewfile](https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b) (with `brew bundle dump`) as a reference. If I install from scratch next time, I guess I'll copy that file, make some changes and run `brew bundle` – all done.
 
 ### Performance
 
@@ -76,13 +76,13 @@ Performance is better than I expected, CPU load is lower than on my HP laptop, d
 
 Have you heard a reviewer on YouTube reviewing a Windows laptop and not comparing the trackpad to the Mac's? I haven't, and there's a reason for that - it's great!
 
-### Screen
+### Display
 
-The screen on my 2013 MacBook Pro is _so_ much better than on my 2018 HP EliteBook. Colour, sharpness, brightness, everything. Sure there are Windows laptops with great screens, but the plethora of Windows laptops with non-great screens often attract those responsible of budget (maybe at your employer).
+The display on my 2013 MacBook Pro is _so_ much better than on my 2018 HP EliteBook. Colour, sharpness, brightness, everything. Sure there are Windows laptops with great displays, but the plethora of Windows laptops with non-great displays often attract those responsible of budget (maybe at your employer).
 
 ### iMessage
 
-Since I was already an iPhone user, having iMessage on the computer is great. I've been trying to get people to write to me through WhatsApp or Facebook Messenger before, so that I could reply from my computer, but iPhone users keep going back to iMessage.
+Since I was already an iPhone user, having iMessage on the computer is great. I've been trying to get people to write to me through _WhatsApp_ or _Facebook Messenger_ before, so that I could reply from my computer, but iPhone users keep going back to iMessage.
 
 ## The Future
 
@@ -100,3 +100,4 @@ Looking ahead, I can see myself continuing with Macs. The high prices, brittle k
 [8]: https://brew.sh/
 [9]: https://en.wikipedia.org/wiki/Windows_3.1x
 [10]: https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b
+[11]: http://www.slackware.com/
