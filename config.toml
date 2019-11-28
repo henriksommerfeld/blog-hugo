@@ -11,6 +11,7 @@ preserveTaxonomyNames = true
 googleAnalytics = "UA-36834923-2"
 disqusShortname = "henrik-sommerfeld"
 minifyBundles = true
+timeout = 30000
 
 [permalinks]
     article = "/:title/"
