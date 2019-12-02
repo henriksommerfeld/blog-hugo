@@ -30,7 +30,7 @@ At university, a new world of Solaris and Linux came to my awareness. I ran [Sla
 My student room with a computer on the floor, a "full tower", and some other important equipment.
 {{</post-image>}}
 
-I found this image of my student room, probably from 2002 when I was moving in. It reveals a bunch of important equipment at the time:
+I found this photo of my student room, probably from 2002 when I was moving in. It reveals a bunch of important equipment at the time:
 
 * Two purchased versions of [Suse Linux][1] (I remember that was my entry drug to Linux)
 * A bunch of computer related books, of which I can read "C++" on one of them
@@ -62,7 +62,7 @@ Even emojis work! I had to pause for a moment after my first Homebrew installati
 
 ### Aesthetics
 
-It's not just emojis, _everything_ look good. It's like there is only one design system used, even for third-party apps. I can't even find an ugly icon, nothing that reminds me of my days as a student.
+It's not just emojis, _everything_ looks good. It's like there is only one design system used, even for third-party apps. I can't even find an ugly icon, nothing that reminds me of my days as a student.
 
 ### Package Manager
 
