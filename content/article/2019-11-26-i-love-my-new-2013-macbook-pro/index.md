@@ -40,7 +40,7 @@ I found this photo of my student room, probably from 2002 when I was moving in. 
 
 As I started working after graduation, Windows was again the default choice and still is where I work today. Especially as a [.Net developer specialised in SharePoint][3], Windows was a requirement, not a choice.
 
-## My New Mac 🤩
+## My New Mac 😍
 
 My new MacBook Pro is fantastic. It runs the latest version of macOS (Catalina) and I'm automatically logged in with my Apple Watch! I'll mostly compare this machine to my work laptop, an HP EliteBook 840 G5 from 2018 (that has a fingerprint reader, that is disabled by a domain policy).
 

@@ -14,10 +14,45 @@ figure {
 
   & > a {
     max-width: 100%;
+    display: inline-block;
+    position: relative;
+
+    &:hover, &:focus {
+      background: none;
+
+      img {
+        position: relative;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 4px);
+        top: 0;
+        left: 0;
+        filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
+        background-color: rgba(0,0,0,0.2);
+        background-image: url('/images/maximize.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 30%;
+        animation: maximizer 500ms ease-out forwards;
+      }
+    }
   }
 
   img {
     filter: var(--image-filter);
+  }
+}
+
+@keyframes maximizer {
+  from {
+    background-size: 30%;
+  }
+  to {
+    background-size: 40%;
   }
 }
 

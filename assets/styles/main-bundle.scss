@@ -37,7 +37,7 @@ body {
 }
 
 * {
-  transition: background-color 1s ease, border-color 1s ease;
+  transition: background-color $theme-switcher-speed ease, border-color $theme-switcher-speed ease;
 }
 // Box sizing partial styles:
 // Apply a natural box layout model to all elements
