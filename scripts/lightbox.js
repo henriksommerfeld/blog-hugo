@@ -40,7 +40,7 @@ export default class LightBox {
             this.cancelShowImage = false;
             const imageElement = event.currentTarget.querySelector('img');
             const imageUrl = event.currentTarget.href;
-            const topOffset = imageElement.offsetTop + (imageElement.clientHeight / 2) - window.pageYOffset;
+            const topOffset = event.currentTarget.offsetTop + (imageElement.clientHeight / 2) - window.pageYOffset;
             const leftOffset = imageElement.offsetLeft + (imageElement.clientWidth / 2);
 
             const lightbox = document.getElementById('lightbox');
