@@ -32,12 +32,12 @@ figure {
         top: 0;
         left: 0;
         filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
-        background-color: rgba(0,0,0,0.2);
+        background-color:transparent;
         background-image: url('/images/maximize.svg');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 30%;
-        animation: maximizer 500ms ease-out forwards;
+        animation: maximizer 200ms ease-out forwards;
       }
     }
   }
@@ -48,11 +48,16 @@ figure {
 }
 
 @keyframes maximizer {
-  from {
+  0% {
     background-size: 30%;
+    background-color: rgba(0,0,0,0.2);
   }
-  to {
+  40% {
+    background-size: 42%;
+  }
+  100% {
     background-size: 40%;
+    background-color: rgba(0,0,0,0.1);
   }
 }
 
