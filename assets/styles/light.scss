@@ -15,6 +15,8 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --white: #{$white};
   --color: black;
   --accent-color: #{$orange500};
+  --selection-color: var(--color);
+  --selection-bg-color: #{$orange400};
   --color-published: #{$gray700};
   --background-color: #{$background-color};
   --blockquote-color: #{$gray600};
