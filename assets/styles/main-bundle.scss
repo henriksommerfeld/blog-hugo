@@ -50,7 +50,8 @@ body {
 }
 
 ::selection {
-  background: var(--accent-color);
+  background: var(--selection-bg-color);
+  color: var(--selection-color);
 }
 
 html {
