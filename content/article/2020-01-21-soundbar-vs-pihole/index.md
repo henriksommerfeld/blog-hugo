@@ -4,8 +4,9 @@ url: yamaha-yas-109-soundbar-has-excessive-network-traffic
 date: 2020-01-21T11:30:09+01:00
 summary: This is an appeal to any of you who is coding for, or otherwise developing connected devices, to put some extra thought into your network traffic. Maybe also a warning to consumers and an encouragement to us tech savvy people to monitor your connected devices.
 description: This is an appeal to any of you who is coding for, or otherwise developing connected devices, to put some extra thought into your network traffic. Maybe also a warning to consumers and an encouragement to us tech savvy people to monitor your connected devices.
-tags: [Internet of Things, Hardware, ]
+tags: [Internet of Things, Hardware]
 categories: [Thoughts]
+ogimage: soundbar-hero-16_9.jpg
 draft: false
 ---
 
