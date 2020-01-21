@@ -14,4 +14,4 @@ I enjoy exploring computer stuff for business and pleasure.
 
 I live in Stockholm, Sweden and am currently on parental leave 👶🏻 from my work at [Academic Work][1] as a programmer and team manager.
 
-[1]: https://www.academicwork.com/
+[1]: https://www.aw.com/
