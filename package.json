@@ -40,6 +40,9 @@
     "serve": "serve public -l 1313",
     "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
   },
+  "resolutions": {
+    "cypress": "3.8.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/henriksommerfeld/blog-hugo.git"
