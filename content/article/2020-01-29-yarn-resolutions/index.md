@@ -1,7 +1,7 @@
 ---
 title: "Yarn Resolutions to Fix Build Error With Multiple Versions of NPM Package"
 url: 
-date: 2020-01-22T11:30:09+01:00
+date: 2020-01-29T11:30:09+01:00
 summary: So, I upgraded Cypress from 3.7.0 to 3.8.2 and ran everything locally - no problems. But the build failed both in GitHub Actions and Netlify. I now had two conflicting versions. When using Yarn, this can be solved with Selective dependency resolutions, by adding the following to package.json
 description: Shows that "resolutions" in package.json with Yarn can solve build errors with multiple versions of npm packages.
 tags: [NodeJS]
