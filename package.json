@@ -28,7 +28,7 @@
     "js:build:prod": "browserify scripts/main.js -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
     "js:watch": "onchange scripts -- npm run js:build && npm run index",
     "build:assets": "npm run clean && npm run js:build:prod",
-    "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
+    "hugo:watch": "hugo --gc serve --config config-dev.toml --bind=0.0.0.0",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
     "start": "npm run js:build && concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
