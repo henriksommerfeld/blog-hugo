@@ -1,13 +1,13 @@
 ---
 title: Lazy Loading Images in Hugo
 url: /lazy-loading-images-in-hugo
-date: 2020-02-04T14:42:21+01:00
-summary: 
+date: 2020-02-05T04:42:21+01:00
+summary: When writing another post, I realised that I hadn't documented/described my image lazy loading implementation in Hugo anywhere, so here it comes. The first thing we need are responsive images, not the thing you get when setting the width to 100% in CSS, but different versions of the same image in different resolutions so that the web browser can pick the best one (using srcset).
 description: In this post I explain my implementation of lazy loading images on my Hugo website.
 tags: [Hugo]
 categories: [Coding]
 ogimage: drew-coffman-DzIt-fTYv4E-unsplash.jpg
-draft: true
+draft: false
 ---
 
 When writing another post, I realised that I hadn't documented/described my image [lazy loading][4] implementation in [Hugo][3] anywhere, so here it comes.
@@ -139,6 +139,8 @@ Shortcode `post-image.html`:
 There are a few CSS classes set here that acts as a signal to different Javascript features. `lightbox` is such a thing, but the interesting one here is `lazyload`. I use a Javascript library called [lazysizes][2] that is included in my Javascript bundle and I have created the HTML to work with that library.
 
 You might have noticed that the code above looks somewhat duplicated, that's because I have a `noscript` tag for those with Javascript disabled. In that case, a srcset tag is still used to provide the best image, but without the lazy loading.
+
+You might also have noted that there is no "blur up effect" here. That's a conscious decision, since this is a bit simpler to implement and feels faster, in my opinion.
 
 ## Performance consideration
 
