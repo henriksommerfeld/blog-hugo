@@ -1,13 +1,13 @@
 ---
 title: How I Tackled Parental Leave Boredom With Code
 url: /how-i-tackled-parental-leave-boredom-with-code
-date: 2020-02-01T14:42:21+01:00
+date: 2020-02-12T04:42:21+01:00
 summary: Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
 description: Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
 tags: []
 categories: [Thoughts]
 ogimage: picsea-EQlTyDZRx7U-unsplash.jpg
-draft: true
+draft: false
 ---
 
 Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
@@ -55,6 +55,6 @@ I'm not saying that everyone should do as much work related stuff as possible du
 [2]: /dark-mode-learnings
 [3]: https://recept.netlify.com
 [4]: /netlify-cms
-[5]: /gatsby-vs-hugo-for-personal-blog
+[5]: /lazy-loading-images-in-hugo
 [6]: https://www.google.com/search?q=david+allen+notetaker+wallet
 
