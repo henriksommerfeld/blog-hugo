@@ -1,13 +1,13 @@
 ---
 title: How I Tackled Parental Leave Boredom With Code
 url: /how-i-tackled-parental-leave-boredom-with-code
-date: 2020-02-01T14:42:21+01:00
+date: 2020-02-12T04:42:21+01:00
 summary: Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
 description: Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
 tags: []
 categories: [Thoughts]
 ogimage: picsea-EQlTyDZRx7U-unsplash.jpg
-draft: true
+draft: false
 ---
 
 Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
@@ -18,7 +18,7 @@ Photo by <a href="https://unsplash.com/@picsea?utm_source=unsplash&utm_medium=re
 
 ## Background
 
-I live in Sweden where we have good possibilities for taking long parental leaves. In my case it has been 7 months – 8 if I count the summer vacation (a bit shorter than my wife's leave). While I'm absolutely thankful for the possibility to stay home with my daughter and getting to know her, I'll never get a second chance etc etc 🙄, it's still boring as hell from time to time. Having an ocean of time, but all the time being consumed by baby care was a new and frustrating experience for me. 
+I live in Sweden where we have good possibilities for taking long parental leaves. In my case it has been 7 months – 8 if I count the summer vacation. While I'm absolutely thankful for the possibility to stay home with my daughter and getting to know her, I'll never get a second chance etc etc 🙄, it's still boring as hell from time to time. Having an ocean of time, but all the time being consumed by baby care was a new and frustrating experience for me. 
 
 What saved me from becoming _chairman of the bored_ was the small technology projects I could work on during the short periods of focus time (like when the child was asleep). Problem solving during stroller walks was also a great way to make progress even in pure AFK days (Away From Keyboard).
 
@@ -55,6 +55,6 @@ I'm not saying that everyone should do as much work related stuff as possible du
 [2]: /dark-mode-learnings
 [3]: https://recept.netlify.com
 [4]: /netlify-cms
-[5]: /gatsby-vs-hugo-for-personal-blog
+[5]: /lazy-loading-images-in-hugo
 [6]: https://www.google.com/search?q=david+allen+notetaker+wallet
 
