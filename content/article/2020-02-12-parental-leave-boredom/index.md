@@ -18,7 +18,7 @@ Photo by <a href="https://unsplash.com/@picsea?utm_source=unsplash&utm_medium=re
 
 ## Background
 
-I live in Sweden where we have good possibilities for taking long parental leaves. In my case it has been 7 months – 8 if I count the summer vacation (a bit shorter than my wife's leave). While I'm absolutely thankful for the possibility to stay home with my daughter and getting to know her, I'll never get a second chance etc etc 🙄, it's still boring as hell from time to time. Having an ocean of time, but all the time being consumed by baby care was a new and frustrating experience for me. 
+I live in Sweden where we have good possibilities for taking long parental leaves. In my case it has been 7 months – 8 if I count the summer vacation. While I'm absolutely thankful for the possibility to stay home with my daughter and getting to know her, I'll never get a second chance etc etc 🙄, it's still boring as hell from time to time. Having an ocean of time, but all the time being consumed by baby care was a new and frustrating experience for me. 
 
 What saved me from becoming _chairman of the bored_ was the small technology projects I could work on during the short periods of focus time (like when the child was asleep). Problem solving during stroller walks was also a great way to make progress even in pure AFK days (Away From Keyboard).
 
