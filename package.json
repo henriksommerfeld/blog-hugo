@@ -33,11 +33,11 @@
     "index": "node build/index-search.js static/search-index.json",
     "start": "npm run js:build && concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
     "build": "npm run build:assets && npm run clean:public && hugo version && hugo --gc && npm run index:prod",
-    "test": "cypress run",
-    "test:open": "cypress open",
-    "cy": "start-server-and-test start http://localhost:1313 test:open",
+    "cypress:cli": "cypress run",
+    "cypress:open": "cypress open",
     "serve": "serve public -l 1313",
-    "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
+    "test": "npm run build && start-server-and-test serve http://localhost:1313 cypress:open",
+    "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 cypress:cli"
   },
   "resolutions": {
     "cypress": "4.0.1"

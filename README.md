@@ -5,13 +5,21 @@
 This is my personal blog based on [Hugo][1] available at <https://www.henriksommerfeld.se>
 
 ## Pre-requisites:
-1. Install Node https://nodejs.org/en/download/
+1. Install Node https://nodejs.org/en/download/ (working version specified in [.nvmrc](./.nvmrc))
 2. Install Hugo https://github.com/gohugoio/hugo/releases See expected version in [netlify.toml](./netlify.toml)). Extended version required.
+3. Install [Yarn][2] (version 1).
 
 ## Installation
-1. npm install
+1. `yarn install`
 
 ## Run
-1. npm start
+1. `yarn start`
+
+## Test with Cypress GUI
+1. `yarn test`
+
+## Test Headless
+1. `yarn test:ci`
 
 [1]: http://gohugo.io/
+[2]: https://yarnpkg.com/
