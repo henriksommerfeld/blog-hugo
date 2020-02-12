@@ -40,7 +40,7 @@
     "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 test"
   },
   "resolutions": {
-    "cypress": "3.8.3"
+    "cypress": "4.0.1"
   },
   "repository": {
     "type": "git",
