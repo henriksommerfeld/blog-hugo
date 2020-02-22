@@ -3,6 +3,7 @@
 import 'lazysizes';
 import ThemeSwitcher from './theme-switcher'
 import Hamburger from './hamburger';
+import SkipLink from './skip-link';
 import LightBox from './lightbox';
 import Search from './search';
 import CodeExpanded from './code-expanded';
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   new ThemeSwitcher();
   new Hamburger();
+  new SkipLink();
   new LightBox();
   new Search();
   new CodeExpanded();
