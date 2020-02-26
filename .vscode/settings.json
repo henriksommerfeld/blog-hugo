@@ -2,13 +2,5 @@
     "sasslint.enable": true,
     "prettier.requireConfig": true,
     "prettier.singleQuote": true,
-    "spellright.language": [
-        "sv",
-        "en"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext"
-    ]
+    "cSpell.language": "en-GB"
 }
