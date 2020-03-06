@@ -6,7 +6,7 @@
 
     <div class="paging-controls has-prev-{{ .Paginator.HasPrev }} has-next-{{ .Paginator.HasNext }} has-dots-{{ $hasDots }} has-max-pages-{{ $hasMaxPages}}">
     {{ if .Paginator.HasPrev }}
-        <a class="page-numbers newer" href="{{ .Paginator.Prev.URL }}" role="button">Newer</a>
+        <a class="page-numbers newer" href="{{ .Paginator.Prev.URL }}" role="button"><svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg> Newer</a>
         <a class="page-numbers" href="{{ .Paginator.First.URL }}" role="button">1</a>
     {{ end }}
 
@@ -30,7 +30,7 @@
 
     {{ if .Paginator.HasNext -}}
         <a class="page-numbers" href="{{ .Paginator.Last.URL }}" role="button">{{ .Paginator.TotalPages }}</a>
-        <a class="page-numbers older" href="{{ .Paginator.Next.URL }}" role="button">Older</a>
+        <a class="page-numbers older" href="{{ .Paginator.Next.URL }}" role="button">Older<svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></a>
     {{- end }}
     </div>
 {{ end -}}

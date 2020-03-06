@@ -1,13 +1,12 @@
 // Import Modules
-@import "./fontawesome/fontawesome";
-@import "./fontawesome/solid";
-@import "./fontawesome/brands";
+
 @import "./_variables";
 @import "./_colors";
 @import "./_screen-reader";
 @import "./_modal";
 @import "./_headings";
 @import "./_font-sizes";
+@import "./_icons";
 @import "./_header";
 @import "./_footer";
 @import "./_article-categories-tags";
@@ -17,7 +16,6 @@
 @import "./_sidebar";
 @import "./_bitmoji";
 @import "./_paging-controls";
-@import "./_bullets";
 @import "./_blockquote";
 @import "./_links";
 @import "./_theme-switcher";
@@ -60,6 +58,17 @@ html {
 
 .hide {
   display: none;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 #page-wrapper {
@@ -130,12 +139,12 @@ aside {
 
 .published {
   color: var(--color-published);
-  font-size: 0.85em;
-  &:before {
-    content: "\f073";
-    font-family: "Font Awesome 5 Free";
-    padding-right: 0.5em;
+  
+  .icon {
+    transform: translateY(2px);
+    margin-right: 0.4em;
   }
+
 
 }
 
@@ -162,3 +171,5 @@ aside {
   scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg-color);
   scrollbar-width: thin;
 }
+
+
