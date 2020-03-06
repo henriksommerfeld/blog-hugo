@@ -44,7 +44,7 @@ export default class Search {
             const searchPhrase = document.getElementById('search-input').value;
             this.search(searchPhrase);
         };
-        const searchButton = document.querySelector('#searchbox .fa-search');
+        const searchButton = document.querySelector('#searchbox .icon-search');
         searchButton.addEventListener('click', doSearch);
         searchButton.addEventListener('touchstart', doSearch);
     }
