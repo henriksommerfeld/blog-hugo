@@ -103,7 +103,7 @@ exports.sourceNodes = async (
 {{</highlight>}}
 _Core of plugin's `gatsby-node.js`_
 
-<i class="fab fa-github"></i> The repo of the entire site can be found at https://github.com/henriksommerfeld/isabel-blog
+{{<icon-github />}} The repo of the entire site can be found at https://github.com/henriksommerfeld/isabel-blog
  
 
 [1]: https://www.gatsbyjs.org/packages/gatsby-source-twitter/

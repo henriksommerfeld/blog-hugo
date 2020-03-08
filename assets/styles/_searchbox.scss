@@ -64,6 +64,10 @@ $search-min-wide: 150em;
         opacity: 0;
     }
 
+    .icon {
+        font-size: 2em;
+    }
+
     .search-input {
         width: 100%;
         border: none;
@@ -85,7 +89,7 @@ $search-min-wide: 150em;
             display: none;
         }
     }
-    .fas {        
+    .icon {
         cursor: pointer;
     }
 }

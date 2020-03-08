@@ -28,29 +28,23 @@
     &.older
         margin-right: 0
         display: inline-flex
-        &:after
-            content: "\f061"
+        .icon
             display: inline-block
-            font-family: 'Font Awesome 5 Free'
-            text-rendering: auto
             margin-left: 0.5em
             margin-right: 0.2em
             transition: margin 150ms ease
-        &:hover:after
+        &:hover .icon
             margin-left: 0.7em
             margin-right: 0
     &.newer
         margin-left: 0
         display: inline-flex
-        &:before
+        .icon
             display: inline-block
-            content: "\f060"
-            font-family: 'Font Awesome 5 Free'
-            text-rendering: auto
             margin-right: 0.5em
             margin-left: 0.2em
             transition: margin 150ms ease
-        &:hover:before
+        &:hover .icon
             margin-right: 0.7em
             margin-left: 0
 

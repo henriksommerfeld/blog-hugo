@@ -23,7 +23,7 @@ export default class CodeExpanded {
       const expanderMarkup = document.createElement('div');
       expanderMarkup.setAttribute('class', 'code-expanded-controls');
       expanderMarkup.innerHTML = 
-        '<a title="Expand" aria-expanded="false" href="javascript:void(\'Expand/collapse code view\')"><i class="fa fa-expand"></i></a>';
+        '<a title="Expand" aria-expanded="false" href="javascript:void(\'Expand/collapse code view\')"><svg class="icon icon-expand"><use xlink:href="#icon-expand"></use></svg></a>';
       const codeElement = highlightElement.querySelector("code");
       codeElement.setAttribute("tabindex", 0);
       const code = codeElement.textContent;
@@ -47,9 +47,8 @@ export default class CodeExpanded {
         const leftOffset = codeToExpand.offsetLeft + (codeToExpand.clientWidth / 2);
         const clonedElement = codeToExpand.cloneNode(true);
   
-        const expander = clonedElement.querySelector(".fa-expand");
-        expander.classList.add("fa-compress");
-        expander.classList.remove("fa.expand");
+        const expander = clonedElement.querySelector(".icon-expand");
+        expander.innerHTML = `<svg class="icon icon-collapse"><use xlink:href="#icon-collapse"></use></svg>`;
 
         const anchor = clonedElement.querySelector("a");
         anchor.setAttribute("aria-expanded", true);

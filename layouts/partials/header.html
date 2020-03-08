@@ -1,4 +1,20 @@
 <header>
+    <!--This SVG ELEMENT CONTAINS SVG DEFINITION-->
+   <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <symbol id="icon-home" viewBox="0 0 32 32">
+            <path d="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z"></path>
+        </symbol>
+        <symbol id="icon-user" viewBox="0 0 32 32">
+            <path d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 32 32">
+            <path d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path>
+        </symbol>
+    </defs>
+    </svg>
+
     <div class="header-content">
         <div class="site-title">Henrik Sommerfeld</div>
         {{- partial "theme-switcher.html" -}}
@@ -9,9 +25,11 @@
             </div>
         </a>
         <nav>
-            <a href="/" class="home"><i aria-hidden="true" class="fas fa-home"> </i>Home</a>
-            <a href="/about/" class="about"><i aria-hidden="true" class="fas fa-user"> </i>About</a>
-            <a href="/search-requires-javascript/" rel="nofollow" class="search"><i aria-hidden="true" class="fas fa-search"></i>Search</a>
+            <a href="/" class="home">
+                <svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg>                
+                Home</a>
+            <a href="/about/" class="about"><svg class="icon icon-user"><use xlink:href="#icon-user"></use></svg>About</a>
+            <a href="/search-requires-javascript/" rel="nofollow" class="search"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>Search</a>
         </nav>
     </div>
 </header>
