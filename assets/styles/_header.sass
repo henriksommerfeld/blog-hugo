@@ -84,6 +84,9 @@ nav
         flex-direction: row
 
     a
+        display: inline-flex
+        align-items: flex-end
+        justify-content: center
         padding: $default-spacing
         text-shadow: none
         text-align: center
@@ -105,7 +108,7 @@ nav
                 outline: none
                 text-shadow: none
                 text-align: center
-        .fas
+        .icon
             font-size: 1.5em
             margin-right: 5px
         &:hover, &:focus, &:active
@@ -148,3 +151,7 @@ nav
         pointer-events: painted
         animation: none
         box-shadow: none
+        
+        a
+            display: inline-flex
+            align-items: unset

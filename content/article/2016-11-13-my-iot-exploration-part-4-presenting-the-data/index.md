@@ -62,7 +62,7 @@ var getConnectionString = function(settings) {
 };
 {{</highlight>}}
 
-> The entire code can be found in my GitHub project [Azure-IoT-Dashboard][9] <i class="fa fa-github fa-2x"></i>
+> The entire code can be found in my GitHub project [Azure-IoT-Dashboard][9]
 
 For deployment I set up the web app to deploy directly from my GitHub project whenever I commit a change. This is also the reason I am only using JavaScript and CSS for this instead of TypeScript and SCSS. This allows for the deployment to be a simple copy operation. I noticed that about six seconds after I pushed changes from Visual Studio Code on my local machine to GitHub, the deployment was finished in Azure. I will probably add a compilation step to this as well later on, but for now this is sufficient.
 

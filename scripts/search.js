@@ -44,7 +44,7 @@ export default class Search {
             const searchPhrase = document.getElementById('search-input').value;
             this.search(searchPhrase);
         };
-        const searchButton = document.querySelector('#searchbox .fa-search');
+        const searchButton = document.querySelector('#searchbox .icon-search');
         searchButton.addEventListener('click', doSearch);
         searchButton.addEventListener('touchstart', doSearch);
     }
@@ -133,7 +133,7 @@ export default class Search {
                 result.forEach(value => {
                     const hit = this.store[value.ref];
                     const dateHtml = `<div class="entry-meta">
-                        <time class="published" datetime='${hit.dateiso}'>${hit.dateformatted}</time>
+                        <time class="published" datetime='${hit.dateiso}'><svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>${hit.dateformatted}</time>
                     </div>`;
 
                     const li = document.createElement('li');

@@ -1,12 +1,8 @@
 @import './_variables'
-@import './fontawesome/fontawesome'
-@import './fontawesome/solid'
-@import './fontawesome/brands'
 @import './_screen-reader'
 @import './code/code-print'
 @import './_bitmoji'
 @import './_article-categories-tags'
-@import './_bullets'
 @import './_blockquote'
 @import './_links'
 @import './_contact-info'
@@ -31,6 +27,15 @@ h4
     font-size: 1em
     font-family: $font-family-sans-serif
     font-weight: bold
+
+img
+    max-width: 100%
+    object-fit: contain
+    height: auto
+
+.icon
+    width: 22px
+    height: 22px
 
 #page-footer
     display: none
@@ -57,3 +62,10 @@ h4
         page-break-inside: avoid
     .explaination
         padding-left: 5mm
+    .icon
+        font-size: 1em
+        height: 1em
+        width: 1em
+
+.sr-only
+    font-size: 0;

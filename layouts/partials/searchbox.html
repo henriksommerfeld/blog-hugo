@@ -1,10 +1,10 @@
 <div id="searchbox-container">
     <div id="searchbox">
-        <i aria-hidden="true" class="fas fa-lg fa-search" title="Perform search"></i>
+        <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
         <label for="search-input" class="sr-only">Searchbox</label>
         <input id="search-input" type="search" placeholder="Search..." class="search-input" 
             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-        <i aria-hidden="true" class="fas fa-lg fa-window-close close-search" title="Close (Esc)"></i>
+        <svg class="icon icon-circle-with-cross close-search"><use xlink:href="#icon-circle-with-cross"></use></svg>
     </div>
     <div class="search-results-container">
         <div id="search-output">
@@ -12,7 +12,7 @@
                 No matching posts found. You can use wildcards and search only in titles, e.g. <code>title:iot</code>
             </div>
             <div id="index-loading-message">
-                <i class="fas fa-spinner fa-pulse fa-2x fa-fw" aria-hidden="true"></i> Loading search index, please try again in a few seconds.
+                <span class="icon-spinner" aria-hidden="true"></span> Loading search index, please try again in a few seconds.
             </div>
             <div id="index-loaded-message">
                 Index has completed downloading. Please search again.

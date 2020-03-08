@@ -3,7 +3,7 @@
   {{ $isLast := lt $index (sub (len $categories) 1) }}
   {{ $isFirst := eq $index 0 -}}
 
-  {{ if ($isFirst) }}<i class="fas fa-folder-open"></i>
+  {{ if ($isFirst) }}<svg class="icon icon-folder"><use xlink:href="#icon-folder"></use></svg>
   <span class="screen-reader-text">This entry was posted in</span>{{ end }}
   <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ if ($isLast) }}, {{ end -}}
 {{ end -}}
