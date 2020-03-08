@@ -23,7 +23,7 @@ This can be either for your specific user or for the whole system.
 
 ## 3. Voilà!
 
-<i class="fab fa-windows"><span class="sr-only">Win</span></i> + cmder
+{{<icon-windows />}}+ cmder
   
 {{<post-image image="Cmder_search_windows.png" alt="Windows start menu showing Cmder" borderless="true" />}}
 

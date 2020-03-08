@@ -15,7 +15,7 @@ Hi have recently bought an ultra-wide monitor for my desk at home, a [Dell U3415
 Dell U3415W Monitor, 34″ 3440×1440
 {{</post-image>}}
 
-Of course Windows has had the feature to add two windows side-by-side built-in since Windows 7. With Windows 10 we now also have the annoying feature of splitting the screen in four (like the Windows logo in the image above), which sort of breaks the keyboard shortcuts (<i class="fab fa-fw"></i> + <i class="fa fa-arrow-left"></i> and <i class="fab fa-fw"></i> + <i class="fa fa-arrow-right"></i>) and is something I find useless unless you have a 4K monitor or higher.
+Of course Windows has had the feature to add two windows side-by-side built-in since Windows 7. With Windows 10 we now also have the annoying feature of splitting the screen in four (like the Windows logo in the image above), which sort of breaks the keyboard shortcuts ({{<icon-windows />}}+ &#8592;</i> and {{<icon-windows />}}+ &#8594;) and is something I find useless unless you have a 4K monitor or higher.
 
 But, to be able to use an ultra-wide monitor most effectively, I like to split the screen space into three columns. To make most use of this, it's even better if you can combine these thirds in any way you like, e.g. having one window occupying 2/3 and one window occupying 1/3 of the screen.
 

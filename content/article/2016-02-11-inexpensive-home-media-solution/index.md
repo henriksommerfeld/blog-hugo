@@ -44,7 +44,7 @@ In contrast to my initial fear of having to buy a new computer or &#8220;smart&#
 
 ## Update
 
-I have now also added [Videostream for Chromecast][5] to this mix for playing video files that Infuse doesn't support. I especially like how Videostream registers in the operating system so that you can search for _&#8220;video&#8221;_ to find it (using <i class="fa fa-fw"></i> or ⌘ + space) (as opposed to starting Chrome and look for the extension).
+I have now also added [Videostream for Chromecast][5] to this mix for playing video files that Infuse doesn't support. I especially like how Videostream registers in the operating system so that you can search for _&#8220;video&#8221;_ to find it (using {{<icon-windows />}}or ⌘ + space) (as opposed to starting Chrome and look for the extension).
 
  [1]: https://www.google.com/chrome/devices/chromecast/
  [2]: https://www.flickr.com/photos/bestboyzde/21867299155/in/photostream/

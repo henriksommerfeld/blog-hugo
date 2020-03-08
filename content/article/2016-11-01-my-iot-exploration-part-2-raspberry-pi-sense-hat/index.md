@@ -41,7 +41,7 @@ I don't have the Raspberry Pi connected to a screen, so I'll also install Samba 
 
 ## My first ever Python program
 
-The Python program reads values from the sensors, shows a status message on the LED and sends it on to another service on localhost using HTTP POST (which will be covered in a future post). Since all of this is done on the same machine with no listening services against the Internet, I haven't bothered much with security. Conceptually the NodeJS piece could be on a separate machine, but that would of course require an authentication mechanism etc. The source code can be found in it's entirety at <i class="fa fa-github fa-2x"></i> <https://github.com/henriksommerfeld/rpi-monitoring>.
+The Python program reads values from the sensors, shows a status message on the LED and sends it on to another service on localhost using HTTP POST (which will be covered in a future post). Since all of this is done on the same machine with no listening services against the Internet, I haven't bothered much with security. Conceptually the NodeJS piece could be on a separate machine, but that would of course require an authentication mechanism etc. The source code can be found in it's entirety at <https://github.com/henriksommerfeld/rpi-monitoring>.
 
 ### Reading temperature
 
