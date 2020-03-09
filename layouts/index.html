@@ -8,12 +8,14 @@
                 <div class="body-max-width">
                     <main id="content">
                         {{ range (.Paginate ( where .Site.RegularPages "Type" "article" )).Pages }}
-                            <h1><a href="{{ .RelPermalink }}">{{ .Title }} </a></h1>
-                            {{ partial "article-date.html" . }}
+                            <article class="summary">
+                                <h1><a href="{{ .RelPermalink }}">{{ .Title }} </a></h1>
+                                {{ partial "article-date.html" . }}
 
-                            <p>
-                                {{ partial "summary.html" . }}
-                            </p>
+                                <p>
+                                    {{ partial "summary.html" . }}
+                                </p>
+                            </article>
                         {{ end }}
 
                         {{ partial "paging-navigation.html" . }}
