@@ -17,7 +17,7 @@ context('Post', () => {
 
   it('Should have publishing date', () => {
     cy.get('article time.published')
-      .should('have.text', '31, July 2018')
+      .should('have.text', '31 July 2018')
       .should('have.attr', 'datetime').and('include', '2018-07-31 11:14:58 +0200')
   })
 
