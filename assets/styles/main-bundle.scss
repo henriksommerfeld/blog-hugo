@@ -6,6 +6,7 @@
 @import "./_modal";
 @import "./_headings";
 @import "./_font-sizes";
+@import "./_fonts";
 @import "./_icons";
 @import "./_header";
 @import "./_footer";
@@ -30,13 +31,16 @@ body {
   background-color: var(--background-color);
   min-width: 300px;
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-family: $font-family-sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 * {
   transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
 }
+
 // Box sizing partial styles:
 // Apply a natural box layout model to all elements
 *,
@@ -98,6 +102,7 @@ html {
   width: 100%;
   margin: 0 auto;
   max-width: $page-max-width;
+
   @media (min-width: $side-column-min-width) {
     flex-direction: row;
   }
@@ -106,6 +111,7 @@ html {
 main {
   width: 100%;
   padding: $default-spacing;
+
   @media (min-width: $side-column-min-width) {
     width: 71%;
   }
@@ -113,10 +119,13 @@ main {
 
 article {
   width: 100%;
+
   footer {
     display: flex;
   }
-  &.full-article .entry-meta {
+
+  &.full-article .entry-meta,
+  &.summary {
     margin-bottom: 2em;
   }
 }
@@ -124,6 +133,7 @@ article {
 aside {
   width: 100%;
   padding: $default-spacing;
+
   @media (min-width: $side-column-min-width) {
     width: 29%;
   }
@@ -149,7 +159,7 @@ aside {
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: var(--scrollbar-bg-color);
   border-radius: $border-radius;
 
@@ -158,12 +168,10 @@ aside {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-color);
   border-radius: $border-radius;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
 }
 
 * {
   scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg-color);
   scrollbar-width: thin;
 }
-
-
