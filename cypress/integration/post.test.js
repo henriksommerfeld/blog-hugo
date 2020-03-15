@@ -33,8 +33,8 @@ context('Post', () => {
   })
 
   it('Should open expanded code view', () => {
-    cy.findByText('$TMPVERS').scrollIntoView()
-      .findByTitle('Expand').click({ force: true })
+    cy.findByText('$TMPVERS').scrollIntoView();
+    cy.findByTitle('Expand').click({ force: true })
       .get('#code-container').within(() => {
         cy.findByTitle('Close (Esc)').should('exist')
       })
