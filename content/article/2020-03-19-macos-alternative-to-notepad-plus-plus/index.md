@@ -1,7 +1,7 @@
 ---
 title: MacOS Alternative to Notepad++
 url: /macos-alternative-to-notepad-plus-plus
-date: 2020-03-19T20:22:21+01:00
+date: 2020-03-23T06:22:21+01:00
 summary: Having switched from Windows to Mac quite recently, there is one application in particular that I’m missing – Notepad++. After trying Notes and Stickes, Brackets and a bunch of others, I had to rethink what I was actually using Notepad++ for and which characteristics I was appreciating the most.
 description: Having switched from Windows to Mac quite recently, there is one application in particular that I’m missing – Notepad++. Standard Notes became my choice.
 tags: [macOS, Text editor, Notepad++]
