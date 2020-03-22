@@ -27,7 +27,7 @@ After trying _[Notes][3]_ and _[Stickes][4]_, _[Brackets][2]_ and a bunch of oth
 
 I concluded that I used Notepad++ for short snippets of text where the low barrier to entry was key. Quickly opening the app and pasting something; or writing a text for a web form that I suspect will just reload and loose my text. 
 
-Surprisingly many text editing tools don't paste unformatted text by default. Apple's _Stickes_ allow you to paste unformatted with the key combination ⌥ ⇧ ⌘ V (trying doing that with one hand!). Both _Stickes_ and _Notes_ change single quote (`'`) to some other character ( ‘ ), which messes up my [Cypher][5] queries.
+Surprisingly many text editing tools don't paste unformatted text by default. The common macOS key combination to paste unformatted seems to be  ⌥ ⇧ ⌘ V (trying doing that with one hand!). Both _Stickes_ and _Notes_ also change single quote (`'`) to some other character ( ‘ ), which messes up my [Cypher][5] queries.
 
 I already use a heavy-weight app/service for my notes ([OneNote][7]) an several windows of [VS Code][8] for coding, so I wanted something _else_ for these kind of quick notes.
 
