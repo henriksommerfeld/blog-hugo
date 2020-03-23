@@ -14,12 +14,12 @@
     "babelify": "10.0.0",
     "browserify": "16.5.0",
     "concurrently": "5.1.0",
-    "cypress": "4.1.0",
+    "cypress": "4.2.0",
     "del-cli": "3.0.0",
     "onchange": "6.1.0",
     "serve": "11.3.0",
     "shx": "0.3.2",
-    "start-server-and-test": "1.10.10"
+    "start-server-and-test": "1.10.11"
   },
   "scripts": {
     "clean": "shx rm -f static/*.js",
@@ -40,7 +40,7 @@
     "test:ci": "npm run build && start-server-and-test serve http://localhost:1313 cypress:cli"
   },
   "resolutions": {
-    "cypress": "4.1.0"
+    "cypress": "4.2.0"
   },
   "repository": {
     "type": "git",
