@@ -1,0 +1,1042 @@
+{{ partial "doctype.html" }}
+<html lang="en">
+{{ partial "head.html" . }}
+{{ $guideStyles := resources.Get "styles/guide-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
+<link rel="stylesheet" type="text/css" href="{{ $guideStyles.RelPermalink }}" integrity="{{ $guideStyles.Data.Integrity }}" media="screen, tv, projection">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Average+Sans" media="all">
+<body class="guide">
+    <main>    
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <symbol id="icon-windows" viewBox="0 0 32 32">
+                    <path d="M15.2 5.186v10.014h13.6v-12l-13.6 1.986zM3.2 15.2h10.4v-9.781l-10.4 1.518v8.262zM15.2 26.814l13.6 1.986v-12h-13.6v10.014zM3.2 25.062l10.4 1.518v-9.781h-10.4v8.262z"></path>
+                </symbol>
+                <symbol id="icon-chrome" viewBox="0 0 32 32">
+                    <path d="M8.071 13.954l-4.579-7.931c2.932-3.671 7.445-6.023 12.508-6.023 5.857 0 10.978 3.148 13.767 7.844h-13.055c-0.235-0.020-0.472-0.031-0.711-0.031-3.809 0-7.018 2.614-7.929 6.142zM21.728 10.156h9.171c0.711 1.81 1.101 3.781 1.101 5.844 0 8.776-7.066 15.9-15.818 15.998l6.544-11.334c0.921-1.324 1.462-2.932 1.462-4.664 0-2.287-0.943-4.357-2.459-5.844zM10.188 16c0-3.205 2.607-5.813 5.813-5.813s5.813 2.607 5.813 5.813c0 3.205-2.608 5.813-5.813 5.813s-5.813-2.608-5.813-5.813zM18.193 23.889l-4.581 7.934c-7.704-1.153-13.613-7.797-13.613-15.822 0-2.851 0.746-5.526 2.053-7.845l6.532 11.314c1.308 2.785 4.14 4.718 7.415 4.718 0.759 0 1.495-0.104 2.193-0.299z"></path>
+                </symbol>
+                <symbol id="icon-firefox" viewBox="0 0 32 32">
+                    <path d="M31.954 10.442l-0.371 2.377c0 0-0.53-4.402-1.179-6.047-0.995-2.521-1.438-2.501-1.441-2.498 0.667 1.694 0.546 2.604 0.546 2.604s-1.181-3.219-4.303-4.243c-3.459-1.134-5.33-0.824-5.547-0.765-0.033-0-0.064-0-0.095-0 0.026 0.002 0.050 0.005 0.076 0.007-0.001 0.001-0.003 0.001-0.003 0.002 0.014 0.017 3.822 0.666 4.497 1.594 0 0-1.617 0-3.227 0.464-0.073 0.021 5.923 0.749 7.148 6.74 0 0-0.657-1.371-1.47-1.604 0.535 1.626 0.397 4.712-0.112 6.245-0.066 0.197-0.133-0.853-1.135-1.305 0.321 2.301-0.019 5.952-1.616 6.957-0.124 0.078 1.001-3.603 0.226-2.18-4.46 6.838-9.731 3.155-12.101 1.535 1.215 0.264 3.52-0.041 4.541-0.8 0.001-0.001 0.002-0.002 0.004-0.003 1.108-0.758 1.765-1.311 2.354-1.18s0.982-0.46 0.524-0.985c-0.459-0.526-1.572-1.249-3.079-0.855-1.063 0.278-2.379 1.454-4.389 0.264-1.543-0.914-1.688-1.673-1.702-2.199 0.038-0.186 0.086-0.361 0.143-0.52 0.178-0.496 0.716-0.646 1.015-0.764 0.508 0.087 0.946 0.246 1.405 0.481 0.006-0.153 0.008-0.356-0.001-0.586 0.044-0.088 0.017-0.352-0.054-0.674-0.041-0.322-0.107-0.655-0.211-0.959 0-0 0.001-0 0.001-0 0.002-0.001 0.003-0.001 0.005-0.002s0.005-0.004 0.007-0.006c0-0.001 0.001-0.001 0.001-0.002 0.003-0.004 0.005-0.008 0.006-0.015 0.032-0.144 0.376-0.423 0.804-0.722 0.383-0.268 0.834-0.553 1.19-0.774 0.314-0.195 0.554-0.34 0.605-0.378 0.019-0.015 0.042-0.032 0.068-0.051 0.005-0.004 0.009-0.007 0.014-0.011 0.003-0.002 0.006-0.005 0.009-0.007 0.169-0.135 0.421-0.389 0.474-0.924 0-0.001 0-0.002 0-0.004 0.002-0.016 0.003-0.032 0.004-0.048 0.001-0.011 0.002-0.023 0.002-0.034 0-0.009 0.001-0.018 0.001-0.027 0.001-0.021 0.002-0.043 0.002-0.065 0-0.001 0-0.002 0-0.004 0.001-0.052-0-0.106-0.003-0.163-0.002-0.032-0.004-0.060-0.009-0.086-0-0.001-0.001-0.003-0.001-0.004-0.001-0.003-0.001-0.005-0.002-0.008-0.001-0.005-0.002-0.009-0.004-0.013-0-0.001-0-0.001-0.001-0.001-0.002-0.005-0.004-0.010-0.005-0.014-0-0-0-0-0-0.001-0.055-0.128-0.26-0.177-1.108-0.191-0.001-0-0.002-0-0.002-0v0c-0.346-0.006-0.798-0.006-1.391-0.004-1.039 0.004-1.613-1.016-1.797-1.41 0.251-1.389 0.977-2.379 2.17-3.051 0.023-0.013 0.018-0.023-0.009-0.031 0.233-0.141-2.82-0.004-4.225 1.782-1.247-0.31-2.333-0.289-3.269-0.069-0.18-0.005-0.404-0.027-0.67-0.083-0.623-0.564-1.514-1.606-1.562-2.85 0 0-0.003 0.002-0.008 0.006-0.001-0.012-0.002-0.024-0.002-0.036 0 0-1.897 1.458-1.613 5.434-0.001 0.064-0.002 0.125-0.004 0.184-0.514 0.696-0.768 1.282-0.787 1.411-0.455 0.926-0.917 2.32-1.292 4.437 0 0 0.263-0.833 0.79-1.777-0.388 1.188-0.693 3.036-0.514 5.808 0 0 0.047-0.615 0.215-1.5 0.131 1.719 0.704 3.841 2.152 6.337 2.78 4.791 7.052 7.211 11.775 7.582 0.839 0.069 1.689 0.071 2.544 0.006 0.079-0.006 0.157-0.011 0.236-0.018 0.968-0.068 1.942-0.214 2.914-0.449 13.287-3.212 11.842-19.256 11.842-19.256z"></path>
+                </symbol>
+                <symbol id="icon-edge" viewBox="0 0 32 32">
+                    <path d="M0.481 14.206c0.938-7.4 5.987-14.113 15.037-14.206 5.463 0.106 9.956 2.581 12.631 7.3 1.344 2.462 1.762 5.050 1.85 7.906v3.356h-20.081c0.094 8.281 12.188 8 17.394 4.35v6.744c-3.050 1.831-9.969 3.469-15.325 1.363-4.563-1.712-7.813-6.488-7.794-11.081-0.15-5.956 2.962-9.9 7.794-12.144-1.025 1.269-1.806 2.669-2.213 5.094h11.338c0 0 0.663-6.775-6.419-6.775-6.675 0.231-11.488 4.112-14.213 8.094v0z"></path>
+                </symbol>
+                <symbol id="icon-cursor" viewBox="0 0 24 24">
+                    <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 4.702z"/>
+                </symbol>
+            </defs>
+        </svg>
+            
+        <section>
+            <h1>Keyboard Shortcuts for Windows</h1>
+            <h2>Window Management</h2>
+            <ol>
+                <li>
+                    <div class="shortcut multiline">
+                        <div class="shortcut">
+                            <div class="key medium">
+                                <div class="keycap">
+                                    <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shortcut">
+                            <div class="key">
+                                <div class="keycap">
+                                    E
+                                </div>
+                            </div>
+                            <div class="key">
+                                <div class="keycap">
+                                    X
+                                </div>
+                            </div>
+                            <div class="key">
+                                <div class="keycap">
+                                    C
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shortcut">
+                            <div class="key medium">
+                                <div class="keycap">
+                                    Enter
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Start Microsoft <strong>Exc</strong>el by searching for it. Of course this works for all apps and also for finding files.
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                E
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Open Windows <strong>E</strong>xplorer
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                D
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Show the <strong>D</strong>esktop
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                L
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        <strong>L</strong>ock the computer
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Alt
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Tab
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Switch app
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                &#8592;
+                            </div>
+                        </div>
+                        <div class="or">or</div>
+                        <div class="key">
+                            <div class="keycap">
+                                &#8594;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Place window on the left or right half of the display
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                &#8593;
+                            </div>
+                        </div>
+                        <div class="or">or</div>
+                        <div class="key">
+                            <div class="keycap">
+                                &#8595;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Maximise or minimise a window
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                &#8593;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Make a windows full height
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                <svg class="icon icon-windows"><use xlink:href="#icon-windows"></use></svg><span class="sr-only">Win</span>
+                            </div>
+                        </div>
+                        <div class="plus">+</div>                        
+                        <div class="key">
+                            <div class="keycap">
+                                P
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Use an external display or <strong>p</strong>rojector
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               N
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Open <strong>n</strong>ew window (of current app)
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>                        
+                        <div class="key">
+                            <div class="keycap">
+                                F10
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Same as right click
+                    </div>
+                </li>
+            </ol>
+            <h2>Edit Text and Files</h2>
+            <ol>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                A
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Select all
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               C
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Copy
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               V
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Paste
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               X
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Cut
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               Z
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Undo
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               S
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Save
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               B
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Make selected text <strong>b</strong>old
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               I
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Make selected text <strong>i</strong>talic
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               U
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Make selected text <strong>u</strong>nderlined
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Esc
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Cancel
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key">
+                            <div class="keycap">
+                                F2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Change name of selected file
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Home
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to beginning of current row
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                End
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to end of current row 
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Home
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to beginning of document
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                End
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to end of document
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div>Arrow key</div>
+                    </div>
+                    <div class="explaination">
+                        Select text from the cursor's position in the given direction
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Home
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Select all text from the cursor's position to the beginning of the row
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                End
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Select all text from the cursor's position to the end of the row
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Home
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Select all text from the cursor's position to the beginning of the document
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                End
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Select all text from the cursor's position to the end of the document
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>                        
+                        <div class="key">
+                            <div class="keycap">
+                                P
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Print
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="webb">
+            <h1>Shortcuts for Web Browsers
+                <svg class="icon icon-chrome"><use xlink:href="#icon-chrome"></use></svg>
+                <svg class="icon icon-firefox"><use xlink:href="#icon-firefox"></use></svg>
+                <svg class="icon icon-edge"><use xlink:href="#icon-edge"></use></svg></h1>
+            <p>
+                Seems to work in all browsers, but it's not guaranteed.
+            </p>
+            <h2>Common</h2>
+            <ol>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>                        
+                        <svg class="icon icon-cursor"><use xlink:href="#icon-cursor"></use></svg><span class="sr-only">Mouse Cursor</span>
+                    </div>
+                    <div class="explaination">
+                        Open clicked link in new tab
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                            <div class="keycap">
+                                F
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Search on the current page
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key">
+                            <div class="keycap">
+                                F3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to the next result in a search
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               T
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Open in new tab
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               T
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Open last closed tab(s)
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               W
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Close current tab
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key">
+                            <div class="keycap">
+                                F11
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Full screen mode
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key">
+                            <div class="keycap">
+                                F5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Reload the page
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               F5
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Reload the page without cache, i.e. if the page isn't working properly
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               L
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Focus the address bar
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               J
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Show downloaded files
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               +
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Zoom in
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               -
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Zoom ut
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                               0
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Zooma till 100%
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div>
+                            Mouse wheel
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Zoom in or out. Works in Word and some other apps as well.
+                    </div>
+                </li>
+            </ol>
+            <h2>Navigate</h2>
+            <ol>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Home
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to beginning of page
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                End
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go to end of page
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                PgDn
+                            </div>
+                        </div>
+                        <div class="or">or</div>
+                        <div class="key large">
+                            <div class="keycap">
+                                Space
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go down one screen height
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut multiline">
+                        <div class="shortcut">
+                            <div class="key medium">
+                                <div class="keycap">
+                                    PgUp
+                                </div>
+                            </div>
+                            <div class="or">or</div>
+                        </div>
+                        <div class="shortcut">
+                            <div class="key medium">
+                                <div class="keycap">
+                                    Shift
+                                </div>
+                            </div>
+                            <div class="plus">+</div>
+                            <div class="key large">
+                                <div class="keycap">
+                                    Space
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Go up one screen height
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Tab
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Switch to next tab
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Ctrl
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Shift
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key medium">
+                            <div class="keycap">
+                                Tab
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Switch to previous tab
+                    </div>
+                </li>
+                <li>
+                    <div class="shortcut">
+                        <div class="key medium">
+                            <div class="keycap">
+                                Alt
+                            </div>
+                        </div>
+                        <div class="plus">+</div>
+                        <div class="key">
+                           <div class="keycap">
+                            &#8592;
+                           </div>
+                        </div>
+                        <div class="or">or</div>
+                        <div class="key">
+                           <div class="keycap">
+                            &#8594;
+                           </div>
+                        </div>
+                    </div>
+                    <div class="explaination">
+                        Previous or next page. Browse back or forward.
+                    </div>
+                </li>
+            </ol>
+        </section>
+    </main>
+</body>
+
+</html>
