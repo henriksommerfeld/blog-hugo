@@ -94,11 +94,11 @@ cask "vlc"
 
 ## Touch Bar
 
-The Touch Bar is probably my least favourite part of the MacBook Pro, maybe after the very low-quality web cam. I find most of the default configuration to aim for aiding non-tech savvy users with simple tasks. In web browsers, the Touch Bar shows a big button that sets focus on the address bar.
+The Touch Bar is probably my least favourite part of the MacBook Pro, maybe after the very low-quality web cam. I find most of the default configuration to aim for aiding non-tech savvy users with simple tasks. In most web browsers, the Touch Bar shows a big button that sets focus on the address bar.
 
 {{<post-image image="touch-bar-web.png" width="650" borderless="true" />}}
 
-To me this clearly appears to be made for those who don't know that ⌘ + L does the same. It _is_ possible to have the Touch Bar always show the Fn-keys, but for now I'll give it the benefit of the doubt.
+To me this is a clear indication that it's made for those who don't know that ⌘ + L does the same. It _is_ possible to have the Touch Bar always show the Fn-keys, but for now I'll give it the benefit of the doubt.
 
 ### Replacing Siri with Screenshot
 
@@ -108,6 +108,12 @@ Since I don't use Siri, I replaced that button with the one for taking a screen 
 
 Once I did my first change, this is easy in the way Apple likes to think of their products. My new controls:
 {{<post-image image="touch-bar.png" width="300" borderless="true" />}}
+
+### Using function keys in Visual Studio Code
+
+I find the function keys much more useful than anything else in [VS Code](https://code.visualstudio.com/), so I set an app specific rule for using the function keys, as shown below. 
+
+{{<post-image image="vs-code-fn-keys.png" width="650" borderless="true" />}}
 
 ## General desktop changes
 
