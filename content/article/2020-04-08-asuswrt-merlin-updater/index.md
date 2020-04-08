@@ -1,18 +1,22 @@
 ---
 title: Asuswrt-Merlin Firmware Update Checker
 url: /asuswrt-merlin-firmware-update-checker
-date: 2020-04-06T06:22:21+01:00
-summary: 
-description: 
+date: 2020-04-08T15:02:21+01:00
+summary: I have an Asus RT-AC68U router at home. I’ve previously used the build-in update checker together with a notification script that ran on the router itself. Recently I noticed that I hadn’t got any update notifications in a long time, one of downsides of silent failures. This is my custom code that looks for updates.
+description: My custom checker for finding updates to Asuswrt-Merlin router firmware. I describe the code and how it's scheduled to run.
 tags: [Networking, Scripting, NodeJS]
 categories: [Tooling]
-ogimage: 
+ogimage: pushover.jpg
 draft: false
 ---
 
-I have an Asus RT-AC-68U router at home. [I've previously used the build-in update checker together with a notification script][3] that ran on the router itself. Recently I noticed that I hadn't got any update notifications in a long time, one of downsides of silent failures. 
+I have an Asus RT-AC68U router at home. [I've previously used the build-in update checker together with a notification script][3] that ran on the router itself. Recently I noticed that I hadn't got any update notifications in a long time, one of downsides of silent failures. 
 
 When I ran a manual check using the router's web interface, it just said: _"Temporarily unable to get the latest firmware information. Please try again later."_ It doesn't seem to be that temporary though.
+
+## TLDR
+
+The code is in [this GitHub repo][2] and the scheduling piece with cron is described a the end of this post.
 
 ## Building my own update checker
 
@@ -98,6 +102,8 @@ export function sendPushoverNotification(message) {
 
 ### Gluing it together
 
+By sending a notification both when there is no update and when an error occurs, I won't have any silent failures unless I made a mistake here somewhere. 
+
 {{<highlight javascript>}}
 import { getLatestStableVersion } from './latest-version-checker.js';
 import { sendPushoverNotification } from './notify.js';
@@ -132,14 +138,30 @@ main();
 
 ## Scheduling the update checker
 
-Running once a week and notifying when nothing changed. Might get annoying...?
-
+I'm running this on a [RaspberryPi][8] and it's scheduled to run once a week, 18:10 on Wednesdays. I found https://crontab.guru to be helpful for not mixing up the time settings.
 
 `crontab -e`
 
 ```
 10 18 * * 3 /home/pi/router-update-check.sh >> /home/pi/router-update-check.log
 ```
+
+The trickiest thing for me as a terrible Linux admin, was to get the cron scheduling working. Adding the output of `echo $PATH` at the top of the script did the trick. Logging the output (to `router-update-check.log` in this case), also helped.
+
+`router-update-check.sh` script contains the following:
+
+{{<highlight bash>}}
+#!/bin/bash
+PATH=/home/pi/.nvm/versions/node/v13.12.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/snap/bin
+
+cd /home/pi/Code/asuswrt-merlin-update-check/
+node ./main.js
+{{</highlight>}}
+
+The result of running the script once every minute (while troubleshooting) showed up in my phone like this. I now have an update checker that I can only blame myself if it doesn't work. Great success!
+
+{{<post-image image="pushover.jpg" alt="Pushover notifications on iOS" width="600">}}
+{{</post-image>}}
 
 [1]: https://crontab.guru/
 [2]: https://github.com/henriksommerfeld/asuswrt-merlin-update-check
@@ -148,3 +170,5 @@ Running once a week and notifying when nothing changed. Might get annoying...?
 [5]: https://en.wikipedia.org/wiki/Web_scraping
 [6]: https://askubuntu.com/questions/23009/why-crontab-scripts-are-not-working
 [7]: https://pushover.net/
+[8]: https://www.raspberrypi.org/
+[9]: https://pi-hole.net/
