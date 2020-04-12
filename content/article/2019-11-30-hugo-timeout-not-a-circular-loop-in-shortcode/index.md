@@ -27,3 +27,8 @@ The actual problem is that the build with image processing takes longer than 10 
 ```
 timeout = 60000
 ```
+
+**_Update_**: I mention that this was caused by [adding image processing][2], but when you do that you should commit the generated images files to source control, according to [Hugo’s documentation for image processing][1]. I hadn't done that, and that's why the builds were suddenly taking a lot longer than before.
+
+[1]: https://gohugo.io/content-management/image-processing/
+[2]: /lazy-loading-images-in-hugo/
