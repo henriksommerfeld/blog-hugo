@@ -38,12 +38,12 @@ export default class Hamburger {
             if (navElement.classList.contains("open")) {
                 navElement.querySelectorAll("a").forEach(element => {
                     element.addEventListener('click', this.closeMenu);
-                    element.addEventListener('touchmove', this.closeMenu);
+                    element.addEventListener('touchmove', this.closeMenu, {passive: true});
                 });
             }
         };
         document.querySelector('.hamburger-trigger').addEventListener('click', closeMenu);
-        document.querySelector('.hamburger-trigger').addEventListener('touch', closeMenu);
+        document.querySelector('.hamburger-trigger').addEventListener('touch', closeMenu, {passive: true});
     }
 
     closeMenu() {

@@ -20,7 +20,7 @@ export default class LightBox {
             this.closeModal(event);
         };
         document.getElementById('lightbox-loading').addEventListener('click', cancel);
-        document.getElementById('lightbox-loading').addEventListener('touch', cancel);
+        document.getElementById('lightbox-loading').addEventListener('touch', cancel, {passive: true});
     }
 
     addCloseOnEscEvent() {

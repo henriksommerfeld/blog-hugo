@@ -36,7 +36,7 @@ export default class Search {
         const closeButton = document.querySelector('#searchbox .close-search');
 
         closeButton.addEventListener('click', closeEvent);
-        closeButton.addEventListener('touchstart', closeEvent);
+        closeButton.addEventListener('touchstart', closeEvent, {passive: true});
     }
 
     addSearchClickEvent() {
@@ -46,7 +46,7 @@ export default class Search {
         };
         const searchButton = document.querySelector('#searchbox .icon-search');
         searchButton.addEventListener('click', doSearch);
-        searchButton.addEventListener('touchstart', doSearch);
+        searchButton.addEventListener('touchstart', doSearch, {passive: true});
     }
 
     addKeyDownEvent() {
