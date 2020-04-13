@@ -148,7 +148,7 @@ _System Preferences_ -> _Keyboard_ -> _Shortcuts_ -> _Use keyboard navigation to
 
 Using Firefox, there is an extra setting you have to do to be able to use keyboard navigation (moving focus to links). 
 
-In addition to the _All controls_ setting in macOS described above, you also have to type `about:config` in Firefox and create a setting with the key `accessibility.tabfocus` and set it to `true`.
+In addition to the _All controls_ setting in macOS described above, you also have to type `about:config` in Firefox and create a setting with the key `accessibility.tabfocus` and set it to `true`, see [Stack Overflow question][9].
 
 ### Adding key bindings for external keyboard
 
@@ -186,3 +186,4 @@ That's it, at least for now!
 [6]: https://github.com/rxhanson/Rectangle
 [7]: https://apple.stackexchange.com/questions/18016/can-i-change-the-behavior-of-the-home-and-end-keys-on-an-apple-keyboard-with-num
 [8]: https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b
+[9]: https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox
