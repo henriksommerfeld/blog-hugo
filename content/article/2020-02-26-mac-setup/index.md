@@ -115,6 +115,10 @@ I find the function keys much more useful than anything else in [VS Code](https:
 
 {{<post-image image="vs-code-fn-keys.png" width="650" borderless="true" />}}
 
+And...look at this! We've gone full circle with the Touch Bar in VS Code:
+{{<post-image image="f1-f12.png" borderless="true" />}}
+
+
 ## General desktop changes
 
 There are a bunch of smaller changes I've done and I don't remember all of them, but here are a few.
@@ -128,10 +132,25 @@ Default setting for Finder is apparently to show files in no particular order. T
 
 ### Arrange windows
 
-For a MacBook with a small screen, this might not be that useful, but with a larger display I find it really helpful. It's basically to enable the possibilities that has been in Windows for many years, like putting two windows next to each other. There are a number of applications that does this. I use [Rectangle][5] because it's free and [open source][6]. Though it is possible to align windows next to each other out-of-the-box as well, that involves precision clicking on the green maximise button, so it doesn't count.
+For a MacBook with a small screen, this might not be that useful, but with a larger display I find it really helpful. It's basically to enable the possibilities that has been in Windows for many years, like putting two windows next to each other. There are a number of applications that does this. I use [Rectangle][5] because it's free and [open source][6]. Though it is possible to align windows next to each other out-of-the-box as well, that involves precision clicking on the green maximise 
+button, so it doesn't count.
+
+## Keyboard navigation
+
+To be able to use the keyboard in dialogue windows and such, you need to enable a setting because...I wish I knew. 
+
+_System Preferences_ -> _Keyboard_ -> _Shortcuts_ -> _Use keyboard navigation to move focus between controls_.
+
+{{<post-image image="allow-keyboard.png" width="650" borderless="true" />}}
 
 
-## Adding key bindings for external keyboard
+### Allow keyboard focus on links in Firefox
+
+Using Firefox, there is an extra setting you have to do to be able to use keyboard navigation (moving focus to links). 
+
+In addition to the _All controls_ setting in macOS described above, you also have to type `about:config` in Firefox and create a setting with the key `accessibility.tabfocus` and set it to `true`.
+
+### Adding key bindings for external keyboard
 
 I have the full size keyboard with numerical pad from Apple. What I found was that the keys that are called _Home_ and _End_ on other keyboards (not from Apple), don't do what I expect in a text file (moving the cursor to beginning or end of line).
 
