@@ -33,6 +33,9 @@ img
     object-fit: contain
     height: auto
 
+a[href]::after
+    content: " (" attr(href) ")";
+
 .icon
     width: 22px
     height: 22px
@@ -44,6 +47,9 @@ img
     display: none
 
 #searchbox-container
+    display: none
+
+#comments-button-container
     display: none
 
 .header-content
