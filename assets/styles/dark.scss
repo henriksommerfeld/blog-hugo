@@ -40,7 +40,7 @@ $modal-bg-for-blur: transparentize($gray900, 0.4);
   --searchbox-icon-color: var(--color);
   --search-output-color: var(--color);
 
-  --paging-color: var(--color);
+  --paging-color: #{$gray200};
   --paging-bg-color: #{$paging-bg-color};
   --paging-border-color: #{darken($paging-bg-color, 8%)};
   --paging-text-shadow: #{darken($paging-bg-color, 30%)};
