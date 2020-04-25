@@ -19,11 +19,11 @@ jobs:
         run: |
           yarn install
       - name: Waiting for 200 from the Netlify Preview
-          uses: jakepartusch/wait-for-netlify-action@v1.1
-          id: waitFor200
-          with:
-            site_name: "henriksommerfeld"
-            max_timeout: 300
+        uses: jakepartusch/wait-for-netlify-action@v1.1
+        id: waitFor200
+        with:
+          site_name: "henriksommerfeld"
+          max_timeout: 300
       - name: Integration tests
         run: |
           CYPRESS_BASE_URL==${{ steps.waitFor200.outputs.url }} npm run test:ci
