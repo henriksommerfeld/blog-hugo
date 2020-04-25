@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.2.2
-        with:
-          hugo-version: '0.69.2'
-          extended: true
       - name: Install
         run: |
           yarn install
