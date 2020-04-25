@@ -1,2 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
 [build.environment]
   HUGO_VERSION = "0.66.0"
+  CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+  TERM = "xterm"
+
+[[plugins]]
+  # local Cypress plugin will test our site after it is built
+  package = "netlify-plugin-cypress"
