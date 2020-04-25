@@ -15,11 +15,11 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 ## Run
 1. `yarn start`
 
-## Test with Cypress GUI
+## Test Headless
 1. `yarn test`
 
-## Test Headless
-1. `yarn test:ci`
+## Test with Cypress GUI
+1. `yarn test:open`
 
 [1]: http://gohugo.io/
 [2]: https://yarnpkg.com/
