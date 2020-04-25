@@ -38,7 +38,7 @@
     "cypress:open": "cypress open",
     "serve": "serve public -l 1313",
     "test": "npm run build && start-server-and-test serve http://localhost:1313 cypress:cli",
-    "test:open": "npm run build && start-server-and-test serve http://localhost:1313 cypress:open",
+    "test:open": "npm run build && start-server-and-test serve http://localhost:1313 cypress:open"
   },
   "resolutions": {
     "cypress": "4.3.0"
