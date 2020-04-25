@@ -26,4 +26,4 @@ jobs:
           max_timeout: 300
       - name: Integration tests
         run: |
-          CYPRESS_BASE_URL=${{ steps.waitFor200.outputs.url }} npm run test:ci
+          CYPRESS_BASE_URL=${{ steps.waitFor200.outputs.url }} npm run cypress:cli
