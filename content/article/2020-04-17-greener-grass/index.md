@@ -37,17 +37,21 @@ Sample tech:
 * README for monthly "deploy weekend"
 
 
+
 ## Where I'm now
 
 Currently I'm part of a _tooling_ team that provides the infrastructure and tools for other development teams to run their applications (micro services) on. As a dev in our organisation, you create a new service by using our CLI. It will ask you a few questions: name and description for the service, what team owns it, should it be accessible from the Internet, do you have an existing repository, etc. 
+
+We try to use as many open source pieces as possible when laying our puzzle. We buy commercial software as well when we find that's the best option, but we don't buy a product that claims it do everything. 
 
 Event storming, event sourcing...
 
 Sample tech:
 * [Visual Studio Code][19] (still avoid [Vim][18])
 * JavaScript/TypeScript
+* Go
 * [NodeJS][13] with [koa][14] or [Apollo Server][15]
-* [Docker][10], [Nomad][11], [Consul][12], [Jenkins][9], [Neo4j][16], [Grafana][8], [Graylog][7]...
+* [Docker][10], Terraform, [Nomad][11], [Consul][12], [Jenkins][9], [Neo4j][16], [Grafana][8], [Graylog][7]...
 * [Mob][21] station with large TV and [Ubuntu Linux][23] [NUC][22] + personal [MacBook Pro 16"][17]
 
 ## Next actions
