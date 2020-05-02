@@ -40,23 +40,27 @@ Sample tech:
 
 ## Where I'm now
 
-Currently I'm part of a _tooling_ team that provides the infrastructure and tools for other development teams to run their applications (micro services) on. As a dev in our organisation, you create a new service by using our CLI. It will ask you a few questions: name and description for the service, what team owns it, should it be accessible from the Internet, do you have an existing repository, etc. 
+Now I'm in _ops_, part of a team named _Tooling_ that provides the infrastructure and tools for other development teams to run their applications on. I'm the least experienced in the team when it comes to infrastructure and the tools we use, so I learn a ton of new stuff all the time. Having taken a web interface for granted for almost all of my career, the primary user interface our team is building right now is a [CLI][24].
 
-We try to use as many open source pieces as possible when laying our puzzle. We buy commercial software as well when we find that's the best option, but we don't buy a product that claims it do everything. 
+As a developer in our organisation, you create a new service (API, web app, etc.) by using our CLI. It will ask you a few questions: name and description for the service, what team owns it, select the upstream services it depends on etc. That takes care of all the boring stuff you _need_, but don't want to deal with as an application developer, like logging, monitoring, TLS certificates etc.
 
-Event storming, event sourcing...
+Naturally, the idea of _infrastructure as code_ isn't something you have to _sell_ to someone like me with a coding background, but seeing it in action is still fantastic. Even if this isn't feasible for a small company, we're certainly not as big as Google, Microsoft or Facebook.
+
+I find it delightful to primarily work with open source products. We buy commercial software when we find that's the best option, but we don't buy a product that claims it do everything. There is a big difference in choosing the pieces that best fits the puzzle you're trying to assemble, and buying a complete puzzle that you have to retrofit your existing pieces into.
 
 Sample tech:
 * [Visual Studio Code][19] (still avoid [Vim][18])
 * JavaScript/TypeScript
-* Go
-* [NodeJS][13] with [koa][14] or [Apollo Server][15]
-* [Docker][10], Terraform, [Nomad][11], [Consul][12], [Jenkins][9], [Neo4j][16], [Grafana][8], [Graylog][7]...
-* [Mob][21] station with large TV and [Ubuntu Linux][23] [NUC][22] + personal [MacBook Pro 16"][17]
+* [Go][28]
+* [Node JS][13] with [koa][14] or [Apollo Server][15]
+* [Docker][10], [Terraform][27], [Nomad][11], [Consul][12], [Jenkins][9], [Neo4j][16], [Grafana][8], [Graylog][7], [Prometheus][29]...
+* [Mob][21] station with large TV and [Ubuntu Linux][23] [NUC][22] + personal [MacBook Pro][17]
 
 ## Next actions
 
-Deploy weekends vs git hooks
+I will keep evaluating my learning and how fun I think my job is. In hindsight I should probably have made a change earlier, but I wasn't unhappy before either and I guess that's the tricky part when it isn't as clear as black and white. 
+
+I hope I have contributed to better ways of working earlier in my career as well, but some things are hard to change within a specific role or company. Some prefer stability and familiarity, but git hooks _are_ bette than _"deployment weekends"_!
 
 [1]: https://www.imdb.com/title/tt3659388/
 [2]: https://itrevolution.com/book/the-phoenix-project/
@@ -81,3 +85,9 @@ Deploy weekends vs git hooks
 [21]: https://visualstudio.microsoft.com/vs/
 [22]: https://en.wikipedia.org/wiki/Next_Unit_of_Computing
 [23]: https://ubuntu.com/
+[24]: https://www.w3schools.com/whatis/whatis_cli.asp
+[25]: https://itrevolution.com/book/the-unicorn-project/
+[26]: https://www.infoq.com/presentations/Simple-Made-Easy/
+[27]: https://www.terraform.io/
+[28]: https://golang.org/
+[29]: https://prometheus.io/docs/introduction/overview/
