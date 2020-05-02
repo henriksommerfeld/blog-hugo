@@ -7,7 +7,7 @@ description:
 tags: []
 categories: [Thoughts]
 ogimage: green-grass_16-9.jpg
-draft: false
+draft: true
 ---
 
 {{<post-image image="green-grass_16-9.jpg" alt="Green field from above">}}
