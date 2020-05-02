@@ -40,7 +40,7 @@ Sample tech:
 
 ## Where I'm now
 
-Now I'm in _ops_, part of a team named _Tooling_ that provides the infrastructure and tools for other development teams to run their applications on. I'm the least experienced in the team when it comes to infrastructure and the tools we use, so I learn a ton of new stuff all the time. Having taken a web interface for granted for almost all of my career, the primary user interface our team is building right now is a [CLI][24].
+Now I'm in _ops_, part of a team named _Tooling_ that provides the infrastructure and tools for other development teams to run their applications on. I'm the least experienced in the team (joined a couple of months ago) when it comes to infrastructure and the tools we use, so I learn a ton of new stuff all the time. Having taken a web interface for granted for almost all of my career, the primary user interface our team is building right now is a [CLI][24].
 
 As a developer in our organisation, you create a new service (API, web app, etc.) by using our CLI. It will ask you a few questions: name and description for the service, what team owns it, select the upstream services it depends on etc. That takes care of all the boring stuff you _need_, but don't want to deal with as an application developer, like logging, monitoring, TLS certificates etc.
 
@@ -60,7 +60,9 @@ Sample tech:
 
 I will keep evaluating my learning and how fun I think my job is. In hindsight I should probably have made a change earlier, but I wasn't unhappy before either and I guess that's the tricky part when it isn't as clear as black and white. 
 
-I hope I have contributed to better ways of working earlier in my career as well, but some things are hard to change within a specific role or company. Some prefer stability and familiarity, but git hooks _are_ bette than _"deployment weekends"_!
+I hope I have contributed to better ways of working earlier in my career as well, but some things are hard to change within a specific role or company. Some people prefer stability and familiarity, but "git hooks" _are_ better than "deployment weekends"!
+
+Read (or listen to the audio books) [The Phoenix Project][2] and [The Unicorn Project][25] and listen to [Rich Hickey's talk _Simple Made Easy_][26] if you haven't, that's my next actions for you 😉
 
 [1]: https://www.imdb.com/title/tt3659388/
 [2]: https://itrevolution.com/book/the-phoenix-project/
