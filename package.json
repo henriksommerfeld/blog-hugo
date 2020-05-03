@@ -13,14 +13,14 @@
     "@testing-library/cypress": "6.0.0",
     "babelify": "10.0.0",
     "browserify": "16.5.1",
-    "concurrently": "5.1.0",
-    "cypress": "4.3.0",
+    "concurrently": "5.2.0",
+    "cypress": "4.5.0",
     "del-cli": "3.0.0",
-    "onchange": "6.1.0",
+    "onchange": "7.0.1",
     "serve": "11.3.0",
     "shx": "0.3.2",
-    "start-server-and-test": "1.10.11",
-    "uglify-js": "^3.8.1"
+    "start-server-and-test": "1.11.0",
+    "uglify-js": "^3.9.1"
   },
   "scripts": {
     "clean": "shx rm -f static/*.js",
@@ -41,7 +41,7 @@
     "test:open": "npm run build && start-server-and-test serve http://localhost:1313 cypress:open"
   },
   "resolutions": {
-    "cypress": "4.3.0"
+    "cypress": "4.5.0"
   },
   "repository": {
     "type": "git",
