@@ -2,9 +2,9 @@
 title: The Grass is Greener on the Other Side
 url: /the-grass-is-greener-on-the-other-side
 date: 2020-05-03T10:02:21+02:00
-summary: Approaching 40 years old and two years since I changed direction as a software developer, I conclude that the grass really is greener on the other side. Perhaps I should have jumped earlier.
-description: Approaching 40 years old and two years since I changed direction as a software developer, I conclude that the grass really is greener on the other side. Perhaps I should have jumped earlier.
-tags: []
+summary: Approaching 40 years old and two years since I changed direction as a software developer, I conclude that the grass really is greener on the other side. Perhaps I should have jumped earlier. Git hooks are better than deployment weekends!
+description: Approaching 40 years old and two years since I changed direction as a software developer, I conclude that the grass really is greener on the other side. Perhaps I should have jumped earlier. Git hooks are better than deployment weekends!
+tags: [Career]
 categories: [Thoughts]
 ogimage: green-grass_16-9.jpg
 draft: false

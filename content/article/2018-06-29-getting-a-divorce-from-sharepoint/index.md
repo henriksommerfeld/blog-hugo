@@ -4,7 +4,7 @@ date: 2018-06-29T23:18:39+02:00
 url: "getting-a-divorce-from-sharepoint"
 draft: false
 categories: ["Thoughts"]
-tags: ["SharePoint"]
+tags: ["SharePoint", "Career"]
 ---
 
 In my early days as a consultant this product from Microsoft called _SharePoint_ became popular and customers starting to ask for people who could work with it. As a junior, I jumped onboard and could soon call myself a SharePoint developer, one of the hottest thing in the IT consultant market at the time (around 2007). 
