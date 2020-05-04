@@ -4,7 +4,7 @@ export default class Hamburger {
     constructor() {
         console.log('%c 🍔 Hamburger module loaded', 'font-size:1.5em');
 
-        this.addCloseOnTouchEvent();
+        this.addToggleEvent();
         this.addCloseOnEscEvent();
     }
 
@@ -19,8 +19,8 @@ export default class Hamburger {
         });
     }
 
-    addCloseOnTouchEvent() {
-        const closeMenu = () => {
+    addToggleEvent() {
+        const toggleMenu = () => {
             document.querySelector('.hamburger-menu .bar').classList.toggle('animate');
             let navElement = document.querySelector('nav');
             if (navElement.classList.contains('open') && navElement.classList.contains('close')) {
@@ -42,8 +42,8 @@ export default class Hamburger {
                 });
             }
         };
-        document.querySelector('.hamburger-trigger').addEventListener('click', closeMenu);
-        document.querySelector('.hamburger-trigger').addEventListener('touch', closeMenu, {passive: true});
+        document.querySelector('.hamburger-trigger').addEventListener('click', toggleMenu);
+        document.querySelector('.hamburger-trigger').addEventListener('touch', toggleMenu, {passive: true});
     }
 
     closeMenu() {

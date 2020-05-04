@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
   } catch (error) { }
 
   new ThemeSwitcher();
-  new Hamburger();
+  //new Hamburger();
   new SkipLink();
   new LightBox();
   new Search();
@@ -31,6 +31,42 @@ document.addEventListener("DOMContentLoaded", function() {
 window.blog = {
   state: {
     alpine: false,
-    isModalOpen: false
-  }  
+    isModalOpen: false,
+  }
+}
+
+window.menu = {
+  states: {
+      CLOSED: 'closed',
+      CLOSING: 'closing',
+      OPEN: 'open',
+      OPENING: 'opening'
+  },
+  state: 'closed',
+  isOpen: ()=> menu.state === menu.states.OPEN,
+  isOpening: ()=> menu.state === menu.states.OPENING,
+  isClosing: ()=> menu.state === menu.states.CLOSING,
+  isClosed: ()=> menu.state === menu.states.CLOSED,
+  hamburgerIsOpen: ()=> menu.isOpen() || menu.isOpening(),
+  close: function() {
+    this.state = this.states.CLOSING;
+      setTimeout(()=> {
+        this.state = this.states.CLOSED;
+      }, 300)
+  },
+  open: function() {
+    this.state = this.states.OPENING;
+      setTimeout(()=> {
+        this.state = this.states.OPEN;
+      }, 300)
+  },
+  toggle: function() {      
+    if (this.isOpen()) {
+      this.close();
+    }
+    
+    else if (this.isClosed()) {
+      this.open();
+    }
+  }
 }

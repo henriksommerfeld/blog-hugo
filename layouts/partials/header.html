@@ -15,16 +15,16 @@
     </defs>
     </svg>
 
-    <div class="header-content">
+    <div class="header-content" x-data="window.menu">
         <div class="site-title">Henrik Sommerfeld</div>
         {{- partial "theme-switcher.html" -}}
         <a href="#content" id="skip-link" class="sr-only skip-link">Skip to content</a>
-        <a href="javascript:void('Hamburger menu show/hide')" class="hamburger-trigger">Menu
+        <button @click="toggle()" class="hamburger-trigger">Menu
             <div class="hamburger-menu">
-                <div class="bar"></div>
+                <div class="bar" :class="{'animate': hamburgerIsOpen()}"></div>
             </div>
-        </a>
-        <nav>
+        </button>
+        <nav :class="{'open': isOpen() || isOpening(), 'open close': isClosing()}">
             <a href="/" class="home">
                 <svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg>                
                 Home</a>
