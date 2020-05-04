@@ -15,7 +15,7 @@
     </defs>
     </svg>
 
-    <div class="header-content" x-data="window.menu">
+    <div class="header-content" x-data="window.menu" @click.away="close()">
         <div class="site-title">Henrik Sommerfeld</div>
         {{- partial "theme-switcher.html" -}}
         <a href="#content" id="skip-link" class="sr-only skip-link">Skip to content</a>
@@ -29,7 +29,7 @@
                 <svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg>                
                 Home</a>
             <a href="/about/" class="about"><svg class="icon icon-user"><use xlink:href="#icon-user"></use></svg>About</a>
-            <a href="/search-requires-javascript/" rel="nofollow" class="search"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>Search</a>
+            <a href="/search-requires-javascript/" rel="nofollow" class="search" @click="close()"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>Search</a>
         </nav>
     </div>
 </header>

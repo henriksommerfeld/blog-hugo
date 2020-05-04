@@ -49,12 +49,18 @@ window.menu = {
   isClosed: ()=> menu.state === menu.states.CLOSED,
   hamburgerIsOpen: ()=> menu.isOpen() || menu.isOpening(),
   close: function() {
+    if (this.state === this.states.CLOSED || this.state === this.states.CLOSING)
+      return;
+
     this.state = this.states.CLOSING;
       setTimeout(()=> {
         this.state = this.states.CLOSED;
       }, 300)
   },
   open: function() {
+    if (this.state === this.states.OPEN || this.state === this.states.OPENING)
+      return;
+
     this.state = this.states.OPENING;
       setTimeout(()=> {
         this.state = this.states.OPEN;
