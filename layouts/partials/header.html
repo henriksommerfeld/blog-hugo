@@ -24,7 +24,7 @@
                 <div class="bar" :class="{'animate': hamburgerIsOpen()}"></div>
             </div>
         </button>
-        <nav :class="{'open': isOpen() || isOpening(), 'open close': isClosing()}">
+        <nav :class="{'open': isOpen() || isOpening(), 'open closing': isClosing()}">
             <a href="/" class="home">
                 <svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg>                
                 Home</a>

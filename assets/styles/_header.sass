@@ -134,14 +134,14 @@ nav
             animation: fold-in 400ms forwards
             border-bottom: none
 
-    &.close
+    &.closing
         pointer-events: painted
         animation: slide-out 500ms forwards
         @media (min-width: $small-size-min-width)
             animation: fold-out 500ms forwards
 
 @media (min-width: $medium-size-min-width)
-    nav, nav.open, nav.close
+    nav, nav.open, nav.closing
         position: relative
         display: flex
         top: 0
