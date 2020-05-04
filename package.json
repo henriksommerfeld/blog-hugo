@@ -3,24 +3,25 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
+    "alpinejs": "^2.3.1",
     "lazysizes": "5.2.0",
     "lunr": "2.3.8"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
-    "@babel/core": "7.9.0",
-    "@babel/preset-env": "7.9.5",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
     "@testing-library/cypress": "6.0.0",
     "babelify": "10.0.0",
     "browserify": "16.5.1",
     "concurrently": "5.2.0",
     "cypress": "4.5.0",
     "del-cli": "3.0.0",
-    "onchange": "7.0.1",
+    "onchange": "7.0.2",
     "serve": "11.3.0",
     "shx": "0.3.2",
     "start-server-and-test": "1.11.0",
-    "uglify-js": "^3.9.1"
+    "uglify-js": "^3.9.2"
   },
   "scripts": {
     "clean": "shx rm -f static/*.js",

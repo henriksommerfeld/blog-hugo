@@ -1,7 +1,7 @@
 {{ partial "doctype.html" }}
 <html lang="en">
     {{ partial "head.html" . }}
-    <body class="articles-with-category">
+    {{ partial "body-start-tag.html" (dict "cssClassNames" "articles-with-category")}}
         <div id="page-wrapper">
             {{ partial "header.html" . }}
             <div class="body">

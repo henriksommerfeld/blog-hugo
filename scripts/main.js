@@ -1,6 +1,7 @@
 'use strict';
 
 import 'lazysizes';
+import 'alpinejs';
 import ThemeSwitcher from './theme-switcher'
 import Hamburger from './hamburger';
 import SkipLink from './skip-link';
@@ -26,3 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
   new Search();
   new CodeExpanded();
 });
+
+window.blog = {
+  state: {
+    alpine: false,
+    isModalOpen: false
+  }  
+}

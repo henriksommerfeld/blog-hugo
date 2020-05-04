@@ -15,7 +15,14 @@
             </symbol>
         </defs>
     </svg>
-	<h3>Contact Info</h3>
+    <h3>Contact Info</h3>
+    <div>
+        <h4 x-show="!alpine">VanillaJS</h4>
+        <h4 x-show="alpine">Alpine</h4>
+
+        <button type="button" @click="alpine = !alpine">Toggle</button>
+
+    </div>
 	<ul>
         <li>
             <a href="mailto:henrik@sommerfeld.nu">
@@ -45,6 +52,4 @@
             </a>
         </li>
     </ul>
-
-	<script src="https://www.google.com/recaptcha/api.js?render=explicit" async="" defer=""></script>
 </div>

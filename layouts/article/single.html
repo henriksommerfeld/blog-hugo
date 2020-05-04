@@ -1,7 +1,7 @@
 {{ partial "doctype.html" }}
 <html lang="en">
     {{ partial "head.html" . }}
-    <body>
+    {{ partial "body-start-tag.html"}}
         {{ $postStyles := resources.Get "styles/post-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
         <link rel="stylesheet" type="text/css" href="{{ $postStyles.RelPermalink }}" integrity="{{ $postStyles.Data.Integrity }}" media="screen, tv, projection">
         <div id="page-wrapper">

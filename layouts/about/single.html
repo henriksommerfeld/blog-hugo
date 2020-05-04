@@ -2,7 +2,7 @@
 <html lang="en">
 {{ partial "head.html" . }}
 
-<body>
+{{ partial "body-start-tag.html"}}
     {{ $aboutStyles := resources.Get "styles/about-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.RelPermalink }}" integrity="{{ $aboutStyles.Data.Integrity }}" media="screen, tv, projection">
     <div id="page-wrapper">
