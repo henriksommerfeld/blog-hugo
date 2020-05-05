@@ -2,12 +2,15 @@
 
 import 'lazysizes';
 import 'alpinejs';
+import lunr from 'lunr';
+
 import ThemeSwitcher from './theme-switcher'
 import Hamburger from './hamburger';
 import SkipLink from './skip-link';
 import LightBox from './lightbox';
 import Search from './search';
 import CodeExpanded from './code-expanded';
+import { BabelifyObject } from 'babelify';
 
 document.addEventListener("DOMContentLoaded", function() {
   try {
@@ -24,55 +27,88 @@ document.addEventListener("DOMContentLoaded", function() {
   //new Hamburger();
   new SkipLink();
   new LightBox();
-  new Search();
+  //new Search();
   new CodeExpanded();
 });
 
 window.blog = {
-  state: {
-    alpine: false,
-    isModalOpen: false,
-  }
-}
+  isModalOpen: false,
+  search: {
+    isOpen: false,
+    textInSearchBox: '',
+    index: null,
+    store: null,
+    lastSearch: 0,
+    indexLoadFailed: false,
+    indexLoading: false,
+    indexLoadingShowed: false,
+    indexLoadedShowed: false,
+    openSearchDialog: function() {
+      blog.isModalOpen = true;
+      this.isOpen = true;
+      this.textInSearchBox = '';
+      this.indexLoadFailed = false;
+      this.downloadIndex();
+    },
+    downloadIndex: function() {
+      if (this.index) return;
 
-window.menu = {
-  states: {
-      CLOSED: 'closed',
-      CLOSING: 'closing',
-      OPEN: 'open',
-      OPENING: 'opening'
-  },
-  state: 'closed',
-  isOpen: ()=> menu.state === menu.states.OPEN,
-  isOpening: ()=> menu.state === menu.states.OPENING,
-  isClosing: ()=> menu.state === menu.states.CLOSING,
-  isClosed: ()=> menu.state === menu.states.CLOSED,
-  hamburgerIsOpen: ()=> menu.isOpen() || menu.isOpening(),
-  close: function() {
-    if (this.state === this.states.CLOSED || this.state === this.states.CLOSING)
-      return;
-
-    this.state = this.states.CLOSING;
-      setTimeout(()=> {
-        this.state = this.states.CLOSED;
-      }, 300)
-  },
-  open: function() {
-    if (this.state === this.states.OPEN || this.state === this.states.OPENING)
-      return;
-
-    this.state = this.states.OPENING;
-      setTimeout(()=> {
-        this.state = this.states.OPEN;
-      }, 300)
-  },
-  toggle: function() {      
-    if (this.isOpen()) {
-      this.close();
+      this.indexLoading = true;
+      this.fetchIndex().then(response => {
+          this.index = lunr.Index.load(response.index);
+          this.store = response.store;
+      });
+    },
+    fetchIndex: function() {
+      return fetch('/search-index.json')
+          .then(res => this.handleFetchResponse(res))
+          .catch(res => this.handleFetchResponse(res));
+    },
+    handleFetchResponse: function(response) {
+      this.indexLoadFailed = !response.ok;
+      this.indexLoading = false;
+      return response.ok && response.json ? response.json() : this.index;
     }
-    
-    else if (this.isClosed()) {
-      this.open();
+  },
+  menu: {
+    states: {
+        CLOSED: 'closed',
+        CLOSING: 'closing',
+        OPEN: 'open',
+        OPENING: 'opening'
+    },
+    state: 'closed',
+    isOpen: ()=> blog.menu.state === blog.menu.states.OPEN,
+    isOpening: ()=> blog.menu.state === blog.menu.states.OPENING,
+    isClosing: ()=> blog.menu.state === blog.menu.states.CLOSING,
+    isClosed: ()=> blog.menu.state === blog.menu.states.CLOSED,
+    hamburgerIsOpen: ()=> blog.menu.isOpen() || blog.menu.isOpening(),
+    close: function() {
+      if (this.state === this.states.CLOSED || this.state === this.states.CLOSING)
+        return;
+  
+      this.state = this.states.CLOSING;
+        setTimeout(()=> {
+          this.state = this.states.CLOSED;
+        }, 300)
+    },
+    open: function() {
+      if (this.state === this.states.OPEN || this.state === this.states.OPENING)
+        return;
+  
+      this.state = this.states.OPENING;
+        setTimeout(()=> {
+          this.state = this.states.OPEN;
+        }, 300)
+    },
+    toggle: function() {      
+      if (this.isOpen()) {
+        this.close();
+      }
+      
+      else if (this.isClosed()) {
+        this.open();
+      }
     }
   }
 }

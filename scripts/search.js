@@ -63,7 +63,7 @@ export default class Search {
 
             this.closeModal();
             this.resetFocus();
-        }); 44444448
+        });
     }
 
     handleFetchResponse(response) {

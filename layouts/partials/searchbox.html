@@ -1,9 +1,9 @@
-<div id="searchbox-container">
-    <div id="searchbox">
+<div id="searchbox-container" :class="{'open': search.isOpen, 'close': !search.isOpen}">
+    <div id="searchbox" :class="{'open': search.isOpen, 'close': !search.isOpen}">
         <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
         <label for="search-input" class="sr-only">Searchbox</label>
-        <input id="search-input" type="search" placeholder="Search..." class="search-input" 
-            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <input id="search-input" type="search" placeholder="Search..." class="search-input" x-ref="searchInput"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" x-text="search.textInSearchBox">
         <svg class="icon icon-circle-with-cross close-search"><use xlink:href="#icon-circle-with-cross"></use></svg>
     </div>
     <div class="search-results-container">
