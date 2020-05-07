@@ -17,11 +17,11 @@ window.blog = {
     textInSearchBox: '',
     index: null,
     store: null,
-    lastSearch: 0,
     indexLoadFailed: false,
     indexLoading: false,
-    indexLoadingShowed: false,
-    indexLoadedShowed: false,
+    showOutput: function() {
+      return this.textInSearchBox;
+    },
     openSearchDialog: function() {
       blog.isModalOpen = true;
       this.isOpen = true;
@@ -29,13 +29,20 @@ window.blog = {
       this.indexLoadFailed = false;
       this.downloadIndex();
     },
+    closeSearchDialog: function() {
+      this.isOpen = false;
+      blog.isModalOpen = false;
+    },
     downloadIndex: function() {
       if (this.index) return;
 
       this.indexLoading = true;
       this.fetchIndex().then(response => {
-          this.index = lunr.Index.load(response.index);
-          this.store = response.store;
+          this.index = window.lunr.Index.load(response.index);
+          this.store = response.store; 
+          this.indexLoading = false;
+          this.searchBoxChanged(this.textInSearchBox);
+          console.log("🔍 Search index downloaded")
       });
     },
     fetchIndex: function() {
@@ -45,8 +52,9 @@ window.blog = {
     },
     handleFetchResponse: function(response) {
       this.indexLoadFailed = !response.ok;
-      this.indexLoading = false;
       return response.ok && response.json ? response.json() : this.index;
+    },
+    searchBoxChanged: function(phrase) {
     }
   },
   menu: {

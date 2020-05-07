@@ -1,6 +1,6 @@
-<div id="searchbox-container" :class="{'open': search.isOpen, 'close': !search.isOpen}" 
+<div id="searchbox-container" :class="{'open': search.isOpen}" 
     x-on:keydown.escape="search.closeSearchDialog();$nextTick(() => $refs.searchMenuLink.focus())">
-    <div id="searchbox" :class="{'open': search.isOpen, 'close': !search.isOpen}">
+    <div id="searchbox" :class="{'open': search.isOpen}">
         <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
         <label for="search-input" class="sr-only">Searchbox</label>
         <input id="search-input" type="search" placeholder="Search..." class="search-input" x-ref="searchInput"
@@ -9,15 +9,15 @@
         <svg class="icon icon-circle-with-cross close-search"><use xlink:href="#icon-circle-with-cross"></use></svg>
     </div>
     <div class="search-results-container">
-        <div id="search-output" x-show="search.showOutput">
-            <div id="no-results-message">
+        <div id="search-output" x-show="search.showOutput()">
+            <!-- <div id="no-results-message">
                 No matching posts found. You can use wildcards and search only in titles, e.g. <code>title:iot</code>
-            </div>
-            <div id="index-loading-message">
+            </div> -->
+            <div id="index-loading-message" x-show="!search.indexLoadFailed && search.indexLoading && search.textInSearchBox">
                 <span class="icon-spinner" aria-hidden="true"></span> Loading search index, please wait...
             </div>
-            <div id="index-loaded-message">
-                Index has completed downloading. Please search again.
+            <div id="index-failed-message" x-show="search.indexLoadFailed && search.textInSearchBox">
+                Search index failed to download 😢
             </div>
             <div id="number-of-hits-message"></div>
             <ol class="result-list"></ol>

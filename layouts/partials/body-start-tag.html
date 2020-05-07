@@ -1,1 +1,2 @@
-<body x-data="window.blog" :class="{ 'modal-open': isModalOpen }" class="{{ .cssClassNames }}">
+<body x-data="window.blog" :class="{ 'modal-open': isModalOpen }" class="{{ .cssClassNames }}" 
+  x-on:keydown.escape="search.isOpen = false;isModalOpen = false">
