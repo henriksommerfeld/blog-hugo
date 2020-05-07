@@ -10,7 +10,9 @@ pygmentsstyle = "monokai"
 preserveTaxonomyNames = true
 googleAnalytics = ""
 disqusShortname = "henrik-sommerfeld"
-minifyBundles = false
+
+[params]
+    minifyBundles = false
 
 [permalinks]
     article = "/:title/"

@@ -9,8 +9,15 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 2. Install Hugo https://github.com/gohugoio/hugo/releases See expected version in [netlify.toml](./netlify.toml)). Extended version required.
 3. Install [Yarn][2] (version 1).
 
-## Installation
-1. `yarn install`
+## Running the site
+1. `yarn install:prod`
+2. `yarn build`
+3. `yarn serve`
+
+### Installation
+
+### Run
+1. `yarn serve`
 
 ## Run
 1. `yarn start`

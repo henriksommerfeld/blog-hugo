@@ -121,11 +121,11 @@ $search-min-wide: 150em;
         box-shadow: 0 4px 15px 5px rgba(black, 0.6);
     }
 
-    &.search-performed, &.has-error, &.index-loading, &.index-loaded {
+    //&.search-performed, &.has-error, &.index-loading, &.index-loaded {
         display: flex;
         width: calc(100% - 20px);
         flex-direction: column;        
-    }
+    //}
     &.search-performed:not(.has-hits), &.has-error {
         #no-results-message {
             display: block;

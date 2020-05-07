@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
-    "alpinejs": "^2.3.1",
+    "alpinejs": "2.3.3",
     "lazysizes": "5.2.0",
     "lunr": "2.3.8"
   },
@@ -19,25 +19,31 @@
     "del-cli": "3.0.0",
     "onchange": "7.0.2",
     "serve": "11.3.0",
-    "shx": "0.3.2",
+    "shx": "^0.3.2",
     "start-server-and-test": "1.11.0",
-    "uglify-js": "^3.9.2"
+    "uglifyify": "5.0.2"
   },
   "scripts": {
+    "install:prod": "yarn install --production",
     "clean": "shx rm -f static/*.js",
     "clean:public": "shx rm -rf public",
+    
+    "build:js-libs": "browserify -t [ babelify --presets [ @babel/preset-env ] ] -g uglifyify scripts/libraries.js > assets/libraries.js",
+    "build:assets": "npm run clean && npm run build:js-libs",
+    "build": "npm run build:assets && npm run clean:public && hugo version && hugo --gc --minify && npm run index:prod",
+    
+    
+    
+    
     "js:build": "browserify scripts/main.js --debug -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
-    "js:build:prod": "browserify scripts/main.js -o assets/site-bundle.js -t [ babelify --presets [ @babel/preset-env ] ] && uglifyjs assets/site-bundle.js -c -o assets/site-bundle.js",
+    "js:build:prod": "browserify scripts/main.js -o assets/site-bundle.js -t [ babelif --presets [ @babel/preset-env ] ] && uglifyjs assets/site-bundle.js -c -o assets/site-bundle.js",
     "js:watch": "onchange scripts -- npm run js:build && npm run index",
-    "build:assets": "npm run clean && npm run js:build:prod",
-    "hugo:watch": "hugo serve --config config-dev.toml --bind=0.0.0.0",
+    "hugo:watch": "hugo server --config config-dev.toml --bind=0.0.0.0",
     "index:prod": "node build/index-search.js public/search-index.json",
     "index": "node build/index-search.js static/search-index.json",
     "start": "npm run js:build && concurrently --kill-others \"npm run js:watch\" \"npm run hugo:watch\"",
-    "build": "npm run build:assets && npm run clean:public && hugo version && hugo --gc && npm run index:prod",
     "cypress:cli": "cypress run",
     "cypress:open": "cypress open",
-    "serve": "serve public -l 1313",
     "test": "npm run build && start-server-and-test serve http://localhost:1313 cypress:cli",
     "test:open": "npm run build && start-server-and-test serve http://localhost:1313 cypress:open"
   },

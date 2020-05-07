@@ -1,2 +1,6 @@
 [build.environment]
-  HUGO_VERSION = "0.69.2"
+  HUGO_VERSION = "0.70.0"
+  YARN_VERSION = "1.22.4"
+  YARN_FLAGS = "--production"
+  NODE_ENV = "production"
+  
