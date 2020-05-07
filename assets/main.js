@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   } catch (error) { }  
 });
-
+ 
 window.blog = {
   isModalOpen: false,
   search: {

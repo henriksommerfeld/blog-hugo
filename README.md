@@ -11,21 +11,15 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 
 ## Running the site
 1. `yarn install:prod`
-2. `yarn build`
-3. `yarn serve`
+2. `yarn start`
 
-### Installation
+## Tests
+1. `yarn install`
 
-### Run
-1. `yarn serve`
-
-## Run
-1. `yarn start`
-
-## Test Headless
+### Headless
 1. `yarn test`
 
-## Test with Cypress GUI
+## Cypress GUI
 1. `yarn test:open`
 
 [1]: http://gohugo.io/
