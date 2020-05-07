@@ -20,7 +20,7 @@ window.blog = {
     indexLoadFailed: false,
     indexLoading: false,
     showOutput: function() {
-      return this.textInSearchBox;
+      return !!this.textInSearchBox;
     },
     openSearchDialog: function() {
       blog.isModalOpen = true;
