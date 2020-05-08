@@ -17,6 +17,21 @@ body.modal-open {
     overflow: hidden;
 }
 
+.modal-close-button {
+    display: none;
+    position: absolute;
+    align-items: center;
+    color: white;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    .icon {
+        font-size: 2rem;
+    }
+}
+
 @mixin modal-open {
     opacity: 1;
     visibility: visible;
