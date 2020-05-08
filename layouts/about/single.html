@@ -11,6 +11,12 @@
             <div class="body-max-width">
                 <main id="content">
                     {{- .Content -}}
+                    <script>
+                        document.querySelector('figure img').addEventListener('click', evt => {
+                            if (evt.detail === 3)
+                                evt.target.classList.toggle('effect');
+                        });
+                    </script>
                     {{- partial "contact-info.html" -}}
                 </main>
                 <aside id="sidebar">
