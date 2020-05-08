@@ -19,8 +19,9 @@ window.blog = {
     store: null,
     indexLoadFailed: false,
     indexLoading: false,
-    showOutput: function() {
-      return !!this.textInSearchBox;
+    hits: [],
+    getHitsText: function() {
+      return `Search phrase matching ${this.hits.length} pages`;
     },
     openSearchDialog: function() {
       blog.isModalOpen = true;
@@ -38,11 +39,11 @@ window.blog = {
 
       this.indexLoading = true;
       this.fetchIndex().then(response => {
-          this.index = window.lunr.Index.load(response.index);
-          this.store = response.store; 
-          this.indexLoading = false;
-          this.searchBoxChanged(this.textInSearchBox);
-          console.log("🔍 Search index downloaded")
+        this.index = window.lunr.Index.load(response.index);
+        this.store = response.store; 
+        this.indexLoading = false;
+        this.searchBoxChanged(this.textInSearchBox);
+        console.log("🔍 Search index downloaded")
       });
     },
     fetchIndex: function() {
@@ -55,6 +56,24 @@ window.blog = {
       return response.ok && response.json ? response.json() : this.index;
     },
     searchBoxChanged: function(phrase) {
+      const trimmedPhrase = (phrase || '').trim();
+      if (trimmedPhrase.length < 2 && trimmedPhrase !== '*')
+        return;
+    
+      this.find(trimmedPhrase);
+    },
+    find: function(phrase) {
+      this.hits = this.index.search(phrase);
+    },
+    fromStore: function(hit) {
+      return this.store[hit.ref] || {};
+    },
+    focusFirstAnchor: function(event, element) {
+      try {
+        element.querySelector('a').focus();
+        event.preventDefault();
+
+      } catch(error) {}
     }
   },
   menu: {
