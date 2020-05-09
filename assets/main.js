@@ -11,7 +11,61 @@ document.addEventListener("DOMContentLoaded", function() {
 });
  
 window.blog = {
+  keyboardNavigation: false,
   isModalOpen: false,
+  closeModals: function() {
+    this.search.closeSearchDialog();
+    this.lightbox.close();
+  },
+  lightbox: {
+    isOpen: false,
+    cancelShowImage: false,
+    openImage: false,
+    showLoading: false,
+    close: function() {
+      this.openImage = false;
+      this.isOpen = false;
+      blog.isModalOpen = false;
+    },
+    cancel: function() {
+      this.cancelShowImage = true;
+      this.close();
+    },
+    open: function(event, xRefs) {   
+      this.openImage = false;
+      this.showLoading = false;
+      this.cancelShowImage = false;
+
+      const imageElement = event.currentTarget.querySelector('img');
+      const imageUrl = event.currentTarget.href;
+      const topOffset = event.currentTarget.offsetTop + (imageElement.clientHeight / 2) - window.pageYOffset;
+      const leftOffset = imageElement.offsetLeft + (imageElement.clientWidth / 2);
+      xRefs.lightbox.style.cssText = `transform-origin: ${leftOffset}px ${topOffset}px`;
+      this.isOpen = true;
+
+      const img = xRefs.lightbox.querySelector('img');
+      if (!img || img.getAttribute('src') !== imageUrl) {
+        img && img.remove();
+        setTimeout(() => {
+          if (xRefs.lightbox.querySelectorAll('img').length === 0)
+            this.showLoading  = true;          
+        }, 300);
+        let downloadingImage = new Image();
+        downloadingImage.onload = () => {
+            if (!this.cancelShowImage) {
+              this.showLoading = false;
+              xRefs.lightbox.append(downloadingImage);
+              this.openImage = true
+            }
+        };
+        downloadingImage.src = imageUrl;                
+      }
+      else {
+        this.openImage = true;
+      }
+      blog.isModalOpen = true;
+    }
+  },
   search: {
     isOpen: false,
     textInSearchBox: '',

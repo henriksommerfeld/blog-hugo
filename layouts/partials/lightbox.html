@@ -1,10 +1,17 @@
 
-<div id="lightbox-container">
-    <div id="lightbox-loading-container">
-        <div id="lightbox-loading">            
-            <div aria-busy="true" aria-label="Loading, please wait." role="progressbar" class="spinner"></div>
+<div id="lightbox-container" :class="{'open': lightbox.isOpen, 'close': !lightbox.isOpen}">
+    {{/*  <button type="button" aria-label="Close image modal" class="modal-close-button" 
+        @click="lightbox.isOpen = false">
+        <svg class="icon icon-expand"><use xlink:href="#icon-expand"></use></svg>
+        (ESC)
+    </button>  */}}
+    <div id="lightbox-loading-container" x-ref="lightboxLoadingContainer" x-show="lightbox.showLoading">
+        <div id="lightbox-loading">
+            <div aria-busy="true" aria-label="Loading, please wait." role="progressbar" class="spinner" 
+            @click="lightbox.cancel()" @click.away="lightbox.cancel()"></div>
         </div>
     </div>
-    <div id="lightbox" class="close">
+    <div id="lightbox" x-ref="lightbox" :class="{'open': lightbox.openImage, 'close': !lightbox.openImage}"
+        @click="lightbox.close()" x-on:keydown.escape="lightbox.escape()">
     </div>
 </div>

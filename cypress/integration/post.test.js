@@ -21,7 +21,7 @@ context('Post', () => {
       .should('have.attr', 'datetime').and('include', '2018-07-31 11:14:58 +0200')
   })
 
-  it('Should open image lighbox on click', () => {
+  it('Should open image lightbox on click', () => {
     cy.findByAltText('Asus router web interface for uploading and applying a firmware update')
       .click({ force: true })
       .get('#lightbox').should('have.class', 'open')
