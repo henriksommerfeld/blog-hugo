@@ -102,8 +102,8 @@ window.blog = {
     },
     fetchIndex: function() {
       return fetch('/search-index.json')
-          .then(res => this.handleFetchResponse(res))
-          .catch(res => this.handleFetchResponse(res));
+        .then(res => this.handleFetchResponse(res))
+        .catch(res => this.handleFetchResponse(res));
     },
     handleFetchResponse: function(response) {
       this.indexLoadFailed = !response.ok;
