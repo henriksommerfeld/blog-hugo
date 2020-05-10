@@ -1,9 +1,13 @@
 $theme-switcher-speed: 500ms;
 .theme-switcher {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+  display: none;
+
+  &.has-javascript {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
 
   @media (min-width: $medium-size-min-width) {
     .keyboard-navigation &:focus-within {
