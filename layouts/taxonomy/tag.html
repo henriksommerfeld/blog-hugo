@@ -6,7 +6,7 @@
             {{ partial "header.html" . }}
             <div class="body">
                 <div class="body-max-width">                    
-                    <main id="content">
+                    <main id="content" x-ref="content">
                             <h1><span class="taxonomy-heading">Tag:</span> {{ .Title }}</h1>
                             {{- range .Paginator.Pages }}
                                 <article>

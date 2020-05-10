@@ -9,7 +9,7 @@
         {{ partial "header.html" . }}
         <div class="body">
             <div class="body-max-width">
-                <main id="content">
+                <main id="content" x-ref="content">
                     {{- .Content -}}
                     <script>
                         document.querySelector('figure img').addEventListener('click', evt => {

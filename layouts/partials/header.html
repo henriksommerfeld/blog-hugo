@@ -18,7 +18,7 @@
     <div class="header-content" @click.away="menu.close()">
         <div class="site-title">Henrik Sommerfeld</div>
         {{- partial "theme-switcher.html" -}}
-        <a href="#content" id="skip-link" class="skip-link">Skip to content</a>
+        <a href="#content" id="skip-link" class="skip-link" @click.prevent="skipLink.skipToContent($refs.content)">Skip to content</a>
         <button @click="menu.toggle()" class="hamburger-trigger">Menu
             <div class="hamburger-menu">
                 <div class="bar" :class="{'animate': menu.hamburgerIsOpen()}"></div>

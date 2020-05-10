@@ -259,6 +259,12 @@ window.blog = {
         this.open();
       }
     }
+  },
+  skipLink: {
+    skipToContent: function(contentElement) {
+      contentElement.setAttribute('tabindex', '-1');
+      contentElement.focus();
+    }
   }
 }
 
