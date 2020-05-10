@@ -64,7 +64,7 @@ html {
   display: none;
 }
 
-.sr-only {
+@mixin for-screen-reader {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -76,22 +76,18 @@ html {
   font-size: 0;
 }
 
+.sr-only {
+  @include for-screen-reader();
+}
+
 .skip-link {
   @media (max-width: $medium-size-max-width) {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    font-size: 0;
+    @include for-screen-reader();
   }
 
   @media (min-width: $side-column-min-width) {
     visibility: hidden;
-    body.keyboard-navigation & {
+    body.keyboard-navigation &   {
       visibility: visible;
     }
   }
