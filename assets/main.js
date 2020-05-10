@@ -17,6 +17,95 @@ window.blog = {
     this.search.closeSearchDialog();
     this.lightbox.close();
   },
+  theme: {
+    options: {
+      LIGHT: 'light',
+      DARK: 'dark'
+    },
+    setSwitch: function(isLight) {
+      // Workaround for https://github.com/alpinejs/alpine/issues/459
+      document.getElementById('theme-switcer-indicator').checked = isLight;
+    },
+    applyTheme: function(theme) {
+      if (theme !== this.options.LIGHT && theme !== this.options.DARK)
+        return;
+
+      const darkStyles = document.querySelectorAll("link[data-theme=dark]");
+      const lightStyles = document.querySelectorAll("link[data-theme=light]");
+
+      const isDark = theme === this.options.DARK;
+      if (isDark) {
+        console.info('🌙 Setting dark mode');
+        darkStyles.forEach(link => {
+            link.media = 'all';
+            link.disabled = false;
+        });
+        lightStyles.forEach(link => {
+            link.media = 'not all';
+            link.disabled = true;
+        });
+      }
+      else {
+        console.info('🌞 Setting light mode');
+
+        darkStyles.forEach(link => {
+            link.media = 'not all';
+            link.disabled = true;
+        });
+        lightStyles.forEach(link => {
+            link.media = 'all';
+            link.disabled = false;
+        });
+      }
+      this.setSwitch(!isDark);
+    },
+    saveSetting: function(theme) {
+      window.localStorage.setItem('theme', theme);
+    },
+    readSavedSetting: function() {
+      return window.localStorage.getItem('theme');
+    },
+    toggleChanged: function(element) {      
+      const theme = element.checked ? this.options.LIGHT : this.options.DARK;
+      this.saveSetting(theme);
+      this.applyTheme(theme);
+    },
+    listenForExternalChange: function() {
+      try {
+        const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (!darkModePreferredQuery.addEventListener) return;
+
+        darkModePreferredQuery.addEventListener("change", event => {
+          const savedTheme = this.readSavedSetting();
+          const isLight = !event.matches;
+          const newOsTheme = isLight ? this.options.LIGHT : this.options.DARK;
+          if (savedTheme !== newOsTheme) {
+            this.applyTheme(newOsTheme);
+            this.saveSetting(newOsTheme);
+            console.log(`🌗 Theme changed in Operating System to ${newOsTheme} mode`);
+          }
+        });
+
+        window.addEventListener('storage', () => {
+          let theme = this.readSavedSetting();
+          if (theme !== this.options.DARK)
+              theme = this.options.LIGHT;
+          this.applyTheme(theme);
+        });
+    } catch (error) { console.warn('Not listening to theme change events', error) }
+    },
+    onLoad: function() {
+      let theme = this.readSavedSetting();
+        if (theme !== this.options.LIGHT &&  theme !== this.options.DARK) {
+            const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            theme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
+            this.saveSetting(theme);
+        } else {
+            this.applyTheme(theme);
+        }
+        this.listenForExternalChange();
+    }
+  },
   lightbox: {
     isOpen: false,
     cancelShowImage: false,
@@ -172,3 +261,5 @@ window.blog = {
     }
   }
 }
+
+window.blog.theme.onLoad();
