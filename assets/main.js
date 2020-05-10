@@ -52,11 +52,11 @@ window.blog = {
         }, 300);
         let downloadingImage = new Image();
         downloadingImage.onload = () => {
-            if (!this.cancelShowImage) {
-              this.showLoading = false;
-              xRefs.lightbox.append(downloadingImage);
-              this.openImage = true
-            }
+          if (!this.cancelShowImage) {
+            this.showLoading = false;
+            xRefs.lightbox.append(downloadingImage);
+            this.openImage = true
+          }
         };
         downloadingImage.src = imageUrl;                
       }
