@@ -1,0 +1,13 @@
+<!-- Modified from https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/highlight.html -->
+<div class="code">
+  <div class="code-expanded-controls">
+    <a title="Expand" aria-expanded="false" href="javascript:void('Expand/collapse code view')">
+      <svg class="icon icon-expand"><use xlink:href="#icon-expand"></use></svg>
+    </a>
+  </div>
+  {{ if len .Params | eq 2 }}
+  {{ highlight (trim .Inner "\n\r") (.Get 0) (.Get 1) }}
+  {{ else }}
+  {{ highlight (trim .Inner "\n\r") (.Get 0) "" }}
+  {{ end }}
+</div>
