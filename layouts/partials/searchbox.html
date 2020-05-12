@@ -13,7 +13,7 @@
             x-model="search.textInSearchBox" x-on:input="search.searchBoxChanged($event.target.value)"
             x-on:keydown.enter="search.focusFirstAnchor($event, $refs.hits)"
             x-on:keydown.arrow-down="search.focusFirstAnchor($event, $refs.hits)">
-        <svg class="icon icon-circle-with-cross close-search" 
+        <svg class="icon icon-circle-with-cross close-search" role="button" aria-label="Close search"
             @click="search.closeSearchDialog();$nextTick(() => $refs.searchMenuLink.focus())">
             <use xlink:href="#icon-circle-with-cross"></use>
         </svg>

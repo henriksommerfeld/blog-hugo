@@ -5,6 +5,10 @@ context('Search', () => {
       cy.visit('/')
     })
 
+    beforeEach(() => {
+      cy.viewport('macbook-15');
+    });
+
     it('Should open searchbox', ()=> {
         cy.get('nav').findByText('Search').click().get('#search-input').should('be.visible')
     })
@@ -32,9 +36,21 @@ context('Search', () => {
     })
 
     it('Should close on ESC key', ()=> {
-        cy.get('nav').findByText('Search').click().get('#search-input')
-            .type('{esc}')
-            .get('#search-input').should('not.be.visible')
+      cy.get('nav').findByText('Search').click().get('#search-input')
+        .type('{esc}')
+        .get('#search-input').should('not.be.visible')
+    })
 
+    it('Should close on click outside', ()=> {
+      cy.get('nav').findByText('Search').click().get('#search-input')
+      cy.findByLabelText('Close search modal').click()
+      cy.get('#search-input').should('not.be.visible')
+    })
+
+    it('Should close on searchbox close click', ()=> {
+      cy.viewport('ipad-2');
+      cy.get('nav').findByText('Search').click().get('#search-input')
+      cy.findByLabelText('Close search').click()
+      cy.get('#search-input').should('not.be.visible')
     })
 })
