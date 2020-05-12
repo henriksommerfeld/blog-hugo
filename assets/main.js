@@ -87,14 +87,16 @@ const theme = {
   },
   onLoad: function() {
     let theme = this.readSavedSetting();
-      if (theme !== this.options.LIGHT &&  theme !== this.options.DARK) {
-          const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
-          theme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
-          this.saveSetting(theme);
-      } else {
-          this.applyTheme(theme);
-      }
-      this.listenForExternalChange();
+    if (theme !== this.options.LIGHT &&  theme !== this.options.DARK) {
+        const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        theme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
+        const isLight = theme === this.options.LIGHT;
+        this.setSwitch(isLight);
+        this.saveSetting(theme);
+    } else {
+        this.applyTheme(theme);
+    }
+    this.listenForExternalChange();
   }
 };
 
@@ -290,7 +292,7 @@ const code = {
     codeContainerInner.style.cssText = `transform-origin: ${leftOffset}px ${topOffset}px`;
     
     setTimeout(() => {
-      /* This is needed for @click.away to work, since the expander is outside (away from) 
+      /*  This is needed for @click.away to work, since the expander is outside ("away" from) 
           the modal element (#code-container). @click.away should only run once the modal is
           fully open and animations are completed.
       */
