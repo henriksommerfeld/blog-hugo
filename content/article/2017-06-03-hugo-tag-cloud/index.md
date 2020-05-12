@@ -18,7 +18,7 @@ _**Update 2017-07-03:** Code is updated to solve an issue that would cause a cra
 _**Update 2017-07-27:** [Artem Sidorenko posted an improved version of this code][9] where he uses logarithmic distribution for calculation of tag sizes. It doesn't make a big difference with my current content, but clearly does on his, so maybe on yours too._
 
 
-{{<highlight go "linenos=inline">}}
+{{<code go "linenos=inline">}}
 {{- if gt (len .Site.Taxonomies.tags) 0 -}}
     {{- $fontUnit := "rem" -}}
     {{- $largestFontSize := 1.8 -}}
@@ -57,7 +57,7 @@ _**Update 2017-07-27:** [Artem Sidorenko posted an improved version of this code
         </div>
     </div>
 {{- end -}}
-{{</highlight>}}
+{{</code>}}
 
 You can uncomment the commented lines for debugging. Also, if the tag keys instead of the tag _names_ are rendered, set `preserveTaxonomyNames = true` in your `config.toml` or  `preserveTaxonomyNames: true`  in your `config.yaml` file. This took a while for me as a beginner to figure out.
 

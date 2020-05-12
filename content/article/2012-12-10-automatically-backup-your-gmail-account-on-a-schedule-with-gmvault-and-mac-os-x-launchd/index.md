@@ -18,7 +18,7 @@ My experience with configuring Mac OS X is limited, but I have gained enough kno
 2. Run `gmvault sync youremail@gmail.com` from the shell and wait for as long as it takes. Use the `-d` option if you don't want the backup at `~/gmvault-db`.
 3. Create a small script that runs the GMVault command and does some logging (so you can see if it actually works) 
 
-{{<highlight bash "hl_lines=6">}}
+{{<code bash "hl_lines=6">}}
 #!/bin/bash
 
 logger "Starting gmvault at $(date)"
@@ -27,7 +27,7 @@ echo "Running gmvault at $(date)" > /Users/henrik/backup-gmail.log
 /opt/local/bin/gmvault sync -t quick youremail@gmail.com >> /Users/henrik/backup-gmail.log
 
 logger "Finished gmvault at $(date)"
-{{</highlight>}}
+{{</code>}}
     
 Apparently I had to use absolute paths here. The logging is of course optional, but handy. If only it was this simple to write to the Windows logs with PowerShell! I chose to write the output from GMVault to a separate log file after I first made an error (not having absolute paths) in the script and the logging just informed me that GMVault finished in 0 seconds. Run the script once to verify that it works as expected.
 
@@ -36,7 +36,7 @@ Apparently I had to use absolute paths here. The logging is of course optional, 
     {{<post-image image="Lingon-Basic-GmailBackup.png" alt="Configure Gmail backup script with Lingon" borderless="true" />}}
   
     The result of the GUI approach above is a file located at `~/Library/LaunchAgents/se.henrikpalm.gmailBackup.plist`, containing the following:
-	{{<highlight xml>}}
+	{{<code xml>}}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -60,7 +60,7 @@ Apparently I had to use absolute paths here. The logging is of course optional, 
         <false/>
     </dict>
 </plist>
-{{</highlight>}}
+{{</code>}}
 
 5. Start the agent.	
 ```

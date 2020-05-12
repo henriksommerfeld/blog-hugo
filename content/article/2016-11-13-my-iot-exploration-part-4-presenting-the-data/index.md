@@ -21,7 +21,7 @@ For the last piece of this project I pretty much followed the approach described
 
 The query I have in Stream Analytics is really simple, just passing on the values it receives to an _Event Hub_. I guess I can do more cool things here later, but for now it's fine to just pass the data on so I can show it in near real time. I'm setting the _TumblingWindow_, the time interval for when Stream Analytics is outputting data, to match the interval that I'm sending data from my Raspberry Pi to IoT Hub. This is also very much a question of cost, the more data you push in and out of Azure, the more it will cost you. I might dig a bit further into the cost aspect in an upcoming post, but for now I conclude that this is sufficient for my hobby project. After all, the conditions hopefully won't change terribly fast in my home office.
 
-{{<highlight tsql>}}
+{{<code tsql>}}
 WITH ProcessedData as (
     SELECT      
         AVG(temperature) Temperature,
@@ -35,7 +35,7 @@ WITH ProcessedData as (
 )
 
 SELECT * INTO [HomeOutput] FROM ProcessedData
-{{</highlight>}}
+{{</code>}}
 
 Now it's time for some coding again and I'm doing this with NodeJS as in the guide [Visualizing IoT Data with Web App][4]. There is a template for NodeJS + Express to choose in the [Azure portal][6]. I first tried the command line route to provision the web site, but I found that the command created a bunch of stuff (like _DefaultAppServicePlan_) that I didn't ask for. I felt I had more control creating this through the portal. Since I'm using Socket.io (see the code on GitHub, link below), I also need to enable _Web sockets_ (which isn't on by default).
 
@@ -47,7 +47,7 @@ Since the app is reading the data from the event hub, I also need a connection s
 
 For development I have a json file that contains the connection string. The code first looks for the app setting and secondly for the config file. Just make sure you exclude that config file when you commit the project to source control.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 var getConnectionString = function(settings) {
     if (settings.OFFICE_MONITORING_CONNSTRING)
     {
@@ -60,7 +60,7 @@ var getConnectionString = function(settings) {
         return configContentJSON.AzureConnectionString;
     }
 };
-{{</highlight>}}
+{{</code>}}
 
 > The entire code can be found in my GitHub project [Azure-IoT-Dashboard][9]
 

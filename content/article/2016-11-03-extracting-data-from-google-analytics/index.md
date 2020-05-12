@@ -19,7 +19,7 @@ In my current assignment we're investigating how we can use [Microsoft's Recomme
 
 I have commented out the stuff I ran the first time, but kept it for reference. This code extracts data in the specified date interval one day at a time and appends it to a CSV file. A thing we discovered is that we wanted the _ClientId_ out of Google Analytics to be able to see some correlation between sessions, but that it's freaking impossible to extract that unless you send it in as a custom dimension. This is what we have done for _dimension2_ (remove that from the query if you don't have it). See [Exposing ClientID in Google Analytics][4] and [User ID Reference][5] for more info on this.
 
-{{<highlight R>}}
+{{<code R>}}
 # Install this stuff the first time
 #install.packages("devtools")
 #install.packages("curl")
@@ -44,7 +44,7 @@ for(dateIndex in seq_along(dateRange)) 
   write.table(gaData, "C:/export/GA export.csv", sep = ",", col.names = F, append = T)
 }
 print("done")
-{{</highlight>}}
+{{</code>}}
 
 I guess the most complicated part of this (at least for me) are the regular expressions used for filtering, but those are of course specific to our needs in this situation.
 

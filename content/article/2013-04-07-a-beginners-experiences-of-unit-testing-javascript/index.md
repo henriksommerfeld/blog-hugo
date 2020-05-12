@@ -14,7 +14,7 @@ As someone working mostly with SharePoint server-side code, unit tests are somet
 
 I want to share my experience from adding tests to a function written without tests in mind. In the code base I’m working with I found that we had a function that was called from a lot of places and wasn’t always working. It looked like this:
 
-{{<highlight javascript "hl_lines=1 7 8">}}
+{{<code javascript "hl_lines=1 7 8">}}
 MAN.getQueryVariable = function(variable, unescape) {
      var query = window.location.search.substring(1);
      var vars = query.split('&');
@@ -28,13 +28,13 @@ MAN.getQueryVariable = function(variable, unescape) {
      }
      return null;
  };
-{{</highlight>}}
+{{</code>}}
 
 The problem (the unescape parameter) was quite easy to spot, but I can’t say that the function's inner workings are immediately obvious to me. It has a good name though, so I understand what it does at the higher level. So I wanted to write some tests for the function without having to change it in a way that effected the callers.
 
 I found out that the `unescape` function isn’t part of the Javascript language, but rather something that exists on the `window` object and thus constitutes a dependency. Like all dependencies we want to inject them into the function so that we can inject a faked object when testing. I also prefer to be explicit about where functions belong, i.e. using namespaces and referring to `window.unescape()` rather than just `unescape()`. So, here’s my slightly modified version ready for testing.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 // MAN = My Abbreviated Namespace
 var MAN = MAN || {}
 
@@ -52,11 +52,11 @@ MAN.getQueryVariable = function (variable, useUnescape, optionalFakeWindow) {
     }
     return null;
 };
-{{</highlight>}}
+{{</code>}}
 
 I have found that I like [Jasmine][1] as my unit testing library for how the tests (or specs) are expressed and I also find the documentation to be in good shape. As the enthusiastic beginner I am in this area I might have ended up with a slightly overkill kind of test suite, considering the amount of test code compared to the amount of tested code. But hey, you got to start somewhere right? Here’s what I ended up with:
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 describe("MAN", function () {
     describe("getQueryVariable()", function () {
         var fakeWindow;
@@ -113,7 +113,7 @@ describe("MAN", function () {
         });
     });
 });
-{{</highlight>}}
+{{</code>}}
 
 Now I’m at the point where I actually dare to change some stuff, and that’s where I want to be with code. If I make a mistake like in the original code, overriding an existing function with a parameter, my tests would tell me. So, the barrier to unit testing Javascript is indeed low and does not require expensive tools (I used Notepad++ and Chrome initially for this before I integrated it into our Visual Studio project). Green makes one happy, get started testing if you haven’t already! You can download this if you want to try it out: [js-tests_henrikpalm.se_2013-04-07.zip][2]
 

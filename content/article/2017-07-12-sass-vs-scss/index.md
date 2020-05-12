@@ -19,7 +19,7 @@ The Sassy Way's old post [Sass vs. SCSS: which syntax is better?][1] has a good 
 
 This is the `link.sass` file I currently have for general link styling on this blog (as an example).
 
-{{<highlight css>}}
+{{<code css>}}
 a
     color: $light-blue
     text-decoration: none
@@ -42,6 +42,6 @@ a
         outline: none
         &:after
             width: 100%
-{{</highlight>}}
+{{</code>}}
   
 [1]: http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better

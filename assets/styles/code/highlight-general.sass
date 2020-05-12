@@ -47,8 +47,13 @@ article .highlight
   backface-visibility: hidden
   &.open
     @include modal-open
+    .modal-close-button
+      display: flex
   &.close
     @include modal-close
+    .modal-close-button
+      display: none
+
 #code-container-inner
   position: fixed
   width: 100%

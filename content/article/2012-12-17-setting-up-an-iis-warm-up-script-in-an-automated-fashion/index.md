@@ -26,7 +26,7 @@ I have cleaned up these folders from the scripts aren't relevant for this blog p
 
 I have borrowed the actual warm-up script from Jon Badgett's post [Easy SharePoint 2010 warmup Script using PowerShell][2], but since my site allows anonymous access and the web servers are exposed to the Internet I prefer not to use `Get-SPAlternateUrl` to find out which application pools to hit, because it requires the script to be run by a high privileged account. I'll hard-code the URLs in the settings files instead. So here is my `Warmup.ps1`:
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 function Get-WebPage([string]$url) {
 	$wc = new-object net.webclient;	
 	$wc.credentials = [System.Net.CredentialCache]::DefaultCredentials;
@@ -39,31 +39,31 @@ foreach ($url in $input) {
 	"Warming up '{0}'..." -F $url;
 	$html = Get-WebPage -url $url;
 }
-{{</highlight>}}
+{{</code>}}
 
 ## Settings and Infrastructure
 
 Examples of the settings files look like the following. Having the account that will run the scheduled task in the environment specific files enables you to have different accounts for each environment if your site requires authentication. All the environment specific variables have the _Env_ prefix as a naming convention in our scripts to avoid confusion where they are used. The file path to the warm-up script is where you want that script to be when the job is set up, so you can delete the supporting scripts folder later if you want to.
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 Write-Host "Setting Prod environment Properties"
 $EnvWarmupUrls = @("http://ourgreatservice.ourcompany.com/Pages/default.aspx", 
                    "http://ourgreatservice-edit.ourcompany.com/Pages/default.aspx")
 $EnvWarmupJobAccount = "NT AUTHORITYNETWORKSERVICE"
 $EnvWarmupScriptPath = "C:Scheduled scriptsWarmup.ps1"
-{{</highlight>}}
+{{</code>}}
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 Write-Host "Setting Dev environment Properties"
 $EnvWarmupUrls = @("http://ourgreatservicedev.ourcompany.com/Pages/default.aspx", 
                    "http://ourgreatservicedev-edit.ourcompany.com/Pages/default.aspx")
 $EnvWarmupJobAccount = "NT AUTHORITYNETWORKSERVICE"
 $EnvWarmupScriptPath = "C:TFS{0}MainScriptsPost-SharePoint-InstallationWarmup.ps1" -F [Environment]::UserName
-{{</highlight>}}
+{{</code>}}
 
 I'll include the `LoadDependencies.ps1` here for reference as well:
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 $ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $HelperScriptsPath = $ScriptPath + "Helpers"
 
@@ -120,13 +120,13 @@ if(-not (Test-AdminPrivileges))
 # -----------------------------------------------------------------------------
 
 return $true
-{{</highlight>}}
+{{</code>}}
 
 ## Setting up the Scheduled Task
 
 You can create [scheduled tasks with PowerShell 3][3], but only periodically ones (at least to my understanding). I prefer [the approach described by Christopher Maish][4] &#8211; monitoring the event log for application pool recycles to trigger our `Warmup.ps1` script. That got me to choose the `SCHTASKS.EXE` instead. There are some extra work done here explained in the comments to make the script more fault-tolerant. Here's `ScheduleWarmup.ps1`:
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 $ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $dependenciesLoaded = . $ScriptPathLoadDependencies.ps1 $args
 if (!$dependenciesLoaded) { exit; }
@@ -163,7 +163,7 @@ SCHTASKS /Delete /TN $jobName /F
 
 "Creating job named '{0}'..." -F $jobName
 SCHTASKS /Create /TN $jobName /RU $EnvWarmupJobAccount /RP /TR $command /SC ONEVENT /EC System /MO $trigger
-{{</highlight>}}
+{{</code>}}
 
 The trigger doesn't look for `IISRESET` and doesn't look for a specific application pool, so feel free to add that to your script. Now we can copy this folder structure (in the screenshot above) to any of our web servers and easily keep the sites warm (it's snowing outside my window), even our dev environment if we want to.
 

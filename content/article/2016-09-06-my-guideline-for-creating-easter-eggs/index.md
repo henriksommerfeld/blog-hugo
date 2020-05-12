@@ -26,9 +26,9 @@ Make sure it doesn't have too big of an impact on performance. It's not a good i
 
 The egg should only trigger on what you intended. Input boxes are generally good because you can trigger the egg when a certain input is given. Again, test surrounding functionality to make sure the egg doesn't pop up unexpectedly. You should probably also avoid good coding practices if you want to hide it from you colleagues. For example, if you create a nicely separated well named component, it will be found more easily. What would you think if you found this on a page or in your source control system?
 
-{{<highlight html>}}
+{{<code html>}}
 <input type="text" name="firstname" easter-egg />
-{{</highlight>}}
+{{</code>}}
 
 ## Tip for web Easter eggs
 

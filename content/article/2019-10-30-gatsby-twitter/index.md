@@ -69,7 +69,7 @@ If any of the three required Twitter API credentials (key, secret, token) isn't 
 ### Enriching tweets
 After fetching the data from Twitter's API, [unfurl.js][10] is used to fetch additional metadata (Twitter Card / Open Graph) from linked websites. Images are downloaded so they can be served with [gatsby-image][11].
 
-{{<highlight js>}}
+{{<code js>}}
 exports.sourceNodes = async (
   { actions, createContentDigest, reporter },
   { query, credentials }
@@ -100,7 +100,7 @@ exports.sourceNodes = async (
 
   return Promise.resolve();
 };
-{{</highlight>}}
+{{</code>}}
 _Core of plugin's `gatsby-node.js`_
 
 {{<icon-github />}} The repo of the entire site can be found at https://github.com/henriksommerfeld/isabel-blog

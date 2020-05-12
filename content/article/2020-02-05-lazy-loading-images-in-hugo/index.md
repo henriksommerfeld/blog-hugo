@@ -48,9 +48,9 @@ content
 To be able to reference the images in the Markdown files, we need a _[shortcode][7]_. This is the trickiest part to explain since the code is a bit lengthy. This is because I have the possibility to pass parameters for whether or not to have a border, a custom width, a lightbox and caption. It might also be because my Go template skills are questionable.
 
 I use the shortcode in my `index.md` file to reference the image like this:
-{{<highlight go-html-template>}}
+{{<code go-html-template>}}
 {{</*post-image image="hero-image.png" /*/>}}
-{{</highlight>}}
+{{</code>}}
 
 What happens in the shortcode implementation below is that I create a blurred version of the image resized to 48px wide (keeping the aspect ratio). This is the image you will see before a better version is fetched. This small image is embedded into the HTML as a Base64 encoded string, so that there is no extra request required to get the initial image.
 
@@ -58,7 +58,7 @@ A few different versions are then generated, but only if the original image is l
 
 
 Shortcode `post-image.html`:
-{{<highlight go-html-template>}}
+{{<code go-html-template>}}
 {{ $image := (.Page.Resources.GetMatch  (index .Params.image)) }}
 {{ $alt := .Get "alt" }}
 {{ $width := .Get "width" }}
@@ -132,7 +132,7 @@ Shortcode `post-image.html`:
   </figcaption>
   {{ end }}
 </figure>
-{{</highlight>}}
+{{</code>}}
 
 ## Adding Javascript
 
