@@ -1,6 +1,7 @@
 <div class="theme-switcher" aria-hidden="true" :class="{'has-javascript': true}">
     <div class="switch">
-        <input type="checkbox" name="toggle" id="theme-switcer-indicator" 
+        <input type="checkbox" name="toggle" id="theme-switcer-indicator"
+            aria-label="Switch theme" 
             @click="theme.toggleChanged($event.target)" checked>
         <label for="theme-switcer-indicator"><i></i></label>
         <span></span> 
