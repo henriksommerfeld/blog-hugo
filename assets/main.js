@@ -86,16 +86,12 @@ const theme = {
   } catch (error) { console.warn('Not listening to theme change events', error) }
   },
   onLoad: function() {
-    let theme = this.readSavedSetting();
-    if (theme !== this.options.LIGHT &&  theme !== this.options.DARK) {
-        const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        theme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
-        const isLight = theme === this.options.LIGHT;
-        this.setSwitch(isLight);
-        this.saveSetting(theme);
-    } else {
-        this.applyTheme(theme);
-    }
+    const savedTheme = this.readSavedSetting();
+    const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const osTheme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
+    const isSavedThemeValid = savedTheme === this.options.DARK || savedTheme === this.options.LIGHT;
+    const themeToApply = isSavedThemeValid && savedTheme !== osTheme ? savedTheme : osTheme;
+    this.applyTheme(themeToApply);
     this.listenForExternalChange();
   }
 };
