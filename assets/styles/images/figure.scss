@@ -27,29 +27,41 @@ figure {
       img {
         position: relative;
       }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 1.6rem;
-      height: 1.6rem;
-      top: 1rem;
-      right: 1rem;
-      background-color:transparent;
-      background-image: url('/images/maximize.svg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 100%;
-    }
-    
-    &:hover::after {
-      background-image: url('/images/maximize-accent.svg');
+      
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 4px);
+        top: 0;
+        left: 0;
+        filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
+        background-color:transparent;
+        background-image: url('/images/maximize.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 30%;
+        animation: maximizer 200ms ease-out forwards;
+      }
     }
   }
 
   img {
     filter: var(--image-filter);
+  }
+}
+
+@keyframes maximizer {
+  0% {
+    background-size: 30%;
+    background-color: rgba(0,0,0,0.2);
+  }
+  40% {
+    background-size: 42%;
+  }
+  100% {
+    background-size: 40%;
+    background-color: rgba(0,0,0,0.1);
   }
 }
 
