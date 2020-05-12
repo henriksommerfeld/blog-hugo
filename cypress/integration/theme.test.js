@@ -20,6 +20,9 @@ function visitLight(url) {
   visit(url, false);
 }
 
+const darkColor = 'rgb(45, 55, 72)';
+const lightColor = 'rgb(250, 250, 250)';
+
 context('Theme', () => {
   describe('Using Dark OS Preference', ()=> {
     before(() => {
@@ -28,13 +31,13 @@ context('Theme', () => {
     })
 
     it('Should be dark', () => {
-      cy.get('body').should('have.css', 'background-color', 'rgb(45, 55, 72)')
+      cy.get('body').should('have.css', 'background-color', darkColor)
       cy.findByLabelText('Switch theme').should('not.be.checked')
     })
 
     it('Should turn light', () => {
       cy.findByLabelText('Switch theme').check()
-      cy.get('body').should('have.css', 'background-color', 'rgb(250, 250, 250)')
+      cy.get('body').should('have.css', 'background-color', lightColor)
       cy.findByLabelText('Switch theme').should('be.checked')
     })
 
@@ -42,13 +45,13 @@ context('Theme', () => {
       window.localStorage.setItem('theme', 'light')
       visitDark('/');
       
-      cy.get('body').should('have.css', 'background-color', 'rgb(250, 250, 250)')
+      cy.get('body').should('have.css', 'background-color', lightColor)
       cy.findByLabelText('Switch theme').should('be.checked')
     })
   
     it('Should turn dark', () => {
       cy.findByLabelText('Switch theme').uncheck()
-      cy.get('body').should('have.css', 'background-color', 'rgb(45, 55, 72)')
+      cy.get('body').should('have.css', 'background-color', darkColor)
       cy.findByLabelText('Switch theme').should('not.be.checked')
     })
   })
@@ -60,13 +63,13 @@ context('Theme', () => {
     })
 
     it('Should be light', () => {
-      cy.get('body').should('have.css', 'background-color', 'rgb(250, 250, 250)')
+      cy.get('body').should('have.css', 'background-color', lightColor)
       cy.findByLabelText('Switch theme').should('be.checked')
     })
 
     it('Should turn dark', () => {
       cy.findByLabelText('Switch theme').uncheck()
-      cy.get('body').should('have.css', 'background-color', 'rgb(45, 55, 72)')
+      cy.get('body').should('have.css', 'background-color', darkColor)
       cy.findByLabelText('Switch theme').should('not.be.checked')
     })
 
@@ -74,13 +77,13 @@ context('Theme', () => {
       window.localStorage.setItem('theme', 'dark')
       visitLight('/');
       
-      cy.get('body').should('have.css', 'background-color', 'rgb(45, 55, 72)')
+      cy.get('body').should('have.css', 'background-color', darkColor)
       cy.findByLabelText('Switch theme').should('not.be.checked')
     })
   
     it('Should turn light', () => {
       cy.findByLabelText('Switch theme').check()
-      cy.get('body').should('have.css', 'background-color', 'rgb(250, 250, 250)')
+      cy.get('body').should('have.css', 'background-color', lightColor)
       cy.findByLabelText('Switch theme').should('be.checked')
     })
   })
