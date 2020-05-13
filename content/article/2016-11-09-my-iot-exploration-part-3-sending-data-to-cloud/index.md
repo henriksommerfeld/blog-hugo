@@ -50,7 +50,7 @@ My full implementation can be found in this GitHub project: [Receiving environme
 
 One newbie mistake I made early on was to try to move the entire project folder from my Windows machine to the Raspberry Pi. This causes two problems, firstly the `node_modules` folder tends to be deeper than Windows can handle (moving or copying the folder). See [Why does the 260 character path length limit exist in Windows?][8]  Secondly, the Node modules should be built on the target machine. In this case I was even developing on a x64 Windows 10 machine and then running it on a Linux ARM machine, the Raspberry Pi.
 
-{{<highlight json>}}
+{{<code json>}}
 "devDependencies": {
   "browser-sync": "^2.11.0",
   "del": "^2.2.0",
@@ -72,7 +72,7 @@ One newbie mistake I made early on was to try to move the entire project folder 
   "body-parser": "~1.0.1",
   "express": "^4.14.0"
 }
-{{</highlight>}}
+{{</code>}}
 
 To avoid this and also to avoid having to check everything into source control, pulling it down and building it locally for every single change, I looked more carefully at the dependencies. If you look at the _package.json_ file, there are _dependencies_ and _devDependencies_. Make sure that only the things needed to _run_ the application is listed in _dependencies_. Also, set the environment variable `NODE_ENV=production` in the target machine (the Raspberry Pi in this case) and make sure that _package.json_ is included in the build output folder (_dist_ in my project). Then you can copy the build output folder to the target machine and simply run `npm install`.
 

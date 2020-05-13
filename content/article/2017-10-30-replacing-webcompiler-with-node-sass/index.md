@@ -12,7 +12,7 @@ Web Compiler is an extension to Visual Studio that listens to changes in your `.
 
 Since I hadn't got the impression that this was a big issue for other team members in our local development environment, I decided to keep Web Compiler in Visual Studio and use its `compilerconfig.json` as configuration for which bundles to create. In reality we have quite a few more bundles for different parts of the application, so that was also a reason to keep the existing configuration.
 
-{{<highlight json>}}
+{{<code json>}}
 [
   {
     "outputFile": "Layouts/OurSolution/bundles/main.css",
@@ -47,12 +47,12 @@ Since I hadn't got the impression that this was a big issue for other team membe
     "sourceMap": true
   }
 ]
-{{</highlight>}}
+{{</code>}}
 _compilerconfig.json_
 
 This is more of a quick hack than well-crafted code, but it has turned out to work great. Now I can rely on my changes to reach the integration and test environments after the next nightly deploy.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 let fs = require('fs');
 let path = require('path');
 let sass = require('node-sass');
@@ -149,6 +149,6 @@ files.forEach((file) => {
     compileFile(file, true);
 });
 
-{{</highlight>}}
+{{</code>}}
 
 [1]: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler

@@ -5,6 +5,10 @@ context('Post', () => {
     cy.visit('/firmware-update-notifications-for-my-asus-router/')
   })
 
+  beforeEach(() => {
+    cy.viewport('macbook-15');
+  });
+
   const expectedPostTitle = 'Firmware Update Notifications for My Asus Router';
 
   it(`Post should have expected title`, () => {
@@ -21,7 +25,7 @@ context('Post', () => {
       .should('have.attr', 'datetime').and('include', '2018-07-31 11:14:58 +0200')
   })
 
-  it('Should open image lighbox on click', () => {
+  it('Should open image lightbox on click', () => {
     cy.findByAltText('Asus router web interface for uploading and applying a firmware update')
       .click({ force: true })
       .get('#lightbox').should('have.class', 'open')
@@ -33,18 +37,11 @@ context('Post', () => {
   })
 
   it('Should open expanded code view', () => {
-    cy.findByText('$TMPVERS').scrollIntoView();
-    cy.findByTitle('Expand').click({ force: true })
-      .get('#code-container').within(() => {
-        cy.findByTitle('Close (Esc)').should('exist')
-      })
-  })
-
-  it('Should close expanded code view', () => {
+    cy.findByText('#!/bin/sh').scrollIntoView();
+    cy.findByTitle('Expand').click({force: true})
     cy.get('#code-container').within(() => {
-      cy.findByTitle('Close (Esc)').click({ force: true })
+      cy.findByText('"w1yy39m3ysguhyfyrpk54peve8ioc8 <- just fake"').should('be.visible')
     })
-    cy.get('#code-container').should('not.have.class', 'open')
   })
 
   it('Should show tag Networking', () => {

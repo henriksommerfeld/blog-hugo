@@ -1,0 +1,2 @@
+<body x-data="window.blog" :class="{ 'modal-open': isModalOpen, 'keyboard-navigation' : keyboardNavigation }" class="{{ .cssClassNames }}" 
+  @mouseup="keyboardNavigation = false" @keydown.tab="keyboardNavigation = true" @keydown.escape="closeModals()">

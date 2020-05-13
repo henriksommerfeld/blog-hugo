@@ -31,6 +31,15 @@ $search-min-wide: 150em;
         padding-right: $default-spacing;
     }
     
+    @media (min-width: 80rem) {
+        .close-search {
+            display: none;
+        }
+        .modal-close-button {
+            display: flex;
+        }
+    }
+    
     &.open {
         @include modal-open;
     }
@@ -88,10 +97,7 @@ $search-min-wide: 150em;
         &::-webkit-search-results-decoration {
             display: none;
         }
-    }
-    .icon {
-        cursor: pointer;
-    }
+    }    
 }
 
 .search-results-container {
@@ -120,17 +126,11 @@ $search-min-wide: 150em;
         border-radius: $border-radius;
         box-shadow: 0 4px 15px 5px rgba(black, 0.6);
     }
+    
+    display: flex;
+    width: calc(100% - 20px);
+    flex-direction: column;
 
-    &.search-performed, &.has-error, &.index-loading, &.index-loaded {
-        display: flex;
-        width: calc(100% - 20px);
-        flex-direction: column;        
-    }
-    &.search-performed:not(.has-hits), &.has-error {
-        #no-results-message {
-            display: block;
-        }
-    }
     &.has-error {
         color: red;
     }
@@ -168,37 +168,24 @@ $search-min-wide: 150em;
     }
 }
 #no-results-message {
-    display: none;
     width: 100%;
 }
 
 #number-of-hits-message {
-    display: none;
     width: auto;
     margin: 0 auto 0.5em auto;
-    #search-output.search-performed.has-hits & {
-        display: block;
-
-    }
 }
 
 #index-loading-message {
-    display: none;
+    display: flex;
+    align-items: center;
     width: auto;
     margin: 0;
-    #search-output.index-loading:not(.index-loaded):not(.search-performed) & {
-        display: flex;
-        align-items: center;
-    }
-
 }
-#index-loaded-message {
-    display: none;
+#index-failed-message {
+    display: block;
     width: auto;
-    margin: 0;
-    #search-output.index-loaded:not(.index-loading):not(.search-performed) & {
-        display: block;
-    }
+    margin: 0;   
 }
 
 @keyframes searchboxOpen {

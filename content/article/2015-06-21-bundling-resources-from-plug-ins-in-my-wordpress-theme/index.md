@@ -19,12 +19,12 @@ One thing I had noticed with my previous WordPress site was that the number of s
 
 One plug-in I was trying out was [Crayon Syntax Hightlighter][3], so let's look at what references it adds to my pages.
 
-{{<highlight html>}}
+{{<code html>}}
 <link rel='stylesheet' id='crayon-css' href='http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=2.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='crayon-theme-classic-css' href='http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/themes/classic/classic.css?ver=2.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='crayon-font-consolas-css'  href='http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/fonts/consolas.css?ver=2.7.1' type='text/css' media='all' />
 <script type='text/javascript' src='http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=2.7.1'></script>
-{{</highlight>}}
+{{</code>}}
 
 That's four additional files for the visitor to download right there. So let's first look at how to get rid of the styles (I leave the js file for now).
 
@@ -33,9 +33,9 @@ That's four additional files for the visitor to download right there. So let's f
 I learned that there was a queueing mechanism in WordPress that makes it possible to dequeue styles that I don't want. By hooking into that queue I should be able to get rid of the link style tags rendered on the page.
 
 **Usage**
-{{<highlight php>}}
+{{<code php>}}
 <?php wp_dequeue_style( $handle ) ?>
-{{</highlight>}}
+{{</code>}}
 
 [The function reference page for `wp_dequeue_style`][4] (quoted above) leaves me with two unanswered questions:
 
@@ -46,7 +46,7 @@ Sage has an [extras.php][5] file that suits for this. If you're not using Sage, 
 
 First and last line is only added here fo my syntax highlighter to understand it's PHP, please ignore.
 
-{{<highlight php>}}
+{{<code php>}}
 <?php
 function remove_plugin_styles() {
   global $wp_styles;
@@ -70,21 +70,21 @@ function remove_plugin_styles() {
 
 add_action('wp_print_styles', __NAMESPACE__ . '\\remove_plugin_styles');
 ?>
-{{</highlight>}}
+{{</code>}}
 
 If I reload the page source I can see that the links are gone and I can see my debug info instead:
 
-{{<highlight html>}}
+{{<code html>}}
 <!-- Removed style reference: http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css (crayon) -->
 <!-- Removed style reference: http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/themes/classic/classic.css (crayon-theme-classic) -->
 <!-- Removed style reference: http://127.0.0.1/henrik.sommerfeld.nu/wp-content/plugins/crayon-syntax-highlighter/fonts/consolas.css (crayon-font-consolas) -->
-{{</highlight>}}
+{{</code>}}
 
 ## Adding the references to my bundle
 
 Sage already provides me with a _manifest.json_ file where I can define the assets I want to be compiled and copied to a _dist_ folder that I later can push to my test and production environment. So I decided to use an extras.css file for all the additional resources that I could load at the end of the page (that are not essential to the first page rendering)
 
-{{<highlight json>}}
+{{<code json>}}
 {
    ...
    "extras.css": {
@@ -99,7 +99,7 @@ Sage already provides me with a _manifest.json_ file where I can define the asse
     }, 
    ...
 }
-{{</highlight>}}
+{{</code>}}
 
 One thing to be aware of here is that the CSS files most likely contains references to images or font files that needs to be placed at the correct relative paths to the _dist_ (output) folder where the extras.css ends up. This could also be an issue when upgrading the plug-in later on. But from my perspective that's not really a problem since I'm the only user of the theme and when there's an update to a plug-in I use, I upgrade it in my development environment, rebuild my theme, test it and make adjustments if needed, before I upgrade the plug-in on the production site.
 

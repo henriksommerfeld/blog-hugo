@@ -1,6 +1,10 @@
-<div id="code-container">
-    <div id="code-container-inner" class="close">
-        <div class="box-shadow-container">
+<div id="code-container" :class="{'open': code.isExpanding, 'close': !code.isExpanding}" >
+    <button class="modal-close-button">
+        <svg class="icon icon-circle-with-cross"><use xlink:href="#icon-circle-with-cross"></use></svg>
+        (ESC)
+    </button>
+    <div id="code-container-inner" class="close" :class="{'open': code.isExpanding, 'close': !code.isExpanding}">
+        <div class="box-shadow-container" @click.away="code.close()">
             <div id="code-placeholder"></div>
         </div>
     </div>

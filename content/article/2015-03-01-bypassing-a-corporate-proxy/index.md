@@ -24,7 +24,7 @@ brew install tinyproxy
 
 Since I want this service to run at all times independent of which user is logged in, a .plist file should be added to the `/Library/LaunchAgents` folder. This could be done with `brew services`, but for some reason that didn't work for me. Running `sudo brew services start tinyproxy` just created an empty file for me, `/Library/LaunchDaemons/homebrew.mxcl.tinyproxy.plist`. So I added the contents myself, ending up with this:
 
-{{<highlight xml>}}
+{{<code xml>}}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd>
@@ -42,7 +42,7 @@ Since I want this service to run at all times independent of which user is logge
   <true/>
 </dict>
 </plist>
-{{</highlight>}}
+{{</code>}}
 
 I leave the config file for tinyproxy pretty much untouched, running at port 8888. I connect to it locally to verify that it's running, `telnet 127.0.0.1 8888`.
 
@@ -76,7 +76,7 @@ One last thing I could do to make things quicker is to create scripts for turnin
 
 ### home-server.ps1
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 $ProxyServer = "127.0.0.1"
 $ProxyPort = "1053"
 $Path   = "HKCU:SoftwareMicrosoftWindowsCurrentVersionInternet Settings"
@@ -88,17 +88,17 @@ $Proxy = $ProxyServer + ":" + $ProxyPort
 Set-ItemProperty -Path $path -Name ProxyEnable -Value 1
 Set-ItemProperty -Path $path -Name ProxyServer -Value $Proxy
 Set-ItemProperty -Path $path -Name ProxyOverride -Value \$Exceptions
-{{</highlight>}}
+{{</code>}}
 
 ### no-proxy.ps1
 
-{{<highlight powershell>}}
+{{<code powershell>}}
 \$Path = "HKCU:SoftwareMicrosoftWindowsCurrentVersionInternet Settings"
 
 # Disable an explicit proxy
 
 Set-ItemProperty -Path \$path -Name ProxyEnable -Value 0
-{{</highlight>}}
+{{</code>}}
 
 A final word of warning is that this will of course be against the corporate IT policy, that’s why I would never do this in real life.
 

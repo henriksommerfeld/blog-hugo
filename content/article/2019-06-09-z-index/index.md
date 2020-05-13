@@ -24,7 +24,7 @@ But, even if you _can_ use really high numbers for z-index, why _should_ you? Th
 
 The first thing I did in the code base I was working on, was to collect all the indexes in a constants file. We were using [styled components][1], so my example is in javascript, but of course the same thing can be done in [Sass][2].
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 export const zIndexes = {
   AlertBox: 10,
   ModalOpacity: 100,
@@ -36,13 +36,13 @@ export const zIndexes = {
   FullScreenButton: 99999,
   ProgressBar: 999999
 };
-{{</highlight>}}
+{{</code>}}
 
 Note that I ordered them by ascending index. By putting _all_ z-indexes in the same file, we have a great overview of them. The place I copied the values from, are now referencing a constant instead of having the actual value. I think this is also good from a readability standpoint - you don't have to care what the value is when looking at the styles for a component/class.
 
 Next step is to take those numbers down to something simpler. If we have a new element that needs a value between the existing ones, we can just re-assign all of them, no biggie.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 export const zIndexes = {
   AlertBox: 1,
   ModalOpacity: 2,
@@ -54,7 +54,7 @@ export const zIndexes = {
   FullScreenButton: 7,
   ProgressBar: 8
 };
-{{</highlight>}}
+{{</code>}}
 
 [1]: https://www.styled-components.com/
 [2]: https://sass-lang.com/

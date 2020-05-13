@@ -1,12 +1,12 @@
 {{ partial "doctype.html" }}
 <html lang="en">
     {{ partial "head.html" . }}
-    <body>
+    {{ partial "body-start-tag.html"}}
         <div id="page-wrapper">
             {{ partial "header.html" . }}
             <div class="body">
                 <div class="body-max-width">
-                    <main id="content">
+                    <main id="content" x-ref="content">
                         <h1>Search Requires JavaScript</h1>
                         <img class="bitmoji" src="/images/oops.png" alt="oops">
                         <p>Sorry, but the search feature requires JavaScript. Enable that or find what you are looking for 

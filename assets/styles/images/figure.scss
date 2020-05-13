@@ -17,13 +17,17 @@ figure {
     display: inline-block;
     position: relative;
 
+    .keyboard-navigation &:focus {
+      outline: 2px solid var(--accent-color);
+    }
+
     &:hover, &:focus {
       background: none;
 
       img {
         position: relative;
       }
-
+      
       &::after {
         content: '';
         position: absolute;

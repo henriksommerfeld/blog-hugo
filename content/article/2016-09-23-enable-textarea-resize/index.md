@@ -15,9 +15,9 @@ Inappropriately sized textbox with disabled resizing
 {{</post-image>}}
 
 To re-enable this I use the [Stylebot extension for Chrome][2]. I have added a rule to the global stylesheet (applies to all websites).
-{{<highlight css>}}
+{{<code css>}}
 textarea { resize: vertical; }
-{{</highlight>}}
+{{</code>}}
 
 If you have a similar extension for other browsers, I'd like to hear about it. I tried to find one for Firefox, but the ones I found seemed to have been broken for a while, so I gave up on that.
 

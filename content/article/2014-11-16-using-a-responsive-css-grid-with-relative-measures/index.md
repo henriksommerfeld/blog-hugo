@@ -18,20 +18,20 @@ These are the grid options you can choose from in version 1.2.4 of the Montezuma
 
 Using _Chrome Developer Tools_ I identified the CSS rule that determines the page width.
 
-{{<highlight css>}}
+{{<code css>}}
 .row, .row5, .lw {
    width: 100%;
    margin: 0 auto;
 }
-{{</highlight>}}
+{{</code>}}
 
 Now the only remaining thing was to add a new rule with the same selector defining the max-width I found appropriate – which I did to in the content.css file like this.
 
-{{<highlight css>}}
+{{<code css>}}
 .row, .row5, .lw {
    max-width: 1220px;
 }
-{{</highlight>}}
+{{</code>}}
 
 
  [1]: http://en.wikipedia.org/wiki/Content_management_system

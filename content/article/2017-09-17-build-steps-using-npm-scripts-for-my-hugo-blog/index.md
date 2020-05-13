@@ -19,7 +19,7 @@ What I needed support for, was the following:
 
 These are the scripts I ended up with. The [full `package.json` can be found here][2].
 
-{{<highlight json>}}
+{{<code json>}}
 "scripts": {
     "clean": "rm -f static/*.js static/*.css",
     "clean:public": "rm -rf public",
@@ -39,7 +39,7 @@ These are the scripts I ended up with. The [full `package.json` can be found her
     "start": "npm run clean && npm run sass:build && npm run js:build && hugo && npm run serve",
     "build": "npm run build:assets && npm run clean:public && hugo && npm run index:prod && npm run timestamp"
 }
-{{</highlight>}}
+{{</code>}}
 
 ## Structure of scripts
 

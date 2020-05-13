@@ -18,7 +18,7 @@ The problem is that the player keeps the height of the entire screen after exiti
 There is great documentation of the player at <https://amp.azure.net/libs/amp/latest/docs/> where I found the **exitFullscreen** event. This is where I can manually set the correct height, which I get from the player itself once it's loaded, at the **loadedmetadata** event. We have an Angular v1 controller that does a few more things, but these are the relevant parts related to the issue.
 
 ### Part of Azure Media Player Angular v1 Controller
-{{<highlight javascript "linenos=inline">}}
+{{<code javascript "linenos=inline">}}
 var playerOptions = {
     "techOrder": ["azureHtml5JS", "html5", "flashSS", "silverlightSS"],
     "logo": { enabled: false },
@@ -60,7 +60,7 @@ $(myPlayer).bind("fullscreenchange", function () {
     }
 });
 // AMP bug fix end
-{{</highlight>}}
+{{</code>}}
 
  [1]: https://azure.microsoft.com/en-gb/services/media-services/
  [2]: http://ampdemo.azureedge.net/azuremediaplayer.html

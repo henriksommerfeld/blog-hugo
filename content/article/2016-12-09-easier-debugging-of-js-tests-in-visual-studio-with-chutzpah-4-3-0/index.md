@@ -27,7 +27,7 @@ As a result of this more tests failed when I started debugging in the browser co
 
 As of the 4.3.0 release of Chutzpah you can enable the tests to be served through `HTTP://` instead, but it isn't enabled by default. The `BrowserArguments` I've used to disable security can be removed. See [Matthew Manela's post][2] about it for configuration options.
 
-{{<highlight json>}}
+{{<code json>}}
 "Server": {
   "Enabled": true
 },
@@ -35,7 +35,7 @@ As of the 4.3.0 release of Chutzpah you can enable the tests to be served throug
 "BrowserArguments": { 
   "chrome": "--allow-file-access-from-files --allow-file-access"
 }
-{{</highlight>}}
+{{</code>}}
 
 Now the _Open in browser_ opens a path similar to this: `http://localhost:39597/Workspaces/Development/Apps/CoolProject/JavascriptSpecs/_Chutzpah.35722df6731f3d62f68cbf6a873ca82068c8446e.test.html` and only the test that should fail, fails.
 

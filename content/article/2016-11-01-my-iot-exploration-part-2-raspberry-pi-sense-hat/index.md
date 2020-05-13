@@ -47,7 +47,7 @@ The Python program reads values from the sensors, shows a status message on the 
 
 As I discussed in the previous post [Difference between Arduino and Raspberry Pi for a High-Level Programmer][7], reading sensors can be tricky. The Sense HAT has a design flaw when it comes to the temperature sensor – it's close to the CPU. It's also a noticeable difference if you use a case or not, so you have to fiddle a bit with the values until they make sense. Some googling led me to this formula (can't remember where, sorry). It reads the temperature from the pressure sensor which is further away from the CPU and subtracts the CPU temperature:
 
-{{<highlight python>}}
+{{<code python>}}
 def get_cpu_temperature():  
 	full_temperature_string = os.popen('vcgencmd measure_temp').readline()  
 	tempterature_string = (full_temperature_string.replace("temp=","").replace("'C\n",""))
@@ -60,7 +60,7 @@ def get_ambient_temperature():
 	return ambient_temp
 
 temperature = get_ambient_temperature()
-{{</highlight>}}
+{{</code>}}
 
 ### The LED
 
@@ -80,7 +80,7 @@ OK. Everything is working fine.
 
 One more thing about the LED is worth mentioning. I found it helpful to clear the LED when terminating the program execution. I typically ran the python command from an SSH session when developing, and catching the _KeyboardInterrupt_ exception (Ctrl + C) made sure that the LED didn't stay on after terminating the program.
 
-{{<highlight python>}}
+{{<code python>}}
 def main():
   try:
     read_sensors()
@@ -89,7 +89,7 @@ def main():
   except Exception as e:
     print(e)
     screen.show_error_message()
-{{</highlight>}}
+{{</code>}}
 
 To conclude, at this stage we are reading sensor values and trying to send them off to another local service, which however, does not yet exist.
 

@@ -22,7 +22,7 @@ But, to be able to use an ultra-wide monitor most effectively, I like to split t
 I use [WinDock][3] to achieve this and here's my configuration file. By dragging a window to the bottom I make it use 1/3 of the screen and by dragging it to the top I make it use 2/3 of the screen.
 
 Ultra-wide WinDock profile.json
-{{<highlight json>}}
+{{<code json>}}
 {
    "name":"21:9 Profile",
    "rules":[
@@ -256,7 +256,7 @@ Ultra-wide WinDock profile.json
       }
    ]
 }
-{{</highlight>}}
+{{</code>}}
 
 
  [1]: http://www1.euro.dell.com/uk/en/business/Peripherals/dell-u3415w-monitor/pd.aspx?refid=dell-u3415w-monitor&cs=ukbsdt1&s=bsd

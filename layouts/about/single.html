@@ -2,15 +2,21 @@
 <html lang="en">
 {{ partial "head.html" . }}
 
-<body>
+{{ partial "body-start-tag.html"}}
     {{ $aboutStyles := resources.Get "styles/about-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
     <link rel="stylesheet" type="text/css" href="{{ $aboutStyles.RelPermalink }}" integrity="{{ $aboutStyles.Data.Integrity }}" media="screen, tv, projection">
     <div id="page-wrapper">
         {{ partial "header.html" . }}
         <div class="body">
             <div class="body-max-width">
-                <main id="content">
+                <main id="content" x-ref="content">
                     {{- .Content -}}
+                    <script>
+                        document.querySelector('figure img').addEventListener('click', evt => {
+                            if (evt.detail === 3)
+                                evt.target.classList.toggle('effect');
+                        });
+                    </script>
                     {{- partial "contact-info.html" -}}
                 </main>
                 <aside id="sidebar">

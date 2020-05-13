@@ -17,7 +17,7 @@ not have to think about it for every new HTTP GET call we add.
 
 By the way, [you need to use Angular 4.3.4+ for this to work][2].
 
-{{<highlight typescript>}}
+{{<code typescript>}}
 import { Injectable, NgModule } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpHandler, HttpEvent, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS, HttpResponse } from '@angular/common/http';
@@ -54,7 +54,7 @@ export class LoggingHttpInterceptor implements HttpInterceptor {
 })
 
 export class HttpInterceptorModule { }
-{{</highlight>}}
+{{</code>}}
 
 
 [1]: https://angular.io/guide/http#intercepting-all-requests-or-responses

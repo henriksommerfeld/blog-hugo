@@ -1,14 +1,14 @@
 {{ partial "doctype.html" }}
 <html lang="en">
     {{ partial "head.html" . }}
-    <body>
+    {{ partial "body-start-tag.html"}}
         {{ $postStyles := resources.Get "styles/post-bundle.sass" | toCSS | minify | fingerprint "sha512" }}
         <link rel="stylesheet" type="text/css" href="{{ $postStyles.RelPermalink }}" integrity="{{ $postStyles.Data.Integrity }}" media="screen, tv, projection">
         <div id="page-wrapper">
             {{ partial "header.html" . }}
             <div class="body">
                 <div class="body-max-width">
-                    <main id="content">
+                    <main id="content" x-ref="content">
                         <article class="full-article">
                             <h1>{{ .Title }}</h1>
                             {{ partial "article-date.html" . }}

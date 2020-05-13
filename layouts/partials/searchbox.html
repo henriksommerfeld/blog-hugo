@@ -1,24 +1,45 @@
-<div id="searchbox-container">
-    <div id="searchbox">
+<div id="searchbox-container" :class="{'open': search.isOpen}" x-show="search.isOpen"
+    x-on:keydown.escape="$nextTick(() => $refs.searchMenuLink.focus())">
+    <button type="button" aria-label="Close search modal" class="modal-close-button" 
+        @click="search.closeSearchDialog();$nextTick(() => $refs.searchMenuLink.focus())">
+        <svg class="icon icon-circle-with-cross"><use xlink:href="#icon-circle-with-cross"></use></svg>
+        (ESC)
+    </button>
+    <div id="searchbox" :class="{'open': search.isOpen}">
         <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
         <label for="search-input" class="sr-only">Searchbox</label>
-        <input id="search-input" type="search" placeholder="Search..." class="search-input" 
-            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-        <svg class="icon icon-circle-with-cross close-search"><use xlink:href="#icon-circle-with-cross"></use></svg>
+        <input id="search-input" type="search" placeholder="Search..." class="search-input" x-ref="searchInput"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" 
+            x-model="search.textInSearchBox" x-on:input="search.searchBoxChanged($event.target.value)"
+            x-on:keydown.enter="search.focusFirstAnchor($event, $refs.hits)"
+            x-on:keydown.arrow-down="search.focusFirstAnchor($event, $refs.hits)">
+        <svg class="icon icon-circle-with-cross close-search" role="button" aria-label="Close search"
+            @click="search.closeSearchDialog();$nextTick(() => $refs.searchMenuLink.focus())">
+            <use xlink:href="#icon-circle-with-cross"></use>
+        </svg>
     </div>
     <div class="search-results-container">
-        <div id="search-output">
-            <div id="no-results-message">
+        <div id="search-output" x-show="search.textInSearchBox">
+            <div id="no-results-message" x-show="search.store && search.textInSearchBox && !search.hits.length">
                 No matching posts found. You can use wildcards and search only in titles, e.g. <code>title:iot</code>
             </div>
-            <div id="index-loading-message">
-                <span class="icon-spinner" aria-hidden="true"></span> Loading search index, please try again in a few seconds.
+            <div id="index-loading-message" x-show="!search.indexLoadFailed && search.indexLoading && search.textInSearchBox">
+                <span class="icon-spinner" aria-hidden="true"></span> Loading search index, please wait...
             </div>
-            <div id="index-loaded-message">
-                Index has completed downloading. Please search again.
+            <div id="index-failed-message" x-show="search.indexLoadFailed && search.textInSearchBox">
+                Search index failed to download 😢
             </div>
-            <div id="number-of-hits-message"></div>
-            <ol class="result-list"></ol>
+            <div id="number-of-hits-message" x-text="search.getHitsText()" x-show="search.hits.length"></div>
+            <ol class="result-list" x-show="search.hits.length" x-ref="hits">
+                <template x-for="hit in search.hits" :key="hit.ref">
+                    <li>
+                        <h2><a :href='hit.ref' x-text="search.fromStore(hit).title"></a></h2><div class="entry-meta">
+                            <time class="published" :datetime="search.fromStore(hit).dateiso"><svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg><span  x-text="search.fromStore(hit).dateformatted"></span></time>
+                        </div>
+                        <p x-text="search.fromStore(hit).summary"></p>
+                    </li>
+                </template>
+            </ol>
         </div>
     </div>
 </div>

@@ -35,7 +35,7 @@ If I can reproduce a bug in any of our test environments, I don't have to replic
 
 So, here is the small sample of the fake backend we're using (all but three methods have been removed for brevity). 
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 let express = require('express');
 let bodyParser = require('body-parser');
 let fs = require('fs');
@@ -76,11 +76,11 @@ app.delete('/cart', (req, res) => {
 })
 
 app.listen(54321);
-{{</highlight>}}
+{{</code>}}
 
 As you can see above, I've set the fake backend to listen on port 54321 and to accept calls from any domain and port number. A parameter passed to the frontend project determines if this fake backend or a real one should be used. `app.js` is the file above, and below you have `package.json` where `nodemon` is used to achieve live reload. 
 
-{{<highlight json>}}
+{{<code json>}}
 {
   "name": "shopping-api-mock",
   "version": "1.0.0",
@@ -96,6 +96,6 @@ As you can see above, I've set the fake backend to listen on port 54321 and to a
     "nodemon": "^1.11.0"
   }
 }
-{{</highlight>}}
+{{</code>}}
 
 [1]: /using-angular-http-interceptor-for-logging/ 

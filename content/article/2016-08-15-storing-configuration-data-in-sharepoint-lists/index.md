@@ -19,7 +19,7 @@ In a recent requirement I had to present users with the ability to choose a lang
 
 I started out by creating a hard-coded object to figure out how it needed to look like. When everything was working I added a method to my service that fetches the configuration file from a document library in SharePoint named _Configuration_.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 // MAN = My Abbreviated Namespace
 // Obviously I have stripped out other methods here
 angular.module('MAN').service('newsSubscriptionService', ['$http', function ($http) {
@@ -34,13 +34,13 @@ angular.module('MAN').service('newsSubscriptionService', ['$http', function ($ht
   
   return service;
 }]);
-{{</highlight>}}
+{{</code>}}
 
 ## Step two
 
 I created a the document library _Configuration_ in SharePoint with the appropriate permissions. Since this isn't an especially user-friendly configuration format I restricted the write permissions to the dev team. The idea here is not to change these settings often, but rather to be able to do it without a deploy. Then I added the file with the configuration object, in this case an array with countries and their respective languages. Since SharePoint by default considers a lot of file extensions to be harmful (like .json and .config for example), I just made a txt file. This file is a bit longer in reality, but you get the point. Since English is the default language I do not store that.
 
-{{<highlight json>}}
+{{<code json>}}
 [
   {
     "CountryCode" : "de",
@@ -75,6 +75,6 @@ I created a the document library _Configuration_ in SharePoint with the appropri
     ]
   }
 ]  
-{{</highlight>}}
+{{</code>}}
 
 As any good solution, this is far from rocket science, that's why I like it.

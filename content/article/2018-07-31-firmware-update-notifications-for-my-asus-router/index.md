@@ -44,7 +44,7 @@ nano /jffs/scripts/update-notification
 
 The script supports e-mail, Pushbullet and Pushover for notifications. I chose [Pushover][9] and followed their guide for creating an API token for the router and added that to the script. The Pushover phone app cost me 50 SEK (4.9 EUR / 5.7 USD) as a one time purchase, but it's free to try for a week. I removed the stuff I didn't need from the original script and ended up with this.
 
-{{<highlight bash>}}
+{{<code bash>}}
 #!/bin/sh
 # https://github.com/RMerl/asuswrt-merlin/wiki/Update-Notification-Example
 
@@ -71,7 +71,7 @@ if [ "$pushover_token" ] && [ "$pushover_username" ]; then
 else                                                                
   echo "Notification settings not configured (not sending anything)"
 fi                                                                  
-{{</highlight>}}
+{{</code>}}
 
 Make the script executable and run it once to see that it works. 
 

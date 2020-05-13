@@ -63,19 +63,19 @@ Do you really need a switch or is it sufficient with the device setting for ligh
 A stupid mistake I made a couple of times during development was to confuse the syntax of Sass/SCSS variables and CSS variables, especially when using Sass functions such as `lighten`, `darken` and `transparentize`. Since CSS variables aren't checked at compile time, a few Sass variables sneaked into the resulting CSS file.
 
 
-{{<highlight css "hl_lines=3">}}
+{{<code css "hl_lines=3">}}
 --color: #CBD5E0;
 --accent-color: #ED8936;
 --color-published: #{darken(var(--color), 10%)}; /* somewhat tricky syntax */
 --background-color: #2D3748;
 --blockquote-color: var(--accent-color);
 --header-text-shadow: rgba(26,32,44,0.5);
-{{</highlight>}}
+{{</code>}}
 
 ## Adjust images with filter
 A bonus feature I borrowed straight from [_Hello darkness, my old friend_][2] is to mute images a bit. I didn't want to go to the extremes, but I do decrease brightness and saturation somewhat in dark mode.
 
-{{<highlight css>}}
+{{<code css>}}
 /* light.scss */
 :root {
     --image-filter: none;
@@ -90,7 +90,7 @@ A bonus feature I borrowed straight from [_Hello darkness, my old friend_][2] is
 figure img {
     filter: var(--image-filter);
 }
-{{</highlight>}}
+{{</code>}}
 
 
 

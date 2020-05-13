@@ -57,7 +57,7 @@
 
 <figure class="{{ $border_class }} lazy">
   {{ if .Get "lightbox" }}
-  <a href='{{ $image.RelPermalink }}'>
+  <a href='{{ $image.RelPermalink }}' @click.prevent="lightbox.open($event, $refs)">
     {{ end }}
     <img class="lazyload" data-sizes="auto" src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }}
       srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $src.RelPermalink }}"

@@ -64,7 +64,7 @@ html {
   display: none;
 }
 
-.sr-only {
+@mixin for-screen-reader {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -74,6 +74,23 @@ html {
   position: absolute;
   width: 1px;
   font-size: 0;
+}
+
+.sr-only {
+  @include for-screen-reader();
+}
+
+.skip-link {
+  @media (max-width: $medium-size-max-width) {
+    @include for-screen-reader();
+  }
+
+  @media (min-width: $side-column-min-width) {
+    visibility: hidden;
+    body.keyboard-navigation &   {
+      visibility: visible;
+    }
+  }
 }
 
 #page-wrapper {
@@ -111,6 +128,7 @@ html {
 main {
   width: 100%;
   padding: $default-spacing;
+  outline-color: var(--accent-color);
 
   @media (min-width: $side-column-min-width) {
     width: 71%;
@@ -146,6 +164,7 @@ aside {
 .result-list .entry-meta {
   margin-top: 0;
   margin-bottom: 0.5em;
+  font-size: 0.8em;
 }
 
 .published {

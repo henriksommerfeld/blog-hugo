@@ -60,8 +60,13 @@ $spinner-thickness: 3px
     backface-visibility: hidden
     &.open
         @include modal-open
+        .modal-close-button
+            display: flex
     &.close
         @include modal-close
+        .modal-close-button
+            display: none        
+    
 
 #lightbox
     position: fixed

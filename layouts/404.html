@@ -1,12 +1,12 @@
 {{ partial "doctype.html" }}
 <html lang="en">
     {{ partial "head.html" . }}
-    <body>
+    {{ partial "body-start-tag.html"}}
         <div id="page-wrapper">
             {{ partial "header.html" . }}
             <div class="body">
                 <div class="body-max-width">
-                    <main id="content">
+                    <main id="content" x-ref="content">
                         <h1>Page Not Found (404)</h1>
                         <img class="bitmoji" src="/images/oops.png" alt="oops">
                         <p>Don't know how you ended up here, but the page doesn't exist. Or well, <em>this</em> page 

@@ -1,7 +1,13 @@
+
 {{ if .Site.Params.MinifyBundles }}
-{{ $minifiedJS := resources.Get "site-bundle.js" | minify | resources.Fingerprint "sha512" }}
-  <script src="{{ $minifiedJS.RelPermalink }}" integrity="{{ $minifiedJS.Data.Integrity }}"></script>
+  {{ $opts := (dict "minified" true "compact" true "noComments" true) }}
+  {{ $main := resources.Get "main.js" | babel $opts }}
+  {{ $libs := resources.Get "libraries.js" }}
+  {{ $bundle := slice $libs $main | resources.Concat "bundle.js" | resources.Fingerprint "sha512" }}
+  <script src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}"></script>
 {{ else }}
-{{ $secureJS := resources.Get "site-bundle.js" | resources.Fingerprint "sha512" }}
-  <script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+  {{ $libs := resources.Get "libraries.js" | resources.Fingerprint "sha512" }}
+  <script src="{{ $libs.RelPermalink }}" integrity="{{ $libs.Data.Integrity }}"></script>
+  {{ $mainDev := resources.Get "main.js" }}
+  <script src="{{ $mainDev.RelPermalink }}"></script>
 {{ end }}

@@ -26,7 +26,7 @@ Since [the project website of Asuswrt-Merlin][4] presents the latest version in 
 
 To find the latest version, I just looked at [the website][4], inspected the HTML, installed the packages `request-promise` and `cheerio`, and finally extracted the version number of interest.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 import rp from 'request-promise';
 import $ from 'cheerio';
 
@@ -43,13 +43,13 @@ export async function getLatestStableVersion() {
     Promise.reject(error);
   }
 }
-{{</highlight>}}
+{{</code>}}
 
 ### Saving last checked version
 
 In order to know if there is a new version since my last check, I of course need to keep track of what the version was the last time I checked. I did this with a simple text file on disk.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import * as path from 'path';
 
@@ -67,13 +67,13 @@ export function getLastCheckedVersion() {
 export function saveLastCheckedVersion(version) {
   writeFileSync(savedVersionFilePath, version);
 }
-{{</highlight>}}
+{{</code>}}
 
 ### Notifier
 
 I already had a working notification script using the service [Pushover][7] that I ported from Bash to NodeJS.
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 import dotenv from 'dotenv';
 import rp from 'request-promise';
 
@@ -98,13 +98,13 @@ export function sendPushoverNotification(message) {
       console.error(err);
     });
   }
-{{</highlight>}}
+{{</code>}}
 
 ### Gluing it together
 
 By sending a notification both when there is no update and when an error occurs, I won't have any silent failures unless I made a mistake here somewhere. 
 
-{{<highlight javascript>}}
+{{<code javascript>}}
 import { getLatestStableVersion } from './latest-version-checker.js';
 import { sendPushoverNotification } from './notify.js';
 import { getLastCheckedVersion, saveLastCheckedVersion } from './localFile.js';
@@ -134,7 +134,7 @@ async function main() {
 }
 
 main();
-{{</highlight>}}
+{{</code>}}
 
 ## Scheduling the update checker
 
@@ -150,13 +150,13 @@ The trickiest thing for me as a terrible Linux admin, was to get the cron schedu
 
 `router-update-check.sh` script contains the following:
 
-{{<highlight bash>}}
+{{<code bash>}}
 #!/bin/bash
 PATH=/home/pi/.nvm/versions/node/v13.12.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/snap/bin
 
 cd /home/pi/Code/asuswrt-merlin-update-check/
 node ./main.js
-{{</highlight>}}
+{{</code>}}
 
 The result of running the script once every minute (while troubleshooting) showed up in my phone like this. I now have an update checker that I can only blame myself if it doesn't work. Great success!
 

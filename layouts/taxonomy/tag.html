@@ -1,12 +1,12 @@
 {{ partial "doctype.html" }}
 <html lang="en">
    {{ partial "head.html" . }}
-    <body class="articles-with-tag">
+   {{ partial "body-start-tag.html" (dict "cssClassNames" "articles-with-tag")}}
         <div id="page-wrapper">
             {{ partial "header.html" . }}
             <div class="body">
                 <div class="body-max-width">                    
-                    <main id="content">
+                    <main id="content" x-ref="content">
                             <h1><span class="taxonomy-heading">Tag:</span> {{ .Title }}</h1>
                             {{- range .Paginator.Pages }}
                                 <article>

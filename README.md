@@ -9,16 +9,17 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 2. Install Hugo https://github.com/gohugoio/hugo/releases See expected version in [netlify.toml](./netlify.toml)). Extended version required.
 3. Install [Yarn][2] (version 1).
 
-## Installation
+## Running the site
+1. `yarn install:prod`
+2. `yarn start`
+
+## Tests
 1. `yarn install`
 
-## Run
-1. `yarn start`
-
-## Test Headless
+### Headless
 1. `yarn test`
 
-## Test with Cypress GUI
+## Cypress GUI
 1. `yarn test:open`
 
 [1]: http://gohugo.io/
