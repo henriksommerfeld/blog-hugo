@@ -33,8 +33,8 @@
     "start": "npm run build:js-libs && hugo && npm run index && npm run hugo:watch",
     "cypress:cli": "cypress run",
     "cypress:open": "cypress open",
-    "test": "npm run build && start-server-and-test http://localhost:1313 cypress:cli",
-    "test:open": "npm run build && start-server-and-test http://localhost:1313 cypress:open"
+    "test": "start-server-and-test http://localhost:1313 cypress:cli",
+    "test:open": "start-server-and-test http://localhost:1313 cypress:open"
   },
   "resolutions": {
     "cypress": "4.5.0"
