@@ -30,7 +30,7 @@
                 Home</a>
             <a href="/about/" class="about"><svg class="icon icon-user"><use xlink:href="#icon-user"></use></svg>About</a>
             <a href="/search-requires-javascript/" rel="nofollow" class="search" x-ref="searchMenuLink"
-                @click.prevent="menu.close(); search.openSearchDialog();$nextTick(() => $refs.searchInput.focus())">
+                @click.prevent="menu.close(); search.open();$nextTick(() => $refs.searchInput.focus())">
                 <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>Search</a>
         </nav>
     </div>

@@ -2,9 +2,9 @@ const base = {
   keyboardNavigation: false,
   isModalOpen: false,
   closeModals: function() {
-    this.search.closeSearchDialog();
+    this.search.close();
     this.lightbox.close();
-    this.code.isExpanding = false;
+    this.code.close();
   }
 };
 
@@ -77,10 +77,10 @@ const theme = {
         }
       });
 
-      window.addEventListener('storage', () => {
+      window.addEventListener('storage', ()=> {
         let theme = this.readSavedSetting();
         if (theme !== this.options.DARK)
-            theme = this.options.LIGHT;
+          theme = this.options.LIGHT;
         this.applyTheme(theme);
       });
   } catch (error) { console.warn('Not listening to theme change events', error) }
@@ -157,14 +157,14 @@ const search = {
   getHitsText: function() {
     return `Search phrase matching ${this.hits.length} pages`;
   },
-  openSearchDialog: function() {
+  open: function() {
     blog.isModalOpen = true;
     this.isOpen = true;
     this.textInSearchBox = '';
     this.indexLoadFailed = false;
     this.downloadIndex();
   },
-  closeSearchDialog: function() {
+  close: function() {
     this.isOpen = false;
     blog.isModalOpen = false;
   },
@@ -213,17 +213,17 @@ const search = {
 
 const menu = {
   states: {
-      CLOSED: 'closed',
-      CLOSING: 'closing',
-      OPEN: 'open',
-      OPENING: 'opening'
+    CLOSED: 'closed',
+    CLOSING: 'closing',
+    OPEN: 'open',
+    OPENING: 'opening'
   },
   state: 'closed',
-  isOpen: ()=> blog.menu.state === blog.menu.states.OPEN,
-  isOpening: ()=> blog.menu.state === blog.menu.states.OPENING,
-  isClosing: ()=> blog.menu.state === blog.menu.states.CLOSING,
-  isClosed: ()=> blog.menu.state === blog.menu.states.CLOSED,
-  hamburgerIsOpen: ()=> blog.menu.isOpen() || blog.menu.isOpening(),
+  isOpen: function() { return this.state === this.states.OPEN },
+  isOpening: function() { return this.state === this.states.OPENING },
+  isClosing: function () { return this.state === this.states.CLOSING },
+  isClosed: function() { return this.state === this.states.CLOSED },
+  hamburgerIsOpen: function() { this.isOpen() || this.isOpening() },
   close: function() {
     if (this.state === this.states.CLOSED || this.state === this.states.CLOSING)
       return;
@@ -261,16 +261,16 @@ const skipLink = {
 };
 
 const code = {
-  isExpanding: false,
+  isOpening: false,
   isVisible: false,
   close: function() {
     if (this.isVisible) {
-      this.isExpanding = false;
+      this.isOpening = false;
       blog.isModalOpen = false;
       this.isVisible = false;
     }
   },
-  expand: function(event) {
+  open: function(event) {
     this.isVisible = false;
     const codeToExpand = event.target.closest('.code-expandable').querySelector('.code');
     const topOffset = codeToExpand.offsetTop + (codeToExpand.clientHeight / 2) - window.pageYOffset;
@@ -278,7 +278,7 @@ const code = {
     const clonedElement = codeToExpand.cloneNode(true);
 
     blog.isModalOpen = true;
-    this.isExpanding = true;
+    this.isOpening = true;
     
     const codePlaceholder = document.getElementById("code-placeholder");
     codePlaceholder.innerHTML = "";
@@ -292,14 +292,12 @@ const code = {
           the modal element (#code-container). @click.away should only run once the modal is
           fully open and animations are completed.
       */
-      this.isVisible = true;        
+      this.isVisible = true;
     }, 500);
   }
 };
 
-
 window.blog = { ...base, theme, lightbox, search, menu, skipLink, code };
-
 window.blog.theme.onLoad();
 
 document.addEventListener("DOMContentLoaded", function() {

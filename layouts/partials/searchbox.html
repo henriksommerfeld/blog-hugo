@@ -1,7 +1,7 @@
 <div id="searchbox-container" :class="{'open': search.isOpen}" x-show="search.isOpen"
     x-on:keydown.escape="$nextTick(() => $refs.searchMenuLink.focus())">
     <button type="button" aria-label="Close search modal" class="modal-close-button" 
-        @click="search.closeSearchDialog();$nextTick(() => $refs.searchMenuLink.focus())">
+        @click="search.close();$nextTick(() => $refs.searchMenuLink.focus())">
         <svg class="icon icon-circle-with-cross"><use xlink:href="#icon-circle-with-cross"></use></svg>
         (ESC)
     </button>
@@ -14,7 +14,7 @@
             x-on:keydown.enter="search.focusFirstAnchor($event, $refs.hits)"
             x-on:keydown.arrow-down="search.focusFirstAnchor($event, $refs.hits)">
         <svg class="icon icon-circle-with-cross close-search" role="button" aria-label="Close search"
-            @click="search.closeSearchDialog();$nextTick(() => $refs.searchMenuLink.focus())">
+            @click="search.close();$nextTick(() => $refs.searchMenuLink.focus())">
             <use xlink:href="#icon-circle-with-cross"></use>
         </svg>
     </div>
