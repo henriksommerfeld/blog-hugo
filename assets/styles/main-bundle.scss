@@ -19,12 +19,9 @@
 @import "./_paging-controls";
 @import "./_blockquote";
 @import "./_links";
+@import "./_theme";
 @import "./_theme-switcher";
 @import "./_notch-mixin";
-
-:root {
-  color-scheme: light dark;
-}
 
 body {
   color: var(--color);

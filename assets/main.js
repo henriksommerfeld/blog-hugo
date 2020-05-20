@@ -18,40 +18,23 @@ const theme = {
     document.getElementById('theme-switcer-indicator').checked = isLight;
   },
   applyTheme: function(theme) {
-    if (theme !== this.options.LIGHT && theme !== this.options.DARK)
-      return;
-
-    const darkStyles = document.querySelectorAll("link[data-theme=dark]");
-    const lightStyles = document.querySelectorAll("link[data-theme=light]");
-
-    const isDark = theme === this.options.DARK;
-    if (isDark) {
-      console.info('🌙 Setting dark mode');
-      darkStyles.forEach(link => {
-          link.media = 'all';
-          link.disabled = false;
-      });
-      lightStyles.forEach(link => {
-          link.media = 'not all';
-          link.disabled = true;
-      });
-    }
-    else {
-      console.info('🌞 Setting light mode');
-
-      darkStyles.forEach(link => {
-          link.media = 'not all';
-          link.disabled = true;
-      });
-      lightStyles.forEach(link => {
-          link.media = 'all';
-          link.disabled = false;
-      });
-    }
+    const isDark = theme === this.options.DARK;    
+    const message = isDark ? '🌙 Setting dark mode' : '🌞 Setting light mode';
+    console.log(message);
     this.setSwitch(!isDark);
+    
+    // Using class binding for toggling classes from a JS file, 
+    // simply does not work with AlpineJS at this point (2.3.5)
+    const classToAdd = theme;
+    const classToRemove = isDark ? this.options.LIGHT : this.options.DARK;
+    document.body.classList.add(classToAdd);
+    document.body.classList.remove(classToRemove);
   },
   saveSetting: function(theme) {
     window.localStorage.setItem('theme', theme);
+  },
+  removeSetting: function() {
+    window.localStorage.removeItem('theme');
   },
   readSavedSetting: function() {
     return window.localStorage.getItem('theme');
@@ -67,14 +50,11 @@ const theme = {
       if (!darkModePreferredQuery.addEventListener) return;
 
       darkModePreferredQuery.addEventListener("change", event => {
-        const savedTheme = this.readSavedSetting();
+        this.removeSetting();
         const isLight = !event.matches;
         const newOsTheme = isLight ? this.options.LIGHT : this.options.DARK;
-        if (savedTheme !== newOsTheme) {
-          this.applyTheme(newOsTheme);
-          this.saveSetting(newOsTheme);
-          console.log(`🌗 Theme changed in Operating System to ${newOsTheme} mode`);
-        }
+        console.log(`🌗 Theme changed in Operating System to ${newOsTheme} mode`);
+        this.applyTheme(newOsTheme);
       });
 
       window.addEventListener('storage', ()=> {

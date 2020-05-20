@@ -1,0 +1,85 @@
+@import "./_colors";
+
+@mixin light-mode {
+  $light-color: $blue400;
+  $white: white;
+  $background-color: rgb(250,250,250);
+  $header-text-shadow: transparentize($gray900, 0.5);
+  $link-text-shadow-color: transparentize($blue900, 0.2);
+  $hamburger-shadow-color: transparentize($white, 0.4);
+  $inline-code-bg-color: darken($background-color, 3%);
+  $inline-code-border-color: darken($background-color, 10%);
+  $paging-bg-color: $gray300;
+  $modal-bg: transparentize($gray900, 0.1);
+  $modal-bg-for-blur: transparentize($gray900, 0.4);
+
+  :root {
+    --white: #{$white};
+    --color: black;
+    --accent-color: #{$orange500};
+    --selection-color: var(--color);
+    --selection-bg-color: #{$orange400};
+    --color-published: #{$gray700};
+    --background-color: #{$background-color};
+    --blockquote-color: #{$gray600};
+    --caption-color: #{$gray700};
+    --taxonomy-heading-color: var(--accent-color);
+    --taxonomy-icon-color: #{$gray600};
+    
+    --widget-bg-color: #{$blue700};
+    --medium-color: var(--white);
+    --light-color: #{$light-color};
+
+    --header-bg-color: #{$gray800};
+    --header-color: var(--white);
+    --header-text-shadow: #{$header-text-shadow};
+    --footer-bg-color: #{$blue500};
+
+    --modal-bg-color: #{$modal-bg};
+    --modal-bg-color-for-blur: #{$modal-bg-for-blur};
+    --spinner-color: var(--accent-color);
+    --spinner-bg-color: var(--white);
+
+    --search-container-bg-color: #{$background-color};  
+    --searchbox-bg-color: var(--background-color);
+    --searchbox-icon-color: #{$blue800};
+    --search-output-color: #{$blue800};
+    --search-output-bg-color: var(--white);
+
+    --paging-color: #{$gray800};
+    --paging-bg-color: #{$paging-bg-color};
+    --paging-border-color: #{darken($paging-bg-color, 8%)};
+    --paging-text-shadow: #{darken($paging-bg-color, 30%)};
+    --paging-box-shadow-color: #{transparentize(black, 0.8)};
+    --paging-button-border-color: var(--accent-color);
+    --paging-focus-bg-color: #{$gray400};
+    --paging-focus-color: var(--paging-color);
+    --paging-currnt-bg-color: var(--widget-bg-color);
+    --paging-current-color: var(--white);
+
+    --link-color: #{$blue600};
+    --link-focus-color: #{$blue700};
+    --link-text-shadow-color: #{$link-text-shadow-color};
+    --link-underline: var(--accent-color);
+
+    --heading-color: var(--link-color);
+    --hamburger-shadow-color: #{$hamburger-shadow-color};
+
+    --mobile-nav-bg-color: #{$gray300};
+    --mobile-nav-border-color: #{$gray700};
+    --mobile-nav-bg-hover-color: #{transparentize($blue800, 0.9)};
+    --mobile-nav-color: #{$gray700};
+    --mobile-nav-box-shadow-color: #{transparentize(black, 0.5)};
+
+    --highlight-bg-color: #{$gray900};
+    --highlight-color: #{$gray200};
+    --highlight-selection-color: #{$gray500};
+    --inline-code-bg-color: #{$inline-code-bg-color};
+    --inline-code-border-color: #{$inline-code-border-color};
+
+    --image-filter: none;
+
+    --scrollbar-color: #{$gray500};
+    --scrollbar-bg-color: #{$gray300};
+  }
+}

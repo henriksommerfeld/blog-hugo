@@ -1,6 +1,7 @@
 ---
 date: "2019-08-18T10:43:00+02:00"
 title: "About"
+description: "I'm Henrik Sommerfeld"
 type: "about"
 url: "about"
 disable_comments: true
