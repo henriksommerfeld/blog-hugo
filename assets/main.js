@@ -23,7 +23,7 @@ const theme = {
     console.log(message);
     this.setSwitch(!isDark);
     
-    // Using class binding for toggling 2 classes right after one another, 
+    // Using class binding for toggling classes from a JS file, 
     // simply does not work with AlpineJS at this point (2.3.5)
     const classToAdd = theme;
     const classToRemove = isDark ? this.options.LIGHT : this.options.DARK;
