@@ -237,6 +237,9 @@ const skipLink = {
   skipToContent: function(contentElement) {
     contentElement.setAttribute('tabindex', '-1');
     contentElement.focus();
+  },
+  removeContentTabIndex: function(contentElement) {
+    contentElement.removeAttribute('tabindex');
   }
 };
 
