@@ -1,0 +1,14 @@
+@import "./_light";
+@import "./_dark";
+
+@include light-mode();
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light) {
+    @include dark-mode();
+  }
+}
+
+body.dark {
+  @include dark-mode();
+}

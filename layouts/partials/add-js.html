@@ -8,6 +8,6 @@
 {{ else }}
   {{ $libs := resources.Get "libraries.js" | resources.Fingerprint "sha512" }}
   <script src="{{ $libs.RelPermalink }}" integrity="{{ $libs.Data.Integrity }}"></script>
-  {{ $mainDev := resources.Get "main.js" }}
-  <script src="{{ $mainDev.RelPermalink }}"></script>
+  {{ $mainDev := resources.Get "main.js" | resources.Fingerprint "sha512" }}
+  <script src="{{ $mainDev.RelPermalink }}" integrity="{{ $mainDev.Data.Integrity }}"></script>
 {{ end }}
