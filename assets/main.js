@@ -50,8 +50,8 @@ const theme = {
         this.removeSetting();
         const isLight = !event.matches;
         const newOsTheme = isLight ? this.options.LIGHT : this.options.DARK;
-        this.applyTheme(newOsTheme);
         console.log(`🌗 Theme changed in Operating System to ${newOsTheme} mode`);
+        this.applyTheme(newOsTheme);
       });
 
       window.addEventListener('storage', ()=> {
@@ -63,20 +63,13 @@ const theme = {
   } catch (error) { console.warn('Not listening to theme change events', error) }
   },
   onLoad: function() {
-    this.listenForExternalChange();
     const savedTheme = this.readSavedSetting();
     const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const osTheme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
     const isSavedThemeValid = savedTheme === this.options.DARK || savedTheme === this.options.LIGHT;
-
-    if (!isSavedThemeValid) {
-      const isDark = osTheme === this.options.DARK;
-      this.setSwitch(!isDark);
-      return;
-    };
-
-    const themeToApply = savedTheme !== osTheme ? savedTheme : osTheme;
+    const themeToApply = isSavedThemeValid && savedTheme !== osTheme ? savedTheme : osTheme;
     this.applyTheme(themeToApply);
+    this.listenForExternalChange();
   }
 };
 
