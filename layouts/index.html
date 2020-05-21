@@ -10,10 +10,11 @@
                         {{ range (.Paginate ( where .Site.RegularPages "Type" "article" )).Pages }}
                             <article class="summary">
                                 <h1><a href="{{ .RelPermalink }}">{{ .Title }} </a></h1>
-                                {{ partial "article-date.html" . }}
-
+                                {{ partial "article-date.html" . }}                                
+                                {{ partial "list-image.html" . }}
                                 <p>
                                     {{ partial "summary.html" . }}
+                                    <a href="{{ .RelPermalink }}">Read more...</a>
                                 </p>
                             </article>
                         {{ end }}

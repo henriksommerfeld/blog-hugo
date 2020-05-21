@@ -4,6 +4,7 @@ date: 2018-07-31T11:14:58+02:00
 url: "firmware-update-notifications-for-my-asus-router"
 categories: ["Tooling"]
 tags: ["Networking", "Scripting"]
+ogimage: asus-firmware-upload.png
 ---
 
 Even though there is an app for my [Asus RT-AC68U router][6] with the default firmware, it hasn't worked that well for me and I wanted reliable firmware update notifications. I found that this has been done by others, but still, there are a few steps to go through, so I'm documenting them here. This works for several other Asus router models as well, see [the list of supported routers][8].

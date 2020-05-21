@@ -9,9 +9,10 @@
                     <main id="content" x-ref="content">
                             <h1><span class="taxonomy-heading">Category:</span> {{ .Title }}</h1>
                             {{- range .Paginator.Pages }}
-                                <article>
+                                <article class="summary">
                                     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                                     {{ partial "article-date.html" . }}
+                                    {{ partial "list-image.html" . }}
                                     <p>
                                         {{ partial "summary.html" . }}
                                         <a href="{{ .RelPermalink }}">Read more...</a>

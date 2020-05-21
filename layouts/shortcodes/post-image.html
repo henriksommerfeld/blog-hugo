@@ -43,7 +43,7 @@
   </style>
   <figure class="{{ $border_class }}">
     {{ if .Get "lightbox" }}
-    <a href='{{ $image.RelPermalink }}'>
+    <a href='{{ $image.RelPermalink }}' class="lightbox-hover">
       {{ end }}
       <img src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} />
       {{ if .Get "lightbox" }}
@@ -57,7 +57,7 @@
 
 <figure class="{{ $border_class }} lazy">
   {{ if .Get "lightbox" }}
-  <a href='{{ $image.RelPermalink }}' @click.prevent="lightbox.open($event, $refs)">
+  <a href='{{ $image.RelPermalink }}' @click.prevent="lightbox.open($event, $refs)" class="lightbox-hover">
     {{ end }}
     <img class="lazyload" data-sizes="auto" src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }}
       srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $src.RelPermalink }}"

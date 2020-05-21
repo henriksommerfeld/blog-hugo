@@ -6,7 +6,7 @@ tags = ["Chutzpah","Jasmine", "Unit testing", "JavaScript"]
 title = "Easier Debugging of JS tests in Visual Studio with Chutzpah 4.3.0+"
 type = "article"
 url = "/easier-debugging-of-js-tests-in-visual-studio-with-chutzpah-4-3-0/"
-
+ogimage = "Chutzpah-test-adapter-version.png"
 +++
 
 If you have a Visual Studio project that uses [Chutzpah][1] for JavaScript tests, things recently got a lot easier with a long-awaited update.

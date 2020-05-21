@@ -22,6 +22,7 @@
 @import "./_theme";
 @import "./_theme-switcher";
 @import "./_notch-mixin";
+@import "./images/images";
 
 body {
   color: var(--color);
@@ -142,6 +143,17 @@ article {
   &.full-article .entry-meta,
   &.summary {
     margin-bottom: 2em;
+    
+    figure {
+      margin-top: $default-spacing;
+      padding-bottom: 0;
+    }
+  }
+  
+  &.summary {
+    padding-bottom: 2em;
+    border-bottom: var(--summary-list-delimiter-color) 4px solid;
+    border-bottom-style: double;    
   }
 }
 
@@ -155,7 +167,7 @@ aside {
 }
 
 .entry-meta {
-  margin-top: -1em;
+  margin-bottom: 2em;
 }
 
 .result-list .entry-meta {
