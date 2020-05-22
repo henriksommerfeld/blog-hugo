@@ -74,7 +74,7 @@ context('Navigation', () => {
       const baseUrl = Cypress.config().baseUrl;
       const isLocal = baseUrl === 'http://localhost:1313';
       const invalidUrl = isLocal ? `${baseUrl}/404.html` : `${baseUrl}/iuneriuhweruh`;
-      cy.visit(invalidUrl).get('h1').findByText('Page Not Found (404)').should('be.visible')
+      cy.visit(invalidUrl, {failOnStatusCode: false}).get('h1').findByText('Page Not Found (404)').should('be.visible')
       cy.findByAltText('oops').should('be.visible');
     })
   })
