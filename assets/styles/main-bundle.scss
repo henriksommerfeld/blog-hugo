@@ -167,11 +167,7 @@ aside {
   }
 }
 
-.summary-with-image {
-  img {
-    filter: grayscale(1);
-  }
-  
+.summary-with-image {  
   @media (min-width: $medium-size-min-width) {
     display: grid;
     grid-template-columns: 1fr 2fr;
