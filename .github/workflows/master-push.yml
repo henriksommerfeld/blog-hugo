@@ -9,6 +9,16 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for Netlify Deploy to complete
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '3m'
+
+      - name: Hit once
+        uses: wei/curl@master
+        with:
+          args: https://www.henriksommerfeld.se
+
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
@@ -16,7 +26,7 @@ jobs:
           accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
           author: ${{ github.actor }}          
           branch: ${{ github.ref }}
-          urls: 'https://www.henriksommerfeld.se'
+          urls: 'https://www.henriksommerfeld.se/about,https://www.henriksommerfeld.se'
           sha: ${{ github.sha }}
           prCommentEnabled: true
           slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}

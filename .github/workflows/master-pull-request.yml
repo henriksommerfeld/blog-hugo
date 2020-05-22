@@ -23,6 +23,10 @@ jobs:
         run: |
           CYPRESS_BASE_URL=${{ steps.waitFor200.outputs.url }} npm run cypress:cli     
       
+      - name: Hit once
+        uses: wei/curl@master
+        with:
+          args: ${{ steps.waitFor200.outputs.url }}
       
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
