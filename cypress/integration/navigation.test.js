@@ -70,7 +70,7 @@ context('Navigation', () => {
       .url().should('equal', Cypress.config().baseUrl + '/');
     })
 
-    it.only('404', () => {
+    it('404', () => {
       const baseUrl = Cypress.config().baseUrl;
       const isLocal = baseUrl === 'http://localhost:1313';
       const invalidUrl = isLocal ? `${baseUrl}/404.html` : `${baseUrl}/iuneriuhweruh`;
