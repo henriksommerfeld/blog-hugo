@@ -27,7 +27,7 @@
   </noscript>
 
   <figure class="image-border lazy">
-    <a href="{{.RelPermalink}}">
+    <a href="{{.RelPermalink}}" aria-label="To post '{{.Params.Title}}'">
       <img class="lazyload" data-sizes="auto" src="{{ $src.RelPermalink }}" 
       srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $src.RelPermalink }}"
       data-srcset="{{ $src_set }}" width="1200" height="600" alt="" />
