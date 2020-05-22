@@ -56,7 +56,7 @@ context('Navigation', () => {
     })
     
     it('Should go to last post in category', () => {
-      cy.get('main article:last').findByText('Read more...').click({force: true});
+      cy.get('main article:last').findByText('Read →').click({force: true});
       cy.get('footer .categories-tags').findByText('Coding').should('have.attr', 'href').and('equal', '/categories/coding');
     })
     
@@ -68,6 +68,14 @@ context('Navigation', () => {
     it('Should go to start page', () => {
       cy.get('nav').findByText('Home').click({force: true})
       .url().should('equal', Cypress.config().baseUrl + '/');
+    })
+
+    it('404', () => {
+      const baseUrl = Cypress.config().baseUrl;
+      const isLocal = baseUrl === 'http://localhost:1313';
+      const invalidUrl = isLocal ? `${baseUrl}/404.html` : `${baseUrl}/iuneriuhweruh`;
+      cy.visit(invalidUrl, {failOnStatusCode: false}).get('h1').findByText('Page Not Found (404)').should('be.visible')
+      cy.findByAltText('oops').should('be.visible');
     })
   })
 

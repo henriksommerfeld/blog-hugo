@@ -12,7 +12,7 @@ figure {
     width: 200px;
   }
 
-  & > a {
+  & > a.lightbox-hover {
     max-width: 100%;
     display: inline-block;
     position: relative;
@@ -21,6 +21,7 @@ figure {
       outline: 2px solid var(--accent-color);
     }
 
+    &.light
     &:hover, &:focus {
       background: none;
 

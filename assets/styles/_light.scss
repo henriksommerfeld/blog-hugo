@@ -73,13 +73,16 @@
 
     --highlight-bg-color: #{$gray900};
     --highlight-color: #{$gray200};
-    --highlight-selection-color: #{$gray500};
+    --highlight-selection-color: var(--accent-color);
     --inline-code-bg-color: #{$inline-code-bg-color};
     --inline-code-border-color: #{$inline-code-border-color};
 
     --image-filter: none;
+    --image-border-box-shadow-color: rgba(34,25,25,.4);
 
     --scrollbar-color: #{$gray500};
     --scrollbar-bg-color: #{$gray300};
+    
+    --summary-list-delimiter-color: #{$gray300};
   }
 }

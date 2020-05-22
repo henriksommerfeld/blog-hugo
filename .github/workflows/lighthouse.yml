@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        id: lighthouseCheck
+        with:
+          accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
+          author: ${{ github.actor }}          
+          branch: ${{ github.ref }}
+          urls: 'https://www.henriksommerfeld.se'
+          sha: ${{ github.sha }}
+          prCommentEnabled: true
+          slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
