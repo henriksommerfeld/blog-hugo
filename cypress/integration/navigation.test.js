@@ -56,7 +56,7 @@ context('Navigation', () => {
     })
     
     it('Should go to last post in category', () => {
-      cy.get('main article:last').findByText('Read more...').click({force: true});
+      cy.get('main article:last').findByText('Read →').click({force: true});
       cy.get('footer .categories-tags').findByText('Coding').should('have.attr', 'href').and('equal', '/categories/coding');
     })
     

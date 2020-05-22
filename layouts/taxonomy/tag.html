@@ -12,11 +12,7 @@
                                 <article class="summary">
                                     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                                     {{ partial "article-date.html" . }}
-                                    {{ partial "list-image.html" . }}
-                                    <p>
-                                        {{ partial "summary.html" . }}
-                                        <a href="{{ .RelPermalink }}">Read more...</a>
-                                    </p>
+                                    {{ partial "summary-read-more.html" . }}
                                 </article>
                             {{- end }}
                             {{ partial "paging-navigation.html" . }}

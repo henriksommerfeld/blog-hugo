@@ -13,11 +13,6 @@
     {{ $src_set = (print $src_set ", " $medium.RelPermalink " 1200w") }}
   {{ end }}
 
-  {{ if gt $image.Width "1800"}}
-    {{ $large := $image.Fill "1800x900" }}
-    {{ $src_set = (print $src_set ", " $large.RelPermalink " 1800w") }}
-  {{ end }}
-
   <noscript>
     <style>
       figure.lazy {

@@ -1,0 +1,17 @@
+{{ $has_image := .Params.Ogimage }}
+{{ if $has_image }}
+  <div class="summary-with-image">
+    <div>
+      {{ partial "list-image.html" . }}
+    </div>
+    <div>
+      {{ partial "summary.html" . }}
+      <a href="{{ .RelPermalink }}">Read&nbsp;→</a>
+    </div>
+  </div>
+{{ else }}
+  <p>
+    {{ partial "summary.html" . }}
+    <a href="{{ .RelPermalink }}">Read&nbsp;→</a>
+  </p>
+{{ end }}
