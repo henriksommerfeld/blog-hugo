@@ -1,0 +1,48 @@
+name: Tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install
+        run: |
+          yarn install
+      - name: Waiting for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1.1
+        id: waitFor200
+        with:
+          site_name: "henriksommerfeld"
+          max_timeout: 300
+      - name: Integration tests
+        run: |
+          CYPRESS_BASE_URL=${{ steps.waitFor200.outputs.url }} npm run cypress:cli     
+      
+      
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        id: lighthouseCheck
+        with:
+          accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
+          author: ${{ github.actor }}          
+          branch: ${{ github.ref }}
+          outputDirectory: /tmp/artifacts
+          urls: ${{ steps.waitFor200.outputs.url }}
+          sha: ${{ github.sha }}
+          prCommentEnabled: true
+          slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
+      
+      - name: Handle Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: "100"
+          minBestPracticesScore: "90"
+          minPerformanceScore: "90"
+          minProgressiveWebAppScore: "0"
+          minSeoScore: "90"
