@@ -31,18 +31,7 @@ jobs:
           accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
           author: ${{ github.actor }}          
           branch: ${{ github.ref }}
-          outputDirectory: /tmp/artifacts
           urls: ${{ steps.waitFor200.outputs.url }}
           sha: ${{ github.sha }}
           prCommentEnabled: true
           slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
-      
-      - name: Handle Lighthouse Check results
-        uses: foo-software/lighthouse-check-status-action@master
-        with:
-          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "100"
-          minBestPracticesScore: "90"
-          minPerformanceScore: "90"
-          minProgressiveWebAppScore: "0"
-          minSeoScore: "90"
