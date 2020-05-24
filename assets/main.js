@@ -203,7 +203,7 @@ const menu = {
   isOpening: function() { return this.state === this.states.OPENING },
   isClosing: function () { return this.state === this.states.CLOSING },
   isClosed: function() { return this.state === this.states.CLOSED },
-  hamburgerIsOpen: function() { this.isOpen() || this.isOpening() },
+  hamburgerIsOpen: function() { return this.isOpen() || this.isOpening() },
   close: function() {
     if (this.state === this.states.CLOSED || this.state === this.states.CLOSING)
       return;
