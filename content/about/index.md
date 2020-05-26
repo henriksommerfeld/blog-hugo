@@ -4,7 +4,6 @@ title: "About"
 description: "I'm Henrik Sommerfeld"
 type: "about"
 url: "about"
-disable_comments: true
 ---
 
 # Hi, I'm Henrik!
