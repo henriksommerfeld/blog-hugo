@@ -14,7 +14,7 @@ I have an Asus RT-AC68U router at home. [I've previously used the build-in updat
 
 When I ran a manual check using the router's web interface, it just said: _"Temporarily unable to get the latest firmware information. Please try again later."_ It doesn't seem to be that temporary though.
 
-## TLDR
+## TL;DR
 
 The code is in [this GitHub repo][2] and the scheduling piece with cron is described a the end of this post.
 
