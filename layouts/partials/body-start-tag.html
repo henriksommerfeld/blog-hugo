@@ -1,2 +1,15 @@
-<body x-data="window.blog" class="{{ .cssClassNames }}" :class="{ 'modal-open': isModalOpen, 'keyboard-navigation' : keyboardNavigation }"
+<body x-data="window.blog" class="{{ .cssClassNames }}" 
+  :class="{ 'modal-open': isModalOpen, 'keyboard-navigation' : keyboardNavigation, 'js-loaded': true }"
   @mouseup="keyboardNavigation = false" @keydown.tab="keyboardNavigation = true" @keydown.escape="closeModals()">
+  
+  <script>
+    // Limit the effect of OS theme being loaded first and then 
+    // a visible theme change when setting is different from OS theme.
+    try {
+      const manualThemeSetting = window.localStorage.getItem('theme');
+      if (manualThemeSetting === 'dark')
+      document.querySelector('body').classList.add('dark')
+      if (manualThemeSetting === 'light')
+      document.querySelector('body').classList.add('light')
+    } catch(error) {}
+  </script>

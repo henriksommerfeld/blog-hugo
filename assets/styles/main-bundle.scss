@@ -35,7 +35,7 @@ body {
   line-height: 1.5;
 }
 
-* {
+body.js-loaded {
   transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
 }
 
