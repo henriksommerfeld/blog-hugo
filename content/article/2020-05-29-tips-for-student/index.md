@@ -65,7 +65,7 @@ Make sure you address _one_ issue at a time. Even if you're not "done" with the 
 
 ### 7. Backup when something works
 
-Ideally you should use a version control system (like Git), but if you haven't been taught how to use that, you can always copy the code folder and give it a sensible name, whenever you've managed something to run like it should. It's just as easy as it's frustrating when you realise that you've broken something that worked before.
+Ideally you should use a version control system (like Git), but if you haven't been taught how to use that, you can always copy the code folder and give it a sensible name, whenever you've managed something to run like it should. It's just as easy to break something that worked before, as it's frustrating when it happens.
 
 ### 8. Google (verb)
 
@@ -75,4 +75,4 @@ If you know what you want to achieve, but not how to type it out – google it, 
 
 Having gone through the assignment, solving it together with the student in a two-hour screen sharing session, I conclude that methodical problem-solving skills is the most important. Of course you have to know the basics of the programming language you're using and have an understanding of the assignment to be solved, but there are no shortcuts. 
 
-The other obvious insight is that apart from my fist JavaScript specific advice on variables, this applies to most of coding – not only most programming languages, but most of programming you will ever do in your career.
+The other obvious insight is that apart from my first JavaScript specific advice on variables, this applies to most of coding – not only most programming languages, but most of programming you will ever do in your career.
