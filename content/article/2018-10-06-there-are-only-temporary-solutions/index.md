@@ -14,7 +14,7 @@ ogimage: rawpixel-749480-unsplash-w1500.jpg
 
 This is a reflection from an earlier job I had. It was at one of those large enterprises with monthly deploys and a development process documentation taking up 5 meters on a wall.
 
-For 8 years, consultants from one of the largest IT companies, had failed to deliver a company-wide identity solution (authentication/authorisation) that fulfilled the requirements. It was emphasised how important is was that this was done _right_ (opposite to _[fail fast][1]_). This became more and more frustrating, as it was holding back many other initiatives that needed a unified user management solution. So, one day two of our team members had enough and spent a sprint on investigating an alternative solution. 
+For 8 years, consultants from one of the largest IT companies, had failed to deliver a company-wide identity solution (authentication/authorisation) that fulfilled the requirements. It was emphasised how important it was that this was done _right_ (opposite to _[fail fast][1]_). This became more and more frustrating, as it was holding back many other initiatives that needed a unified user management solution. So, one day two of our team members had enough and spent a sprint on investigating an alternative solution. 
 
 A solution was presented that would take a few weeks to implement. With a lot of scepticism, we got an approval to go ahead with this alternative solution under the condition that it should only be considered a _temporary_ solution. This was emphasised a lot, a _temporary_ solution. 
 

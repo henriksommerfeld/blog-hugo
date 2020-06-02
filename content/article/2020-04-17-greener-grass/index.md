@@ -40,7 +40,7 @@ Sample tech:
 
 ## Where I'm now
 
-Now I'm in _ops_, part of a team named _Tooling_ that provides the infrastructure and tools for other development teams to run their applications on. I'm the least experienced in the team when it comes to infrastructure and the tools we use, so I learn a ton of new stuff all the time. Having taken a web interface for granted for almost all of my career, the primary user interface our team is building right now is a [CLI][24].
+Now I'm in _Ops_, part of a team named _Tooling_ that provides the infrastructure and tools for other development teams to run their applications on. I'm the least experienced in the team when it comes to infrastructure and the tools we use, so I learn a ton of new stuff all the time. Having taken a web interface for granted for almost all of my career, the primary user interface our team is building right now is a [CLI][24].
 
 As a developer in our organisation, you create a new service (API, web app, etc.) by using our CLI. It will ask you a few questions: name and description for the service, what team owns it, select the upstream services it depends on etc. That takes care of all the boring stuff you _need_, but don't want to deal with as an application developer, like logging, monitoring, TLS certificates etc.
 
