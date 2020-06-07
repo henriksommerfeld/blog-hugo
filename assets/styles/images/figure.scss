@@ -21,7 +21,7 @@ figure {
       outline: 2px solid var(--accent-color);
     }
 
-    &.light
+    &.light,
     &:hover, &:focus {
       background: none;
 
