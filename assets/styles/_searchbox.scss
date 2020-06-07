@@ -145,7 +145,7 @@ $search-min-wide: 150em;
 
         @media (min-width: $searchbox-breakpoint) {
             list-style-position: outside;
-            padding-left: 1.5em;
+            padding-left: 2em;
         }
         li {
             padding-bottom: $default-spacing;
