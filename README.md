@@ -19,7 +19,7 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 ### Headless
 1. `yarn test`
 
-## Cypress GUI
+### Cypress GUI
 1. `yarn test:open`
 
 [1]: http://gohugo.io/
