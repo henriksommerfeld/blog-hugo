@@ -36,9 +36,6 @@
     "test": "start-server-and-test http://localhost:1313 cypress:cli",
     "test:open": "start-server-and-test http://localhost:1313 cypress:open"
   },
-  "resolutions": {
-    "cypress": "4.6.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/henriksommerfeld/blog-hugo.git"
