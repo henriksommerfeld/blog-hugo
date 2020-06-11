@@ -17,10 +17,10 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 1. `yarn install`
 
 ### Headless
-1. `yarn test`
+2. `yarn test`
 
 ### Cypress GUI
-1. `yarn test:open`
+2. `yarn test:open`
 
 [1]: http://gohugo.io/
 [2]: https://yarnpkg.com/
