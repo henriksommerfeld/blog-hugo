@@ -3,20 +3,23 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.9.6",
-    "@babel/preset-env": "7.9.6",
+    "@babel/cli": "7.10.1",
+    "@babel/core": "7.10.2",
+    "@babel/preset-env": "7.10.2",
     "alpinejs": "2.3.5",
     "babelify": "10.0.0",
     "browserify": "16.5.1",
-    "lazysizes": "5.2.1-rc2",
+    "lazysizes": "5.2.2",
     "lunr": "2.3.8",
     "shx": "^0.3.2",
     "uglifyify": "5.0.2"
   },
+  "resolutions": {
+    "cypress": "4.8.0"
+  },
   "devDependencies": {
     "@testing-library/cypress": "6.0.0",
-    "cypress": "4.6.0",
+    "cypress": "4.8.0",
     "cypress-plugin-tab": "^1.0.5",
     "start-server-and-test": "1.11.0"
   },
@@ -35,9 +38,6 @@
     "cypress:open": "cypress open",
     "test": "start-server-and-test http://localhost:1313 cypress:cli",
     "test:open": "start-server-and-test http://localhost:1313 cypress:open"
-  },
-  "resolutions": {
-    "cypress": "4.6.0"
   },
   "repository": {
     "type": "git",
