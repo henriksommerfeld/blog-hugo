@@ -68,7 +68,7 @@ All of the 8 cores on my laptop where working here and it took 40 seconds. This 
 
 ## Total build & deploy time
 
-As I mentioned, I use Netlify to both build and deploy. That process [takes about 1-2 minutes][1], which regardless of everything else, is better than [the 25 minutes Wes Bos is experienceing][2].
+As I mentioned, I use Netlify to both build and deploy. That process [takes about 2 minutes][1], which regardless of everything else, is better than [the 25 minutes Wes Bos is experienceing][2].
 
 
 
