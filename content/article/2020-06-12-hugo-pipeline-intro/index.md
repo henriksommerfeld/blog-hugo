@@ -19,7 +19,7 @@ Quinten de Graaf</a>.
 
 This is the first part in a series of posts where I'll describe how I created my personal blog with a fair amout of work to achieve simplicity. The intendend audience is:
 * Myself (as documentation)
-* Someone with their own [Hugo](gohugo.io/) blog, looking to improve automation
+* Someone with their own [Hugo](https://gohugo.io/) blog, looking to improve automation
 * Someone interesting in learning _one_ way of working with a Hugo blog
 
 This will be an overview of the different pieces I use, it won't be a detailed description or tutorial, but I'll try to link to libraries and concepts.
@@ -34,7 +34,7 @@ This will be an overview of the different pieces I use, it won't be a detailed d
 
 The site I'll be describing has the following characteristics:
 * Annual running cost of **nothing**, except for the domain name
-* Static site (built with [Hugo](gohugo.io/))
+* Static site (built with [Hugo](https://gohugo.io/))
 * 400+ images
 * < 2 minutes combined build & deploy time
 * Custom domain with HTTPS
@@ -43,7 +43,7 @@ The site I'll be describing has the following characteristics:
 * [Lightbox][1] for images and code
 * Dark/light mode
 * [Alpine.js](https://github.com/alpinejs/alpine) for custom JavaScript code
-* [Cypress](cypress.io/) tests that run automatically on [pull requests][7]
+* [Cypress](http://cypress.io/) tests that run automatically on [pull requests][7]
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit results automatically run after deploy 
 * All code is in a [public repo on GitHub](https://github.com/henriksommerfeld/blog-hugo)
 * Runs locally without Internet access
