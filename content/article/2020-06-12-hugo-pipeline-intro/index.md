@@ -2,8 +2,8 @@
 title: Hugo Pipeline Series – Intro
 url: /hugo-pipeline-series-intro
 date: 2020-06-14T22:11:00+02:00
-description: In this post(s) I'll describe how I created my personal blog with a fair amout of work to achieve simplicity. 
-summary: In this post(s) I'll describe how I created my personal blog with a fair amout of work to achieve simplicity. 
+description: In this post(s) I'll describe how I created my personal blog with a fair amount of work to achieve simplicity. 
+summary: In this post(s) I'll describe how I created my personal blog with a fair amount of work to achieve simplicity. 
 tags: [Hugo]
 categories: [Coding]
 ogimage: quinten-de-graaf-L4gN0aeaPY4-unsplash.jpg
@@ -17,7 +17,7 @@ Quinten de Graaf</a>.
 
 ## Who is this for?
 
-This is the first part in a series of posts where I'll describe how I created my personal blog with a fair amout of work to achieve simplicity. The intendend audience is:
+This is the first part in a series of posts where I'll describe how I created my personal blog with a fair amount of work to achieve simplicity. The intended audience is:
 * Myself (as documentation)
 * Someone with their own [Hugo](https://gohugo.io/) blog, looking to improve automation
 * Someone interesting in learning _one_ way of working with a Hugo blog
@@ -27,7 +27,7 @@ This will be an overview of the different pieces I use, it won't be a detailed d
 
 ## TL;DR
 * [Repo is here](https://github.com/henriksommerfeld/blog-hugo). README shows how to run it locally
-* A build & deploy log is here: https://app.netlify.com/sites/henriksommerfeld/deploys/5edd46691261090008d5a8b5
+* A [build & deploy log is here](https://app.netlify.com/sites/henriksommerfeld/deploys/5edd46691261090008d5a8b5)
 
 
 ## Site characteristics
