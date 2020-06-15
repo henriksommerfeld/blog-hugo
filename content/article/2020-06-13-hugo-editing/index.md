@@ -23,11 +23,11 @@ See [Scott Hanselman looking at all his blog posts][3] from 2005 and onwards. It
 
 ## Different workflows for content and code changes
 
-Since correcting a simple spelling mistake using a static site generator requires a new build, it's benificial to reduce the amout of stuff that needs to happen between a push and a deploy. Therefore I have split content changes and code changes (see next post) into two different workflows.
+Since correcting a simple spelling mistake using a static site generator requires a new build, it's beneficial to reduce the amount of stuff that needs to happen between a push and a deploy. Therefore I have split content changes and code changes (see next post) into two different workflows.
 
 ### Reduce the stuff to build
 
-I have some npm packages and have splitted `dependencies` from `devDependencies` to reduce the amount of packages that need to be installed for a content change. Installing dependencies with `yarn install --production` installs 44 MB of _node_modules_, while `yarn install` installs 110 MB of _node_modules_.
+I have some npm packages and have split `dependencies` from `devDependencies` to reduce the amount of packages that need to be installed for a content change. Installing dependencies with `yarn install --production` installs 44 MB of _node_modules_, while `yarn install` installs 110 MB of _node_modules_.
 
 My netlify.toml file:
 ``` toml
@@ -38,7 +38,7 @@ My netlify.toml file:
   NODE_ENV = "production"
 ```
 
-My content deployment workflow consists of pushing directly to the master branch. That triggers a web hook that does a build and deploy by [Netlify](https://www.netlify.com/). This requires the dicipline not to push code changes directly to the master branch, but since I'm the only developer, that's a policy easy to enforce.
+My content deployment workflow consists of pushing directly to the master branch. That triggers a web hook that does a build and deploy by [Netlify](https://www.netlify.com/). This requires the discipline not to push code changes directly to the master branch, but since I'm the only developer, that's a policy easy to enforce.
 
 {{<post-image image="hugo-deploy-pipeline.png" alt="Deploy pipeline with VS Code, GitHub and Netlify" />}}
 
@@ -68,7 +68,7 @@ All of the 8 cores on my laptop where working here and it took 40 seconds. This 
 
 ## Total build & deploy time
 
-As I mentioned, I use Netlify to both build and deploy. That process [takes about 2 minutes][1], which regardless of everything else, is better than [the 25 minutes Wes Bos is experienceing][2].
+As I mentioned, I use Netlify to both build and deploy. That process [takes about 2 minutes][1], which regardless of everything else, is better than [the 25 minutes Wes Bos is experiencing][2].
 
 
 
