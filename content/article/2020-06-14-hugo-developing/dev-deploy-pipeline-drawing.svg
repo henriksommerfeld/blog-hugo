@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   height="1654.5"
+   width="429.5"
+   sodipodi:docname="dev-deploy-pipeline-drawing.svg"
+   id="svg212"
+   viewBox="0 0 429.5 1654.5"
+   version="1.1">
+  <metadata
+     id="metadata216">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg212"
+     inkscape:window-maximized="1"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="827.25"
+     inkscape:cx="214.75"
+     inkscape:zoom="0.44424297"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     id="namedview214"
+     inkscape:window-height="1075"
+     inkscape:window-width="1792"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <!-- svg-source:excalidraw -->
+  <defs
+     id="defs12">
+    <style
+       id="style10">
+      @font-face {
+        font-family: &quot;Virgil&quot;;
+        src: url(&quot;https://excalidraw.com/FG_Virgil.woff2&quot;);
+      }
+      @font-face {
+        font-family: &quot;Cascadia&quot;;
+        src: url(&quot;https://excalidraw.com/Cascadia.woff2&quot;);
+      }
+    </style>
+  </defs>
+  <rect
+     style="fill:none"
+     id="rect14"
+     fill="#ffffff"
+     height="1654.5"
+     width="429.5"
+     y="0"
+     x="0" />
+  <g
+     id="g18"
+     transform="translate(10,10)">
+    <path
+       id="path16"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M 0.32849517,-0.14787792 C 105.61118,0.47754569 210.7281,-0.27873559 401.85532,0.7867261 M 0.09073786,0.53660226 C 130.61733,2.6068979 262.5897,2.5678724 401.0851,-0.33339817 m -1.89163,1.18491345 C 400.95594,32.322103 401.39887,66.567825 399.83141,142.18075 M 401.50985,0.96305769 C 401.86377,57.879016 401.7307,113.53673 401.58645,143.3253 m -1.48443,0.7092 C 252.11335,143.83781 104.62668,144.70962 -0.05066492,142.44507 M 400.73884,142.65832 C 260.544,142.7712 120.47735,143.63768 0.53521993,142.43593 m -1.98163933,0.45442 C 0.32952375,103.75396 2.4232647,63.173587 0.69472794,-0.78758485 M -0.45483575,143.62355 C -0.04936462,110.3809 1.2711865,78.590145 0.42597657,0.31490918" />
+  </g>
+  <g
+     id="g22"
+     transform="translate(63,65)">
+    <text
+       id="text20"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="18"
+       x="146">Create feature branch in Git</text>
+  </g>
+  <g
+     id="g26"
+     transform="translate(13.5,220.5)">
+    <path
+       id="path24"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M 0.00976981,-0.69730492 C 129.78471,0.02869374 259.12166,0.66704936 400.0331,0.2823095 M -0.48976044,-0.44571111 C 150.48018,0.53731054 300.431,0.40531766 400.44396,-0.13424715 M 400.20785,1.8982496 C 399.79347,36.342676 402.33191,72.56657 401.11472,144.76852 M 401.11503,0.69868036 C 400.32635,44.414984 400.2357,89.138938 401.15578,142.65834 m -0.16153,0.8435 C 285.8374,141.72922 172.84571,141.13982 -0.95592406,142.2172 M 401.41196,143.56427 c -105.92174,0.76586 -210.78718,1.57643 -401.42647159,-0.51864 m -0.9477535,-1.54384 C 1.3225805,88.480981 1.6469562,30.78224 0.22820817,-0.16354765 M -0.16587127,142.22797 C -0.64033173,91.047825 -0.2111447,37.485865 -0.30973718,0.67647695" />
+  </g>
+  <g
+     id="g32"
+     transform="translate(92.5,265.5)">
+    <text
+       id="text28"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="18.5"
+       x="123.5">Develop the new feature</text>
+    <text
+       id="text30"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="44"
+       x="123.5">in the new branch</text>
+  </g>
+  <g
+     id="g36"
+     transform="translate(17.5,443.5)">
+    <path
+       id="path34"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M -0.53018682,-0.53971705 C 109.90629,2.2118475 219.70753,1.5048427 401.24351,-1.0681969 M -0.53597791,0.13216543 C 153.69651,-1.3586944 306.61877,-0.35362392 401.32267,0.15614615 m -0.95825,-0.32542825 c 1.27773,38.8484811 2.41469,74.8059531 -0.37191,142.5882121 M 401.95928,-0.74014435 C 402.106,38.092471 401.85685,74.964173 401.73064,143.82058 m -0.41028,-0.52155 C 277.42432,140.96311 155.53663,140.14 -0.9216553,142.23907 m 402.1425953,0.63024 c -109.1533,0.2049 -216.89186,0.6461 -401.38040586,0.52483 m -0.022339,-0.296 C 1.3449535,88.182556 1.034655,28.9525 0.99124251,0.26743786 M -0.5406761,142.02419 C 2.0857968,88.595724 1.3305633,35.145612 0.55034339,-0.37441934" />
+  </g>
+  <g
+     id="g44"
+     transform="translate(56.5,479.5)">
+    <text
+       id="text38"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="17.666666"
+       x="163.5">Create Pull Request from</text>
+    <text
+       id="text40"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="43.333332"
+       x="163.5">feature branch to master branch</text>
+    <text
+       id="text42"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="69"
+       x="163.5">(through GitHub)</text>
+  </g>
+  <g
+     id="g48"
+     transform="translate(17.5,648.5)">
+    <path
+       id="path46"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M 0.13879917,-0.2991768 C 115.82459,0.37589629 230.66536,1.729302 401.26301,0.18181155 M 0.24696938,-0.05704745 C 91.919233,0.70006877 183.93557,0.15575952 400.93972,-0.40213764 m -1.06906,2.15136774 c 1.68927,41.9004729 0.37669,85.0782159 2.6585,139.5635899 M 401.44743,-0.01113264 C 401.21134,30.518866 400.32971,61.41113 400.77539,142.97693 m 0.69544,0.79245 C 264.05643,139.95119 128.37368,141.89886 -0.95606724,142.08515 M 400.84329,143.27736 C 284.50857,141.46767 167.71122,141.99434 0.34202581,142.9111 M -1.652521,142.16019 C 1.4484516,94.786257 1.6420213,47.02907 1.9502219,-0.83965911 M -0.71076751,143.54133 C 1.3396625,93.911857 0.96541711,45.981748 -0.35477457,0.67668211" />
+  </g>
+  <g
+     id="g52"
+     transform="translate(348,553)">
+    <text
+       id="text50"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="18"
+       x="0" />
+  </g>
+  <g
+     id="g62"
+     transform="translate(53,669)">
+    <text
+       id="text54"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="18.5"
+       x="165">Netlify builds &amp; deploys a canary</text>
+    <text
+       id="text56"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="44"
+       x="165">release on a separate URL</text>
+    <text
+       id="text58"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="69.5"
+       x="165">(this is reported back to the</text>
+    <text
+       id="text60"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="95"
+       x="165">PR in GitHub</text>
+  </g>
+  <g
+     id="g66"
+     transform="translate(18.5,863.5)">
+    <path
+       id="path64"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M 0.62995169,0.67970414 C 159.09875,-1.5262533 317.98656,-1.3620299 400.92934,-0.89180003 M 0.21149007,0.24144607 C 152.13447,2.4295119 304.12072,1.5546875 400.83993,0.4970001 M 400.7124,1.1456089 C 400.87773,32.837631 399.64705,68.290133 400.39772,142.37502 M 401.51871,0.44511779 C 401.65949,38.802479 402.34645,77.680799 401.86207,142.04215 m -1.04833,1.53536 c -95.73447,0.62977 -191.85342,0.82395 -401.19075193,-1.24109 M 400.98257,143.42392 C 250.54376,142.56639 100.41494,143.02425 0.46905663,142.87879 M -1.1945203,142.31023 C -0.40276189,106.35245 -0.62440301,72.45826 -1.3453446,-1.1270866 M -0.96441309,143.81597 C 1.0779256,110.66691 2.2005741,80.552291 -0.10107572,0.97405272" />
+  </g>
+  <g
+     id="g76"
+     transform="translate(45.5,884)">
+    <text
+       id="text68"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="18.5"
+       x="173.5">When the canary release URL</text>
+    <text
+       id="text70"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="44"
+       x="173.5">responds with a 200 status code,</text>
+    <text
+       id="text72"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="69.5"
+       x="173.5">Cypress tests are run in</text>
+    <text
+       id="text74"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="95"
+       x="173.5">GitHub Actions</text>
+  </g>
+  <g
+     id="g80"
+     transform="translate(16.5,1079.5)">
+    <path
+       id="path78"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M 0.01265809,0.87561 C 90.498621,-0.15034422 181.23695,-0.95186642 402.02689,0.48397814 M 0.121024,0.3956668 C 134.41904,1.3693357 269.7941,1.9218793 400.49693,-0.2389211 m 0.38016,-0.9585724 C 400.81194,39.585134 400.49733,80.830451 402.6876,141.02181 M 401.35174,0.97073536 C 400.21162,32.40486 399.07559,66.510303 400.33456,143.32414 m 1.48472,0.64993 C 250.69093,141.44613 99.565378,141.18069 -1.0386565,143.94824 M 400.78468,143.28829 C 271.13964,144.74996 141.42916,144.97914 0.31327749,142.71088 M -1.4669851,142.1613 C -0.88752931,91.575316 -1.028419,39.087158 -1.373602,-1.1414708 M -0.02116764,143.21664 C 0.84155186,98.710001 1.7454036,57.190903 0.98167797,0.57733085" />
+  </g>
+  <g
+     id="g88"
+     transform="translate(39,1112.5)">
+    <text
+       id="text82"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="17.666666"
+       x="178">Test results are shown in the PR in</text>
+    <text
+       id="text84"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="43.333332"
+       x="178">GitHub. If green, feature branch</text>
+    <text
+       id="text86"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="69"
+       x="178">is merged into master</text>
+  </g>
+  <g
+     id="g92"
+     transform="translate(15.5,1288.5)">
+    <path
+       id="path90"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M -1.1280258,0.9391162 C 147.3613,1.4288653 293.37293,0.01814833 400.83705,0.64307909 M 0.1237644,0.47982864 C 97.402821,-0.56690498 194.09034,-1.198338 400.61798,0.36162711 M 400.16999,-1.640666 c 1.3999,53.926713 2.67482,107.697406 -0.41298,144.438506 M 401.09725,0.24292748 C 402.75622,52.42169 402.65723,104.89762 401.92452,142.63196 m -0.0452,-0.01 c -134.9395,1.09397 -268.59937,1.46968 -401.50472066,-0.65022 M 401.09214,143.33738 c -88.26984,-1.02235 -177.02759,-1.75873 -401.46374667,0.0403 m -0.0353368,0.0547 C 0.4569947,104.69828 0.14932274,68.6203 -0.01691003,-0.26421745 M 0.78785076,143.34408 C 1.5688614,85.905031 1.3136298,28.707676 -0.91024775,-0.56912331" />
+  </g>
+  <g
+     id="g100"
+     transform="translate(61,1321.5)">
+    <text
+       id="text94"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="17.666666"
+       x="155">Netlify deploys the latest code</text>
+    <text
+       id="text96"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="43.333332"
+       x="155">from the master branch to</text>
+    <text
+       id="text98"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="69"
+       x="155">the live site (Prod)</text>
+  </g>
+  <g
+     id="g104"
+     transform="translate(18.5,1501.5)">
+    <path
+       id="path102"
+       fill="none"
+       stroke-width="2"
+       stroke="#1a202c"
+       d="M 1.0923023,-1.1261579 C 144.2873,-0.33428524 287.01342,-0.4497661 401.38369,-0.06543923 M -0.41283683,-0.09932343 C 133.05523,2.3499236 266.33261,2.0386445 401.33493,-0.47140314 m 1.50675,0.21709383 C 401.92183,37.07064 402.3865,77.99921 400.53104,141.61029 M 400.3498,0.20501437 C 402.02779,51.315799 400.82169,103.02695 401.08626,142.89158 m -1.04251,-0.48448 c -141.73243,1.24638 -285.12123,-0.24365 -400.48745663,0.70854 M 400.70225,142.43899 c -134.28221,1.98318 -267.92799,2.39488 -401.0573791,0.88213 m -1.1812314,-1.97668 C -0.00227989,106.03089 -1.3354513,72.178742 1.6461931,-0.61124475 M 0.38416412,142.98606 C -0.04937592,110.71576 1.3746737,78.094479 -0.65102948,0.15616571" />
+  </g>
+  <g
+     id="g112"
+     transform="translate(32.5,1534.5)">
+    <text
+       id="text106"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="17.666666"
+       x="186.5">GitHub Actions workflow waits 2 min</text>
+    <text
+       id="text108"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="43.333332"
+       x="186.5">and then performs a Lighthouse audit</text>
+    <text
+       id="text110"
+       direction="ltr"
+       style="white-space:pre"
+       text-anchor="middle"
+       fill="#1a202c"
+       font-size="20px"
+       font-family="Virgil"
+       y="69"
+       x="186.5">against the live site</text>
+  </g>
+  <g
+     id="g126">
+    <g
+       id="g116"
+       transform="translate(208,152)">
+      <path
+         id="path114"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 1.2078293,1.5270945 C 1.0806562,13.155872 -0.49815549,58.336234 -0.84204825,69.48881 M -1.5810162,-0.11222228 C -1.9312149,10.832983 -2.1841955,55.31017 -2.2228989,65.967961" />
+    </g>
+    <g
+       id="g120"
+       transform="translate(208,152)">
+      <path
+         id="path118"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -10.1525,39.978918 c 4.6865654,8.287229 6.1967211,11.843547 8.3314018,29.311509 M -11.206035,36.807052 c 0.852217,12.373492 4.7524371,21.194201 8.5843604,27.858622" />
+    </g>
+    <g
+       id="g124"
+       transform="translate(208,152)">
+      <path
+         id="path122"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 10.368421,40.087597 C 8.9568358,48.519569 4.3686209,52.043591 -1.8210982,69.290427 M 9.3148861,36.915731 C 2.5931445,49.431872 -1.0826001,58.212459 -2.6216746,64.665674" />
+    </g>
+  </g>
+  <g
+     id="g140">
+    <g
+       id="g130"
+       transform="translate(209.21051,367.6278)">
+      <path
+         id="path128"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M -1.1999404,-1.5214036 C -1.4371816,10.058365 0.17967553,56.917639 1.1051213,68.430535 M 3.3441392,3.8243807 C 2.3899557,16.019018 -1.8692256,61.186713 -1.8236862,72.285475" />
+    </g>
+    <g
+       id="g134"
+       transform="translate(209.21051,367.6278)">
+      <path
+         id="path132"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -12.759845,41.775867 c 5.9724918,15.913103 8.143263,22.61228 13.01961008,32.784295 M -10.33071,42.533486 c 2.377326,11.164799 4.1866942,18.168852 7.4198973,29.065517" />
+    </g>
+    <g
+       id="g138"
+       transform="translate(209.21051,367.6278)">
+      <path
+         id="path136"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 7.7329238,42.855882 C 5.7150495,58.171805 -0.11263063,64.449445 0.25976508,74.560162 M 10.162058,43.613501 C 5.667946,54.787399 0.60920953,61.429486 -2.9108127,71.599003" />
+    </g>
+  </g>
+  <g
+     id="g154">
+    <g
+       id="g144"
+       transform="translate(208.21051,582.6278)">
+      <path
+         id="path142"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 0.78557144,2.719193 C 0.38845397,13.408277 -0.11239499,54.848238 -0.25885519,65.281182 M -2.2324997,1.7270154 C -3.2161508,12.64918 -2.6738562,57.062547 -2.6249161,68.036822" />
+    </g>
+    <g
+       id="g148"
+       transform="translate(208.21051,582.6278)">
+      <path
+         id="path146"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -9.2030416,39.58344 c -2.0210414,10.745556 1.9623433,17.45384 7.2531557,28.836427 M -13.054861,40.429964 c 3.9672756,9.20085 8.2687823,17.581153 10.2271657,27.252548" />
+    </g>
+    <g
+       id="g152"
+       transform="translate(208.21051,582.6278)">
+      <path
+         id="path150"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 11.317638,39.436143 C 1.5850695,50.352208 -2.1442798,57.115853 -1.9498859,68.419867 M 7.4658194,40.282668 C 4.2738562,49.617194 1.4158,58.048887 -2.8276953,67.682512" />
+    </g>
+  </g>
+  <g
+     id="g168">
+    <g
+       id="g158"
+       transform="translate(211.21051,797.6278)">
+      <path
+         id="path156"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 1.5697368,-0.83683476 C 1.0511137,9.5093856 -3.6775627,53.170553 -4.4719224,64.634484 M -1.0226446,-3.7594274 C -0.53679476,8.086975 1.5504333,55.980262 0.81672388,67.118431" />
+    </g>
+    <g
+       id="g162"
+       transform="translate(211.21051,797.6278)">
+      <path
+         id="path160"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -10.610998,35.987491 c 1.2690228,8.797789 8.5734426,17.02986 12.0381436,32.798908 M -9.1195308,38.58336 c 1.9601374,8.697859 9.12090583,19.788001 11.8630467,28.712307" />
+    </g>
+    <g
+       id="g166"
+       transform="translate(211.21051,797.6278)">
+      <path
+         id="path164"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 9.9102006,36.008132 C 6.0193653,45.030824 8.1643044,53.257705 1.4271456,68.786399 M 11.401667,38.604001 C 5.9279793,47.14253 5.6551998,58.225195 2.7435159,67.295667" />
+    </g>
+  </g>
+  <g
+     id="g182">
+    <g
+       id="g172"
+       transform="translate(219.21051,1010.6278)">
+      <path
+         id="path170"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 0.18389621,0.85386515 C 0.07536003,12.370447 -1.4836906,57.571118 -1.4962611,68.381498 M -3.1607986,-1.150919 c -0.3214447,10.7721029 -0.5439368,53.840623 -0.071457,65.410457" />
+    </g>
+    <g
+       id="g176"
+       transform="translate(219.21051,1010.6278)">
+      <path
+         id="path174"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -12.687795,37.544277 c 3.8555326,9.843219 2.9283101,10.670031 8.3001469,22.772812 M -13.504316,35.262946 c 2.858958,8.389967 5.5593339,13.210612 9.6799163,29.620789" />
+    </g>
+    <g
+       id="g180"
+       transform="translate(219.21051,1010.6278)">
+      <path
+         id="path178"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 7.8311803,37.241556 C 6.1487336,47.193408 -0.31491591,48.1019 -4.3876481,60.317089 M 7.0146593,34.960226 c -2.2925872,8.6214 -4.7474649,13.5181 -10.839059,29.923509" />
+    </g>
+  </g>
+  <g
+     id="g196">
+    <g
+       id="g186"
+       transform="translate(216.21051,1222.6278)">
+      <path
+         id="path184"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M -2.2708894,1.8996993 C -2.6056666,12.531959 -1.8519906,53.761454 -2.0346318,64.68889 M 1.6918179,0.46265373 C 1.0213156,11.310374 -2.8329697,55.451937 -4.0628849,67.202371" />
+    </g>
+    <g
+       id="g190"
+       transform="translate(216.21051,1222.6278)">
+      <path
+         id="path188"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -8.9111812,38.723104 c -3.2030118,6.902109 3.0235148,13.002817 6.4969968,28.904065 M -10.290897,38.454066 c -0.06026,9.523325 5.9152657,18.342082 4.7377975,30.599383" />
+    </g>
+    <g
+       id="g194"
+       transform="translate(216.21051,1222.6278)">
+      <path
+         id="path192"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 11.518958,40.65427 C 2.1935018,46.64743 2.3099343,52.170579 -2.4141844,67.627169 M 10.139242,40.385232 C 3.1927537,49.614169 2.3092062,57.78457 -5.5530995,69.053449" />
+    </g>
+  </g>
+  <g
+     id="g210">
+    <g
+       id="g200"
+       transform="translate(212.21051,1433.6278)">
+      <path
+         id="path198"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M -1.7920528,-0.98070087 C -2.6688968,10.483156 -5.1423582,55.35829 -5.0329109,66.759861 M 2.4305943,-3.9813923 C 2.3637605,8.1493637 0.73046306,57.915627 -0.04880119,70.397583" />
+    </g>
+    <g
+       id="g204"
+       transform="translate(212.21051,1433.6278)">
+      <path
+         id="path202"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="m -10.434098,38.043206 c 3.7779156,14.503084 7.5019292,19.127222 9.0394479,34.87964 M -10.581487,43.458804 c 5.3169154,6.916923 7.8424718,14.939982 10.18541972,28.057299" />
+    </g>
+    <g
+       id="g208"
+       transform="translate(212.21051,1433.6278)">
+      <path
+         id="path206"
+         fill="none"
+         stroke-width="2"
+         stroke="#1a202c"
+         d="M 10.066408,38.964748 C 7.5404455,52.921446 4.9472624,57.261613 -1.3946501,72.922846 M 9.9190198,44.380346 C 8.5798469,51.370266 4.4657089,59.094857 -0.39606728,71.516103" />
+    </g>
+  </g>
+</svg>

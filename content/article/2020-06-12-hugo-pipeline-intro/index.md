@@ -44,7 +44,7 @@ The site I'll be describing has the following characteristics:
 * Dark/light mode
 * [Alpine.js](https://github.com/alpinejs/alpine) for custom JavaScript code
 * [Cypress](http://cypress.io/) tests that run automatically on [pull requests][7]
-* [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit results automatically run after deploy 
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse) audits automatically run after deploy 
 * All code is in a [public repo on GitHub](https://github.com/henriksommerfeld/blog-hugo)
 * Runs locally without Internet access
 
