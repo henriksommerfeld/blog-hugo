@@ -7,7 +7,7 @@ summary: In terms of developing my Hugo site, I'll focus on the JavaScript parts
 tags: [Hugo]
 categories: [Coding]
 ogimage: gh-pr.png
-draft: true  
+draft: false  
 ---
 
 This post is part 3 in the [Hugo Pipeline Series](/hugo-pipeline-series-intro/).
@@ -41,6 +41,8 @@ These are the steps:
 {{<post-svg image="dev-deploy-pipeline-drawing.svg" width="500" use-theme="true" />}}
 
 When I create a pull request, either through GitHub's web interface or preferably by using their CLI (`gh pr create`), two things happen. (1) Netlify deploys a preview of the site (canary release) and (2) GitHub Actions runs my [Cypress](cypress.io/) tests against that deployed site.
+
+{{<post-image image="gha-green.png" alt="All checked passed in GitHub pull request" />}}
 
 Running the tests against a deployed site (as opposed to a dev server on localhost) transform the tests from function tests to end-to-end tests. Before I had this setup I once broke the _comments_ feature (using [Disqus](https://disqus.com/)) by fiddling with [Content Security Policy][2] headers, something I would have caught today when running the tests against a deployed site.
 
