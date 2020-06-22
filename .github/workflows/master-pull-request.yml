@@ -19,7 +19,7 @@ jobs:
         with:
           site_name: "henriksommerfeld"
           max_timeout: 300
-      - name: Integration tests
+      - name: E2E tests
         run: |
           CYPRESS_BASE_URL=${{ steps.waitFor200.outputs.url }} npm run cypress:cli     
       
