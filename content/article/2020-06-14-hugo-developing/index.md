@@ -3,7 +3,7 @@ title: Hugo Pipeline Series – Developing and Deploying
 url: /hugo-pipeline-series-developing-and-deploying
 date: 2020-06-22T06:21:00+02:00
 description: My pipeline for development is Create feature branch -> Code feature -> Create PR -> Tests are green -> Merge to master -> Deploy to live site.
-summary: In terms of developing my Hugo site, I'll focus on the JavaScript parts, since Hugo templates and CSS isn't much to talk about. I use a few libraries that I've installed with npm and those need to be process before they are sent to the browser. The JavaScript code I have written myself, does not have that requirement. In that case it's just a matter of how old browsers I want to support. 
+summary: In terms of developing my Hugo site, I'll focus on the JavaScript parts, since Hugo templates and CSS isn't much to talk about. I use a few libraries that I've installed with npm and those need to be processed before they are sent to the browser. The JavaScript code I have written myself, does not have that requirement. In that case it's just a matter of how old browsers I want to support. 
 tags: [Hugo]
 categories: [Coding]
 ogimage: gh-pr.png
@@ -14,7 +14,7 @@ This post is part 3 in the [Hugo Pipeline Series](/hugo-pipeline-series-intro/).
 
 {{<post-image image="gh-pr.png" lightbox="true" alt="Pull request workflow using GitHub's CLI" />}}
 
-In terms of making code changes to my Hugo site, I'll focus on the JavaScript parts, since Hugo templates and CSS isn't much to talk about. I use a few libraries that I've installed with [npm][3] and those need to be process before they are sent to the browser. The JavaScript code I have written myself, does not have that requirement. In that case it's just a matter of how old browsers I want to support. 
+In terms of making code changes to my Hugo site, I'll focus on the JavaScript parts, since Hugo templates and CSS isn't much to talk about. I use a few libraries that I've installed with [npm][3] and those need to be processed before they are sent to the browser. The JavaScript code I have written myself, does not have that requirement. In that case it's just a matter of how old browsers I want to support. 
 
 So, by splitting libraries (installed through npm) from my own code, I'm able to rely solely on Hugo's file watcher with live reload. For development (using `hugo server`), the libraries are built once, and the file with custom code is served to the browser as is. I use [Browserify](http://browserify.org/) for the libraries and that's good enough for my needs. If you need something more powerful, you might consider [Victor Hugo](https://github.com/netlify-templates/victor-hugo) that comes with [Webpack](https://webpack.js.org/) preconfigured. I could also have referenced the libraries directly from a public [CDN](https://en.wikipedia.org/wiki/Content_delivery_network), but that would make it harder to see when there's a new version of a library and more importantly – my site wouldn't work on localhost without an Internet connection.
 
