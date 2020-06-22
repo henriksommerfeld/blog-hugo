@@ -1,13 +1,13 @@
 ---
 title: Hugo Pipeline Series – Developing and Deploying
 url: /hugo-pipeline-series-developing-and-deploying
-date: 2020-06-22T00:21:00+02:00
+date: 2020-06-22T06:21:00+02:00
 description: My pipeline for development is Create feature branch -> Code feature -> Create PR -> Tests are green -> Merge to master -> Deploy to live site.
 summary: In terms of developing my Hugo site, I'll focus on the JavaScript parts, since Hugo templates and CSS isn't much to talk about. I use a few libraries that I've installed with npm and those need to be process before they are sent to the browser. The JavaScript code I have written myself, does not have that requirement. In that case it's just a matter of how old browsers I want to support. 
 tags: [Hugo]
 categories: [Coding]
 ogimage: gh-pr.png
-draft: true  
+draft: false  
 ---
 
 This post is part 3 in the [Hugo Pipeline Series](/hugo-pipeline-series-intro/).
@@ -41,6 +41,8 @@ These are the steps:
 {{<post-svg image="dev-deploy-pipeline-drawing.svg" width="500" use-theme="true" />}}
 
 When I create a pull request, either through GitHub's web interface or preferably by using their CLI (`gh pr create`), two things happen. (1) Netlify deploys a preview of the site (canary release) and (2) GitHub Actions runs my [Cypress](cypress.io/) tests against that deployed site.
+
+{{<post-image image="gha-green.png" alt="All checked passed in GitHub pull request" />}}
 
 Running the tests against a deployed site (as opposed to a dev server on localhost) transform the tests from function tests to end-to-end tests. Before I had this setup I once broke the _comments_ feature (using [Disqus](https://disqus.com/)) by fiddling with [Content Security Policy][2] headers, something I would have caught today when running the tests against a deployed site.
 
