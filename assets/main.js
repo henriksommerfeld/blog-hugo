@@ -15,6 +15,7 @@ const theme = {
   },
   setSwitch: function(isLight) {
     // Workaround for https://github.com/alpinejs/alpine/issues/459
+    // Still doesn't work with 2.4.1
     document.getElementById('theme-switcer-indicator').checked = isLight;
   },
   applyTheme: function(theme) {
