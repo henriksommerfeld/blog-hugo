@@ -13,19 +13,15 @@ const theme = {
     LIGHT: 'light',
     DARK: 'dark'
   },
-  setSwitch: function(isLight) {
-    // Workaround for https://github.com/alpinejs/alpine/issues/459
-    // Still doesn't work with 2.4.1
-    document.getElementById('theme-switcer-indicator').checked = isLight;
-  },
   applyTheme: function(theme) {
+    // Changing elements directly instead of using Alpine.js is easier, 
+    // since it's apparently not designed to work without user interaction
+    // https://github.com/alpinejs/alpine/discussions/585
     const isDark = theme === this.options.DARK;    
     const message = isDark ? '🌙 Setting dark mode' : '🌞 Setting light mode';
     console.log(message);
-    this.setSwitch(!isDark);
-    
-    // Using class binding for toggling classes from a JS file, 
-    // simply does not work with AlpineJS at this point (2.3.5)
+    document.getElementById('theme-switcer-indicator').checked = !isDark;
+
     const classToAdd = theme;
     const classToRemove = isDark ? this.options.LIGHT : this.options.DARK;
     document.body.classList.add(classToAdd);
