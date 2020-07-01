@@ -133,6 +133,8 @@ The Slack notifications from a "production deploy" looks something like this:
 
 {{<post-image image="slack-notifications.png" lightbox="true" alt="Deploy notification in Slack" />}}
 
+Next post: [Alpine.js – Benefits and Limitations](/alpinejs-benefits-and-limitations).
+
 [1]: https://github.com/features/actions
 [2]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 [3]: https://www.npmjs.com/

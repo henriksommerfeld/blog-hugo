@@ -70,7 +70,7 @@ All of the 8 cores on my laptop where working here and it took 40 seconds. This 
 
 As I mentioned, I use Netlify to both build and deploy. That process [takes about 2 minutes][1], which regardless of everything else, is better than [the 25 minutes Wes Bos is experiencing][2].
 
-
+Next post: [Developing and Deploying](/hugo-pipeline-series-developing-and-deploying).
 
 [1]: https://app.netlify.com/sites/henriksommerfeld/deploys/5edd46691261090008d5a8b5
 [2]: https://wesbos.com/new-wesbos-website/#Pain-Points
