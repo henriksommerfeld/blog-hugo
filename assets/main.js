@@ -1,7 +1,7 @@
 const base = {
   keyboardNavigation: false,
   isModalOpen: false,
-  closeModals: function() {
+  closeModals: function () {
     this.search.close();
     this.lightbox.close();
     this.code.close();
@@ -13,11 +13,11 @@ const theme = {
     LIGHT: 'light',
     DARK: 'dark'
   },
-  applyTheme: function(theme) {
+  applyTheme: function (theme) {
     // Changing elements directly instead of using Alpine.js is easier, 
     // since it's apparently not designed to work without user interaction
     // https://github.com/alpinejs/alpine/discussions/585
-    const isDark = theme === this.options.DARK;    
+    const isDark = theme === this.options.DARK;
     const message = isDark ? '🌙 Setting dark mode' : '🌞 Setting light mode';
     console.log(message);
     document.getElementById('theme-switcer-indicator').checked = !isDark;
@@ -27,21 +27,21 @@ const theme = {
     document.body.classList.add(classToAdd);
     document.body.classList.remove(classToRemove);
   },
-  saveSetting: function(theme) {
+  saveSetting: function (theme) {
     window.localStorage.setItem('theme', theme);
   },
-  removeSetting: function() {
+  removeSetting: function () {
     window.localStorage.removeItem('theme');
   },
-  readSavedSetting: function() {
+  readSavedSetting: function () {
     return window.localStorage.getItem('theme');
   },
-  toggleChanged: function(element) {      
+  toggleChanged: function (element) {
     const theme = element.checked ? this.options.LIGHT : this.options.DARK;
     this.saveSetting(theme);
     this.applyTheme(theme);
   },
-  listenForExternalChange: function() {
+  listenForExternalChange: function () {
     try {
       const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
       if (!darkModePreferredQuery.addEventListener) return;
@@ -54,22 +54,25 @@ const theme = {
         this.applyTheme(newOsTheme);
       });
 
-      window.addEventListener('storage', ()=> {
+      window.addEventListener('storage', () => {
         let theme = this.readSavedSetting();
         if (theme !== this.options.DARK)
           theme = this.options.LIGHT;
         this.applyTheme(theme);
       });
-  } catch (error) { console.warn('Not listening to theme change events', error) }
+    } catch (error) { console.warn('Not listening to theme change events', error) }
   },
-  onLoad: function() {
+  onLoad: function () {
     const savedTheme = this.readSavedSetting();
     const darkModePreferredQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const osTheme = darkModePreferredQuery.matches ? this.options.DARK : this.options.LIGHT;
-    const isSavedThemeValid = savedTheme === this.options.DARK || savedTheme === this.options.LIGHT;
+    const isSavedThemeValid = savedTheme === this.options.DARK || savedTheme === this.options.LIGHT;
     const themeToApply = isSavedThemeValid && savedTheme !== osTheme ? savedTheme : osTheme;
     this.applyTheme(themeToApply);
     this.listenForExternalChange();
+    setTimeout(() => {
+      document.body.classList.add('js-loaded');
+    }, 0)
   }
 };
 
@@ -78,16 +81,16 @@ const lightbox = {
   cancelShowImage: false,
   openImage: false,
   showLoading: false,
-  close: function() {
+  close: function () {
     this.openImage = false;
     this.isOpen = false;
     blog.isModalOpen = false;
   },
-  cancel: function() {
+  cancel: function () {
     this.cancelShowImage = true;
     this.close();
   },
-  open: function(event, xRefs) {   
+  open: function (event, xRefs) {
     this.openImage = false;
     this.showLoading = false;
     this.cancelShowImage = false;
@@ -104,7 +107,7 @@ const lightbox = {
       img && img.remove();
       setTimeout(() => {
         if (xRefs.lightbox.querySelectorAll('img').length === 0)
-          this.showLoading  = true;          
+          this.showLoading = true;
       }, 300);
       let downloadingImage = new Image();
       downloadingImage.onload = () => {
@@ -114,7 +117,7 @@ const lightbox = {
           this.openImage = true
         }
       };
-      downloadingImage.src = imageUrl;                
+      downloadingImage.src = imageUrl;
     }
     else {
       this.openImage = true;
@@ -131,60 +134,60 @@ const search = {
   indexLoadFailed: false,
   indexLoading: false,
   hits: [],
-  getHitsText: function() {
+  getHitsText: function () {
     return `Search phrase matching ${this.hits.length} pages`;
   },
-  open: function() {
+  open: function () {
     blog.isModalOpen = true;
     this.isOpen = true;
     this.textInSearchBox = '';
     this.indexLoadFailed = false;
     this.downloadIndex();
   },
-  close: function() {
+  close: function () {
     this.isOpen = false;
     blog.isModalOpen = false;
   },
-  downloadIndex: function() {
+  downloadIndex: function () {
     if (this.index) return;
 
     this.indexLoading = true;
     this.fetchIndex().then(response => {
       this.index = window.lunr.Index.load(response.index);
-      this.store = response.store; 
+      this.store = response.store;
       this.indexLoading = false;
       this.searchBoxChanged(this.textInSearchBox);
       console.log("🔍 Search index downloaded")
     });
   },
-  fetchIndex: function() {
+  fetchIndex: function () {
     return fetch('/search-index.json')
       .then(res => this.handleFetchResponse(res))
       .catch(res => this.handleFetchResponse(res));
   },
-  handleFetchResponse: function(response) {
+  handleFetchResponse: function (response) {
     this.indexLoadFailed = !response.ok;
     return response.ok && response.json ? response.json() : this.index;
   },
-  searchBoxChanged: function(phrase) {
+  searchBoxChanged: function (phrase) {
     const trimmedPhrase = (phrase || '').trim();
     if (trimmedPhrase.length < 2 && trimmedPhrase !== '*')
       return;
-  
+
     this.find(trimmedPhrase);
   },
-  find: function(phrase) {
+  find: function (phrase) {
     this.hits = this.index.search(phrase);
   },
-  fromStore: function(hit) {
-    return this.store[hit.ref] || {};
+  fromStore: function (hit) {
+    return this.store[hit.ref] || {};
   },
-  focusFirstAnchor: function(event, element) {
+  focusFirstAnchor: function (event, element) {
     try {
       element.querySelector('a').focus();
       event.preventDefault();
 
-    } catch(error) {}
+    } catch (error) { }
   }
 };
 
@@ -196,34 +199,34 @@ const menu = {
     OPENING: 'opening'
   },
   state: 'closed',
-  isOpen: function() { return this.state === this.states.OPEN },
-  isOpening: function() { return this.state === this.states.OPENING },
+  isOpen: function () { return this.state === this.states.OPEN },
+  isOpening: function () { return this.state === this.states.OPENING },
   isClosing: function () { return this.state === this.states.CLOSING },
-  isClosed: function() { return this.state === this.states.CLOSED },
-  hamburgerIsOpen: function() { return this.isOpen() || this.isOpening() },
-  close: function() {
+  isClosed: function () { return this.state === this.states.CLOSED },
+  hamburgerIsOpen: function () { return this.isOpen() || this.isOpening() },
+  close: function () {
     if (this.state === this.states.CLOSED || this.state === this.states.CLOSING)
       return;
 
     this.state = this.states.CLOSING;
-      setTimeout(()=> {
-        this.state = this.states.CLOSED;
-      }, 300)
+    setTimeout(() => {
+      this.state = this.states.CLOSED;
+    }, 300)
   },
-  open: function() {
+  open: function () {
     if (this.state === this.states.OPEN || this.state === this.states.OPENING)
       return;
 
     this.state = this.states.OPENING;
-      setTimeout(()=> {
-        this.state = this.states.OPEN;
-      }, 300)
+    setTimeout(() => {
+      this.state = this.states.OPEN;
+    }, 300)
   },
-  toggle: function() {      
+  toggle: function () {
     if (this.isOpen()) {
       this.close();
     }
-    
+
     else if (this.isClosed()) {
       this.open();
     }
@@ -231,11 +234,11 @@ const menu = {
 };
 
 const skipLink = {
-  skipToContent: function(contentElement) {
+  skipToContent: function (contentElement) {
     contentElement.setAttribute('tabindex', '-1');
     contentElement.focus();
   },
-  removeContentTabIndex: function(contentElement) {
+  removeContentTabIndex: function (contentElement) {
     contentElement.removeAttribute('tabindex');
   }
 };
@@ -243,14 +246,14 @@ const skipLink = {
 const code = {
   isOpening: false,
   isVisible: false,
-  close: function() {
+  close: function () {
     if (this.isVisible) {
       this.isOpening = false;
       blog.isModalOpen = false;
       this.isVisible = false;
     }
   },
-  open: function(event) {
+  open: function (event) {
     this.isVisible = false;
     const codeToExpand = event.target.closest('.code-expandable').querySelector('.code');
     const topOffset = codeToExpand.offsetTop + (codeToExpand.clientHeight / 2) - window.pageYOffset;
@@ -259,14 +262,14 @@ const code = {
 
     blog.isModalOpen = true;
     this.isOpening = true;
-    
+
     const codePlaceholder = document.getElementById("code-placeholder");
     codePlaceholder.innerHTML = "";
     codePlaceholder.appendChild(clonedElement);
     codePlaceholder.querySelector('code').focus();
     const codeContainerInner = document.getElementById("code-container-inner");
     codeContainerInner.style.cssText = `transform-origin: ${leftOffset}px ${topOffset}px`;
-    
+
     setTimeout(() => {
       /*  This is needed for @click.away to work, since the expander is outside ("away" from) 
           the modal element (#code-container). @click.away should only run once the modal is
@@ -280,7 +283,7 @@ const code = {
 window.blog = { ...base, theme, lightbox, search, menu, skipLink, code };
 window.blog.theme.onLoad();
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   try {
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     if (!isSafari) {
@@ -289,5 +292,5 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log("%c So, you're reading the console messages - how geeky! 🤓", css);
     }
 
-  } catch (error) { }  
+  } catch (error) { }
 });
