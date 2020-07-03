@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "adrianwilczynski.alpine-js-intellisense",
+    "budparr.language-hugo-vscode",
+    "syler.sass-indented",
+    "bungcip.better-toml",
+  ]
+}
