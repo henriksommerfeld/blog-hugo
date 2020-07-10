@@ -2,8 +2,8 @@
 title: Alpine.js – Benefits and Limitations
 url: /alpinejs-benefits-and-limitations/
 date: 2020-06-29T06:21:00+02:00
-description: For the custom JavaScript code on my Hugo blog I use Alpine.js . I’ll discuss the benefits and the limitations in this post. This post is part 4 in the Hugo Pipeline Series, but the benefits and limitations I discuss are not specific to using Alpine.js together with Hugo.
-summary: For the custom JavaScript code on my Hugo blog I use Alpine.js . I’ll discuss the benefits and the limitations in this post. This post is part 4 in the Hugo Pipeline Series, but the benefits and limitations I discuss are not specific to using Alpine.js together with Hugo.
+description: For the custom JavaScript code on my Hugo blog I use Alpine.js. I’ll discuss the benefits and the limitations in this post. This post is part 4 in the Hugo Pipeline Series, but the benefits and limitations I discuss are not specific to using Alpine.js together with Hugo.
+summary: For the custom JavaScript code on my Hugo blog I use Alpine.js. I’ll discuss the benefits and the limitations in this post. This post is part 4 in the Hugo Pipeline Series, but the benefits and limitations I discuss are not specific to using Alpine.js together with Hugo.
 tags: [Alpine.js, JavaScript, Hugo]
 categories: [Coding]
 ogimage: kaspar-allenbach-G024sNcoYvY-unsplash.jpg
@@ -17,7 +17,7 @@ Photo by <a href="https://unsplash.com/@kasparallenbach">
 Kaspar Allenbach</a>.
 {{</post-image>}}
 
-For the custom JavaScript code on my [Hugo](https://gohugo.io/) blog (the one you're on right now) I use [Alpine.js](https://github.com/alpinejs/alpine) . I'll discuss the benefits and the limitations in this post. 
+For the custom JavaScript code on my [Hugo](https://gohugo.io/) blog (the one you're on right now) I use [Alpine.js](https://github.com/alpinejs/alpine). I'll discuss the benefits and the limitations in this post. 
 
 ## What is Alpine.js and why?
 Alpine.js is meant to be used with an existing HTML document (server-side rendered HTML that isn't produced by a JavaScript framework) , just like plain JavaScript or [jQuery](https://jquery.com/). This is the way it was done when JavaScript was introduced and how it's done today when using Hugo.
