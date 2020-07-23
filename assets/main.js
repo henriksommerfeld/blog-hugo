@@ -152,9 +152,9 @@ const search = {
     if (this.index) return;
 
     this.indexLoading = true;
-    this.fetchIndex().then(response => {
-      this.index = window.lunr.Index.load(response.index);
-      this.store = response.store;
+    this.fetchIndex().then(({ index, store }) => {
+      this.index = window.lunr.Index.load(index);
+      this.store = store;
       this.indexLoading = false;
       this.searchBoxChanged(this.textInSearchBox);
       console.log("🔍 Search index downloaded")
@@ -162,8 +162,8 @@ const search = {
   },
   fetchIndex: function () {
     return fetch('/search-index.json')
-      .then(res => this.handleFetchResponse(res))
-      .catch(res => this.handleFetchResponse(res));
+      .then(this.handleFetchResponse)
+      .catch(this.handleFetchResponse);
   },
   handleFetchResponse: function (response) {
     this.indexLoadFailed = !response.ok;
