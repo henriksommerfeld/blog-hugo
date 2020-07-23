@@ -149,7 +149,7 @@ const search = {
     this.textInSearchBox = '';
     this.indexLoadFailed = false;
     this.downloadIndex();
-  }
+  },
   downloadIndex: function () {
     if (this.index) return;
 
