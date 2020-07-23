@@ -2,8 +2,8 @@
 title: Search for Static Website Without External Service
 url: /search-static-website-without-external-service
 date: 2020-07-23T18:47:00+02:00
-description: 
-summary: 
+description: I describe how I’ve set up search on my static website without an external service.
+summary: When you have a static website, there are a few things that you usually don’t have out-of-the-box. One such thing is search. You can argue that you don’t need it, but if you want it and your site isn’t that large, I’ll describe how I’ve set it up without an external service.
 tags: [Lunr, Hugo, NodeJS, JavaScript]
 categories: [Coding]
 ogimage: marten-newhall-uAFjFsMS3YY-unsplash.jpg
