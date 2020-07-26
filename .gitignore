@@ -14,4 +14,3 @@ cypress/screenshots
 cypress/videos
 .DS_Store
 cypress/fixtures/example.json
-assets/libraries.js
