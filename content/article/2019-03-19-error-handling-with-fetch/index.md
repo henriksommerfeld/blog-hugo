@@ -4,7 +4,7 @@ date: 2019-03-19T21:35:58+01:00
 url: "error-handling-with-fetch"
 categories: ["Coding"]
 tags: [JavaScript, ReactJS]
-summary: "One thing that has struck me javascript's fetch function is that it often looks so simple. When I see the same thing in a pull request, I'm not overly impressed. No, just because this works on a sunny day doesn't mean you're done. You need error handling as well!"
+summary: "One thing that has struck me with Javascript's fetch function is that it often looks so simple. When I see the same thing in a pull request, I'm not overly impressed. No, just because this works on a sunny day doesn't mean you're done. You need error handling as well!"
 ogimage: "david-kovalenko-414249-unsplash_1500.jpg"
 draft: false
 ---
@@ -13,7 +13,7 @@ draft: false
 <p>Photo by <a href="https://unsplash.com/photos/G85VuTpw6jg">David Kovalenko</a> on <a href="https://unsplash.com/">Unsplash</a>. Importance of error handling - how did we end up here?</p>
 {{</post-image>}}
 
-One thing that has struck me javascript's `fetch` function is that it often looks so simple. 
+One thing that has struck me with Javascript's `fetch` function is that it often looks so simple. 
 
 {{<code javascript>}}
 fetch('/something.json')
