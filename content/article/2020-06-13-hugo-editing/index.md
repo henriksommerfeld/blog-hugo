@@ -29,6 +29,8 @@ Since correcting a simple spelling mistake using a static site generator require
 
 I have some npm packages and have split `dependencies` from `devDependencies` to reduce the amount of packages that need to be installed for a content change. Installing dependencies with `yarn install --production` installs 44 MB of _node_modules_, while `yarn install` installs 110 MB of _node_modules_.
 
+**_Update_**: After switching to [building JavaScript with Hugo (using ESBuild)](https://gohugo.io/hugo-pipes/js/), the production install is 3.7 MB of _node_modules_ and the full install is 96 MB.
+
 My netlify.toml file:
 ``` toml
 [build.environment]
