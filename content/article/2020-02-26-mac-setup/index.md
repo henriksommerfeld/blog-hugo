@@ -118,7 +118,6 @@ I find the function keys much more useful than anything else in [VS Code](https:
 And...look at this! We've gone full circle with the Touch Bar in VS Code:
 {{<post-image image="f1-f12.png" borderless="true" />}}
 
-
 ## General desktop changes
 
 There are a bunch of smaller changes I've done and I don't remember all of them, but here are a few.
@@ -127,13 +126,23 @@ There are a bunch of smaller changes I've done and I don't remember all of them,
 
 ### Sorting in Finder
 
-Default setting for Finder is apparently to show files in no particular order. To fix this to sort by name, that setting can be changed in the dialogue opened by ⌘ + J. This then only applies to the current folder, so to make it the default, there is a special button for that.
+Default setting for Finder is apparently to show files in no particular order. To fix this to sort by name, that setting can be changed in the dialogue opened by ⌘J. This then only applies to the current folder, so to make it the default, there is a special button for that.
 {{<post-image image="folder-settings.png" width="280" borderless="true" />}}
 
 ### Arrange windows
 
 For a MacBook with a small screen, this might not be that useful, but with a larger display I find it really helpful. It's basically to enable the possibilities that has been in Windows for many years, like putting two windows next to each other. There are a number of applications that does this. I use [Rectangle][5] because it's free and [open source][6]. Though it is possible to align windows next to each other out-of-the-box as well, that involves precision clicking on the green maximise 
 button, so it doesn't count.
+
+### Removing irrelevant search results
+
+I use [Alfred](https://www.alfredapp.com/) for searching apps and files, but to remove irrelevant files from the results, you have to go into the Spotlight settings, under the _Privacy_ tab. I have these paths removed:
+
+* ~/Code (which is where I clone all repos and where node_modules end up)
+* ~/go (where Go stuff ends up)
+* /System/Volumes/Data (nothing I'm looking for is here)
+
+{{<post-image image="spotlight-exclude.png" width="650" borderless="true" />}}
 
 ## Keyboard navigation
 
@@ -165,6 +174,14 @@ To fix this I created the file `~/Library/KeyBindings/DefaultKeyBinding.dict` wi
 ```
 
 Each app needs a restart to make it take effect, see [Stack Overflow][6].
+
+### Toggling integrated terminal focus in Visual Studio Code
+
+A thing I have found useful is to be able to toggle focus between the editor and the integrated terminal in VS Code with the keyboard. There is currently no built-in shortcut for this, so I have added one. This is for _my_ keyboard (a Swedish one), but I think that's okay since most other shortcut descriptions on the web assumes an English keyboard. Showing and hiding the terminal is ⌘J, btw.
+
+Keyboard shortcuts are accessed from _Code_ -> _Preferences_ -> _Keyboard Shortcuts [⌘K ⌘S]_. The commands are called _Terminal: Focus Terminal_ and _View: Focus Active Editor Group_. I use the lovely shortcut ⌘Ö for both of them (toggling) and the conditions are `!terminalFocus` and `terminalFocus`respectively.
+
+{{<post-image image="vs-code-terminal-toggling.png" borderless="true" />}}
 
 
 ## Controlling sound volume on external display
