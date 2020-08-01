@@ -179,10 +179,23 @@ Each app needs a restart to make it take effect, see [Stack Overflow][6].
 
 A thing I have found useful is to be able to toggle focus between the editor and the integrated terminal in VS Code with the keyboard. There is currently no built-in shortcut for this, so I have added one. This is for _my_ keyboard (a Swedish one), but I think that's okay since most other shortcut descriptions on the web assumes an English keyboard. Showing and hiding the terminal is ⌘J, btw.
 
-Keyboard shortcuts are accessed from _Code_ -> _Preferences_ -> _Keyboard Shortcuts [⌘K ⌘S]_. The commands are called _Terminal: Focus Terminal_ and _View: Focus Active Editor Group_. I use the lovely shortcut ⌘Ö for both of them (toggling) and the conditions are `!terminalFocus` and `terminalFocus`respectively.
+Keyboard shortcuts are accessed from _Code_ -> _Preferences_ -> _Keyboard Shortcuts [⌘K ⌘S]_. The commands are called _Terminal: Focus Terminal_ and _View: Focus Active Editor Group_. I use the lovely shortcut ⌘Ö for both of them (toggling) and the conditions are `!terminalFocus` and `terminalFocus` respectively.
 
 {{<post-image image="vs-code-terminal-toggling.png" borderless="true" />}}
 
+The resulting configuration in keybindings.json:
+``` json
+{
+  "key": "cmd+[Semicolon]",
+  "command": "workbench.action.terminal.focus",
+  "when": "!terminalFocus"
+},
+{
+  "key": "cmd+[Semicolon]",
+  "command": "workbench.action.focusActiveEditorGroup",
+  "when": "terminalFocus"
+},
+```
 
 ## Controlling sound volume on external display
 
