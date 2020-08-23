@@ -114,13 +114,13 @@ Now to the interesting stuff, things that Alpine.js _not_ so good for – the st
 
 * You cannot have nested components or have them communicate easily.
 * The page (DOM) isn't updated when updates are triggered by non-interactive events.
-* Doesn't work with Turbolinks
+* ~~Doesn't work with Turbolinks~~
 
 In the case of my blog, I made the `body` tag the Alpine component, which works just fine as I'm mostly setting different CSS classes on the body tag anyway. For a more complex use, [A guide to Alpine.js component communication][4] describes how you can have sibling components talk to each other and have the DOM react to non-interactive events, [see answer on GitHub][3]. A non-interactive event is when the user hasn't clicked or typed anything, such as when data is fetched (a promise is resolved) and you set that data to a property. 
 
 The theme switcher I have reacts to theme (light/dark) changes in the operating system and also when the theme setting in `localStorage` is changed. The code I have to listen for those events can update a property bound to the Alpine component, but it won't update the DOM. Rather than implementing some involved dispatch mechanism, I prefer to use pure DOM manipulation for these situation, starting with `document.getElementById()` and setting the element's properties.
 
-Another thing to note is that if you're using [Turbolinks][2] (which gives navigation without full page reloads), [it doesn't seem to work with Alpine.js][1].
+~~Another thing to note is that if you're using [Turbolinks][2] (which gives navigation without full page reloads), [it doesn't seem to work with Alpine.js][1].~~ It seems to [work now](https://github.com/gohugoio/hugo-mod-jslibs/tree/master/turbolinks) 👏
 
 ## Conclusion
 
