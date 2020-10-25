@@ -1,9 +1,9 @@
 ---
 title: Using Same Node in Jenkins Groovy Pipeline
-url: 
-date: 2020-10-23T18:47:00+02:00
-description: Beskrivning
-summary: sadasdsa
+url: /using-same-node-in-jenkins-groovy-pipeline
+date: 2020-10-25T11:34:00+02:00
+description: How to make sure the same agent is used throughout a pipeline in Jenkins.
+summary: As new to Jenkins, I made a mistake that led to confusing errors. Working with .groovy files in Jenkins shared libraries isn’t the most joyful experience I’ve had in my career, but this makes total sense once I saw the obvious.
 tags: [Jenkins]
 categories: [Coding]
 ogimage: jenkins.png
@@ -12,9 +12,9 @@ draft: false
 
 {{<post-image image="jenkins.png" alt="Jenkins build server web UI with big logo" />}}
 
-As new to [Jenkins][1], I made a mistake that led to confusing errors. Working with .groovy files in [_Jenkins shared libraries_][2] isn't the most joyfull experience I've had in my career, but this makes total sense once I saw the obvious.
+As new to [Jenkins][1], I made a mistake that led to confusing errors. Working with .groovy files in [_Jenkins shared libraries_][2] isn't the most joyful experience I've had in my career, but this makes total sense once I saw the obvious.
 
-We have bunch of build agents that perform the actual builds in Jenkins (Docker containers running in Nomad). The initial pipeline defined an _agent_ for every stage, resulting in "random" build failures. Sometimes you would get the same agent in all stages and everything was fine, but other times you would get different agents in a single pipeline (revealed by the build logs). 
+We have bunch of build agents that perform the actual builds in Jenkins (Docker containers running in [Nomad][3]). The initial pipeline defined an _agent_ for every stage, resulting in "random" build failures. Sometimes you would get the same agent in all stages and everything was fine, but other times you would get different agents in a single pipeline (revealed by the build logs). 
 
 This isn't very good when you have stages that depend on state (on the local file system) from the previous stage.
 
@@ -111,4 +111,4 @@ def call(Map config) {
 
 [1]: https://www.jenkins.io/
 [2]: https://www.jenkins.io/doc/book/pipeline/shared-libraries/
-
+[3]: https://www.nomadproject.io/
