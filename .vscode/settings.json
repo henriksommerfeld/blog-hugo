@@ -1,5 +1,4 @@
 {
-    "sasslint.enable": true,
     "prettier.requireConfig": true,
     "prettier.singleQuote": true,
     "cSpell.language": "en-GB",
@@ -9,5 +8,6 @@
         "titleBar.inactiveBackground": "#007fff99",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#007fff"
+    "peacock.color": "#007fff",
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }

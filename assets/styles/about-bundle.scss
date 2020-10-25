@@ -1,0 +1,8 @@
+@import './images/images';
+@import './_contact-info';
+
+figure img {
+  transition: transform 1s ease-in-out, filter 1s ease-in-out;
+  &.effect {
+    transform: rotate3d(1, 1, 1, 360deg);
+    filter: grayscale(1); } }

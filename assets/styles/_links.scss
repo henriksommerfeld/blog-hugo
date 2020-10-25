@@ -1,0 +1,20 @@
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color, text-shadow, background 200ms ease-out, outline 60ms;
+    outline: none;
+    display: inline;
+    background: linear-gradient(to bottom, var(--link-underline) 0%, var(--link-underline) 98%);
+    background-size: 0px 2px;
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    line-height: normal;
+    &:visited {
+        color: var(--link-color); }
+    &:focus, &:active, &:hover {
+        color: var(--link-focus-color);
+        text-shadow: 0 0 1px var(--link-text-shadow-color);
+        text-decoration: none;
+        outline: none;
+        background-size: 100% 2px; } }
+
