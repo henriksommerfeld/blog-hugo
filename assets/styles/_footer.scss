@@ -1,0 +1,38 @@
+#page-footer {
+    padding: $default-spacing;
+    background-color: var(--footer-bg-color);
+    color: var(--white);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @media (min-width: $small-size-min-width) {
+            justify-content: space-around; }
+        @media (min-width: $medium-size-min-width) {
+            justify-content: center;
+            a {
+                margin-left: $default-spacing;
+                margin-right: $default-spacing; } } }
+
+    .footer-text {
+        display: flex;
+        align-items: center; }
+
+    a, a:link, a:visited {
+        outline: none;
+        color: var(--white);
+        text-decoration: none;
+        text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        &:hover, &:focus {
+            text-shadow: 0 0 2px transparentize(black, 0.5), 0 0 30px var(--white); } }
+    .icon-arrow-with-circle-up {
+        font-size: 2.6rem;
+        padding-left: $default-spacing;
+        margin-right: 0; }
+    .icon-github {
+        font-size: 2.6rem;
+        padding-right: $default-spacing;
+        margin-right: 0; } }

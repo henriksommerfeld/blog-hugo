@@ -1,0 +1,15 @@
+@import './code';
+@import './vs';
+
+pre {
+    background-color: transparent;
+    font-size: 9pt; }
+
+.code-expanded-controls {
+    display: none; }
+
+.highlight {
+
+    pre {
+        margin-top: 0 !important; } }
+

@@ -1,0 +1,19 @@
+.contact-info {
+    ul {
+        list-style: none;
+        padding-left: 1em; }
+    li {
+        display: flex;
+        margin-bottom: 1em;
+        &:before {
+            content: '';
+            display: none; } }
+    a div {
+        display: flex;
+        align-items: center; }
+    .icon {
+        width: 2em;
+        height: 2em; } }
+
+
+

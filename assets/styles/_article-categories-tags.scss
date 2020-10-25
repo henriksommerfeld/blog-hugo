@@ -1,0 +1,23 @@
+.categories-tags {
+    font-size: 1.1rem;
+    margin-top: $default-spacing;
+    margin-bottom: $default-spacing;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row-gap: 1em;
+
+    @media (min-width: $medium-size-min-width) {
+        display: unset; }
+
+    .icon {
+        color: var(--taxonomy-icon-color); }
+
+    .icon-tag {
+        @media (min-width: $medium-size-min-width) {
+            margin-left: 1em; } } }
+
+.articles-with-tag, .articles-with-category {
+    article {
+        margin-bottom: 2rem; }
+    h1 {
+        margin-bottom: 2rem; } }

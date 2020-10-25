@@ -1,0 +1,7 @@
+.image-border img {
+    margin: 0;
+    padding: 2px;
+    -webkit-box-shadow: rgba(34,25,25,.4) 0 1px 3px;
+    box-shadow: var(--image-border-box-shadow-color) 0 1px 3px;
+    background-color: white; }
+
