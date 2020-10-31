@@ -13,14 +13,33 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 1. `yarn install:prod`
 2. `yarn start`
 
-## Tests
-1. `yarn install`
+## Build (compile) the site to folder _public_
+1. `yarn build`
 
-### Headless
+## Tests (headless)
+1. `yarn install`
 2. `yarn test`
 
-### Cypress GUI
+## Tests (Cypress GUI)
+1. `yarn install`
 2. `yarn test:open`
+
+## Using Docker
+For using [Docker][3], you don't need the pre-requisites listed above, but you need Docker 🙄
+
+### Running the site
+1. `yarn docker:dev`
+
+### Build (compile) the site to folder _public_
+1. `yarn docker:build`
+
+### Tests
+1. `yarn docker:test`
+
+
+### Rebuild Docker image when dependencies change
+1. `yarn docker:image:rebuild`
 
 [1]: http://gohugo.io/
 [2]: https://yarnpkg.com/
+[3]: https://docker.io/

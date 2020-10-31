@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: ./
+      dockerfile: docker/dev/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 1313:1313
+    command: yarn start
+
+  build:
+    build:
+      context: ./
+      dockerfile: docker/dev/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 1313:1313
+    command: yarn build
+
+  test:
+    build:
+      context: ./
+      dockerfile: docker/test/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 1313:1313
+    command: yarn test
