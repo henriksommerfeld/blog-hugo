@@ -28,15 +28,15 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 For using [Docker][3], you don't need the pre-requisites listed above, but you need Docker 🙄
 
 ### Running the site
-1. `docker-compose up --scale build=0 --scale test=0` 
+1. `docker-compose up dev`
 or if you have yarn installed: `yarn docker:dev`
 
 ### Build (compile) the site to folder _public_
-1. `docker-compose up --scale dev=0 --scale test=0`
+1. `docker-compose up build`
 or if you have yarn installed: `yarn docker:build`
 
 ### Tests
-1. `docker-compose up --scale dev=0 --scale build=0`
+1. `docker-compose up test`
 or if you have yarn installed: `yarn docker:test`
 
 
