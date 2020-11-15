@@ -50,7 +50,7 @@ By making sure all commands have a description, usage and possibly examples, `--
 I also find [the autocomplete plugin][4] helpful, since you can just tab your way to the full command.
 
 {{<html>}}
-  <video style="max-width:100%" controls>
+  <video style="max-width:100%" controls poster="oclif-cli.png">
     <source src="oclif-cli.mp4" type="video/mp4">
   </video>
 {{</html>}}
