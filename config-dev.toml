@@ -13,6 +13,7 @@ disqusShortname = "henrik-sommerfeld"
 
 [params]
     minifyBundles = false
+    plausibleDomain = ""
 
 [permalinks]
     article = "/:title/"

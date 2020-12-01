@@ -15,6 +15,7 @@ rssLimit = 10
 
 [params]
     minifyBundles = true
+    plausibleDomain = "henriksommerfeld.se"
 
 [permalinks]
     article = "/:title/"
