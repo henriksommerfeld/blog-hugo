@@ -8,7 +8,6 @@ paginate = 5
 pygmentsuseclasses = true
 pygmentsstyle = "monokai"
 preserveTaxonomyNames = true
-googleAnalytics = "UA-36834923-2"
 disqusShortname = "henrik-sommerfeld"
 timeout = 60000
 rssLimit = 10
