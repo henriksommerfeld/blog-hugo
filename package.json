@@ -18,7 +18,7 @@
     "start-server-and-test": "1.11.6"
   },
   "scripts": {
-    "install:prod": "yarn install --production",
+    "install:prod": "npm install --only=prod",
     "clean": "shx rm -f static/*.js",
     "clean:public": "shx rm -rf public",
     "build": "npm run clean:public && hugo version && hugo --gc --minify && npm run index:prod",
