@@ -1,0 +1,5 @@
+resources/_gen
+*.html
+*.md
+public
+static/search-index.json

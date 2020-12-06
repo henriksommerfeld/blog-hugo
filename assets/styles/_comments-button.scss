@@ -2,7 +2,8 @@
 
 .comments-button-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .comments-button {
   cursor: default;
@@ -18,11 +19,16 @@
   transition: all 200ms ease, margin 150ms ease;
   box-shadow: 0 5px 10px var(--paging-box-shadow-color);
   outline: none;
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     color: var(--paging-focus-color);
     cursor: pointer;
     box-shadow: none;
     text-shadow: 0 0 1px var(--paging-text-shadow);
-    background-color: var(--paging-focus-bg-color); }
+    background-color: var(--paging-focus-bg-color);
+  }
   &:focus {
-    border-color: var(--paging-button-border-color); } }
+    border-color: var(--paging-button-border-color);
+  }
+}

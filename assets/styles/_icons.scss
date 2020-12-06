@@ -1,14 +1,14 @@
 .icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-    transform: translateY(2px);
-    margin-right: 0.3em;
-  }
-  
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  transform: translateY(2px);
+  margin-right: 0.3em;
+}
+
 .icon-spinner {
   width: 1.5em;
   height: 1.5em;
@@ -27,15 +27,17 @@
     border-radius: 50%;
     border-top: 2px solid var(--color);
     border-right: 2px solid transparent;
-    animation: spinner .6s linear infinite;
+    animation: spinner 0.6s linear infinite;
   }
 }
 
 @keyframes spinner {
-  to {transform: rotate(360deg);}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-  /* ==========================================
+/* ==========================================
   Single-colored icons can be modified like so:
   .icon-name {
     font-size: 32px;

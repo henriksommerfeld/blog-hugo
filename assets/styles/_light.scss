@@ -1,9 +1,9 @@
-@import "./_colors";
+@import './_colors';
 
 @mixin light-mode {
   $light-color: $blue400;
   $white: white;
-  $background-color: rgb(250,250,250);
+  $background-color: rgb(250, 250, 250);
   $header-text-shadow: transparentize($gray900, 0.5);
   $link-text-shadow-color: transparentize($blue900, 0.2);
   $hamburger-shadow-color: transparentize($white, 0.4);
@@ -25,7 +25,7 @@
     --caption-color: #{$gray700};
     --taxonomy-heading-color: var(--accent-color);
     --taxonomy-icon-color: #{$gray600};
-    
+
     --widget-bg-color: #{$blue700};
     --medium-color: var(--white);
     --light-color: #{$light-color};
@@ -40,7 +40,7 @@
     --spinner-color: var(--accent-color);
     --spinner-bg-color: var(--white);
 
-    --search-container-bg-color: #{$background-color};  
+    --search-container-bg-color: #{$background-color};
     --searchbox-bg-color: var(--background-color);
     --searchbox-icon-color: #{$blue800};
     --search-output-color: #{$blue800};
@@ -78,11 +78,11 @@
     --inline-code-border-color: #{$inline-code-border-color};
 
     --image-filter: none;
-    --image-border-box-shadow-color: rgba(34,25,25,.4);
+    --image-border-box-shadow-color: rgba(34, 25, 25, 0.4);
 
     --scrollbar-color: #{$gray500};
     --scrollbar-bg-color: #{$gray300};
-    
+
     --summary-list-delimiter-color: #{$gray300};
   }
 }
