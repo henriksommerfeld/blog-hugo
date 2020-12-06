@@ -1,4 +1,4 @@
-@import "../_variables";
+@import '../_variables';
 
 figure {
   margin: 0;
@@ -22,13 +22,14 @@ figure {
     }
 
     &.light,
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: none;
 
       img {
         position: relative;
       }
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -37,7 +38,7 @@ figure {
         top: 0;
         left: 0;
         filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
-        background-color:transparent;
+        background-color: transparent;
         background-image: url('/images/maximize.svg');
         background-repeat: no-repeat;
         background-position: center center;
@@ -55,14 +56,14 @@ figure {
 @keyframes maximizer {
   0% {
     background-size: 30%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
   }
   40% {
     background-size: 42%;
   }
   100% {
     background-size: 40%;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 

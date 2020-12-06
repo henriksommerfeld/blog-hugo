@@ -24,7 +24,7 @@ jobs:
         id: lighthouseCheck
         with:
           accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
-          author: ${{ github.actor }}          
+          author: ${{ github.actor }}
           branch: ${{ github.ref }}
           urls: 'https://www.henriksommerfeld.se/about,https://www.henriksommerfeld.se'
           sha: ${{ github.sha }}
