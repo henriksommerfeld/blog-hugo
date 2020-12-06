@@ -4,5 +4,5 @@ RUN apt-get update && apt-get -y install libgtk2.0-0 libgtk-3-0 libgbm-dev libno
 WORKDIR /usr/src/app
 COPY docker/install-hugo.sh netlify.toml ./
 RUN chmod +x install-hugo.sh ; ./install-hugo.sh
-COPY package.json yarn.lock ./
-RUN yarn
+COPY package.json package-lock.json ./
+RUN npm ci

@@ -10,7 +10,7 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 1313:1313
-    command: yarn start
+    command: npm start
 
   build:
     build:
@@ -21,7 +21,7 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 1313:1313
-    command: yarn build
+    command: npm run build
 
   test:
     build:
@@ -32,4 +32,4 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 1313:1313
-    command: yarn test
+    command: npm test
