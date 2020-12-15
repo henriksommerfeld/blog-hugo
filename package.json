@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
-    "alpinejs": "2.8.0",
+    "alpinejs": "2.7.3",
     "lazysizes": "5.2.2",
     "lunr": "2.3.9",
     "shx": "0.3.3"
