@@ -50,6 +50,6 @@ jobs:
           branch: ${{ github.ref }}
           urls: ${{ steps.waitFor200.outputs.url }}
           sha: ${{ github.sha }}
-          emulatedFormFactor: desktop
+          emulatedFormFactor: all
           prCommentEnabled: true
           slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}

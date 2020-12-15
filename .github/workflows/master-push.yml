@@ -28,6 +28,6 @@ jobs:
           branch: ${{ github.ref }}
           urls: 'https://www.henriksommerfeld.se/about,https://www.henriksommerfeld.se'
           sha: ${{ github.sha }}
-          emulatedFormFactor: desktop
+          emulatedFormFactor: all
           prCommentEnabled: true
           slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
