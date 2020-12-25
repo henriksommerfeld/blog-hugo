@@ -128,8 +128,11 @@ Overall, I think the migration from plain JavaScript to Alpine.js was worth it f
 
 There are also features of Alpine.js that I don't use, namely animations and `x-ref` when using a .js file. Maybe this is because I came from a world of plain JavaScript and animations in CSS. It seems that the convention when using Alpine.js is to include all JavaScript in `<script>` tags rather than separate .js files. I didn't go that route and found that `document.getElementById()` works just as well as passing x-refs around (they don't seem to work in .js files otherwise). Using a `<script>` tag is probably better as long as the code is as simple as in my keyboard navigation example above, but as it grows, I find it better to use a separate file 🤷‍♂️
 
+_[Awesome Alpine][6]_ is a great collection of resources.
+
 [1]: https://github.com/alpinejs/alpine/issues/319
 [2]: https://github.com/turbolinks/turbolinks
 [3]: https://github.com/alpinejs/alpine/discussions/585
 [4]: https://codewithhugo.com/alpinejs-component-communication-event-bus/
 [5]: https://en.wikipedia.org/wiki/Document_Object_Model
+[6]: https://github.com/alpine-collective/awesome
