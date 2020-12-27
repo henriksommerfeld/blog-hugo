@@ -3,7 +3,7 @@ title: Settings for new MacBook Pro
 url: /settings-for-new-macbook-pro
 date: 2020-02-26T10:22:21+01:00
 summary: I recently bought a new machine, a MacBook Pro 16", and this is my initial configuration. I'm documenting this for my future self so I have something to cherry-pick from if I will ever configure a new Mac from scratch. Some of these things might not be relevant in future versions of macOS or for future versions of myself, so I don't see a point in automating it.
-description: I recently bought a new machine, a MacBook Pro 16", and this is my initial configuration. 
+description: I recently bought a new machine, a MacBook Pro 16", and this is my initial configuration.
 tags: [macOS, Hardware]
 categories: [Tooling]
 ogimage: 2020-02-21_HPA_2383.jpg
@@ -27,7 +27,7 @@ I found two settings that improve the great trackpad on MacBooks.
 Enabling clicking by tapping on the trackpad rather than having to press it with force is an obvious thing I definitely want to change. Easy to find in _System Preferences_ -> _Trackpad_ -> _Point & Click_ -> _Tap to click_.
 
 ### Enabling three finger move of windows
-The other trackpad change I make is to [enable moving windows with a three finger gesture][4]. I don't know why this isn't enabled by default and why it's buried so deep in the accessibility settings – very inaccessible. 
+The other trackpad change I make is to [enable moving windows with a three finger gesture][4]. I don't know why this isn't enabled by default and why it's buried so deep in the accessibility settings – very inaccessible.
 
 1. System Preferences -> Accessibility -> Pointer Control -> Mouse & Trackpad -> Trackpad options... -> Enable dragging -> _three finger drag_
 {{<post-image image="three-finger-drag.png" width="700" borderless="true" alt="Three finger window drag setting" />}}
@@ -111,7 +111,7 @@ Once I did my first change, this is easy in the way Apple likes to think of thei
 
 ### Using function keys in Visual Studio Code
 
-I find the function keys much more useful than anything else in [VS Code](https://code.visualstudio.com/), so I set an app specific rule for using the function keys, as shown below. 
+I find the function keys much more useful than anything else in [VS Code](https://code.visualstudio.com/), so I set an app specific rule for using the function keys, as shown below.
 
 {{<post-image image="vs-code-fn-keys.png" width="650" borderless="true" />}}
 
@@ -122,7 +122,7 @@ And...look at this! We've gone full circle with the Touch Bar in VS Code:
 
 There are a bunch of smaller changes I've done and I don't remember all of them, but here are a few.
 * Show path and status bar in _Finder_
-* Remove the _Stocks_ widget from _Notification Centre_. I find it astounding that an app for stock exchange rates is pre-installed and impossible to remove. 
+* Remove the _Stocks_ widget from _Notification Centre_. I find it astounding that an app for stock exchange rates is pre-installed and impossible to remove.
 
 ### Sorting in Finder
 
@@ -131,7 +131,7 @@ Default setting for Finder is apparently to show files in no particular order. T
 
 ### Arrange windows
 
-For a MacBook with a small screen, this might not be that useful, but with a larger display I find it really helpful. It's basically to enable the possibilities that has been in Windows for many years, like putting two windows next to each other. There are a number of applications that does this. I use [Rectangle][5] because it's free and [open source][6]. Though it is possible to align windows next to each other out-of-the-box as well, that involves precision clicking on the green maximise 
+For a MacBook with a small screen, this might not be that useful, but with a larger display I find it really helpful. It's basically to enable the possibilities that has been in Windows for many years, like putting two windows next to each other. There are a number of applications that does this. I use [Rectangle][5] because it's free and [open source][6]. Though it is possible to align windows next to each other out-of-the-box as well, that involves precision clicking on the green maximise
 button, so it doesn't count.
 
 ### Removing irrelevant search results
@@ -146,7 +146,7 @@ I use [Alfred](https://www.alfredapp.com/) for searching apps and files, but to 
 
 ## Keyboard navigation
 
-To be able to use the keyboard in dialogue windows and such, you need to enable a setting because...I wish I knew. 
+To be able to use the keyboard in dialogue windows and such, you need to enable a setting because...I wish I knew.
 
 _System Preferences_ -> _Keyboard_ -> _Shortcuts_ -> _Use keyboard navigation to move focus between controls_.
 
@@ -155,7 +155,7 @@ _System Preferences_ -> _Keyboard_ -> _Shortcuts_ -> _Use keyboard navigation to
 
 ### Allow keyboard focus on links in Firefox
 
-Using Firefox, there is an extra setting you have to do to be able to use keyboard navigation (moving focus to links). 
+Using Firefox, there is an extra setting you have to do to be able to use keyboard navigation (moving focus to links).
 
 In addition to the _All controls_ setting in macOS described above, you also have to type `about:config` in Firefox and create a setting with the key `accessibility.tabfocus` and set it to `true`, see [Stack Overflow question][9].
 
@@ -170,10 +170,13 @@ To fix this I created the file `~/Library/KeyBindings/DefaultKeyBinding.dict` wi
   "\UF72B"  = moveToEndOfLine:;
   "$\UF729" = moveToBeginningOfLineAndModifySelection:;
   "$\UF72B" = moveToEndOfLineAndModifySelection:;
+  "^@\UF701" = "noop:";
+  "^@\UF702" = "noop:";
+  "^@\UF703" = "noop:";
 }
 ```
 
-Each app needs a restart to make it take effect, see [Stack Overflow][6].
+Each app needs a restart to make it take effect, see [Stack Exchange][7]. The "`noop`" settings [prevents the system from beeping when pressing ⌘⌃↓][10].
 
 ### Toggling integrated terminal focus in Visual Studio Code
 
@@ -217,3 +220,4 @@ That's it, at least for now!
 [7]: https://apple.stackexchange.com/questions/18016/can-i-change-the-behavior-of-the-home-and-end-keys-on-an-apple-keyboard-with-num
 [8]: https://gist.github.com/henriksommerfeld/c7b6d59b19f89780b1a7e40ab2f6434b
 [9]: https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox
+[10]: https://github.com/adobe/brackets/issues/2419
