@@ -4,16 +4,16 @@
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
     "alpinejs": "2.7.3",
-    "lazysizes": "5.2.2",
+    "lazysizes": "5.3.0",
     "lunr": "2.3.9",
     "shx": "0.3.3"
   },
   "devDependencies": {
-    "@testing-library/cypress": "7.0.2",
-    "cypress": "6.1.0",
+    "@testing-library/cypress": "7.0.3",
+    "cypress": "6.2.1",
     "cypress-plugin-tab": "1.0.5",
     "prettier": "2.2.1",
-    "start-server-and-test": "1.11.6"
+    "start-server-and-test": "1.11.7"
   },
   "scripts": {
     "install:prod": "npm install --only=prod",
