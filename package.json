@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
   "dependencies": {
-    "alpinejs": "2.7.3",
-    "lazysizes": "5.3.0",
+    "alpinejs": "2.8.2",
+    "lazysizes": "5.3.2",
     "lunr": "2.3.9",
     "shx": "0.3.3"
   },
   "devDependencies": {
-    "@testing-library/cypress": "7.0.4",
-    "cypress": "6.5.0",
+    "@testing-library/cypress": "7.0.6",
+    "cypress": "7.1.0",
     "cypress-plugin-tab": "1.0.5",
     "prettier": "2.2.1",
-    "start-server-and-test": "1.12.0"
+    "start-server-and-test": "1.12.1"
   },
   "scripts": {
     "install:prod": "npm install --only=prod",
