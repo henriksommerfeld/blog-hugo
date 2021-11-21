@@ -9,11 +9,11 @@
     "shx": "0.3.3"
   },
   "devDependencies": {
-    "@testing-library/cypress": "7.0.6",
-    "cypress": "7.3.0",
+    "@testing-library/cypress": "8.0.2",
+    "cypress": "9.0.0",
     "cypress-plugin-tab": "1.0.5",
-    "prettier": "2.3.0",
-    "start-server-and-test": "1.12.2"
+    "prettier": "2.4.1",
+    "start-server-and-test": "1.14.0"
   },
   "scripts": {
     "install:prod": "npm install --only=prod",
