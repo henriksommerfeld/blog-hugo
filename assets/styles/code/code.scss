@@ -1,3 +1,5 @@
+@import './_theme-switcher';
+
 code {
   word-wrap: break-word;
   font-family: 'Fira Code', SFMono-Regular, Menlo, Consolas, courier, monospace;
@@ -8,10 +10,11 @@ li {
   code {
     padding: 0 4px;
     border-radius: $border-radius;
-    background: var(--inline-code-bg-color);
-    border: 1px solid var(--inline-code-border-color);
+    background-color: var(--inline-code-bg-color);
+    border: 1px solid magenta;
     white-space: pre-wrap;
     font-size: large;
+    transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
   }
 }
 
