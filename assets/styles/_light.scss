@@ -71,8 +71,8 @@
     --mobile-nav-color: #{$gray700};
     --mobile-nav-box-shadow-color: #{transparentize(black, 0.5)};
 
-    --highlight-bg-color: #{$gray900};
-    --highlight-color: #{$gray200};
+    --highlight-bg-color: #{$gray200};
+    --highlight-color: #{$gray900};
     --highlight-selection-color: var(--accent-color);
     --inline-code-bg-color: #{$inline-code-bg-color};
     --inline-code-border-color: #{$inline-code-border-color};

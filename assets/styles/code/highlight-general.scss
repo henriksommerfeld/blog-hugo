@@ -1,4 +1,6 @@
+@import './_theme-switcher';
 @import './pygments-jellybeans';
+@import './manni';
 
 article .highlight {
   margin-bottom: $default-spacing;
@@ -28,7 +30,9 @@ article .highlight {
     z-index: 1;
     background: var(--highlight-bg-color);
     color: var(--highlight-color);
-    border-left: none;
+    border: 1px solid var(--inline-code-border-color);
+    transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in,
+      color $theme-switcher-speed ease-in;
   }
   .lineno {
     color: #aaa;
