@@ -88,7 +88,7 @@ I think updating your router software is just as important as keeping your compu
 Router firmware update notification on my phone
 {{</post-image>}}
 
-Update: for some reason this failed silently after some time and I didn't get it to work again, so I took a different [approach][10].
+Update: for some reason this failed silently after some time and I didn't get it to work again, so I took [a different approach][10].
 
 [1]: https://asuswrt.lostrealm.ca/
 [2]: https://github.com/RMerl/asuswrt-merlin/wiki/Update-Notification-Example
