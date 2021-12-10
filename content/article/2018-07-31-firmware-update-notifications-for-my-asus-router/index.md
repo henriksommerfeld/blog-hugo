@@ -66,15 +66,15 @@ pushover_message () {
     https://api.pushover.net/1/messages.json
 }
 
-if [ "$pushover_token" ] && [ "$pushover_username" ]; then          
-  echo "Sending notification"                                       
-  pushover_message                                                  
-else                                                                
+if [ "$pushover_token" ] && [ "$pushover_username" ]; then
+  echo "Sending notification"
+  pushover_message
+else
   echo "Notification settings not configured (not sending anything)"
-fi                                                                  
+fi
 {{</code>}}
 
-Make the script executable and run it once to see that it works. 
+Make the script executable and run it once to see that it works.
 
 ```
 chmod +x /jffs/scripts/update-notification
@@ -88,6 +88,8 @@ I think updating your router software is just as important as keeping your compu
 Router firmware update notification on my phone
 {{</post-image>}}
 
+Update: for some reason this failed silently after some time and I didn't get it to work again, so I took a different [approach][10].
+
 [1]: https://asuswrt.lostrealm.ca/
 [2]: https://github.com/RMerl/asuswrt-merlin/wiki/Update-Notification-Example
 [3]: https://onedrive.live.com/?authkey=%21AJLLKAY--4EBqDo&id=CCE5625ED3599CE0%211444&cid=CCE5625ED3599CE0
@@ -97,3 +99,4 @@ Router firmware update notification on my phone
 [7]: https://asuswrt.lostrealm.ca/download
 [8]: https://asuswrt.lostrealm.ca/about
 [9]: https://pushover.net/
+[10]: /asuswrt-merlin-firmware-update-checker
