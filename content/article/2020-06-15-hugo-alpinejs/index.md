@@ -7,17 +7,17 @@ summary: For the custom JavaScript code on my Hugo blog I use Alpine.js. I’ll 
 tags: [Alpine.js, JavaScript, Hugo]
 categories: [Coding]
 ogimage: kaspar-allenbach-G024sNcoYvY-unsplash.jpg
-draft: false  
+draft: false
 ---
 
-This post is part 4 in the [Hugo Pipeline Series](/hugo-pipeline-series-intro/), but the benefits and limitations I discuss are not specific to using [Alpine.js](https://github.com/alpinejs/alpine) together with [Hugo](https://gohugo.io/). 
+This post is part 4 in the [Hugo Pipeline Series](/hugo-pipeline-series-intro/), but the benefits and limitations I discuss are not specific to using [Alpine.js](https://github.com/alpinejs/alpine) together with [Hugo](https://gohugo.io/).
 
 {{<post-image image="kaspar-allenbach-G024sNcoYvY-unsplash.jpg" alt="white and gray mountains">}}
 Photo by <a href="https://unsplash.com/@kasparallenbach">
 Kaspar Allenbach</a>.
 {{</post-image>}}
 
-For the custom JavaScript code on my [Hugo](https://gohugo.io/) blog (the one you're on right now) I use [Alpine.js](https://github.com/alpinejs/alpine). I'll discuss the benefits and the limitations in this post. 
+For the custom JavaScript code on my [Hugo](https://gohugo.io/) blog (the one you're on right now) I use [Alpine.js](https://github.com/alpinejs/alpine). I'll discuss the benefits and the limitations in this post.
 
 ## What is Alpine.js and why?
 Alpine.js is meant to be used with an existing HTML document (server-side rendered HTML that isn't produced by a JavaScript framework) , just like plain JavaScript or [jQuery](https://jquery.com/). This is the way it was done when JavaScript was introduced and how it's done today when using Hugo.
@@ -62,11 +62,11 @@ body.keyboard-navigation a:focus {
 }
 ```
 
-Doing this with imperative code is simply messier, so this is one example where Alpine.js helps. 
+Doing this with imperative code is simply messier, so this is one example where Alpine.js helps.
 
 ## An example with search results
 
-Another example is the search results I present. This is a situation where I could just add any of the popular JavaScript frameworks, since this part of the page creates the HTML in JavaScript. This is also a situation where pure JavaScript quickly gets messy, like concatenating strings and setting `innerHTML`, especially if you need event listeners on those new elements. 
+Another example is the search results I present. This is a situation where I could just add any of the popular JavaScript frameworks, since this part of the page creates the HTML in JavaScript. This is also a situation where pure JavaScript quickly gets messy, like concatenating strings and setting `innerHTML`, especially if you need event listeners on those new elements.
 
 {{<code html "hl_lines=14 25">}}
 <div class="search-results-container">
@@ -110,13 +110,13 @@ Hopefully I've been able to highlight some of the benefits in the examples above
 
 ## Limitations
 
-Now to the interesting stuff, things that Alpine.js _not_ so good for – the stuff you generally don't find in documentation or tutorials.
+Now to the interesting stuff, things that Alpine.js is _not_ so good for – the stuff you generally don't find in documentation or tutorials.
 
 * You cannot have nested components or have them communicate easily.
 * The page (DOM) isn't updated when updates are triggered by non-interactive events.
 * ~~Doesn't work with Turbolinks~~
 
-In the case of my blog, I made the `body` tag the Alpine component, which works just fine as I'm mostly setting different CSS classes on the body tag anyway. For a more complex use, [A guide to Alpine.js component communication][4] describes how you can have sibling components talk to each other and have the DOM react to non-interactive events, [see answer on GitHub][3]. A non-interactive event is when the user hasn't clicked or typed anything, such as when data is fetched (a promise is resolved) and you set that data to a property. 
+In the case of my blog, I made the `body` tag the Alpine component, which works just fine as I'm mostly setting different CSS classes on the body tag anyway. For a more complex use, [A guide to Alpine.js component communication][4] describes how you can have sibling components talk to each other and have the DOM react to non-interactive events, [see answer on GitHub][3]. A non-interactive event is when the user hasn't clicked or typed anything, such as when data is fetched (a promise is resolved) and you set that data to a property.
 
 The theme switcher I have reacts to theme (light/dark) changes in the operating system and also when the theme setting in `localStorage` is changed. The code I have to listen for those events can update a property bound to the Alpine component, but it won't update the DOM. Rather than implementing some involved dispatch mechanism, I prefer to use pure DOM manipulation for these situation, starting with `document.getElementById()` and setting the element's properties.
 
