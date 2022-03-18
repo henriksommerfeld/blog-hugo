@@ -6,13 +6,13 @@
     "alpinejs": "2.8.2",
     "lazysizes": "5.3.2",
     "lunr": "2.3.9",
-    "shx": "0.3.3"
+    "shx": "0.3.4"
   },
   "devDependencies": {
     "@testing-library/cypress": "8.0.2",
-    "cypress": "9.0.0",
+    "cypress": "9.5.2",
     "cypress-plugin-tab": "1.0.5",
-    "prettier": "2.4.1",
+    "prettier": "2.6.0",
     "start-server-and-test": "1.14.0"
   },
   "scripts": {
