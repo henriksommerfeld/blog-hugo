@@ -27,11 +27,7 @@
     "cypress:cli": "cypress run",
     "cypress:open": "cypress open",
     "test": "start-server-and-test http://localhost:1313 cypress:cli",
-    "test:open": "start-server-and-test http://localhost:1313 cypress:open",
-    "docker:start": "docker-compose up dev",
-    "docker:test": "docker-compose up test",
-    "docker:build": "docker-compose up build",
-    "docker:image:rebuild": "docker-compose build"
+    "test:open": "start-server-and-test http://localhost:1313 cypress:open"
   },
   "repository": {
     "type": "git",

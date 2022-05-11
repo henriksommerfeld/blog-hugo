@@ -23,20 +23,4 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 1. `npm install`
 2. `npm run test:open`
 
-## Using Docker
-For using [Docker][3], you don't need the pre-requisites listed above, but you need Docker 🙄
-
-### Running the site
-1. `docker-compose up dev`
-or if you have npm installed: `npm run docker:dev`
-
-### Build (compile) the site to folder _public_
-1. `docker-compose up build`
-or if you have npm installed: `npm run docker:build`
-
-### Tests
-1. `docker-compose up test`
-or if you have npm installed: `npm run docker:test`
-
 [1]: http://gohugo.io/
-[3]: https://docker.io/
