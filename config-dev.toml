@@ -16,3 +16,8 @@ disqusShortname = "henrik-sommerfeld"
 
 [permalinks]
     article = "/:title/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
