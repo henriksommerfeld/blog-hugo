@@ -1,5 +1,5 @@
-baseURL = "https://www.henriksommerfeld.se/"
 languageCode = "en-gb"
+baseURL = "https://www.henriksommerfeld.se/"
 title = "Henrik Sommerfeld's blog"
 canonifyURLs = false
 relativeURLs = false
@@ -18,3 +18,8 @@ rssLimit = 10
 
 [permalinks]
     article = "/:title/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
