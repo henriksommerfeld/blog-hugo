@@ -23,37 +23,36 @@ So, I decided to implement dark mode on my website (to tackle parental leave bor
 
 ## Background
 
-Supporting different themes on a website is very simple, I remember that I built three different themes that you could choose between on my website almost 20 years ago when I was learning about CSS and the semantic web. It's just a matter of switching .css files. Those themes had different layout where the navigation would be placed differently and much more. Dark/light mode is just a matter of changing colours. 
+Supporting different themes on a website is very simple, I remember that I built three different themes that you could choose between on my website almost 20 years ago when I was learning about CSS and the semantic web. It's just a matter of switching .css files. Those themes had different layout where the navigation would be placed differently and much more. Dark/light mode is just a matter of changing colours.
 
 Of course the web has evolved a bit since the Web's youth. The basic techniques you need today are:
 
 * [CSS variables][1]
 * [Media queries][4]
 
-<figure class="image-border">
-    <img src="dark-mode.gif" alt="Animated gif of toggling dark mode on my website from Windows dark/light mode" width="1668" height="908">
-    <figcaption><em>This shows how toggling between light and dark mode in Windows 10 changes the theme on my website as well. </em></figcaption>
-</figure>
+{{<post-image image="dark-mode.gif" alt="Animated gif of toggling dark mode on my website from Windows dark/light mode">}}
+This shows how toggling between light and dark mode in Windows 10 changes the theme on my website as well.
+{{</post-image>}}
 
-My starting point was the extensive blog post named [_Hello darkness, my old friend_][2]. It gives a background and describes an implementation that I pretty much followed. 
+My starting point was the extensive blog post named [_Hello darkness, my old friend_][2]. It gives a background and describes an implementation that I pretty much followed.
 
 It uses a `light.css` and a `dark.css` which are conditionally loaded with media queries. These files define the same set of [CSS variables][1] that are then used in a `main.css`.
 
 ```
 <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">    
+<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
 ```
 
 This works great and uses the theme of the operating system, here _light_ theme is the default if the browser doesn't provide this information. It's when you add the possibility to manually switch between themes it becomes a bit more complicated.
 
 ## Different CSS files VS `body` selector
-A slightly different approach is to place the media query inside a `main.css` and include all the CSS variables there. My site is build with Hugo and uses one main CSS file, rather than a component system, so I don't have any deferring of non-critical CSS anyway. Given that, I think a few extra CSS variables wouldn't make difference. 
+A slightly different approach is to place the media query inside a `main.css` and include all the CSS variables there. My site is build with Hugo and uses one main CSS file, rather than a component system, so I don't have any deferring of non-critical CSS anyway. Given that, I think a few extra CSS variables wouldn't make difference.
 
 In that case I could set a class or data attribute on the body tag and use that as my condition in CSS.
 
 ```
 <body class="dark-theme">
-``` 
+```
 
 ## Provide a switch between modes?
 Do you really need a switch or is it sufficient with the device setting for light/dark? If I hadn't taken the extra steps of adding a switch, it would have been a lot simpler,  and maybe good enough, in hindsight. Given that I have a switch, borrowed from [_Pure CSS Smooth Toggle Swtich Demo_][3], I think it would have been easier to toggle a CSS class or data attribute than modifying the CSS link tags like I do.
