@@ -10,7 +10,7 @@ url: "about"
 
 {{<post-image image="henrik-1.jpg" width="400" alt="Bald guy smiling" />}}
 
-I enjoy exploring computer stuff for business and pleasure. I live in Stockholm, Sweden with a wife and a daughter, working for [Academic Work][1] as a programmer.
+I enjoy exploring computer stuff for business and pleasure. I live in Sundsvall, Sweden with a wife and a daughter, working for [Academic Work][1] as a programmer.
 
 
 [1]: https://www.aw.com/
