@@ -14,8 +14,11 @@ Today when I booted my [Endeavour OS][1] Linux machine and logged in to [i3][2],
 
 {{<post-image image="i3wm-logo-portada.png" alt="i3 logo" />}}
 
-It turned out to be the settings in `/etc/xdg/picom.conf` that I needed to change.
+It turned out to be the settings in `/etc/xdg/picom.conf` that I needed to change by copying it to the home folder and disable fading.
+ 
+**Update:** [I3wm started picom automatic also it is commented?][3] describes this problem. However, I didn't really see how to completely disable it using the config file (the way it was before the update), so I instead removed the package (`yay -R picom`)
 
 
 [1]: https://endeavouros.com
 [2]: https://i3wm.org
+[3]: https://forum.endeavouros.com/t/i3wm-started-picom-automatic-also-it-is-commented/34073
