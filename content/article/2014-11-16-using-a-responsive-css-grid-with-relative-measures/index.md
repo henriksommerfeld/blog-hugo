@@ -12,7 +12,7 @@ url = "/using-a-responsive-css-grid-with-relative-measures/"
 
 When you build a web site on a [CMS][1] and a theme made by someone else you always have some limitations. For this blog I use WordPress and the [Montezuma theme][2], and this is how I customised the default CSS grid options to my liking.
 
-{{<post-image image="montezuma-css-grid-options.png" alt="montezuma-css-grid-options" >}}
+{{<post-image image="montezuma-css-grid-options.png" alt="montezuma-css-grid-options" />}}
 
 These are the grid options you can choose from in version 1.2.4 of the Montezuma theme. Not bad at all, but if you want to use a responsive layout (and yes, you should) you have to choose between a fixed 960 px maximum width or use the 100% width option which can become ridiculous on large high resolution screens. So, what I did was to choose the 100% option and then add `max-width` to constrain the width. This was an easy way to achieve what I wanted with a minimal adjustment and have relative widths, which I really prefer in a CSS grid system.
 
@@ -34,5 +34,5 @@ Now the only remaining thing was to add a new rule with the same selector defini
 {{</code>}}
 
 
- [1]: http://en.wikipedia.org/wiki/Content_management_system
- [2]: https://wordpress.org/themes/montezuma
+[1]: http://en.wikipedia.org/wiki/Content_management_system
+[2]: https://wordpress.org/themes/montezuma
