@@ -26,7 +26,7 @@ broken product. I've had two (in the previous house as well) and none of them
 have worked reliably (and forums are full of people with the same issue). To
 add insult to injury, I receive an email from Yale when the lock has been
 offline for a while, blaming my Wi-Fi. Remember, if your product is bad, it's
-always the customers fault.
+always the customer's fault.
 
 {{<post-image image="bridge-close-to-door.jpg" alt="Yale Wi-Fi Bridge very close to font door" width="600">}}
 <p>No matter how close the bridge is to the door, the BLE signal is weak.</p>
