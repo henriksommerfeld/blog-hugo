@@ -37,7 +37,7 @@ One thing I'm not sure about the idea behind, is the double power supplies (PSU)
 
 I was surprised by the running temperature of the device when I turned it on without any load, quite hot. Thankfully it's pretty much the same after connecting my devices, around 64°C. I'm only using around 33W out of maximum 420W PoE capacity though (3 access points and 2 cameras) and CPU utilisation is around 15-20%
 
-{{<post-image image="temp.jpeg" alt="Dream Wall showing temperature on display" width="500" />}}
+{{<post-image image="temp.jpeg" alt="Dream Wall showing temperature on display. 64 degrees Celsius, 147 degrees Fahrenheit" width="500" />}}
 {{<post-image image="cpu.jpeg" alt="Dream Wall showing CPU load on display" width="500" />}}
 
 ## Noise
