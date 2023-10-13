@@ -27,6 +27,7 @@ pre {
   border-left: 4px solid var(--accent-color);
   border-radius: $border-radius;
   line-height: 1.55em;
+  transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
   code {
     word-wrap: normal;
     text-shadow: none;
