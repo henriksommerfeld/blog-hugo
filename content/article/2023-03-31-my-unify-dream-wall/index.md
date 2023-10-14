@@ -44,7 +44,15 @@ I was surprised by the running temperature of the device when I turned it on wit
 The noise level was my biggest initial disappointment, coming from a traditional home router without a fan. The Dream Wall is a device with components equal to Ubiquiti's rack mountable hardware and I think that's how you should set your noise level expectations. Having that said, my wife uses the room as as music studio without complaining (after the initial reaction), but I wouldn't want to sleep next to it.
 
 ## Stability
-There has been a few times with power outage in the house (partly due to electricians cutting the power for renovation work without telling me in advance) and the Dream Wall has had trouble starting up again. Booting has been slow and twice required manual intervention. This has however been during the early access period with 2.x version of Unify OS and there might have been hardware changes made (in addition to the screen) between my version and the ones available in the store now, so I don't think you should be scared of that.
+There has been a few times with power outage in the house and the Dream Wall has had trouble starting up again. This is how it goes:
+1. Power comes back and the Dream Wall is *on* but not handling any traffic and the display says it needs to be restarted.
+2. I restart it and it says: "Est. Time Remaining: 5m". 
+3. After 5 minutes it says: "It is taking longer a little longer". No matter how long I wait it doesn't help (I've switched my computer to phone tethering and waited hours) ⛔
+
+This is the procedure that has worked for me to get it running again.
+1. Power comes back and the Dream Wall is *on*  but not handling any traffic and the display says it needs to be restarted.
+2. I shut it down and wait long enough for it to completely cool down (touching the aluminium on the left side where it gets the hottest)
+3. I start it again and it starts handling traffic. ✅
 
 Other than that, it's been great. Moving around the house and watching the phone seamlessly switch between WiFi access points is nice. 
 
