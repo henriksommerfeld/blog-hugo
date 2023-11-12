@@ -62,6 +62,7 @@ context('Search', () => {
 
   it('Should close on searchbox close click', () => {
     cy.viewport('ipad-2')
+    cy.get('#hamburger-trigger').click()
     cy.get('nav').findByText('Search').click().get('#search-input')
     cy.findByLabelText('Close search').click()
     cy.get('#search-input').should('not.be.visible')

@@ -6,7 +6,6 @@ $animation-speed: 150ms;
 .hamburger-menu {
   width: $bar-width;
   height: $bar-height + $bar-spacing * 2;
-  cursor: pointer;
   margin-left: $default-spacing - 5px;
 }
 
@@ -39,6 +38,7 @@ $animation-speed: 150ms;
   transition: border 400ms ease;
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
+  cursor: pointer;
   &:hover,
   &:active,
   &:focus {
