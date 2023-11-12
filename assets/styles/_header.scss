@@ -94,7 +94,7 @@ nav {
   letter-spacing: 0.1rem;
   @include notch-padding;
 
-  @media (min-width: $small-size-min-width) {
+  @media (min-width: 48rem) {
     flex-direction: row;
   }
 
@@ -159,21 +159,14 @@ nav {
   &.open {
     opacity: 1;
     pointer-events: painted;
-    animation: slide-in 400ms forwards;
+    animation: fold-in 400ms forwards;
     display: flex;
     border-bottom: 1px solid var(--mobile-nav-border-color);
-    @media (min-width: $small-size-min-width) {
-      animation: fold-in 400ms forwards;
-      border-bottom: none;
-    }
   }
 
   &.closing {
     pointer-events: painted;
-    animation: slide-out 500ms forwards;
-    @media (min-width: $small-size-min-width) {
-      animation: fold-out 500ms forwards;
-    }
+    animation: fold-out 500ms forwards;
   }
 }
 
