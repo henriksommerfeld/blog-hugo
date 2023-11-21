@@ -46,7 +46,7 @@ As a developer in our organisation, you create a new service (API, web app, etc.
 
 Naturally, the idea of _infrastructure as code_ isn't something you have to _sell_ to someone like me with a coding background, but seeing it in action is still fantastic. Even if this isn't feasible for a small company, we're certainly not as big as Google, Amazon, Microsoft or Facebook.
 
-I find it delightful to primarily work with open source products. We buy commercial software when we find that's the best option, but we don't buy a product that claims it do everything. There is a big difference in choosing the pieces that best fits the puzzle you're trying to assemble, vs buying a complete puzzle that you have to retrofit your existing pieces into.
+I find it delightful to primarily work with open source products. We buy commercial software when we find that's the best option, but we don't buy a product that claims it does everything. There is a big difference in choosing the pieces that best fits the puzzle you're trying to assemble, vs buying a complete puzzle that you have to retrofit your existing pieces into.
 
 Sample tech:
 * [Visual Studio Code][19] (still avoid [Vim][18])
@@ -84,7 +84,7 @@ Read (or listen to the audio books) [The Phoenix Project][2] and [The Unicorn Pr
 [18]: https://www.vim.org/
 [19]: https://code.visualstudio.com/
 [20]: https://visualstudio.microsoft.com/vs/
-[21]: https://visualstudio.microsoft.com/vs/
+[21]: https://mobprogramming.org/
 [22]: https://en.wikipedia.org/wiki/Next_Unit_of_Computing
 [23]: https://ubuntu.com/
 [24]: https://www.w3schools.com/whatis/whatis_cli.asp
