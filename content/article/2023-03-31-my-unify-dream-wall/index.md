@@ -47,7 +47,7 @@ The noise level was my biggest initial disappointment, coming from a traditional
 There has been a few times with power outage in the house and the Dream Wall has had trouble starting up again. This is how it goes:
 1. Power comes back and the Dream Wall is *on* but not handling any traffic and the display says it needs to be restarted.
 2. I restart it and it says: "Est. Time Remaining: 5m". 
-3. After 5 minutes it says: "It is taking longer a little longer". No matter how long I wait it doesn't help (I've switched my computer to phone tethering and waited hours) ⛔
+3. After 5 minutes it says: "It is taking a little longer". No matter how long I wait it doesn't help (I've switched my computer to phone tethering and waited hours) ⛔
 
 This is the procedure that has worked for me to get it running again.
 1. Power comes back and the Dream Wall is *on*  but not handling any traffic and the display says it needs to be restarted.
