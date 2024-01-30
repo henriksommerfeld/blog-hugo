@@ -15,3 +15,7 @@ cypress/videos
 .DS_Store
 cypress/fixtures/example.json
 .hugo_build.lock
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

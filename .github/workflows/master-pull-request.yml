@@ -1,18 +1,19 @@
 name: Tests
-
 on:
   pull_request:
-    branches:
-      - master
-
+    branches: [main, master]
 jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
       - name: Install
-        run: |
-          yarn install
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - name: Waiting for 200 from the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1.1
         id: waitFor200
@@ -21,20 +22,20 @@ jobs:
           max_timeout: 300
       - name: E2E tests
         run: |
-          CYPRESS_BASE_URL=${{ steps.waitFor200.outputs.url }} npm run cypress:cli
+          BASE_URL=${{ steps.waitFor200.outputs.url }} npx playwright test
 
-      - name: Cypress tests Slack notification
+      - name: Integration tests Slack notification
         uses: 8398a7/action-slack@v3
         with:
           status: custom
           fields: job,repo,ref,author,took
           custom_payload: |
             {
-              username: 'Cypress tests',
+              username: 'Integration tests',
               icon_emoji: ':octocat:',
               attachments: [{
                 color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: `Cypress tests completed for repo ${process.env.AS_REPO}`,
+                text: `Integration tests completed for repo ${process.env.AS_REPO}`,
               }]
             }
         env:
