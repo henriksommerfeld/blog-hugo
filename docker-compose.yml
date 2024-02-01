@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  hugo:
+    build:
+      context: .
+      dockerfile: ./scripts/compose-hugo.dockerfile
+    command: /bin/sh /init.sh
+    volumes:
+      - ./scripts/compose-hugo.sh:/init.sh
+      - ./:/app
+      - node_home:/home
+    tmpfs:
+      - /app/node_modules:exec
+      - /app/public
+    ports:
+      - 1313:1313
+    restart: always
+
+volumes:
+  node_home:
