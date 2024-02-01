@@ -1,16 +1,16 @@
-FROM mcr.microsoft.com/playwright:v1.41.1 as playwright
-RUN npx playwright install
+FROM mcr.microsoft.com/playwright:v1.41.2 as playwright
 
 FROM playwright as playwright-hugo
-RUN wget --output-document hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.122.0/hugo_extended_0.122.0_Linux-64bit.tar.gz
-RUN tar zxvf hugo.tar.gz
-RUN cp hugo /usr/bin/
+RUN wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.122.0/hugo_extended_0.122.0_Linux-64bit.tar.gz
+RUN tar zxvf /tmp/hugo.tar.gz -C /tmp/
+RUN mv /tmp/hugo /usr/bin/
 
 FROM playwright-hugo as install
 WORKDIR /app
 COPY .nvmrc package.json package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm \
   npm ci --no-update-notifier --no-audit --no-fund
+RUN npx playwright install
 
 FROM install as build
 COPY playwright.config.ts config.toml config-dev.toml ./
@@ -23,6 +23,7 @@ COPY static ./static
 COPY tests ./tests
 RUN npm run build
 
+# UI tests are sometimes flaky, so always run them
 FROM build as test
 ARG CACHEBUST=1
 RUN echo "$CACHEBUST"

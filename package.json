@@ -5,18 +5,17 @@
   "dependencies": {
     "alpinejs": "2.8.2",
     "lazysizes": "5.3.2",
-    "lunr": "2.3.9",
-    "shx": "0.3.4"
+    "lunr": "2.3.9"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.1",
+    "@playwright/test": "^1.41.2",
     "@types/node": "^20.10.6",
     "prettier": "3.1.1"
   },
   "scripts": {
     "install:prod": "npm install --only=prod",
-    "clean": "shx rm -f static/*.js",
-    "clean:public": "shx rm -rf public",
+    "clean": "rm -f static/*.js",
+    "clean:public": "rm -rf public",
     "build": "npm run clean:public && hugo version && hugo --gc --minify && npm run index:prod",
     "hugo:watch": "hugo server --config config-dev.toml --bind=0.0.0.0",
     "index:prod": "node build/index-search.js public/search-index.json",
@@ -24,8 +23,12 @@
     "start": "hugo && npm run index && npm run hugo:watch",
     "test": "playwright test",
     "test:install": "npx playwright install",
+    "test:open": "playwright test --ui",
+    "docker:run": "docker compose up",
     "docker:test": "docker build --build-arg CACHEBUST=$(date +%s) .",
-    "test:open": "playwright test --ui"
+    "upgrade:hugo": "./scripts/upgrade-hugo.sh",
+    "upgrade:node": "./scripts/upgrade-node.sh",
+    "upgrade:playwright": "./scripts/upgrade-playwright.sh"
   },
   "repository": {
     "type": "git",
