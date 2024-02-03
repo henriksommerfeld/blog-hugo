@@ -44,10 +44,10 @@ test.describe('Post', () => {
     await expect(tag).toHaveAttribute('href', '/tags/networking')
   })
 
-  test('Should show category Tooling', async ({ page }) => {
-    const tag = page.locator('article footer').getByText('Tooling')
+  test('Should show category Tools', async ({ page }) => {
+    const tag = page.locator('article footer').getByText('Tools')
     await expect(tag).toBeVisible()
-    await expect(tag).toHaveAttribute('href', '/categories/tooling')
+    await expect(tag).toHaveAttribute('href', '/categories/tools')
   })
 
   test('Should have comments button', async ({ page }) => {

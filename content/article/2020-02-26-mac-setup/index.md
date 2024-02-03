@@ -5,7 +5,7 @@ date: 2020-02-26T10:22:21+01:00
 summary: I recently bought a new machine, a MacBook Pro 16", and this is my initial configuration. I'm documenting this for my future self so I have something to cherry-pick from if I will ever configure a new Mac from scratch. Some of these things might not be relevant in future versions of macOS or for future versions of myself, so I don't see a point in automating it.
 description: I recently bought a new machine, a MacBook Pro 16", and this is my initial configuration.
 tags: [macOS, Hardware]
-categories: [Tooling]
+categories: [Tools]
 ogimage: 2020-02-21_HPA_2383.jpg
 draft: false
 ---

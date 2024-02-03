@@ -5,7 +5,7 @@ date: 2021-08-11T20:15:00+02:00
 description: An argument for building a barebone PC for your non-technical relative.
 summary: I built another barebone computer for my sister and explain why I like barebones.
 tags: [hardware]
-categories: [Tooling]
+categories: [Tools]
 ogimage: asus-barebone2.jpg
 draft: false
 ---

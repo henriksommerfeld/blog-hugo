@@ -1,7 +1,7 @@
 +++
 author = "admin"
 bfa_virtual_template = ["hierarchy"]
-categories = ["Tooling"]
+categories = ["Tools"]
 date = "2012-12-10T21:09:15+00:00"
 tags = ["Backup","Gmail","GMVault","macOS","Scripting"]
 title = "Automatically Backup your Gmail account on a schedule with GMVault and Mac OS X launchd"

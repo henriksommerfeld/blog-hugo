@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["Tooling","Coding"]
+categories = ["Tools","Coding"]
 date = "2015-03-24T23:05:12+00:00"
 tags = ["PowerShell","Scripting","SharePoint","Windows Server"]
 title = "Inventory of Page Layout Usage in a SharePoint Site"

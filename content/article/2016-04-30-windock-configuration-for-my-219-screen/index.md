@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["Tooling"]
+categories = ["Tools"]
 date = "2016-04-30T16:59:15+00:00"
 tags = ["Hardware","WinDock", "Windows 10"]
 title = "WinDock Configuration for my 21:9 Screen"

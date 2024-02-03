@@ -5,7 +5,7 @@ date: 2023-03-31T22:18:00+02:00
 description: "The Unify Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
 summary: "The Unify Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
 tags: [Network, Unify]
-categories: [Tooling]
+categories: [Tools]
 ogimage: dream-wall-input.jpeg
 draft: false
 ---

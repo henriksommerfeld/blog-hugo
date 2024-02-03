@@ -5,7 +5,7 @@ date: 2022-11-28T20:15:00+01:00
 description: ""
 summary: ""
 tags: [i3]
-categories: [Tooling]
+categories: [Tools]
 ogimage: i3wm-logo-portada.png
 draft: false
 ---
