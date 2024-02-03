@@ -35,8 +35,9 @@ test.describe('Search', () => {
 
   test('Should set focus on first hit on down-arrow', async ({ page }) => {
     await searchForAsusFirmware(page)
-    await page.locator('#search-input').press('ArrowDown')
     const firstResult = page.locator('#search-output .result-list li').first().getByRole('link')
+    await expect(firstResult).toBeVisible()
+    await page.locator('#search-input').press('ArrowDown')
     await expect(firstResult).toBeFocused()
   })
 
