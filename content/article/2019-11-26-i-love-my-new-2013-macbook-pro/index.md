@@ -2,7 +2,7 @@
 title: "I ❤️ My \"New\" 2013 MacBook Pro"
 date: 2019-11-28T21:29:10+01:00
 url: "i-love-my-new-2013-macbook-pro"
-categories: ["Tooling"]
+categories: ["Tools"]
 tags: [macOS, Hardware]
 summary: "This is a story about my personal computer (PC) experience, from the 1990’s up to my new love for a six year old laptop.
 

@@ -5,7 +5,7 @@ date: 2020-04-08T14:02:21+02:00
 summary: I have an Asus RT-AC68U router at home. I’ve previously used the build-in update checker together with a notification script that ran on the router itself. Recently I noticed that I hadn’t got any update notifications in a long time, one of the downsides of silent failures. This is my custom code that looks for updates.
 description: My custom checker for finding updates to Asuswrt-Merlin router firmware. I describe the code and how it's scheduled to run.
 tags: [Networking, Scripting, NodeJS]
-categories: [Tooling]
+categories: [Tools]
 ogimage: pushover.jpg
 draft: false
 ---

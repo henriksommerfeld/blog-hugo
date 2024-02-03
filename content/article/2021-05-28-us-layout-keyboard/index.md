@@ -5,7 +5,7 @@ date: 2021-05-30T22:40:00+02:00
 description: "Advice to my youth self: Get a US keyboard for programming."
 summary: "An advice I would give my youth self is to properly learn the keyboard, specifically to switch to a US layout for programming and to learn touch typing."
 tags: [keyboard,typing]
-categories: [Tooling]
+categories: [Tools]
 ogimage: keyboard-us-layout.jpeg
 draft: false
 ---

@@ -1,7 +1,7 @@
 +++
 author = "admin"
 bfa_virtual_template = ["hierarchy"]
-categories = ["Tooling"]
+categories = ["Tools"]
 date = "2013-01-21T14:30:06+00:00"
 tags = ["VMWare Workstation"]
 title = "VMware Workstation 9 User Hostility"

@@ -1,6 +1,6 @@
 +++
 author = "admin"
-categories = ["Tooling","Coding"]
+categories = ["Tools","Coding"]
 date = "2016-12-15T14:58:59+00:00"
 tags = ["Azure IoT Hub","Internet of Things","Raspberry Pi"]
 title = "My IoT Exploration – Part 5 – Costs and Architecture Refection"
