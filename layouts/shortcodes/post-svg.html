@@ -2,6 +2,7 @@
 {{ $svgFile :=  (path.Join (path.Dir .Page.File.Path) $svgRes) }}
 {{ $width := .Get "width" }}
 {{ $use_theme := .Get "use-theme" }}
+{{ $fill_path := .Get "fill-path" }}
 
 <style>
   figure svg {
@@ -10,6 +11,8 @@
   }
   figure.use-theme svg path {
     stroke: var(--color);
+  }
+  figure.use-theme.fill-path svg path {
     fill: var(--color) !important;
   }
   figure.use-theme svg text {
@@ -21,7 +24,7 @@
 </style>
 <figure
   {{ if $width }}style="max-width: {{$width}}px"{{ end }} 
-  {{ if $use_theme }}class="use-theme"{{ end }}>
+  {{ if $use_theme }}class="use-theme{{ if $fill_path }} fill-path{{end}}"{{ end }}>
 
   {{- readFile $svgFile | safeHTML -}}
   {{.Inner}}
