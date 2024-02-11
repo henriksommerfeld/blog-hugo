@@ -1,5 +1,10 @@
 @import '../_variables';
 
+.side-by-side {
+  display: flex;
+  gap: 1em;
+}
+
 figure {
   margin: 0;
   padding-bottom: 1em;
