@@ -48,6 +48,8 @@ test.describe('Navigation', () => {
     })
 
     test('Should go to last post in category', async ({ page }) => {
+      page.locator('.all-categories').getByRole('link', { name: 'coding', exact: true }).click()
+      await expect(page).toHaveURL(/categories\/coding/)
       page.locator('main article').last().getByRole('link').filter({ hasText: 'Read' }).click()
       const link = page.locator('footer .categories-tags').getByRole('link', { name: 'Coding' })
       await expect(link).toHaveAttribute('href', '/categories/coding')
