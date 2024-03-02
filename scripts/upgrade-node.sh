@@ -27,3 +27,6 @@ sed -E "$regex" "$file" >"$file.upg"
 mv "$file.upg" "$file"
 
 printf "v$version" >.nvmrc
+
+echo "Rebuilding docker image for docker-compose"
+docker compose build
