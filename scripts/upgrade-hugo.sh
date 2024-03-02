@@ -13,13 +13,12 @@ else
 	exit 1
 fi
 
-netlify_regex="s/HUGO_VERSION = \"[0-9]+\.[0-9]+\.[0-9]+\"/HUGO_VERSION = \"$version\"/g"
-dockerfile_regex1="s/hugo\/releases\/download\/v[0-9]+\.[0-9]+\.[0-9]+/hugo\/releases\/download\/v$version/g"
-dockerfile_regex2="s/hugo_extended_[0-9]+\.[0-9]+\.[0-9]+/hugo_extended_$version/g"
+regex="s/HUGO_VERSION=\"[0-9]+\.[0-9]+\.[0-9]+\"/HUGO_VERSION=\"$version\"/g"
 
 files=(
 	netlify.toml
 	Dockerfile
+	./scripts/compose-hugo.dockerfile
 )
 
 cleanup() {
@@ -32,16 +31,9 @@ cleanup() {
 trap cleanup EXIT
 
 for x in "${files[@]}"; do
-	sed -E "$netlify_regex" "$x" >"$x.upg"
+	sed -E "$regex" "$x" >"$x.upg"
 	mv "$x.upg" "$x"
 done
 
-for x in "${files[@]}"; do
-	sed -E "$dockerfile_regex1" "$x" >"$x.upg"
-	mv "$x.upg" "$x"
-done
-
-for x in "${files[@]}"; do
-	sed -E "$dockerfile_regex2" "$x" >"$x.upg"
-	mv "$x.upg" "$x"
-done
+echo "Rebuilding docker image for docker-compose"
+docker compose build
