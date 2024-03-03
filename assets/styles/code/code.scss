@@ -2,7 +2,7 @@
 
 code {
   word-wrap: break-word;
-  font-family: 'Fira Code', SFMono-Regular, Menlo, Consolas, courier, monospace;
+  font-family: 'Fira Code', SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 p,
@@ -14,7 +14,9 @@ li {
     border: 1px solid var(--inline-code-border-color);
     white-space: pre-wrap;
     font-size: large;
-    transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
+    transition:
+      background-color $theme-switcher-speed ease-in,
+      border-color $theme-switcher-speed ease-in;
   }
 }
 
@@ -27,7 +29,9 @@ pre {
   border-left: 4px solid var(--accent-color);
   border-radius: $border-radius;
   line-height: 1.55em;
-  transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
+  transition:
+    background-color $theme-switcher-speed ease-in,
+    border-color $theme-switcher-speed ease-in;
   code {
     word-wrap: normal;
     text-shadow: none;
