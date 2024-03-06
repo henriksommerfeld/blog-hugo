@@ -250,10 +250,10 @@ it's not just a plain SQL string to look at.*
 Having access to powerful features and sensible syntax makes it attractive to
 implement more logic in the database, especially when operating on larger
 datasets. Extracting large chunks of data into memory, performing the logic and
-then applying the updates back to the database is sometimes not feasable. This
-does couple the particular databse engine tighter to the rest of the system,
+then applying the updates back to the database is sometimes not feasible. This
+does couple the particular database engine tighter to the rest of the system,
 but the idea of simply swapping one database engine for another one is only
-relevant when viewing the database as pure presistance. Replacing Postgres with
+relevant when viewing the database as pure persistence. Replacing Postgres with
 another database engine in our applications would be like replacing NodeJS with
 .NET, or Python with Java or whatever you might come up with -- basically a
 rewrite.
@@ -266,7 +266,7 @@ This is also easy to test: just create two rows, one a user is supposed to see
 and one the user is *not* supposed to see. Make a select query as the user and
 see which rows were returned. 
 
-[modern-sql.com](https://modern-sql.com) contains a boat load of explainations
+[modern-sql.com](https://modern-sql.com) contains a boat load of explanations
 of SQL features and [Postgres' Feature
 Matrix](https://www.postgresql.org/about/featurematrix/) clearly shows that
 database development hasn't stood still since I got out of university.
