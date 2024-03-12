@@ -201,6 +201,10 @@ create trigger trigger_supplement_before_insert
   execute function core.trigger_supplement_before_insert();
 {{</code>}}
 
+*Apparently there is no law that require us to hold shift while typing SQL* ☝️
+*We also have better syntax highlighting in our editors than my blog can
+render.*
+
 ### Migrations
 
 We write migrations by adding a `.sql` file to the database folder which is
@@ -242,7 +246,7 @@ const [{ count }] = await db.query(
 )
 {{</code>}}
 
-*We have better syntax highlighting in our editors than my blog can render, so
+*Again, we have better syntax highlighting in our editors than my blog can render, so
 it's not just a plain SQL string to look at.*
 
 ## Database features
