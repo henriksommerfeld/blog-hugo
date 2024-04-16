@@ -19,13 +19,19 @@ blockquote {
     font-size: 1.2em;
     line-height: 1.2em;
   }
-  &::before {
-    content: '“';
+  &::before,
+  &:after {
     font-family: Georgia, serif;
     font-weight: 700;
     font-size: 5em;
     opacity: 0.5;
+  }
+  &::before {
+    content: open-quote;
     margin-right: 0.2em;
+  }
+  &::after {
+    content: close-quote;
     margin-top: 0.5em;
   }
 }
