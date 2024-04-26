@@ -31,7 +31,9 @@ article .highlight {
     background: var(--highlight-bg-color);
     color: var(--highlight-color);
     border: 1px solid var(--inline-code-border-color);
-    transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in,
+    transition:
+      background-color $theme-switcher-speed ease-in,
+      border-color $theme-switcher-speed ease-in,
       color $theme-switcher-speed ease-in;
   }
   .lineno {
