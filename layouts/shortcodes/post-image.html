@@ -2,7 +2,7 @@
 {{ $alt := .Get "alt" }}
 {{ $width := .Get "width" }}
 {{ $borderless := .Get "borderless" }}
-{{ $placeholder := ($image.Resize "48x q20") | images.Filter (images.GaussianBlur 6) }}
+{{ $placeholder := ($image.Resize "48x q20 webp") | images.Filter (images.GaussianBlur 6) }}
 {{ $src := $image }}
 {{ $src_set := ""}}
 
@@ -10,22 +10,22 @@
 {{ $src := $image }}
 
 {{ if ge $image.Width "500"}}
-{{ $x_small := $image.Resize "500x" }}
+{{ $x_small := $image.Resize "500x webp" }}
 {{ $src_set = (print $src_set ", "  $x_small.RelPermalink " 500w") }}
 {{ end }}
 
 {{ if ge $image.Width "800"}}
-{{ $small := $image.Resize "800x" }}
+{{ $small := $image.Resize "800x webp" }}
 {{ $src_set = (print $src_set ", " $small.RelPermalink " 800w") }}
 {{ end }}
 
 {{ if ge $image.Width "1200"}}
-{{ $medium := $image.Resize "1200x" }}
+{{ $medium := $image.Resize "1200x webp" }}
 {{ $src_set = (print $src_set ", " $medium.RelPermalink " 1200w") }}
 {{ end }}
 
 {{ if gt $image.Width "1500"}}
-{{ $large := $image.Resize "1500x" }}
+{{ $large := $image.Resize "1500x webp" }}
 {{ $src_set = (print $src_set ", " $large.RelPermalink " 1500w") }}
 {{ end }}
 
