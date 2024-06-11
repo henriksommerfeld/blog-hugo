@@ -1,7 +1,7 @@
 {{ $og_image_url := (print .Site.BaseURL "images/og-image.png") }}
 {{ if .Params.Ogimage }}
     {{ $og_image := ($.Page.Resources.GetMatch (index .Params.Ogimage)) }}
-    {{ $resized := $og_image.Resize "1200x" }}
+    {{ $resized := $og_image.Resize "1200x webp" }}
     {{ $og_image_url = $resized.Permalink }}
 {{ end }}
 <meta property="og:image" content="{{ $og_image_url }}" />
