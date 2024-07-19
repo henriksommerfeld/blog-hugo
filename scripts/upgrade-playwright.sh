@@ -4,7 +4,7 @@ set -eo pipefail
 
 npm i @playwright/test@latest
 
-version=$(cat package.json | jq '.devDependencies."@playwright/test"' | tr -d '"' | tr -d '^')
+version=$(jq '.devDependencies."@playwright/test"' package.json | tr -d '"' | tr -d '^')
 
 if [[ -z "$version" ]] || [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	echo "Failed to retrieve version"

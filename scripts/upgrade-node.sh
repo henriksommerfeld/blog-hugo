@@ -10,7 +10,7 @@ if [[ -z "$version" ]] || [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	exit 1
 fi
 
-echo $version
+echo "$version"
 
 regex="s/node:[0-9]+\.[0-9]+\.[0-9]+/node:$version/g"
 
@@ -26,7 +26,7 @@ trap cleanup EXIT
 sed -E "$regex" "$file" >"$file.upg"
 mv "$file.upg" "$file"
 
-printf "v$version" >.nvmrc
+printf 'v%s' "$version" >.nvmrc
 
 echo "Rebuilding docker image for docker-compose"
 docker compose build

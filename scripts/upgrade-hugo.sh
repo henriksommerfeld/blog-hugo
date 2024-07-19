@@ -3,7 +3,7 @@
 set -eo pipefail
 
 release=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest)
-input=$(jq -r .name <<<$release)
+input=$(jq -r .name <<<"$release")
 
 if [[ $input =~ v([0-9]+\.[0-9]+\.[0-9]+) ]]; then
 	version="${BASH_REMATCH[1]}"
