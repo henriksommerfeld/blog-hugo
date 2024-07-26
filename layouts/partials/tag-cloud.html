@@ -32,7 +32,7 @@
             {{ $weigth := div (sub (math.Log $currentTagCount) (math.Log $minCount)) (sub (math.Log $maxCount) (math.Log $minCount)) }}
             {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
             <!--Current font size: {{$currentFontSize}}-->
-            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" aria-label="{{ $name }} ({{$currentTagCount}} posts)" style="font-size:{{$currentFontSize}}{{$fontUnit}}">{{- $name -}}</a>
+            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" style="font-size:{{$currentFontSize}}{{$fontUnit}}">{{- $name -}}</a>
         {{- end -}}
         </div>
     </div>

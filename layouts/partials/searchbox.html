@@ -34,7 +34,7 @@
                 <template x-for="hit in search.hits" :key="hit.ref">
                     <li>
                         <h2><a :href='hit.ref' x-text="search.fromStore(hit).title"></a></h2><div class="entry-meta">
-                            <time class="published" :datetime="search.fromStore(hit).dateiso"><svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg><span  x-text="search.fromStore(hit).dateformatted"></span></time>
+                            <time class="published" :datetime="search.fromStore(hit).dateiso"><svg class="icon icon-calendar" aria-hidden="true" role="img"><use xlink:href="#icon-calendar"></use></svg><span  x-text="search.fromStore(hit).dateformatted"></span></time>
                         </div>
                         <p x-text="search.fromStore(hit).summary"></p>
                     </li>

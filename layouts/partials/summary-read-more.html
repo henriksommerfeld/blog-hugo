@@ -6,12 +6,12 @@
     </div>
     <div>
       {{ partial "summary.html" . }}
-      <a href="{{ .RelPermalink }}" aria-label="To post '{{.Params.Title}}'">Read&nbsp;→</a>
+      <a href="{{ .RelPermalink }}">Read&nbsp;→</a>
     </div>
   </div>
 {{ else }}
   <p>
     {{ partial "summary.html" . }}
-    <a href="{{ .RelPermalink }}" aria-label="To post '{{.Params.Title}}'">Read&nbsp;→</a>
+    <a href="{{ .RelPermalink }}">Read&nbsp;→</a>
   </p>
 {{ end }}
