@@ -198,26 +198,3 @@ aside {
   display: flex;
   justify-content: flex-end;
 }
-
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-  background-color: var(--scrollbar-bg-color);
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: var(--scrollbar-bg-color);
-  border-radius: $border-radius;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-color);
-  border-radius: $border-radius;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-* {
-  scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg-color);
-  scrollbar-width: thin;
-}
