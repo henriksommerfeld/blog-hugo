@@ -81,10 +81,16 @@ some HTML. The latter part I can do myself, so I ended up using
 _vite-imagetools_ directly. I find it a bit odd that my images are now
 *modules* and that I have to import all images using a [glob
 import](https://vitejs.dev/guide/features.html#glob-import) just to pick the
-one I'm interested in. {{<code typescript>}} const images =
-import.meta.glob('/src/uploads/*{.webp,.jpg,.jpeg,.png,.heif,.heic}', { import:
-'default', eager: true, query: '?w=800;1500&format=webp&as=picture' }) const
-image = getImage(images, lqipImages, imagePath) {{</code>}}
+one I'm interested in.
+
+{{<code typescript>}}
+const images = import.meta.glob('/src/uploads/*{.webp,.jpg,.jpeg,.png,.heif,.heic}', {
+  import: 'default',
+  eager: true,
+  query: '?w=800;1500&format=webp&as=picture'
+})
+const image = getImage(images, lqipImages, imagePath)
+{{</code>}}
 
 I also have to produce sensible errors when a referenced image isn't found or
 can't be converted the way I expect. See [the definition of
