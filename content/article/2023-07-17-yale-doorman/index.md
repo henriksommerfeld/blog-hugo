@@ -19,7 +19,7 @@ I bought the _Yale Doorman L3_ lock for my front door in a kit that
 included the _[Yale Connect Wi-Fi Bridge][1]_. That should enable remote access
 to the lock, which you may or may not want, but without it it's not available
 for automations and only accessible from your phone when you stand in front of
-the lock (shortest imaginable Bluetooth range).
+the lock.
 
 The _Connect Wi-Fi Bridge_ is possible to get working, but it's a fundamentally
 broken product. I've had two (in the previous house as well) and none of them
@@ -37,8 +37,8 @@ always the customer's fault.
 {{</post-image>}}
 
 So, it's nothing wrong with the Bluethooth capabilities in the lock itself, it's just
-that the _Connect Wi-Fi Bridge_ is a faulty product. By connecting the lock itself directly to Home 
-Assistant, I'm not limited by the _Connect Wi-Fi Bridge_ or a Yale cloud service. Here is the 
+that the _Connect Wi-Fi Bridge_ is a faulty product. By connecting the lock itself directly to Home
+Assistant, I'm not limited by the _Connect Wi-Fi Bridge_ or a Yale cloud service. Here is the
 setup _with_ the _Connect Wi-Fi Bridge_:
 
 {{<post-svg image="yale-connect-wifi-bridge.svg" use-theme="true" />}}
@@ -47,29 +47,29 @@ setup _with_ the _Connect Wi-Fi Bridge_:
 
 By using Home Assistant Bluetooth Proxy I don't have to place the Home
 Assistant machine (I use a Raspberry Pi) right by the front door. Home
-Assistant can speak to the lock through the proxy instead of the _Connect Wi-Fi Bridge_ and without 
-hitting the public Internet. 
+Assistant can speak to the lock through the proxy instead of the _Connect Wi-Fi Bridge_ and without
+hitting the public Internet.
 
 {{<post-svg image="bluetooth-proxy.svg" use-theme="true" />}}
 
 ## Step-by-step
 
 The steps I took to got this set up (I already had a Home Assistant instance
-running). 
+running).
 
 ### Get the Bluetooth Proxy going
 
 First I bouth [a NodeMCU that speaks WiFi and Bluetooth][2] and flashed it
    with the right firmware using the option _Generic ESP32_ at the [ESPHome
 Bluetooth Proxies web site][4] using the Chromium web browser. Not all Chromium
-based browsers work, you should see a _Connect_ button. When asked to join a Wi-Fi network, 
-I used my IoT Wi-Fi. I then added it to Home Assistant from the option in the dialogue following the firmware flash. 
+based browsers work, you should see a _Connect_ button. When asked to join a Wi-Fi network,
+I used my IoT Wi-Fi. I then added it to Home Assistant from the option in the dialogue following the firmware flash.
 
 {{<post-image image="esphome-flash-bluetooth-proxy.png" alt="" width="600">}}
 {{</post-image>}}
 
-After that I chose the option to add the ESP32 device to Home Assistant and got this 
-trick question about a `Host`. What I found working was to enter the IP address 
+After that I chose the option to add the ESP32 device to Home Assistant and got this
+trick question about a `Host`. What I found working was to enter the IP address
 the ESP32 device has on my local network. I set a fixed address for the device in my router.
 
 {{<post-image image="esphome-add-to-home-assistant.png" alt="" width="600">}}
