@@ -34,10 +34,10 @@ characteristics I found relevant for my use-case. To understand my use-case,
 here are some main characteristics of the site:
 
 * Fully static
-* Recipes stored as Markdown files in the repository 
+* Recipes stored as Markdown files in the repository
 * Images stored in the repository
-* Simple CMS with authentication for my wife to contribute. [Netlify CMS][8]
-got replaced with [Sveltia CMS](9)
+* Simple CMS with authentication. [Netlify CMS][8]
+got replaced with [Sveltia CMS][9]
 * Generating multiple versions of images
 * In-browser search and tags to find recipes, in addition to listing by
 category
@@ -47,14 +47,14 @@ category
 > How can this possibly work during compile time?
 
 A popular idea among Javascript frameworks seems to be that *where* and *when*
-code is executed should be "abstracted away". That is, _server_ vs _client_ and
-_compile-time_ vs _run-time_. In Sveltekit this has the consequence of assuming
+code is executed should be "abstracted away". That is, *server* vs *client* and
+*compile-time* vs *run-time*. In Sveltekit this has the consequence of assuming
 an active server when using `npm run dev`, even though I'm using the
 `@sveltejs/adapter-static` and setting `export const prerender = true` in
 `layout.ts`. This led to a few occasions where I was happily hacking on and
 found myself thinking "how can this possibly work during compile time?" The
 answer was that it didn't work, an `npm run build` showed the error that what I
-was doing wasn't available for static builds. 
+was doing wasn't available for static builds.
 
 ## Images
 
@@ -73,12 +73,12 @@ described in the Sveltekit docs has [21 open and 18 closed
 issues](https://github.com/sveltejs/kit/issues?q=is%3Aissue+is%3Aopen+enhanced-img)
 at the time of writing this. I also tried another component, but that didn't
 have any caching, so multiple builds in a row without any change would result
-in all images being processed again and again, for every build. 
+in all images being processed again and again, for every build.
 
 I then realised that the components are just using
 [vite-imagetools](https://github.com/JonasKruckenberg/imagetools) and rendering
 some HTML. The latter part I can do myself, so I ended up using
-_vite-imagetools_ directly. I find it a bit odd that my images are now
+*vite-imagetools* directly. I find it a bit odd that my images are now
 *modules* and that I have to import all images using a [glob
 import](https://vitejs.dev/guide/features.html#glob-import) just to pick the
 one I'm interested in.
@@ -102,11 +102,11 @@ In hindsight I should probably have picked Astro instead of Sveltekit with the
 possibility to keep the React components from Gatsby, but I guess I have to
 have something left in the backlog. The explicitness of client vs server in
 Astro also appeals more to me than the "magic" that handles where my code is
-run in Sveltekit. 
+run in Sveltekit.
 
 The overall experience of using Sveltekit is nice though and I would absolutely
 use it again, especially in a scenario with an active server, like the stuff I
-build at work. 
+build at work.
 
 The build times are actually a bit slower when comparing Sveltekit to Gatsby,
 but now it builds on Node.js 20.x and installs without `--legacy-peer-deps`,
