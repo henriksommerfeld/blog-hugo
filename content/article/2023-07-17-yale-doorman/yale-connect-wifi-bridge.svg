@@ -5,11 +5,11 @@
     <style class="style-fonts">
       @font-face {
         font-family: "Virgil";
-        src: url("https://excalidraw.com/Virgil.woff2");
+        src: url("/fonts/excalidraw/Virgil.woff2");
       }
       @font-face {
         font-family: "Cascadia";
-        src: url("https://excalidraw.com/Cascadia.woff2");
+        src: url("/fonts/excalidraw/Cascadia.woff2");
       }
     </style>
     
