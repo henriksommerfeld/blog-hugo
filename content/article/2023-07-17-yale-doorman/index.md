@@ -77,7 +77,7 @@ the ESP32 device has on my local network. I set a fixed address for the device i
 
 ### Install and Configure Home Assistant Integrations
 
-1. Install the [August integration][6] in Home Assistant to get the _Offline Key_
+1. Install the ~[August][6]~ [Yale integration][8] In Home Assistant to get the _Offline Key_
    required by the Yale Access Bluetooth integration. The August integration
 specifically lists the _Yale Doorman L3_ lock as incompatible, but it worked for
 me to get the Offline Key by simply signing in to my Yale account using e-mail.
@@ -100,3 +100,4 @@ treatment](https://www.youtube.com/watch?v=N9wsjroVlu8)  it deserves.
 [5]: https://www.yalehome.com/se/sv/products/smart-locks/yale-doorman-l3s
 [6]: https://www.home-assistant.io/integrations/august/
 [7]: https://www.home-assistant.io/integrations/yalexs_ble
+[8]: https://www.home-assistant.io/integrations/yale
