@@ -1,1 +1,2 @@
-{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Summary  | safeHTML }}{{ end }}
+{{ if .Params.summary }}{{ .Params.summary | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape
+}}{{ end }}
