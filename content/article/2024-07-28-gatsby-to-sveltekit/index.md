@@ -6,11 +6,12 @@ description: I have migrated the family's recipe collection site, a static Gatsb
 summary: During my first parental leave I built a static web site with Gatsby for the family’s recipe collection. It has worked great and cost us nothing to host, but it has also been all the bad things critics say about the npm ecosystem. In hindsight, Gatsby was the wrong horse to bet on.
 tags: [GatsbyJS,Sveltekit,Netlify CMS,Sveltia CMS]
 categories: [Coding]
-ogimage: logos.png
+ogimage: logos.webp
+ogimagenoborder: true
 draft: false
 ---
 
-{{<post-image image="logos.png" alt="Small GatsbyJS logo to the left and a bigger Svelte logo to the right" />}}
+{{<post-image image="logos.webp" alt="Small GatsbyJS logo to the left and a bigger Svelte logo to the right" />}}
 
 During [my first parental leave][1] I built a static web site with [Gatsby][2]
 for [the family's recipe collection](https://recept.netlify.app). It has worked
