@@ -48,7 +48,10 @@ figure {
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 30%;
-        animation: maximizer 200ms ease-out forwards;
+        animation: maximizer var(--image-maximizer-speed) ease-out forwards;
+        @media (prefers-reduced-motion: reduce) {
+          content: unset;
+        }
       }
     }
   }

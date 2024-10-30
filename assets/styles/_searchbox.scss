@@ -65,7 +65,7 @@ $search-min-wide: 150em;
     transform-origin: scale(0);
     visibility: visible;
     opacity: 1;
-    animation: searchboxOpen 300ms ease-in-out forwards;
+    animation: searchboxOpen var(--searchbox-open-speed) ease-in-out forwards;
   }
   &.close {
     transform-origin: 0% 0% scale(1);

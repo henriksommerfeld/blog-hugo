@@ -1,4 +1,5 @@
 @import './_theme-switcher';
+@import './animation-variables';
 @import './pygments-jellybeans';
 @import './manni';
 
@@ -32,9 +33,9 @@ article .highlight {
     color: var(--highlight-color);
     border: 1px solid var(--inline-code-border-color);
     transition:
-      background-color $theme-switcher-speed ease-in,
-      border-color $theme-switcher-speed ease-in,
-      color $theme-switcher-speed ease-in;
+      background-color var(--theme-switcher-speed) ease-in,
+      border-color var(--theme-switcher-speed) ease-in,
+      color var(--theme-switcher-speed) ease-in;
   }
   .lineno {
     color: #aaa;
@@ -84,7 +85,7 @@ article .highlight {
   margin: 0;
   max-width: 100vw;
   max-height: 100vh;
-  transition: transform 300ms ease-in-out;
+  transition: transform var(--lightbox-speed) ease-in-out;
   cursor: pointer;
   @media screen and (prefers-reduced-motion: reduce) {
     transform: none;

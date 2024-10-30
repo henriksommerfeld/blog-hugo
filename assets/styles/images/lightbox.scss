@@ -1,6 +1,3 @@
-$lightbox-open-speed: 500ms;
-$lightbox-close-speed: 500ms;
-$background-animation-speed: 300ms;
 $spinner-diameter: 60px;
 $spinner-thickness: 3px;
 
@@ -25,9 +22,9 @@ $spinner-thickness: 3px;
   width: $spinner-diameter * 1.5;
   height: $spinner-diameter * 1.5;
   cursor: pointer;
-  transition: all $background-animation-speed ease-in-out;
+  transition: all var(--background-animation-speed) ease-in-out;
   &.close {
-    animation: overlayClose $background-animation-speed ease-in-out forwards;
+    animation: overlayClose var(--background-animation-speed) ease-in-out forwards;
   }
 }
 
@@ -87,24 +84,13 @@ $spinner-thickness: 3px;
   overflow: hidden;
   padding: 0;
   margin: 0;
-  transition: transform 300ms ease-in-out;
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: opacity 300ms ease-in-out;
-  }
+  transition: transform var(--lightbox-speed) ease-in-out;
   &.open {
     cursor: pointer;
     transform: scale(1);
-    @media screen and (prefers-reduced-motion: reduce) {
-      opacity: 1;
-      transform: none;
-    }
   }
   &.close {
     transform: scale(0);
-    @media screen and (prefers-reduced-motion: reduce) {
-      opacity: 0;
-      transform: none;
-    }
   }
   img {
     max-width: 100vw;
