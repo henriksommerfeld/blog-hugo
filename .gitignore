@@ -19,3 +19,4 @@ cypress/fixtures/example.json
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+htmltest-tmp

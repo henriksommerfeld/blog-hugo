@@ -29,7 +29,8 @@
     "docker:test": "docker build --build-arg CACHEBUST=$(date +%s) .",
     "upgrade:hugo": "./scripts/upgrade-hugo.sh",
     "upgrade:node": "./scripts/upgrade-node.sh",
-    "upgrade:playwright": "./scripts/upgrade-playwright.sh"
+    "upgrade:playwright": "./scripts/upgrade-playwright.sh",
+    "htmltest": "htmltest --conf .htmltest.yml public"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,6 @@
+# https://github.com/wjdp/htmltest
+OutputDir: htmltest-tmp
+IgnoreDirectoryMissingTrailingSlash: true
+CheckExternal: false
+IgnoreURLs: ['/js/script.js']
+IgnoreAltEmpty: true
