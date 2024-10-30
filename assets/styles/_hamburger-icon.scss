@@ -1,7 +1,6 @@
 $bar-width: 27px;
 $bar-height: 4px;
 $bar-spacing: $bar-height * 2;
-$animation-speed: 150ms;
 
 .hamburger-menu {
   width: $bar-width;
@@ -35,7 +34,7 @@ $animation-speed: 150ms;
   padding: $default-spacing;
   outline: none;
   border-bottom: transparent solid 1px;
-  transition: border 400ms ease;
+  transition: border var(--hamburger-speed) ease;
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   cursor: pointer;
@@ -55,8 +54,9 @@ $animation-speed: 150ms;
   left: 0;
   bottom: $bar-spacing;
   background: var(--white);
-  transition: bottom $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1),
-    transform $animation-speed cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    bottom var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    transform var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .bar::after {
@@ -65,8 +65,9 @@ $animation-speed: 150ms;
   left: 0;
   top: $bar-spacing;
   background: var(--white);
-  transition: top $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1),
-    transform $animation-speed cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    top var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    transform var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .bar.animate {
@@ -77,14 +78,16 @@ $animation-speed: 150ms;
   visibility: visible;
   top: 0;
   transform: rotate(45deg);
-  transition: top $animation-speed cubic-bezier(0.23, 1, 0.32, 1),
-    transform $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    top var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    transform var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .bar.animate:before {
   visibility: visible;
   bottom: 0;
   transform: rotate(-45deg);
-  transition: bottom $animation-speed cubic-bezier(0.23, 1, 0.32, 1),
-    transform $animation-speed $animation-speed cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    bottom var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
+    transform var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1);
 }

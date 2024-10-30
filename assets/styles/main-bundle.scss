@@ -22,6 +22,7 @@
 @import './_theme';
 @import './_theme-switcher';
 @import './_notch-mixin';
+@import './animation-variables';
 @import './images/images';
 
 body {
@@ -36,7 +37,9 @@ body {
 }
 
 body.js-loaded {
-  transition: background-color $theme-switcher-speed ease-in, border-color $theme-switcher-speed ease-in;
+  transition:
+    background-color var(--theme-switcher-speed) ease-in,
+    border-color var(--theme-switcher-speed) ease-in;
 }
 
 // Box sizing partial styles:

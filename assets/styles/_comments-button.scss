@@ -16,7 +16,9 @@
   border: 1px solid var(--paging-border-color);
   color: var(--paging-color);
   font-size: 1.05rem;
-  transition: all 200ms ease, margin 150ms ease;
+  transition:
+    all var(--comments-button-speed) ease,
+    margin var(--comments-button-margin-speed) ease;
   box-shadow: 0 5px 10px var(--paging-box-shadow-color);
   outline: none;
   &:focus,

@@ -1,0 +1,36 @@
+body {
+  --theme-switcher-speed: 500ms;
+  --nav-open-speed: 400ms;
+  --nav-close-speed: 500ms;
+  --hamburger-speed: 400ms;
+  --hamburger-bar-speed: 150ms;
+  --lightbox-speed: 300ms;
+  --background-animation-speed: 300ms;
+  --link-outline-speed: 60ms;
+  --link-speed: 200ms;
+  --comments-button-speed: 200ms;
+  --comments-button-margin-speed: 150ms;
+  --image-maximizer-speed: 200ms;
+  --searchbox-open-speed: 300ms;
+  --page-numbers-speed: 200ms;
+  --page-numbers-margin-speed: 150ms;
+  --modal-speed: 300ms;
+  @media (prefers-reduced-motion: reduce) {
+    --theme-switcher-speed: 1ms;
+    --nav-open-speed: 1ms;
+    --nav-close-speed: 1ms;
+    --hamburger-speed: 1ms;
+    --hamburger-bar-speed: 1ms;
+    --lightbox-speed: 1ms;
+    --background-animation-speed: 1ms;
+    --link-outline-speed: 1ms;
+    --link-speed: 1ms;
+    --comments-button-speed: 1ms;
+    --comments-button-margin-speed: 1ms;
+    --image-maximizer-speed: 1ms;
+    --searchbox-open-speed: 1ms;
+    --page-numbers-speed: 1ms;
+    --page-numbers-margin-speed: 1ms;
+    --modal-speed: 1ms;
+  }
+}

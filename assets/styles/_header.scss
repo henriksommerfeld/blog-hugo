@@ -126,7 +126,9 @@ nav {
       .header-content &:focus,
       .header-content &:active {
         background-color: transparent;
-        text-shadow: 0 0 2px var(--header-text-shadow), 0 0 30px var(--header-color);
+        text-shadow:
+          0 0 2px var(--header-text-shadow),
+          0 0 30px var(--header-color);
       }
       .header-content &:focus {
         outline: none;
@@ -147,7 +149,9 @@ nav {
       }
     }
     &:focus {
-      text-shadow: 0 0 1px var(--header-color), 0px 3px 5px rgba(black, 0.5);
+      text-shadow:
+        0 0 1px var(--header-color),
+        0px 3px 5px rgba(black, 0.5);
       outline: transparentize(#555, 0.5) solid 1px;
       outline-offset: 0;
     }
@@ -159,14 +163,14 @@ nav {
   &.open {
     opacity: 1;
     pointer-events: painted;
-    animation: fold-in 400ms forwards;
+    animation: fold-in var(--nav-open-speed) forwards;
     display: flex;
     border-bottom: 1px solid var(--mobile-nav-border-color);
   }
 
   &.closing {
     pointer-events: painted;
-    animation: fold-out 500ms forwards;
+    animation: fold-out var(--nav-close-speed) forwards;
   }
 }
 

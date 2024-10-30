@@ -1,7 +1,11 @@
 a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color, text-shadow, background 200ms ease-out, outline 60ms;
+  transition:
+    color,
+    text-shadow,
+    background var(--link-speed) ease-out,
+    outline var(--link-outline-speed);
   outline: none;
   display: inline;
   background: linear-gradient(to bottom, var(--link-underline) 0%, var(--link-underline) 98%);

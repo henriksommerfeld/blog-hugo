@@ -37,7 +37,7 @@ body.modal-open {
   opacity: 1;
   visibility: visible;
   @include background;
-  animation: modalOpen 300ms ease-in-out;
+  animation: modalOpen var(--modal-speed) ease-in-out;
   @media screen and (prefers-reduced-motion: reduce) {
     animation: none;
   }
@@ -47,7 +47,7 @@ body.modal-open {
   visibility: hidden;
   opacity: 0;
   @include background;
-  animation: modalClose 300ms ease-in-out;
+  animation: modalClose var(--modal-speed) ease-in-out;
   @media screen and (prefers-reduced-motion: reduce) {
     animation: none;
   }
