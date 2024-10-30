@@ -40,7 +40,7 @@ When doing code changes I always create a new branch in Git. As I described in t
 These are the steps:
 {{<post-svg image="dev-deploy-pipeline-drawing.svg" width="500" use-theme="true" />}}
 
-When I create a pull request, either through GitHub's web interface or preferably by using their CLI (`gh pr create`), two things happen. (1) Netlify deploys a preview of the site (canary release) and (2) GitHub Actions runs my [Cypress](cypress.io/) tests against that deployed site.
+When I create a pull request, either through GitHub's web interface or preferably by using their CLI (`gh pr create`), two things happen. (1) Netlify deploys a preview of the site (canary release) and (2) GitHub Actions runs my [Cypress](https://cypress.io/) tests against that deployed site.
 
 {{<post-image image="gha-green.png" alt="All checked passed in GitHub pull request" />}}
 
