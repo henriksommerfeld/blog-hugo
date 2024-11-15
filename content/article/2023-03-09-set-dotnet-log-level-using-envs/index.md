@@ -25,7 +25,7 @@ LOGGING__LOGLEVEL__MICROSOFT.ASPNETCORE.DATAPROTECTION=Error
 ```
 It looks a bit strange with dots in the variable names, but it works.
 
-**Update 2024-09-19**: In a recently project I found that the above did not help.
+**Update 2024-09-19**: In a service I looked at recently, I found that the above did not help.
 It turned out that the project used a package that had its own logging using
 Serilog. To turn the volume down for that logging, I set:
 
