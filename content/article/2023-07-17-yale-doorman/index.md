@@ -54,7 +54,7 @@ hitting the public Internet.
 
 ## Step-by-step
 
-The steps I took to got this set up (I already had a Home Assistant instance
+The steps I took to get this set up (I already had a Home Assistant instance
 running).
 
 ### Get the Bluetooth Proxy going
