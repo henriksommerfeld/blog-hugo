@@ -1,7 +1,7 @@
 ---
 title: Kyria to Solve My Keyboard Problems
 url: /kyria-to-solve-my-keyboard-problems
-date: 2024-02-11T16:38:00+02:00
+date: 2024-02-11
 description: How the Kyria solves my keyboard problems, hitting between keys and stretching weak fingers.
 summary: Ever since I came to the conclusion to use a US keyboard for programming and built my first custom keyboard, I’ve tried to solve my weaknesses related to using the primary input device of my work. I’ve now settled on the Kyria from splitkb.com, and these are the problems it solves for me.
 tags: [hardware, keyboard]

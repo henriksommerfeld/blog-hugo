@@ -1,7 +1,7 @@
 ---
 title: Search for Static Website Without External Service
 url: /search-static-website-without-external-service
-date: 2020-07-23T18:47:00+02:00
+date: 2020-07-23
 description: I describe how I’ve set up search on my static website without an external service.
 summary: When you have a static website, there are a few things that you usually don’t have out-of-the-box. One such thing is search. You can argue that you don’t need it, but if you want it and your site isn’t that large, I’ll describe how I’ve set it up without an external service.
 tags: [Lunr, Hugo, NodeJS, JavaScript]
@@ -48,7 +48,7 @@ I also exclude the list page named _Articles_ (that I don't know how to get rid 
 This layout needs to be referenced and for that I have [`search-index.md`](https://github.com/henriksommerfeld/blog-hugo/blob/master/content/search-index.md) which is empty, except for the frontmatter.
 ``` toml
 ---
-date: "2017-06-21T06:51:27+02:00"
+date: "2017-06-21
 title: "search index"
 type: "search-index"
 url: "data-to-index.json"

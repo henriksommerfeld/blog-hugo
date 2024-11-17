@@ -1,7 +1,7 @@
 ---
 title: Alpine.js – Benefits and Limitations
 url: /alpinejs-benefits-and-limitations/
-date: 2020-06-29T06:21:00+02:00
+date: 2020-06-29
 description: For the custom JavaScript code on my Hugo blog I use Alpine.js. I’ll discuss the benefits and the limitations in this post. This post is part 4 in the Hugo Pipeline Series, but the benefits and limitations I discuss are not specific to using Alpine.js together with Hugo.
 summary: For the custom JavaScript code on my Hugo blog I use Alpine.js. I’ll discuss the benefits and the limitations in this post. This post is part 4 in the Hugo Pipeline Series, but the benefits and limitations I discuss are not specific to using Alpine.js together with Hugo.
 tags: [Alpine.js, JavaScript, Hugo]

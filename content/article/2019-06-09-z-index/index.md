@@ -1,6 +1,6 @@
 ---
 title: "Refactoring z-index"
-date: 2019-06-09T20:41:10+02:00
+date: 2019-06-09
 url: "refactoring-z-index"
 categories: ["Coding"]
 tags: [CSS]

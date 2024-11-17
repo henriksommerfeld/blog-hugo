@@ -1,7 +1,7 @@
 ---
 title: Build a Barebone PC for Your Non-Technical Relative
 url: /build-a-barebone-pc-for-your-non-tech-relative
-date: 2021-08-11T20:15:00+02:00
+date: 2021-08-11
 description: An argument for building a barebone PC for your non-technical relative.
 summary: I built another barebone computer for my sister and explain why I like barebones.
 tags: [hardware]

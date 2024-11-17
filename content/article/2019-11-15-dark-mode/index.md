@@ -1,6 +1,6 @@
 ---
 title: "Dark Mode Learnings 🌙"
-date: 2019-11-15T14:14:10+01:00
+date: 2019-11-15
 url: "dark-mode-learnings"
 categories: ["Coding"]
 tags: [Dark mode, CSS]

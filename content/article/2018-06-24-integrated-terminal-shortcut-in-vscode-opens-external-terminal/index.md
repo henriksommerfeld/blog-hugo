@@ -1,7 +1,7 @@
 ---
 title: "Integrated Terminal Shortcut in VS Code Opens External Terminal"
 url: "integrated-terminal-shortcut-in-vscode-opens-external-terminal"
-date: 2018-06-24T05:46:00+01:00
+date: 2018-06-24
 categories: ["Tools"]
 tags: ["ConEmu", "Cmder", "VS Code"]
 ---

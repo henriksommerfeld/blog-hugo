@@ -1,7 +1,7 @@
 ---
 title: Lazy Loading Images in Hugo
 url: /lazy-loading-images-in-hugo
-date: 2020-02-05T04:42:21+01:00
+date: 2020-02-05
 summary: When writing another post, I realised that I hadn't documented/described my image lazy loading implementation in Hugo anywhere, so here it comes. The first thing we need are responsive images, not the thing you get when setting the width to 100% in CSS, but different versions of the same image in different resolutions so that the web browser can pick the best one (using srcset).
 description: In this post I explain my implementation of lazy loading images on my Hugo website.
 tags: [Hugo]

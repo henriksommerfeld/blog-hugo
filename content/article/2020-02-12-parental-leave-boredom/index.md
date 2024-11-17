@@ -1,7 +1,7 @@
 ---
 title: How I Tackled Parental Leave Boredom With Code
 url: /how-i-tackled-parental-leave-boredom-with-code
-date: 2020-02-12T04:42:21+01:00
+date: 2020-02-12
 summary: Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
 description: Approaching the end of my parental leave, I'll take a moment reflecting on how I tackled the occasional boredom of a longer absence from work.
 tags: []

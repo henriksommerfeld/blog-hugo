@@ -20,7 +20,7 @@ test.describe('Post', () => {
   test('Should have publishing date', async ({ page }) => {
     const time = page.locator('article time.published')
     await expect(time).toHaveText('31 July 2018')
-    await expect(time).toHaveAttribute('datetime', /^2018-07-31\ 11:14:58\ \+0200/)
+    await expect(time).toHaveAttribute('datetime', /^2018-07-31/)
   })
 
   test('Should open image lightbox on click and close it again', async ({ page }) => {

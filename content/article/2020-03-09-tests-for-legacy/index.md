@@ -1,7 +1,7 @@
 ---
 title: Code Quality and Automated Tests for Legacy Systems
 url: /code-quality-and-automated-tests-for-legacy-systems
-date: 2020-03-09T14:22:21+01:00
+date: 2020-03-09
 summary: My team recently had a discussion trying to agree on a few rules of thumb for our ambition level regarding code quality and automated tests for our legacy systems. These systems are business-critical, but planned to be replaced in a Big Bang fashion.
 description: My team recently had a discussion trying to agree on a few rules of thumb for our ambition level regarding code quality and automated tests for our legacy systems. These systems are business-critical, but planned to be replaced in a Big Bang fashion.
 tags: [Testing, Code Quality]

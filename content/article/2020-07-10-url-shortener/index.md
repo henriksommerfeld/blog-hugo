@@ -1,7 +1,7 @@
 ---
 title: Simple Short URL Service
 url: 
-date: 2020-07-10T14:45:00+02:00
+date: 2020-07-10
 description: My personal URL shortener implementation – super simple.
 summary: I happened to buy a domain name that could be used for short URL's and thought – why not, let's give it a try!
 tags: [Short URL's]

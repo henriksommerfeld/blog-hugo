@@ -1,6 +1,6 @@
 ---
 title: "Git wasn't that Complicated"
-date: 2019-01-10T19:52:58+01:00
+date: 2019-01-10
 url: "git-wasnt-that-complicated"
 categories: ["Thoughts"]
 tags: []

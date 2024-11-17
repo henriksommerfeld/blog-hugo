@@ -1,6 +1,6 @@
 ---
 title: "Netlify CMS with Gatsby - Best Option with Some Quirks"
-date: 2019-11-22T00:02:10+01:00
+date: 2019-11-22
 url: "netlify-cms"
 categories: ["Coding"]
 tags: [Netlify CMS, GatsbyJS, ReactJS]

@@ -1,7 +1,7 @@
 ---
 title: OneDrive on Linux
 url: /onedrive-on-linux
-date: 2023-09-14T19:13:00+02:00
+date: 2023-09-14
 description: How to use Microsoft OneDrive on Linux through CLI
 summary: When switching from MacOS to Linux, one of the things I was concerned about was Microsoft OneDrive that I've used for a decade or so. I found the using an unofficial CLI works really well.
 tags: [onedrive]

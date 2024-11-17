@@ -1,7 +1,7 @@
 ---
 title: Setting Dotnet Log Level Using Environment Variables
 url: /set-dotnet-log-level-using-envs
-date: 2023-03-09T21:15:00+01:00
+date: 2023-03-09
 description: "This is an example of how the log levels can be set granularly using envs"
 summary: "After migrating a bunch of old Dotnet applications from Azure Web Apps on Windows to Docker containers on Linux, I found that the logs were flooded by Information messages from Dotnet itself."
 tags: [Logging, Dotnet]

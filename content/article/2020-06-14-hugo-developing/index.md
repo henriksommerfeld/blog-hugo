@@ -1,7 +1,7 @@
 ---
 title: Hugo Pipeline Series – Developing and Deploying
 url: /hugo-pipeline-series-developing-and-deploying
-date: 2020-06-22T06:21:00+02:00
+date: 2020-06-22
 description: My pipeline for development is Create feature branch -> Code feature -> Create PR -> Tests are green -> Merge to master -> Deploy to live site.
 summary: In terms of developing my Hugo site, I'll focus on the JavaScript parts, since Hugo templates and CSS isn't much to talk about. I use a few libraries that I've installed with npm and those need to be processed before they are sent to the browser. The JavaScript code I have written myself, does not have that requirement. In that case it's just a matter of how old browsers I want to support. 
 tags: [Hugo]

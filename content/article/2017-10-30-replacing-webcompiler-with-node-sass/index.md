@@ -1,7 +1,7 @@
 ---
 title: "Replacing Web Compiler With Node Sass"
 url: "replacing-webcompiler-with-node-sass"
-date: 2017-10-30T05:48:41+01:00
+date: 2017-10-30
 categories: ["Coding"]
 tags: ["NodeJS", "CSS", "JavaScript"]
 ---

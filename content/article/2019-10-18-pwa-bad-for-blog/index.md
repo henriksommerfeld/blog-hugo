@@ -1,6 +1,6 @@
 ---
 title: "Progressive Web App - Bad Idea for a Blog"
-date: 2019-10-18T12:19:10+02:00
+date: 2019-10-18
 url: "pwa-bad-for-blog"
 categories: ["Coding"]
 tags: [Progressive Web App, GatsbyJS]

@@ -1,7 +1,7 @@
 ---
 title: "Build Steps Using NPM Scripts for My Hugo Blog"
 url: "build-steps-using-npm-scripts-for-my-hugo-blog"
-date: 2017-09-17T17:15:54+02:00
+date: 2017-09-17
 draft: false
 categories: ["Coding"]
 tags: ["Hugo","NodeJS", "JavaScript", "CSS"]

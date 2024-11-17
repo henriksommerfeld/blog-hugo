@@ -1,7 +1,7 @@
 ---
 title: Emoji Debugging
 url: /emoji-debugging
-date: 2024-10-21T19:28:00+02:00
+date: 2024-10-21
 description: I realised that the debugging I do nowadays is exclusively “emoji debugging”, maybe better known as “printf() debugging”. Coming from C# development in Visual Studio, which has the best debugging experience I know, I find this works surprisingly well.
 summary: I realised that the debugging I do nowadays is exclusively “emoji debugging”, maybe better known as “printf() debugging”. Coming from C# development in Visual Studio, which has the best debugging experience I know, I find this works surprisingly well.
 tags: [debugging, logging, nodejs, javascript, typescript, dotnet]

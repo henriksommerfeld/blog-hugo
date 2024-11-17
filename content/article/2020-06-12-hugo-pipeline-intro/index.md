@@ -1,7 +1,7 @@
 ---
 title: Hugo Pipeline Series – Intro
 url: /hugo-pipeline-series-intro
-date: 2020-06-14T22:11:00+02:00
+date: 2020-06-14
 description: In this post(s) I'll describe how I created my personal blog with a fair amount of work to achieve simplicity. 
 summary: In this post(s) I'll describe how I created my personal blog with a fair amount of work to achieve simplicity. 
 tags: [Hugo]

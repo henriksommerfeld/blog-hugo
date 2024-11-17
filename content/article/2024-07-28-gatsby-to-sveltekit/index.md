@@ -1,7 +1,7 @@
 ---
 title: Migrating from Gatsby to Sveltekit
 url: /migrating-from-gatsby-to-sveltekit
-date: 2024-08-06T00:28:00+02:00
+date: 2024-08-06
 description: I have migrated the family's recipe collection site, a static Gatsby website, to Sveltekit. Here I describe the roadblocks and my conslusions.
 summary: During my first parental leave I built a static web site with Gatsby for the family’s recipe collection. It has worked great and cost us nothing to host, but it has also been all the bad things critics say about the npm ecosystem. In hindsight, Gatsby was the wrong horse to bet on.
 tags: [GatsbyJS,Sveltekit,Netlify CMS,Sveltia CMS]
