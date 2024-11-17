@@ -30,7 +30,8 @@
     "upgrade:hugo": "./scripts/upgrade-hugo.sh",
     "upgrade:node": "./scripts/upgrade-node.sh",
     "upgrade:playwright": "./scripts/upgrade-playwright.sh",
-    "htmltest": "htmltest --conf .htmltest.yml public"
+    "htmltest": "htmltest --conf .htmltest.yml public",
+    "new": "bash ./scripts/new-article.sh"
   },
   "repository": {
     "type": "git",
