@@ -1,6 +1,6 @@
 ---
 title: "Gatsby Source Plugin for Twitter"
-date: 2019-10-31T00:20:10+01:00
+date: 2019-10-31
 url: "gatsby-source-plugin-for-twitter"
 categories: ["Coding"]
 tags: [GatsbyJS, JavaScript, TypeScript, NodeJS, ReactJS]

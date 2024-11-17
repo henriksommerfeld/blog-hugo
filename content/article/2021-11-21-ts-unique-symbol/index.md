@@ -1,7 +1,7 @@
 ---
 title: Alternative to Typescript Classes that can be Compared
 url: /alternative-to-typescript-classes-that-can-be-compared
-date: 2021-11-27T12:15:00+02:00
+date: 2021-11-27
 description: "Classes in Typescript have the drawback of not being comparable, like when used as a key in a Map.
 This post describes a possible alternative using unique symbols. Works well when you don't have to perform operations on the values."
 summary: "Classes in Typescript have the drawback of not being comparable, like when used as a key in a Map.

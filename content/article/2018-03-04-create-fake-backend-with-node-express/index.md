@@ -1,7 +1,7 @@
 ---
 title: "Create Fake Backend with Node Express"
 url: "create-fake-backend-with-node-express"
-date: 2018-03-04T18:16:00+01:00
+date: 2018-03-04
 categories: ["Coding"]
 tags: ["NodeJS", "JavaScript"]
 ---
@@ -98,4 +98,4 @@ As you can see above, I've set the fake backend to listen on port 54321 and to a
 }
 {{</code>}}
 
-[1]: /using-angular-http-interceptor-for-logging/ 
+[1]: /using-angular-http-interceptor-for-logging/

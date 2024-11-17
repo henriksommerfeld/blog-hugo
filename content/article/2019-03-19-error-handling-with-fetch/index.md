@@ -1,6 +1,6 @@
 ---
 title: "Error Handling with Fetch (and custom React hook)"
-date: 2019-03-19T21:35:58+01:00
+date: 2019-03-19
 url: "error-handling-with-fetch"
 categories: ["Coding"]
 tags: [JavaScript, ReactJS]

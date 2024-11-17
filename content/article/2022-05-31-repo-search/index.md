@@ -1,7 +1,7 @@
 ---
 title: Find GitHub Repositories Locally
 url: /find-github-repositories-locally
-date: 2022-06-03T21:15:00+02:00
+date: 2022-06-03
 description: "I recently glued together some CLI tools to be able to clone and open the web page of the GitHub repositories  have access to."
 summary: "I recently glued together some CLI tools to be able to clone and open the web page of the GitHub repositories  have access to."
 tags: [zx, javascript, bash, scripting]

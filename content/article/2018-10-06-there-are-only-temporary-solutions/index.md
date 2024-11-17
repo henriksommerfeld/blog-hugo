@@ -1,6 +1,6 @@
 ---
 title: "There Are Only Temporary Solutions"
-date: 2018-09-06T20:14:58+02:00
+date: 2018-09-06
 url: "there-are-only-temporary-solutions"
 categories: ["Thoughts"]
 tags: []

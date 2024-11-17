@@ -1,7 +1,7 @@
 ---
 title: Usability Learnings from Building a CLI
 url: /usability-learnings-from-building-a-cli
-date: 2020-11-15T20:34:00+02:00
+date: 2020-11-15
 description: How to address naming challenge with a multi-command CLI, example in oclif.
 summary: From the past months of iterating on a CLI for managing micro services in our company, I've drawn some conclusions regarding usability. I'll describe the features of OCLIF we've used to address the challenges.
 tags: [oclif]

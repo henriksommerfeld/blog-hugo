@@ -1,7 +1,7 @@
 ---
 title: My Favourite Note Taking App for Mac and iPhone
 url: /my-favourite-note-taking-app-for-mac-and-iphone
-date: 2021-01-06T21:34:00+02:00
+date: 2021-01-06
 description: My Favourite Note Taking App for Mac and iPhone is Bear
 summary: After switching from Windows to Mac, I have reconsidered a few of the applications I use. To my own surprise I ended up with a paid one that’s only available on Apple devices – Bear.
 tags: [Bear]

@@ -1,7 +1,7 @@
 ---
 title: Remove Fading and Transparency in i3
 url: /remove-fading-and-transparency-in-i3wm
-date: 2022-11-28T20:15:00+01:00
+date: 2022-11-28
 description: ""
 summary: ""
 tags: [i3]

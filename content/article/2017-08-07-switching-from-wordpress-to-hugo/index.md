@@ -1,7 +1,7 @@
 ---
 title: "Switching from WordPress to Hugo"
 url: "switching-from-wordpress-to-hugo"
-date: 2017-08-07T21:25:57+02:00
+date: 2017-08-07
 categories: ["Coding"]
 tags: ["Hugo","WordPress"]
 draft: false

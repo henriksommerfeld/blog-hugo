@@ -1,6 +1,6 @@
 ---
 title: "Getting a Divorce From SharePoint 💔"
-date: 2018-06-29T23:18:39+02:00
+date: 2018-06-29
 url: "getting-a-divorce-from-sharepoint"
 draft: false
 categories: ["Thoughts"]

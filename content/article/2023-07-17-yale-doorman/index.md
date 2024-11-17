@@ -1,7 +1,7 @@
 ---
 title: Yale Doorman L3 with Home Assistant through Bluetooth Proxy
 url: /yale-doorman-l3-with-home-assistant-through-bluetooth-proxy
-date: 2023-07-17T01:08:00+02:00
+date: 2023-07-17
 description: I'll describe how I use Bluetooth proxy to control my Yale Doorman L3 lock through Home Assistant.
 summary: I'll describe how I use Bluetooth proxy to control my Yale Doorman L3 lock through Home Assistant.
 tags: [home-assistant,yale,hardware]

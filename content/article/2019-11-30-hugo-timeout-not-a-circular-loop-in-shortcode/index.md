@@ -1,6 +1,6 @@
 ---
 title: "Hugo Timeout Not a Circular Loop in Shortcode"
-date: 2019-11-30T18:19:09+01:00
+date: 2019-11-30
 summary: "I have been getting a few random build errors with Hugo on Netlify recently. This is a bit strange, since it builds fine on my local machine and with Github Actions. Re-running the same build also worked a few times. The build log on Netlify says the following..."
 description: Hugo build timeout was not acircular loop in a shortcode, like the error message suggested.
 tags: [Hugo]

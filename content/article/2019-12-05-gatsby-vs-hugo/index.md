@@ -1,6 +1,6 @@
 ---
 title: "Gatsby vs Hugo for a Personal Blog"
-date: 2019-12-05T22:20:34+01:00
+date: 2019-12-05
 url: gatsby-vs-hugo-for-personal-blog
 summary: "Having built two personal websites/blogs that are fairly similar, one using Gatsby and one using Hugo, I’ll take a moment to compare my experiences. All CSS is written from scratch for both sites, no framework. They both have categories and tags that you can use to find related posts. No server-side API is used, so once the build is done, everything is static. Well, I use Google Analytics and Disqus on both sites, but those are third-party API's that I don't have to manage."
 description: "Having built two personal websites/blogs that are fairly similar, one using Gatsby and one using Hugo, I'll take a moment to compare my experiences."

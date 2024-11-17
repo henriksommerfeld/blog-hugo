@@ -1,7 +1,7 @@
 ---
 title: Databases as a Dev Tool
 url: /databases-as-dev-tool
-date: 2024-03-03T16:38:00+01:00
+date: 2024-03-03
 description: Some years ago I had the view that databases were a persistence tool, that they hadn’t evolved in any significant way in the last decades and that they were a somewhat necessary evil. Today I use databases as a tool among others in my developer’s toolbox. I think there are a number of reasons why my views have changed.
 summary: Some years ago I had the view that databases were a persistence tool, that they hadn’t evolved in any significant way in the last decades and that they were a somewhat necessary evil. Today I use databases as a tool among others in my developer’s toolbox. I think there are a number of reasons why my views have changed.
 tags: [postgres,docker,nodejs,typescript,testing]

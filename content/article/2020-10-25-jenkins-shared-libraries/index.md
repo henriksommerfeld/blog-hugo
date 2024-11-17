@@ -1,7 +1,7 @@
 ---
 title: Using Same Node in Jenkins Groovy Pipeline
 url: /using-same-node-in-jenkins-groovy-pipeline
-date: 2020-10-25T11:34:00+02:00
+date: 2020-10-25
 description: How to make sure the same agent is used throughout a pipeline in Jenkins.
 summary: As new to Jenkins, I made a mistake that led to confusing errors. Working with .groovy files in Jenkins shared libraries isn’t the most joyful experience I’ve had in my career, but this makes total sense once I saw the obvious.
 tags: [Jenkins]

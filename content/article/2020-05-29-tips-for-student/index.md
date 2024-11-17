@@ -1,7 +1,7 @@
 ---
 title: 8 JavaScript Recommendations to a Struggling Student
 url: /javascript-recommendations-to-a-struggling-student
-date: 2020-05-30T10:21:00+02:00
+date: 2020-05-30
 description: My general advice to a student struggling with a web development assignment.
 summary: I recently helpt a student struggling with a web development assignment. Not surprisingly, it wasn't one specific thing that wasn't working with a clear question on how to solve that specific problem. There were errors in the web browser console, long functions with wrong indentation that made it all hard to understand. 
 tags: [JavaScript, Code Quality]

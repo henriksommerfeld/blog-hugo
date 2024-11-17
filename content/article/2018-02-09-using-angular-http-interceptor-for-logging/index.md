@@ -1,7 +1,7 @@
 ---
 title: "Using Angular HTTP Interceptor for Logging"
 url: "using-angular-http-interceptor-for-logging"
-date: 2018-02-09T11:35:22+01:00
+date: 2018-02-09
 categories: ["Coding"]
 tags: ["Angular", "TypeScript"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: Hugo Pipeline Series – Editing and Deploying
 url: /hugo-pipeline-series-editing-and-deploying
-date: 2020-06-14T22:12:00+02:00
+date: 2020-06-14
 description: This is how I write and deploy content on this blog, the technical process, not the creative one.
 summary: This is how I write and deploy content on this blog. I'll describe how I work with images and JavaScript dependencies to keep building and deploying as quick as possible.
 tags: [Hugo, VS Code, JavaScript]

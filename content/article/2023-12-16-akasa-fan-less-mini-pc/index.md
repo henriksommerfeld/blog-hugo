@@ -1,7 +1,7 @@
 ---
 title: Akasa Fanless Mini PC
 url: /akasa-fanless-mini-pc
-date: 2023-12-17T21:43:00+02:00
+date: 2023-12-17
 description: The last couple of years, I've enjoyed a completely silent mini-PC by putting it into a fanless case. This time I'm using the Akasa Newton A50 to make a machine for my parents.
 summary: The last couple of years, I've enjoyed a completely silent mini-PC by putting it into a fanless case. This time I'm using the Akasa Newton A50 to make a machine for my parents.
 tags: [hardware]
