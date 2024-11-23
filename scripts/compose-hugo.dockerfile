@@ -1,4 +1,4 @@
-FROM node:20.17.0-alpine AS base
+FROM node:22.11.0-alpine AS base
 RUN apk add --update tzdata rsync openssh gcompat libc6-compat libstdc++ wget
 
 FROM base AS hugo
