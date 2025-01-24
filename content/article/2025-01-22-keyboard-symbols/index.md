@@ -218,6 +218,30 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
     <li>
       <div class="shortcut">
       <div class="explaination">
+        <code>¾</code>
+      </div>
+        <div class="key medium">
+          <div class="keycap">
+            AltGr
+          </div>
+        </div>
+        <div class="plus">+</div>
+        <div class="key medium">
+          <div class="keycap">
+            Shift
+          </div>
+        </div>
+        <div class="plus">+</div>
+        <div class="key">
+          <div class="keycap">
+            8
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="shortcut">
+      <div class="explaination">
         <code>÷</code>
       </div>
         <div class="key medium">
@@ -234,7 +258,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            -
+            =
           </div>
         </div>
       </div>
@@ -258,7 +282,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            m
+            M
           </div>
         </div>
       </div>
@@ -282,7 +306,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            v
+            V
           </div>
         </div>
       </div>
@@ -306,7 +330,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            s
+            S
           </div>
         </div>
       </div>
@@ -324,7 +348,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            e
+            E
           </div>
         </div>
       </div>
@@ -342,7 +366,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            y
+            Y
           </div>
         </div>
       </div>
@@ -360,7 +384,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            s
+            S
           </div>
         </div>
       </div>
@@ -384,7 +408,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            w
+            W
           </div>
         </div>
       </div>
@@ -408,7 +432,7 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            q
+            Q
           </div>
         </div>
       </div>
@@ -432,7 +456,25 @@ https://github.com/thomasfaingnaert/win-us-intl-altgr to be a useful resource.
         <div class="plus">+</div>
         <div class="key">
           <div class="keycap">
-            p
+            P
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="shortcut">
+      <div class="explaination">
+          <code>ø</code>
+      </div>
+        <div class="key medium">
+          <div class="keycap">
+            AltGr
+          </div>
+        </div>
+        <div class="plus">+</div>
+        <div class="key">
+          <div class="keycap">
+            L
           </div>
         </div>
       </div>
