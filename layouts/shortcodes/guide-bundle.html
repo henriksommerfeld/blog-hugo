@@ -1,0 +1,2 @@
+{{ $guideStyles := resources.Get "styles/guide-bundle.scss" | toCSS | minify | fingerprint "sha512" }}
+<link rel="stylesheet" type="text/css" href="{{ $guideStyles.RelPermalink }}" integrity="{{ $guideStyles.Data.Integrity }}" media="screen, tv, projection">
