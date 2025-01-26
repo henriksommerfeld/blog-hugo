@@ -37,8 +37,11 @@ make clean; make;
 sudo make install
 ``````
 
+**Update:** Since version 2.5.x of _OneDrive Client for Linux_, I experienced recurring database corruptions and switched to [Insync][6]. This is a payed product, but well worth the money for me. I don't have it autostart, so in a way I use it like the CLI tool, only syncing when I know files have changed. 
+
 [1]: https://github.com/abraunegg/onedrive
 [2]: https://onedrive.com
 [3]: https://github.com/abraunegg/onedrive/blob/master/docs/INSTALL.md
 [4]: https://aur.archlinux.org/packages/onedrive-abraunegg
 [5]: https://github.com/bpozdena/OneDriveGUI
+[6]: https://www.insynchq.com/
