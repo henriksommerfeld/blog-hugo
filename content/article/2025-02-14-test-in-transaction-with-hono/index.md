@@ -1,21 +1,19 @@
 ---
 title: 'Test in Database Transaction with Hono'
 url: 'test-in-database-transation-with-hono'
-date: 2025-02-13
+date: 2025-02-14
 draft: false
-description: ''
-summary: ''
+description: 'I’m currently working on a service that’s basically an API implemented in Hono running on NodeJs backed by a Postgres database. Since we prefer to implement data validation as close to the source as possible in my team, we need a way to test the whole service with the database included, rather than mocked...'
+summary: 'I’m currently working on a service that’s basically an API implemented in Hono running on NodeJs backed by a Postgres database. Since we prefer to implement data validation as close to the source as possible in my team, we need a way to test the whole service with the database included, rather than mocked...'
 tags: [testing, postgres,typescript, javascript,nodejs]
 categories: [coding]
 ---
-TODO: we eller I?
-TODO: txid_current()
 
 I'm currently working on a service that's basically an {{<API />}} implemented in [Hono][1] running on [NodeJs][2] backed by a [Postgres][3] database. Since we prefer to implement data validation as close to the source as possible in my team, we need a way to test the whole service with the database included, rather than mocked. See my previous post [Databases as a Dev Tool][4] for an expanded description of this thinking.
 
 ## The code to test
 
-This is the endpoint we're going to use as an example:
+This is the endpoint I'm going to use as an example:
 
 ``` typescript
 import { zValidator } from '@hono/zod-validator'
@@ -60,11 +58,62 @@ apiRouter.get(
 )
 ```
 
-Ideally we would like to call this endpoint in our tests in the same way as a real consumer of the API would do. Hono makes this easy where we can simply import the `apiRouter` in our test file and use the `apiRouter.request` function. To not be dependent on the available endpoints for setting up test data, being able to run the tests in parallel (isolated) etc, we need a way to wrap each test in a database transaction. 
+Ideally we would like to call this endpoint in our tests in the same way as a real consumer of the API would do. Hono makes this easy where we can simply import the `apiRouter` in our test file and use the `apiRouter.request` function. To not be dependent on the available endpoints for setting up test data, being able to run the tests in parallel (isolated) etc, we need a way to wrap each test in a database transaction and use that transaction in the endpoint's handler during test execution, and of course abort the transaction when we're done and pretend like our database operations never happened.
 
-## Injecting a database transaction
+## Create and abort a transaction
 
-In Hono you can pass a third argument to the request called [Env][5], which is useful for testing. My initial thought when seeing the name `Env` was a key value pair, but you can set anything here, like a database transaction!
+Similar to how we create the regular database connection and transaction from our middleware, we define this additional function called `testDb`. We have a bit of [Zod][6] code wrapping the [postgres][7] lib for convenience, but basically it returns a function that creates a transaction, executes our test code and throws an exception to abort the transaction. The catch block checks if it's the explicit throw to abort the transaction or something else that's failed. I also found the `txid_current()` function in Postgres to be valuable when asserting that we use the same transaction throughout the entire test execution.
+
+``` typescript
+import postgres from 'postgres'
+import { pgz, PostgresZodWrapper } from './lib/postgres-zod'
+
+export const testDb = async (
+  func: (
+    tx: PostgresZodWrapper,
+    rawTx: postgres.TransactionSql<{}>,
+  ) => Promise<any>,
+) => {
+  const transactionAborted = 'ABORT_TRANSACTION'
+  const connection = postgres(createPostgresConnectionConfig('OUR_SERVICE'))
+  let result: any
+  try {
+    return await connection.begin('read write', async (tx) => {
+      const client = pgz.wrapPostgresTransaction(tx)
+      result = await func(client, tx)
+      throw new Error(transactionAborted)
+    })
+  } catch (err: any) {
+    if (!(err instanceof Error) || err?.message !== transactionAborted) {
+      console.error('❌ Test execution failed: ', err?.message)
+      throw err
+    }
+  } finally {
+    connection.end()
+  }
+  return result
+}
+```
+## Injecting the database transaction
+
+In Hono you can pass a third argument to the request, which is useful for testing. My initial thought when seeing the name [Env][5] was a key value pair, but you can set anything here, like a database transaction!
+
+```typescript
+// Hono's documentation for Env.
+// https://hono.dev/docs/guides/testing#env
+const MOCK_ENV = {
+  API_HOST: 'example.com',
+  DB: {
+    prepare: () => {
+      /* mocked D1 */
+    },
+  },
+}
+
+test('GET /posts', async () => {
+  const res = await app.request('/posts', {}, MOCK_ENV)
+})
+```
 
 We already have a middleware that is responsible for creating the database transaction and set the correct user/role for the lifetime of the transaction based on the calling client. So this is were we read the `c.env` and prefer that to the regular database client if it is set. Like this:
 
@@ -93,49 +142,18 @@ const testApiRouter = (
     const testRequest: RequestType = (
       input,
       requestInit,
-      Env,
+      env,
       executionContext,
     ) => {
       return apiRouter.request(
         input,
         requestInit,
-        { Env, testTx: tx },
+        { testTx: tx, ...(typeof env === 'object' ? env: {}) },
         executionContext,
       )
     }
     return await func(db, testRequest)
   })
-}
-```
-## Create and abort the transaction
-
-Oh yeah, the `testDb` function imported above... We have a bit of [Zod][6] code wrapping the [postgres][7] lib for convenience, but basically it returns a function that creates a transaction, executes your test code and throws an exception to abort the transaction. The catch block checks if it's the explicit throw to abort the transaction or something else that's failed.
-
-``` typescript
-export const testDb = async (
-  func: (
-    tx: PostgresZodWrapper,
-    rawTx: postgres.TransactionSql<{}>,
-  ) => Promise<any>,
-) => {
-  const transactionAborted = 'ABORT_TRANSACTION'
-  const connection = postgres(createPostgresConnectionConfig('OUR_SERVICE'))
-  let result: any
-  try {
-    return await connection.begin('read write', async (tx) => {
-      const client = pgz.wrapPostgresTransaction(tx)
-      result = await func(client, tx)
-      throw new Error(transactionAborted)
-    })
-  } catch (err: any) {
-    if (!(err instanceof Error) || err?.message !== transactionAborted) {
-      console.error('❌ Test execution failed: ', err?.message)
-      throw err
-    }
-  } finally {
-    connection.end()
-  }
-  return result
 }
 ```
 ## Finally, the test code
@@ -168,7 +186,7 @@ Our test helper file has a bunch of `create.*` and `get.*` functions for setting
 
 ## Running the tests
 
-To run these tests I do a `docker build .`. The tests are a stage in our `Dockerfile` in the repo and that's also what the build server (CI) builds. Locally the tests run continuously as part of a [docker compose][8] during development.
+To run these tests I do a `docker build .` The tests are a stage in our `Dockerfile` in the repo and that's also what the build ({{<CI />}}) server builds. Locally the tests run continuously as part of a [docker compose][8] with file watching during development.
 
 
 [1]: https://hono.dev/
