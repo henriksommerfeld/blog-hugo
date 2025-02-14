@@ -10,6 +10,8 @@ ogimage: onedrive-logo.png
 draft: false
 ---
 
+_**Update:** Since version 2.5.x of _OneDrive Client for Linux_, I experienced recurring database corruptions and switched to [Insync][6]. This is a payed product, but well worth the money for me._
+
 When switching from MacOS to Linux, one of the things I was concerned about was [Microsoft OneDrive][2] that I've used for a decade or so. My wife and I have shared folders, so switching to another service would be a bit of a hassle. 
 
 I also found that the web interface at onedrive.live.com is intermittently broken when my ad blocking lists contain [certain URL's](https://learn.microsoft.com/en-us/sharepoint/required-urls-and-ports) 
@@ -36,8 +38,6 @@ cd onedrive
 make clean; make;
 sudo make install
 ``````
-
-**Update:** Since version 2.5.x of _OneDrive Client for Linux_, I experienced recurring database corruptions and switched to [Insync][6]. This is a payed product, but well worth the money for me.
 
 [1]: https://github.com/abraunegg/onedrive
 [2]: https://onedrive.com
