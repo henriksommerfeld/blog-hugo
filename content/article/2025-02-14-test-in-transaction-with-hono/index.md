@@ -166,6 +166,7 @@ import { create, testApiRouter } from '../lib/test-helper'
 test('Can get person by person_id', () => {
   testApiRouter(async (db, request) => {
     const person = await create.person(db, { email: 'bo.ek@example.com' })
+
     const res = await request(
       `/person/${person.public_id}`,
       {
