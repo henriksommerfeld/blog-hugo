@@ -1,6 +1,6 @@
 baseURL = "https://www.henriksommerfeld.se/"
 languageCode = "en-gb"
-title = "Henrik Sommerfeld's blog"
+title = "Henrik Sommerfeld"
 canonifyURLs = false
 relativeURLs = false
 buildDrafts = true
