@@ -9,7 +9,7 @@ tags: [testing, postgres,typescript, javascript,nodejs]
 categories: [coding]
 ---
 
-I'm currently working on a service that's basically an {{<API />}} implemented in [Hono][1] running on [NodeJs][2] backed by a [Postgres][3] database. Since we prefer to implement data validation as close to the source as possible in my team, we need a way to test the whole service with the database included, rather than mocked. See my previous post [Databases as a Dev Tool][4] for an expanded description of this thinking.
+I'm currently working on a service that's basically an {{<API />}} implemented in [Hono][1] running on [NodeJs][2] backed by a [Postgres][3] database. Since we prefer to implement data validation as close to the source as possible in my team, we need a way to test the whole service with the database included, rather than mocked. See my previous post [Databases as a Dev Tool][4] for a more detailed explanation of this way of thinking.
 
 ## The code to test
 
