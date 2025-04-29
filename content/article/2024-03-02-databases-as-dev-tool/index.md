@@ -21,7 +21,7 @@ changed.
 3. Tooling
 4. Database features
 
-As a [.Net](https://dot.net) developer I seldom interacted directly with the
+As a [.Net](https://dot.net) developer I rarely interacted directly with the
 database. We used an
 [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) and
 migrations were scary. Running [SQL](https://en.wikipedia.org/wiki/SQL) queries
