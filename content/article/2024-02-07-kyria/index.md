@@ -99,10 +99,7 @@ on my thumb keys is something I find useful. [Home row mods][3] also reduces
 the need of moving my fingers horizontally and having a numpad is something I
 prefer to stretching my fingers to reach another row of dedicated number keys.
 
-{{<post-svg image="layers-num.svg" use-theme="true" fill-path="true">}} <em>My numbers layer,
-activated by holding the left thumb key marked <code>[L]</code>. <a
-    href="https://github.com/henriksommerfeld/qmk_firmware/tree/henriks-kyria-linux">My
-    full QMK firmware config</a></em> {{</post-svg>}}
+{{<kyria-keymap-svg />}}
 
 ### Kyria specifics
 
