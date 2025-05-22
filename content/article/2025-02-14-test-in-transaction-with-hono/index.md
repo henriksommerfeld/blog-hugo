@@ -172,7 +172,6 @@ test('Can get person by person_id', () => {
       {
         headers: {
           'x-local-service-auth': 'service-xyz',
-          'content-type': 'application/json',
         },
       },
     )

@@ -26,7 +26,7 @@ left to bottom right, is strange.
 {{<post-image image="row-staggering.jpg" alt="60% row staggered keyboard with drawn lines to illustrate how your fingers move when touch typing">}}
 {{</post-image>}}
 
-Second is the space between the keys. On my current work laptop this isn't a
+Second is the distance between the keys. On my current work laptop this isn't a
 problem at all, but on external keyboards, the higher and more cone shaped the
 key caps are, the more of a problem this is.
 
@@ -145,7 +145,7 @@ you like it and you get to eat your *stroopwafle*.
 
 ## Not building the Kyria (Update)
 
-Since I originally published this post, the [Halcyon Kyria][10] has been released. I would strongly recommend that version over the previous ones. It doesn't require the buyer to solder and solves a bunch of issues as described in [Thomas Baart's Winter 2024 blog post][11]. To be honest, I never got my Kyria rev3 to work reliably (all keys). I had several {{<ESD />}} incidents, other family members unplugged the {{<TRRS />}} cable etc. I replaced parts, but finally just gave up. The Halcyon version uses USB-C instead of TRRS and comes pre-soldered.
+Since I originally published this post, the [Halcyon Kyria][10] has been released. I would strongly recommend that version over the previous ones. It doesn't require you to solder and solves a bunch of issues as described in [Thomas Baart's Winter 2024 blog post][11]. To be honest, I never got my Kyria rev3 to work reliably (all keys). I had several {{<ESD />}} incidents, other family members unplugged the {{<TRRS />}} cable etc. I replaced parts, but finally just gave up. The Halcyon version uses USB-C instead of TRRS and comes pre-soldered.
 
 A tip for anyone interested in a low-profile Kyria is to get convex key caps for the thumb keys. I find it a lot more comfortable.
 
