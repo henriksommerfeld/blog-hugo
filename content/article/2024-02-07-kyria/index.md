@@ -157,7 +157,7 @@ As final words I would like to emphasise the importance of spending some time
 thinking about what might suite you, before buying anything. For the Kyria
 there is [a printable sheet][9] to try out by placing your hands on a paper version
 of the keyboard. I did this with a bunch of different keyboards before I made
-my mind.
+my first purchase.
 
 [1]: /use-a-us-keyboard-for-programming
 [2]: https://youtu.be/Ho_CFfdsmc8?si=tnY1YUn-EaBI6A9r
