@@ -3,6 +3,10 @@
 .side-by-side {
   display: flex;
   gap: 1em;
+
+  figure {
+    flex: 1;
+  }
 }
 
 figure {
