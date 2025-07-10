@@ -1,18 +1,18 @@
 ---
-title: My Unify Dream Wall
+title: My Unifi Dream Wall
 url: /my-unify-dream-wall
 date: 2023-03-31
-description: "The Unify Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
-summary: "The Unify Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
-tags: [Network, Unify]
+description: "The Unifi Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
+summary: "The Unifi Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
+tags: [Network, Unifi]
 categories: [Tools]
 ogimage: dream-wall-input.jpeg
 draft: false
 ---
 
-The [Unify Dream Wall][1] was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it.
+The [Unifi Dream Wall][1] was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it.
 
-{{<post-image image="cablebox-open.jpeg" alt="Unify Dream Wall beneath cable box mounted on wall" >}}
+{{<post-image image="cablebox-open.jpeg" alt="Unifi Dream Wall beneath cable box mounted on wall" >}}
 <p>The screen is smaller on this version than the editions you can find in Ubiquiti's store, but other than that, it doesn't appear to be any other visible changes made.</p>
 {{</post-image>}}
 
@@ -25,10 +25,10 @@ My family bought our first house in July 2022, a house built in 1930 with three 
 
 
 ## Form factor
-For our house, the form factor is much better than any alternative I've seen. The Power over Ethernet (PoE) ports also mean I have gotten rid of a bunch of PoE injectors around the house. The Micro SD card slot is good enough for our storage needs using [Unify Protect][2] with recording enabled during detected motion. 
+For our house, the form factor is much better than any alternative I've seen. The Power over Ethernet (PoE) ports also mean I have gotten rid of a bunch of PoE injectors around the house. The Micro SD card slot is good enough for our storage needs using [Unifi Protect][2] with recording enabled during detected motion.
 
 {{<post-image image="protect.jpeg" alt="Micro-SD card slot" >}}
-<p>The Micro SD card holds the video recordings as part of Unify Protect, which is good enough for our home usage.</p>
+<p>The Micro SD card holds the video recordings as part of Unifi Protect, which is good enough for our home usage.</p>
 {{</post-image>}}
 
 One thing I'm not sure about the idea behind, is the double power supplies (PSU). It has two, but since it only takes one power plug, I don't really understand the purpose.
