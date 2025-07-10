@@ -55,17 +55,14 @@ test.describe('Navigation', () => {
       await expect(link).toHaveAttribute('href', '/categories/coding')
     })
 
-    // Netlify adds an iframe with a React app for deploy previews that covers the footer links
-    if (!process.env.BASE_URL) {
-      test('Should go to top of page', async ({ page }) => {
-        await page.locator('#page-footer').scrollIntoViewIfNeeded()
-        const footer = page.locator('#page-footer')
-        const link = footer.getByRole('link', { name: 'To top', exact: true })
-        await link.click()
-        const siteTitle = page.locator('.site-title')
-        await expect(siteTitle).toBeInViewport()
-      })
-    }
+    test('Should go to top of page', async ({ page }) => {
+      await page.locator('#page-footer').scrollIntoViewIfNeeded()
+      const footer = page.locator('#page-footer')
+      const link = footer.getByRole('link', { name: 'To top', exact: true })
+      await link.click()
+      const siteTitle = page.locator('.site-title')
+      await expect(siteTitle).toBeInViewport()
+    })
 
     test('Should go to start page', async ({ page }) => {
       await page.getByRole('navigation').getByText('Home').click()

@@ -2,5 +2,5 @@
 OutputDir: htmltest-tmp
 IgnoreDirectoryMissingTrailingSlash: true
 CheckExternal: false
-IgnoreURLs: ['/js/script.js']
+IgnoreURLs: ['/fruit/orange/script.js']
 IgnoreAltEmpty: true

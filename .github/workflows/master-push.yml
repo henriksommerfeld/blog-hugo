@@ -6,7 +6,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait 2 min for Netlify Deploy to complete
+      - name: Wait 2 min for Cloudflare Deploy to complete
         uses: jakejarvis/wait-action@master
         with:
           time: '2m'

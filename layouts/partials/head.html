@@ -42,7 +42,7 @@
     <link rel="preload" as="font" href="/fonts/muli2.woff2" type="font/woff2" crossorigin="anonymous">
 
     {{ if .Site.Params.PlausibleDomain }}
-    <script async defer data-domain="{{ .Site.Params.PlausibleDomain }}" src="/js/script.js"></script>
+    <script defer data-domain="{{ .Site.Params.PlausibleDomain }}" data-api="/fruit/orange/event" src="/fruit/orange/script.js"></script>
     {{ end }}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
