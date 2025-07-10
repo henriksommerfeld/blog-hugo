@@ -5,7 +5,7 @@ date: 2025-07-10
 draft: false
 description: 'How I access Unifi Protect with a local account using Tailscale'
 summary: 'I’ve been using Unifi Protect cameras ever since I got my Dream Wall in 2022 and one of its best characteristics is the independence of cloud services. With a UPS connected to the Dream Wall, my cameras can keep recording even when I lost power in the rest of the house.'
-tags: [Network, Unifi, Home Assistant]
+tags: [Network, Tailscale, Unifi, Home Assistant]
 categories: [tools]
 ogimage: local_consoles.png
 ---
