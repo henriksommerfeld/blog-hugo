@@ -34,7 +34,7 @@ If I instead connect locally, it loads instantly.
 
 ## Remote Access with Local Account
 
-The obvious limitation of using a local account is that it's _local_. But by using Tailscale on my phone or other device, I can reach my local network and my Unifi console at `192.168.1.1`. My Raspberry Pi that runs Home Assistant is on my tailnet and have _[Tailscale Subnet routers][3]_ enabled. That gives me access to both _Unifi Protect_, _Home Assistant_ and whatever else I find useful on my home network regardless of whether I'm home or not.
+The obvious limitation of using a local account is that it's _local_. But by using Tailscale on my phone or other device, I can reach my local network and my Unifi console at `192.168.1.1`. My Raspberry Pi that runs Home Assistant is on my tailnet and have _[Tailscale Subnet routers][3]_ enabled. That gives me access to _Unifi Protect_ on my home network regardless of whether I'm home or not.
 
 [1]: /my-unify-dream-wall
 [2]: https://www.ui.com/physical-security
