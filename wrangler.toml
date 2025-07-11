@@ -1,6 +1,9 @@
 name = "blog-hugo"
 compatibility_date = "2025-07-10"
 
+[build]
+command = "./scripts/build.sh"
+
 [assets]
 directory = "./public"
 

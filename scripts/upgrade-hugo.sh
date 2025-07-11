@@ -13,10 +13,10 @@ else
 	exit 1
 fi
 
-regex="s/(HUGO_VERSION\s*=\s*)\"[0-9]+\.[0-9]+\.[0-9]+\"/\1\"$version\"/g"
+regex="s/HUGO_VERSION=\"[0-9]+\.[0-9]+\.[0-9]+\"/HUGO_VERSION=\"$version\"/g"
 
 files=(
-	wrangler.toml
+	./scripts/build.sh
 	Dockerfile
 	./scripts/compose-hugo.dockerfile
 )
