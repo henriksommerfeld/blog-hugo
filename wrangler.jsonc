@@ -3,5 +3,8 @@
   "compatibility_date": "2025-07-10",
   "assets": {
     "directory": "./public"
+  },
+  "vars": {
+    "HUGO_VERSION": "0.147.0"
   }
 }
