@@ -1,6 +1,6 @@
 ---
-title: 'Tailscale to Remote Access Unifi Protect with Local Account'
-url: '/tailscale-to-remote-access-unifi-protect-with-local-account'
+title: 'Tailscale to Remotely Access Unifi Protect with Local Account'
+url: '/tailscale-to-remotely-access-unifi-protect-with-local-account'
 date: 2025-07-10
 draft: false
 description: 'How I access Unifi Protect with a local account using Tailscale'
