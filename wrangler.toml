@@ -6,4 +6,5 @@ command = "./scripts/build.sh"
 
 [assets]
 directory = "./public"
+not_found_handling = "404-page"
 
