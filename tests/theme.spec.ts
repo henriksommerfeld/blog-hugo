@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { BaseURL } from '../playwright.config'
 
 const darkColor = 'rgb(45, 55, 72)'
 const lightColor = 'rgb(250, 250, 250)'
@@ -42,7 +43,7 @@ test.describe('Theme', () => {
     test.use({
       storageState: {
         cookies: [],
-        origins: [{ origin: '', localStorage: [{ name: 'theme', value: 'light' }] }],
+        origins: [{ origin: BaseURL, localStorage: [{ name: 'theme', value: 'light' }] }],
       },
     })
 
@@ -75,7 +76,7 @@ test.describe('Theme', () => {
     test.use({
       storageState: {
         cookies: [],
-        origins: [{ origin: '', localStorage: [{ name: 'theme', value: 'dark' }] }],
+        origins: [{ origin: BaseURL, localStorage: [{ name: 'theme', value: 'dark' }] }],
       },
     })
 
