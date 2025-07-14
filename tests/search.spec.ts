@@ -26,12 +26,12 @@ test.describe('Search', () => {
     await expect(page.locator('#search-output .result-list').getByText(expectedPostTitle)).toBeVisible()
   })
 
-  // test('Should set focus on first hit on enter', async ({ page }) => {
-  //   await searchForAsusFirmware(page)
-  //   await page.locator('#search-input').press('Enter')
-  //   const firstResult = page.locator('#search-output .result-list li').first().getByRole('link')
-  //   await expect(firstResult).toBeFocused()
-  // })
+  test('Should set focus on first hit on enter', async ({ page }) => {
+    await searchForAsusFirmware(page)
+    await page.locator('#search-input').press('Enter')
+    const firstResult = page.locator('#search-output .result-list li').first().getByRole('link')
+    await expect(firstResult).toBeFocused()
+  })
 
   test('Should set focus on first hit on down-arrow', async ({ page }) => {
     await searchForAsusFirmware(page)
