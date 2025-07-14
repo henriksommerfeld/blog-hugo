@@ -10,7 +10,8 @@ import { defineConfig, devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 
-export const BaseURL = process.env.BASE_URL ?? 'http://127.0.0.1:1313'
+const localURL = 'http://127.0.0.1:1313'
+export const BaseURL = process.env.BASE_URL ?? localURL
 
 export default defineConfig({
   testDir: './tests',
@@ -75,7 +76,7 @@ export default defineConfig({
     ? undefined
     : {
         command: 'npm run start',
-        url: 'http://127.0.0.1:1313',
+        url: localURL,
         reuseExistingServer: true,
       },
 })
