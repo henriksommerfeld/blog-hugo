@@ -13,8 +13,6 @@ jobs:
           node-version: 22
       - name: Install
         run: npm ci
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
       - uses: shidil/cloudflare-workers-preview@v1
         with:
           cf_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -22,6 +20,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           domain: henrik-8ae.workers.dev
           project_path: blog-hugo
+          build: npx playwright install --with-deps
           teardown: 'true'
       - name: Get URL
         run: echo "${{ steps.preview_step.outputs.preview_url }}"
