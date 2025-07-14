@@ -14,7 +14,7 @@ This is my personal blog based on [Hugo][1] available at <https://www.henriksomm
 
 #### Pre-requisites:
 1. Install Node https://nodejs.org/en/download/ (working version specified in [.nvmrc](./.nvmrc))
-2. Install Hugo https://github.com/gohugoio/hugo/releases See expected version in [netlify.toml](./netlify.toml)). Extended version required.
+2. Install Hugo https://github.com/gohugoio/hugo/releases See expected version in [build.sh](./scripts/build.sh)). Extended version required.
 
 #### Running the site
 1. `npm run install:prod`
