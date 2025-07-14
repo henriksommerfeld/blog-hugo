@@ -15,15 +15,14 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - uses: zentered/cloudflare-preview-url@v1.4.2
-        id: cloudflare_preview_url
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - uses: shidil/cloudflare-workers-preview@v1
         with:
-          cloudflare_project_id: 'blog-hugo'
-          wait_until_ready: true
+          cf_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          cf_account: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          domain: henrik-8ae.workers.dev
+          project_path: blog-hugo
+          teardown: 'true'
       - name: Get URL
         run: echo "https://${{ steps.cloudflare_preview_url.outputs.preview_url }}"
       - name: E2E tests
