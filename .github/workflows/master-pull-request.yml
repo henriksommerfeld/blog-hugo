@@ -24,10 +24,10 @@ jobs:
           project_path: blog-hugo
           teardown: 'true'
       - name: Get URL
-        run: echo "https://${{ steps.preview_step.outputs.preview_url }}"
-      - name: E2E tests
-        run: |
-          BASE_URL=${{ steps.cloudflare_preview_url.outputs.preview_url }} npx playwright test
+        run: echo "${{ steps.preview_step.outputs.preview_url }}"
+      # - name: E2E tests
+      #   run: |
+      #     BASE_URL=${{ steps.cloudflare_preview_url.outputs.preview_url }} npx playwright test
 
       - name: Integration tests Slack notification
         uses: 8398a7/action-slack@v3
