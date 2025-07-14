@@ -13,20 +13,11 @@ jobs:
           node-version: 22
       - name: Install
         run: npm ci
-      - uses: shidil/cloudflare-workers-preview@v1
-        with:
-          cf_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          cf_account: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          domain: henrik-8ae.workers.dev
-          project_path: blog-hugo
-          build: npx playwright install --with-deps
-          teardown: 'true'
-      - name: Get URL
-        run: echo "${{ steps.preview_step.outputs.preview_url }}"
-      # - name: E2E tests
-      #   run: |
-      #     BASE_URL=${{ steps.cloudflare_preview_url.outputs.preview_url }} npx playwright test
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: E2E tests
+        run: |
+          BASE_URL="https://${{ github.head_ref || github.ref_name }}-blog-hugo.henrik-8ae.workers.dev" npx playwright test
 
       - name: Integration tests Slack notification
         uses: 8398a7/action-slack@v3
