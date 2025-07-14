@@ -8,8 +8,8 @@
   <script defer src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}"></script>
 {{ else }}
   {{ $libs := resources.Get "libraries.js" | js.Build $opts | resources.Fingerprint "sha512" }}
-  <script defer src="{{ $libs.RelPermalink }}" integrity="{{ $libs.Data.Integrity }}"></script>
+  <script src="{{ $libs.RelPermalink }}" integrity="{{ $libs.Data.Integrity }}"></script>
   
   {{ $mainDev := resources.Get "main.js" | resources.Fingerprint "sha512" }}
-  <script defer src="{{ $mainDev.RelPermalink }}" integrity="{{ $mainDev.Data.Integrity }}"></script>
+  <script src="{{ $mainDev.RelPermalink }}" integrity="{{ $mainDev.Data.Integrity }}"></script>
 {{ end }}
