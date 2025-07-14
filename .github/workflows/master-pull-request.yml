@@ -5,24 +5,30 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Install
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Waiting for 200 from the Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@v1.4
-        id: waitFor200
+      - uses: zentered/cloudflare-preview-url@v1.4.2
+        id: cloudflare_preview_url
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         with:
-          site_name: 'henriksommerfeld'
-          max_timeout: 300
+          cloudflare_project_id: 'blog-hugo'
+          wait_until_ready: true
+      - name: Get URL
+        run: echo "https://${{ steps.cloudflare_preview_url.outputs.preview_url }}"
       - name: E2E tests
         run: |
-          BASE_URL=${{ steps.waitFor200.outputs.url }} npx playwright test
+          BASE_URL=${{ steps.cloudflare_preview_url.outputs.preview_url }} npx playwright test
 
       - name: Integration tests Slack notification
         uses: 8398a7/action-slack@v3
