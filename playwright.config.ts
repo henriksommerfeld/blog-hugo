@@ -11,6 +11,7 @@ import { defineConfig, devices } from '@playwright/test'
  */
 
 const localURL = 'http://127.0.0.1:1313'
+
 export const BaseURL = process.env.BASE_URL ?? localURL
 
 export default defineConfig({
