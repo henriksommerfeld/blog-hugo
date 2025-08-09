@@ -29,8 +29,7 @@ directly was done by selecting text in [SQL Server Management
 Studio](https://en.wikipedia.org/wiki/SQL_Server_Management_Studio) and hitting
 F5, preferably by a colleague, hoping we didn't forget a `where` statement.
 
-As [a SharePoint
-consultant](http://localhost:46433/getting-a-divorce-from-sharepoint/) I was
+As [a SharePoint consultant](/getting-a-divorce-from-sharepoint/) I was
 explicitly trained not to touch the database, as that would void the support
 agreement and that the database should be considered a black box. 
 
