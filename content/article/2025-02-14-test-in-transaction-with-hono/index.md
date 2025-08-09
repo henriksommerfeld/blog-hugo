@@ -148,7 +148,7 @@ const testApiRouter = (
       return apiRouter.request(
         input,
         requestInit,
-        { testTx: tx, ...(typeof env === 'object' ? env: {}) },
+        { testTx: tx, ...(typeof env === 'object' ? env : {}) },
         executionContext,
       )
     }
