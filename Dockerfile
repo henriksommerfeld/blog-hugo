@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.52.0 AS playwright
+FROM mcr.microsoft.com/playwright:v1.54.2 AS playwright
 
 FROM playwright AS playwright-hugo
 ARG HUGO_VERSION="0.148.1"
