@@ -5,5 +5,5 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-hugo new "content/article/$(date --iso-8601)-$1/index.md"
+hugo new "content/article/$(date -I)-$1/index.md"
 
