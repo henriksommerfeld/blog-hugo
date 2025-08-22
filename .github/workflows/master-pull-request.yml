@@ -11,13 +11,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - name: Install
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: E2E tests
-        run: |
-          BASE_URL="https://${{ github.head_ref || github.ref_name }}-blog-hugo.henrik-8ae.workers.dev" npx playwright test
+        run: npx playwright test
 
       - name: Integration tests Slack notification
         uses: 8398a7/action-slack@v3
