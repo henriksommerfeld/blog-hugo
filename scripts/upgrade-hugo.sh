@@ -14,11 +14,13 @@ else
 fi
 
 regex="s/HUGO_VERSION=\"[0-9]+\.[0-9]+\.[0-9]+\"/HUGO_VERSION=\"$version\"/g"
+regex_yml="s/hugo-version\:\ '[0-9]+\.[0-9]+\.[0-9]+'/hugo-version\:\ '$version'/g"
 
 files=(
-	./scripts/build.sh
 	Dockerfile
+	./scripts/build.sh
 	./scripts/compose-hugo.dockerfile
+  ./.github/workflows/master-pull-request.yml
 )
 
 cleanup() {
@@ -35,5 +37,10 @@ for x in "${files[@]}"; do
 	mv "$x.upg" "$x"
 done
 
-echo "Rebuilding docker image for docker-compose"
-docker compose build
+for x in "${files[@]}"; do
+	sed -E "$regex_yml" "$x" >"$x.upg"
+	mv "$x.upg" "$x"
+done
+
+# echo "Rebuilding docker image for docker-compose"
+# docker compose build
