@@ -20,25 +20,22 @@ jobs:
 
       - name: Install
         run: npm ci
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+
       - name: E2E tests
+        id: e2e_tests
         run: npx playwright test
 
-      - name: Integration tests Slack notification
-        uses: 8398a7/action-slack@v3
-        with:
-          status: custom
-          fields: job,repo,ref,author,took
-          custom_payload: |
-            {
-              username: 'Integration tests',
-              icon_emoji: ':octocat:',
-              attachments: [{
-                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: `Integration tests completed for repo ${process.env.AS_REPO}`,
-              }]
-            }
+      - name: Send Pushover Notification
+        uses: umahmood/pushover-actions@0582cb24dccd1fe77aeb35e6fb8027ddbca8af35
         env:
-          GITHUB_TOKEN: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
-          SLACK_WEBHOOK_URL: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
+          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_TOKEN }}
+          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
+        with:
+          status: ${{ job.status }}
+          title: 'Blog PR'
+          message: 'Test result: ${{ steps.e2e_tests.outcome }}'
+          device: 'Gnutten'
+          sound: ${{ job.status == 'success' && 'cosmic' || 'falling' }}
