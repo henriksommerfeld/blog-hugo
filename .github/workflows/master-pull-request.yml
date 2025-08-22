@@ -35,7 +35,8 @@ jobs:
           PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
         with:
           status: ${{ job.status }}
-          title: 'Blog PR'
+          title: ${{ job.status == 'success' && '😄 Blog PR' || '🙁 Blog PR' }}
           message: 'Test result: ${{ steps.e2e_tests.outcome }}'
           device: 'Gnutten'
           sound: ${{ job.status == 'success' && 'cosmic' || 'falling' }}
+          priority: 1
