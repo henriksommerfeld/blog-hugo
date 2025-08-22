@@ -19,7 +19,7 @@ jobs:
           extended: true
 
       - name: Install
-        run: pnpm install
+        run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: E2E tests
