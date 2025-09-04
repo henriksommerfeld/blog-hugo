@@ -16,7 +16,7 @@ The first and most important rule when creating an Easter egg, is to _not cause 
 
 ## 2. Nothing offensive
 
-Think about the what will happen if the system owner, your boss or an end user of the system, finds the egg. Can you defend it? If your egg involves insulting the end user or showing something obscene and your company's most important customer finds it by mistake, you might have a problem.
+Think about what will happen if the system owner, your boss or an end user of the system, finds the egg. Can you defend it? If your egg involves insulting the end user or showing something obscene and your company's most important customer finds it by mistake, you might have a problem.
 
 ## 3. Performance
 
