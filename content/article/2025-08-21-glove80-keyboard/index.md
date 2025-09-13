@@ -49,13 +49,13 @@ The keyboard comes with a carrying case, very nice! That's good for storing it w
 
 ## Firmware
 
-I appreciate that there is a graphical tool at https://my.glove80.com/, although it could improve in some areas. 
+I appreciate that there is a graphical tool at https://my.glove80.com/, although it could improve in some areas.
 
-Example: If you want a dedicated key for a double quote, of course I want it to have `"`  printed on the key in the visual layout, the result of pressing the key. I can do that by choosing the _DOUBLE_QUOTES_ key code in the editor, but it will warn me: _"[DEPRECATED] Use LS(SINGLE_QUOTE)"_. If I do as told the key will instead have `LS(')` printed on it. If I follow that advice/warning for all keys I have a visual layout of my keymap that doesn't tell me what pressing the keys do - very poor {{<UX />}}. 
+Example: If you want a dedicated key for a double quote, of course I want it to have `"`  printed on the key in the visual layout, the result of pressing the key. I can do that by choosing the _DOUBLE_QUOTES_ key code in the editor, but it will warn me: _"[DEPRECATED] Use LS(SINGLE_QUOTE)"_. If I do as told the key will instead have `LS(')` printed on it. If I follow that advice/warning for all keys I have a visual layout of my keymap that doesn't tell me what pressing the keys do - very poor {{<UX />}}.
 
-If you go for a more advanced layout, like [Sunak's](https://sunaku.github.io/moergo-glove80-keyboard.html) , it will say _CUSTOM_ on most keys. I have borrowed some of his ideas the would certainly recommend you take a look at his work for inspiration, but at least for me the complexity of such a layout is just too much to deal with. 
+If you go for a more advanced layout, like [Sunak's](https://sunaku.github.io/moergo-glove80-keyboard.html) , it will say _CUSTOM_ on most keys. I have borrowed some of his ideas and would certainly recommend you take a look at his work for inspiration, but at least for me the complexity of such a layout is just too much to deal with.
 
-Ideally I would appreciate a simpler way of building the firmware locally from my own git repo. Doing that looks way more complicated than I'm currently willing to dive into. 
+Ideally I would appreciate a simpler way of building the firmware locally from my own git repo. Doing that looks way more complicated than I'm currently willing to dive into.
 
 [My layout is here][3] and I have even added mouse support for fun, but have to conclude that that's too imprecise for any practical use.
 
