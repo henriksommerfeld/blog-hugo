@@ -1,6 +1,6 @@
 ---
 title: 'My Experience of the Glove80 Keyboard'
-url: '/glove80-keybaord'
+url: '/my-experience-of-the-glove80-keyboard'
 date: 2025-08-21
 draft: false
 description: "These are my thoughts on the Glove80 keyboard as a first time user of a keywell keyboard. I'm mostly comparing it to my smaller Kyria and there are some things that makes me still prefer the Kyria, but I think it's a great keyboard that I could probably get used to using full-time."
