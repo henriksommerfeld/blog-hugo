@@ -27,6 +27,8 @@
     "test:open": "playwright test --ui",
     "docker:run": "docker compose up",
     "docker:test": "docker build --build-arg CACHEBUST=$(date +%s) .",
+    "docker:clean:build": "docker build -t clean-images -f scripts/clean-images.dockerfile .",
+    "docker:clean:run": "docker run -it -v ${PWD}/content/:/app/content clean-images",
     "upgrade:hugo": "./scripts/upgrade-hugo.sh",
     "upgrade:node": "./scripts/upgrade-node.sh",
     "upgrade:playwright": "./scripts/upgrade-playwright.sh",
