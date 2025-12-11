@@ -1,6 +1,6 @@
 ---
 title: 'Test in Database Transaction with Hono'
-url: 'test-in-database-transation-with-hono'
+url: '/test-in-database-transaction-with-hono'
 date: 2025-02-14
 draft: false
 description: 'I’m currently working on a service that’s basically an API implemented in Hono running on NodeJs backed by a Postgres database. Since we prefer to implement data validation as close to the source as possible in my team, we need a way to test the whole service with the database included, rather than mocked...'
