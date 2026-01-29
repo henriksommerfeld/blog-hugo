@@ -5,10 +5,11 @@ FROM public.ecr.aws/docker/library/rust:1.91.1-trixie AS base
 
 FROM base AS exif-oxide
 WORKDIR /app
-RUN git clone --depth=1 https://github.com/photostructure/exif-oxide
-WORKDIR exif-oxide
-RUN make build
-RUN make install
+RUN cargo install exif-oxide
+# RUN git clone --depth=1 https://github.com/photostructure/exif-oxide
+# WORKDIR exif-oxide
+# RUN make build
+# RUN make install
 
 FROM exif-oxide AS exif
 RUN apt-get update
