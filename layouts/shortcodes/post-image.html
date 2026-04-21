@@ -45,7 +45,7 @@
     {{ if .Get "lightbox" }}
     <a href='{{ $image.RelPermalink }}' class="lightbox-hover">
       {{ end }}
-      <img src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} />
+      <img src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} alt="{{ $alt }}" />
       {{ if .Get "lightbox" }}
     </a>
     {{ end }}
