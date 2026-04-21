@@ -15,7 +15,7 @@ After switching from Windows to Mac, I have reconsidered a few of the applicatio
 I’ve been using [Microsoft OneNote](http://www.onenote.com/)  for over a decade and I’ve been fairly happy with it. It’s free, feature-rich, works on all devices and so on.  There are two things that I find a bit frustrating though.
 
 1. Keyboard navigation is limited and flaky. Here is an example where I try to check a checkbox using ⌘1
-  {{<post-image image="onenote-checkbox.gif" alt="Unable to check checkbox in OneNote – animated gif" />}}
+  {{<post-gif image="onenote-checkbox.gif" alt="Unable to check checkbox in OneNote – animated gif" />}}
 2. Font family and size gets mixed when I edit the same note on different devices
 3. Wanted a better writing experience with the possibility to copy and paste to Markdown
 

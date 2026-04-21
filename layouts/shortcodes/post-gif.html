@@ -1,0 +1,17 @@
+{{ $image := (.Page.Resources.GetMatch  (index .Params.image)) }}
+{{ $alt := .Get "alt" }}
+{{ $src := $image }}
+
+{{ $borderless := .Get "borderless" }}
+{{ $border_class := "image-border" }}
+{{ if $borderless}}
+{{ $border_class = "" }}
+{{ end }}
+
+
+<figure class="{{ $border_class }}">
+  <img src="{{ $src.RelPermalink }}" alt="{{ $alt }}" />
+  <figcaption>
+    <em>{{ .Inner }}</em>
+  </figcaption>
+</figure>

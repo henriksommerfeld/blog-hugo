@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/playwright:v1.58.1 AS playwright
 
 FROM playwright AS playwright-hugo
-ARG HUGO_VERSION="0.153.1"
+ARG HUGO_VERSION="0.160.1"
 RUN wget --max-redirect=1 -O /tmp/hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
 RUN tar zxvf /tmp/hugo.tar.gz -C /tmp/
 RUN mv /tmp/hugo /usr/bin/

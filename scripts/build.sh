@@ -12,7 +12,7 @@
 
 main() {
 
-  HUGO_VERSION="0.153.1"
+  HUGO_VERSION="0.160.1"
 
   export TZ="Europe/Stockholm"
 
