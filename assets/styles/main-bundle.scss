@@ -48,8 +48,6 @@ body.js-loaded {
 *,
 *::before,
 *::after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -60,6 +58,7 @@ body.js-loaded {
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light dark;
 }
 
 .hide {

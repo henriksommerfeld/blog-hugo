@@ -4,23 +4,15 @@ $searchbox-breakpoint: 880px;
 $search-min-wide: 150em;
 
 #searchbox-container {
-  display: flex;
-  visibility: hidden;
-  opacity: 0;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  min-width: 100vw;
-  height: 100%;
-  min-height: 100vh;
   padding-top: 1rem;
   @include notch-padding;
+
+  &[open] {
+    display: flex;
+  }
 
   @media (min-height: $searchbox-breakpoint) {
     padding-bottom: 0rem;
@@ -31,6 +23,10 @@ $search-min-wide: 150em;
     padding-right: $default-spacing;
   }
 
+  .modal-close-button {
+    display: none;
+  }
+
   @media (min-width: 80rem) {
     .close-search {
       display: none;
@@ -38,13 +34,6 @@ $search-min-wide: 150em;
     .modal-close-button {
       display: flex;
     }
-  }
-
-  &.open {
-    @include modal-open;
-  }
-  &.close {
-    @include modal-close;
   }
 }
 
@@ -62,15 +51,7 @@ $search-min-wide: 150em;
   color: var(--searchbox-icon-color);
 
   &.open {
-    transform-origin: scale(0);
-    visibility: visible;
-    opacity: 1;
     animation: searchboxOpen var(--searchbox-open-speed) ease-in-out forwards;
-  }
-  &.close {
-    transform-origin: 0% 0% scale(1);
-    visibility: hidden;
-    opacity: 0;
   }
 
   .icon {
@@ -86,12 +67,6 @@ $search-min-wide: 150em;
     background-color: transparent;
     appearance: none;
     color: var(--color);
-    &::-ms-clear,
-    &::-ms-reveal {
-      display: none;
-      width: 0;
-      height: 0;
-    }
     &::-webkit-search-decoration,
     &::-webkit-search-cancel-button,
     &::-webkit-search-results-button,
@@ -103,7 +78,6 @@ $search-min-wide: 150em;
 
 .search-results-container {
   width: 100%;
-  height: 100%;
   height: calc(100% - 5rem);
   display: flex;
   justify-content: center;
@@ -111,7 +85,6 @@ $search-min-wide: 150em;
 }
 
 #search-output {
-  display: none;
   color: var(--search-output-color);
   padding-top: 2 * $default-spacing;
   max-width: $side-column-min-width;
@@ -138,7 +111,6 @@ $search-min-wide: 150em;
   ol.result-list {
     margin: 0;
     overflow: auto;
-    overflow: overlay;
     width: 100%;
     color: var(--search-output-color);
     list-style-position: outside;
@@ -192,7 +164,6 @@ $search-min-wide: 150em;
 @keyframes searchboxOpen {
   0% {
     transform: scale(0.001);
-    visibility: visible;
     opacity: 0;
   }
   80% {

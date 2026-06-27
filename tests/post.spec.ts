@@ -25,10 +25,12 @@ test.describe('Post', () => {
 
   test('Should open image lightbox on click and close it again', async ({ page }) => {
     await page.getByAltText('Asus router web interface for uploading and applying a firmware update').click()
-    await expect(page.locator('#lightbox')).toHaveClass('open')
+    const dialog = page.locator('#lightbox-container')
+    await expect(dialog).toHaveAttribute('open', '')
     const img = page.locator('#lightbox img')
+    await expect(img).toBeVisible()
     await img.click()
-    await expect(img).not.toHaveClass('open')
+    await expect(dialog).not.toHaveAttribute('open', '')
   })
 
   test('Should open expanded code view', async ({ page }) => {

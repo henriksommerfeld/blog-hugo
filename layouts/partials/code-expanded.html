@@ -1,11 +1,11 @@
-<div id="code-container" :class="{'open': code.isOpening, 'close': !code.isOpening}" >
-    <button class="modal-close-button">
-        <svg class="icon icon-circle-with-cross"><use xlink:href="#icon-circle-with-cross"></use></svg>
+<dialog id="code-container" @close="code.close()">
+    <button class="modal-close-button" aria-label="Close code modal" @click="code.close()">
+        <svg class="icon icon-circle-with-cross"><use href="#icon-circle-with-cross"></use></svg>
         (ESC)
     </button>
-    <div id="code-container-inner" class="close" :class="{'open': code.isOpening, 'close': !code.isOpening}">
+    <div id="code-container-inner" :class="{'open': code.isOpening, 'close': !code.isOpening}">
         <div class="box-shadow-container" @click.away="code.close()">
             <div id="code-placeholder"></div>
         </div>
     </div>
-</div>
+</dialog>
