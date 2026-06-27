@@ -1,6 +1,5 @@
 {{ if .Params.Ogimage }}
 {{ $image := (.Resources.GetMatch (index .Params.Ogimage)) }}
-{{ $placeholder := ($image.Resize "48x q20 webp") | images.Filter (images.GaussianBlur 6) }}
 {{ $src := $image }}
 {{ $src_set := ""}}
 {{ $src := $image }}
@@ -17,24 +16,11 @@
 {{ $src_set = (print $src_set ", " $small.RelPermalink " 978w") }}
 {{ end }}
 
-<noscript>
-  <style>
-    figure.lazy {
-      display: none;
-    }
-  </style>
-  <figure class="image-border">
-    <a href="{{.RelPermalink}}">
-      <img src="{{ $src.RelPermalink }}" srcset="{{ $src_set }}" />
-    </a>
-  </figure>
-</noscript>
-
-<figure class="{{ $border_class }} lazy">
+<figure class="{{ $border_class }}">
   <a href="{{.RelPermalink}}" aria-label="To post '{{.Params.Title}}'">
-    <img class="lazyload" data-sizes="auto" src="{{ $src.RelPermalink }}"
-      srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $src.RelPermalink }}"
-      data-srcset="{{ $src_set }}" width="1200" height="600" alt="" />
+    <img loading="lazy" decoding="async" src="{{ $src.RelPermalink }}"
+      srcset="{{ $src_set }}" sizes="(min-width: 64rem) 33vw, 100vw"
+      width="1200" height="600" alt="" />
   </a>
 </figure>
 {{ end }}

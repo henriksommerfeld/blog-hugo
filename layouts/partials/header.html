@@ -1,7 +1,6 @@
 <header>
     <!--This SVG ELEMENT CONTAINS SVG DEFINITION-->
-   <svg aria-hidden="true" role="img" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink">
+   <svg aria-hidden="true" role="img" style="position: absolute; width: 0; height: 0; overflow: hidden;" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <symbol id="icon-home" viewBox="0 0 32 32">
             <path d="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z"></path>
@@ -40,13 +39,13 @@
         </button>
         <nav :class="{'open': menu.isOpen() || menu.isOpening(), 'open closing': menu.isClosing()}">
             <a href="/" class="home">
-                <svg role="img" aria-hidden="true" class="icon icon-home"><use xlink:href="#icon-home"></use></svg>
+                <svg role="img" aria-hidden="true" class="icon icon-home"><use href="#icon-home"></use></svg>
                 Home</a>
-            <a href="/about/" class="about"><svg role="img" aria-hidden="true" class="icon icon-user"><use xlink:href="#icon-user"></use></svg>About</a>
-            <a href="/index.xml" class="rss"><svg role="img" aria-hidden="true" class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg>RSS</a>
+            <a href="/about/" class="about"><svg role="img" aria-hidden="true" class="icon icon-user"><use href="#icon-user"></use></svg>About</a>
+            <a href="/index.xml" class="rss"><svg role="img" aria-hidden="true" class="icon icon-rss"><use href="#icon-rss"></use></svg>RSS</a>
             <a href="/search-requires-javascript/" rel="nofollow" class="search" x-ref="searchMenuLink"
                 @click.prevent="menu.close(); search.open();$nextTick(() => $refs.searchInput.focus())">
-                <svg role="img" aria-hidden="true" class="icon icon-search"><use xlink:href="#icon-search"></use></svg>Search</a>
+                <svg role="img" aria-hidden="true" class="icon icon-search"><use href="#icon-search"></use></svg>Search</a>
         </nav>
     </div>
 </header>

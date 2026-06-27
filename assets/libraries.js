@@ -1,5 +1,4 @@
 /* Anything installed through npm goes here */
-import 'lazysizes'
 import 'alpinejs'
 import lunr from 'lunr'
 

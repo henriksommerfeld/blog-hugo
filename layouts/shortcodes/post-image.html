@@ -2,7 +2,6 @@
 {{ $alt := .Get "alt" }}
 {{ $width := .Get "width" }}
 {{ $borderless := .Get "borderless" }}
-{{ $placeholder := ($image.Resize "48x q20 webp") | images.Filter (images.GaussianBlur 6) }}
 {{ $src := $image }}
 {{ $src_set := ""}}
 
@@ -34,34 +33,14 @@
 {{ $border_class = "" }}
 {{ end }}
 
-
-<noscript>
-  <style>
-    figure.lazy {
-      display: none;
-    }
-  </style>
-  <figure class="{{ $border_class }}">
-    {{ if .Get "lightbox" }}
-    <a href='{{ $image.RelPermalink }}' class="lightbox-hover">
-      {{ end }}
-      <img src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }} alt="{{ $alt }}" />
-      {{ if .Get "lightbox" }}
-    </a>
-    {{ end }}
-    <figcaption>
-      <em>{{ .Inner }}</em>
-    </figcaption>
-  </figure>
-</noscript>
-
-<figure class="{{ $border_class }} lazy">
+<figure class="{{ $border_class }}">
   {{ if .Get "lightbox" }}
   <a href='{{ $image.RelPermalink }}' @click.prevent="lightbox.open($event, $refs)" class="lightbox-hover">
     {{ end }}
-    <img class="lazyload" data-sizes="auto" src="{{ $src.RelPermalink }}" {{ if $width }}width="{{$width}}"{{ end }}
-      srcset="data:image/jpeg;base64,{{ $placeholder.Content | base64Encode }}" data-src="{{ $src.RelPermalink }}"
-      data-srcset="{{ $src_set }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
+    <img loading="lazy" decoding="async" src="{{ $src.RelPermalink }}"
+      srcset="{{ $src_set }}" sizes="(min-width: 64rem) 50vw, 100vw"
+      {{ if $width }}width="{{$width}}"{{ end }}
+      width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
     {{ if .Get "lightbox" }}
   </a>
   {{ end }}
