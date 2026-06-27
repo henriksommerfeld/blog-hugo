@@ -2,16 +2,18 @@
   "name": "blog-hugo",
   "version": "1.0.0",
   "description": "Henrik's blog using static site engine Hugo",
-  "dependencies": {
-    "alpinejs": "2.8.2",
-    "lunr": "2.3.9"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.58.1",
-    "@types/node": "^22.15.2",
-    "prettier": "^3.5.3"
+  "keywords": [
+    "blog",
+    "hugo"
+  ],
+  "license": "MIT",
+  "author": "Henrik Sommerfeld",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henriksommerfeld/blog-hugo.git"
   },
   "scripts": {
+    "format": "oxfmt",
     "install:prod": "npm install --only=prod",
     "clean": "rm -f static/*.js",
     "clean:public": "rm -rf public",
@@ -34,14 +36,13 @@
     "htmltest": "htmltest --conf .htmltest.yml public",
     "new": "bash ./scripts/new-article.sh"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/henriksommerfeld/blog-hugo.git"
+  "dependencies": {
+    "alpinejs": "2.8.2",
+    "lunr": "2.3.9"
   },
-  "keywords": [
-    "blog",
-    "hugo"
-  ],
-  "author": "Henrik Sommerfeld",
-  "license": "MIT"
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^22.15.2",
+    "oxfmt": "^0.56.0"
+  }
 }
