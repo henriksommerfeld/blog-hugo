@@ -11,13 +11,13 @@ preserveTaxonomyNames = true
 disqusShortname = "henrik-sommerfeld"
 
 [params]
-    minifyBundles = false
-    plausibleDomain = ""
+minifyBundles = false
+plausibleDomain = ""
 
 [permalinks]
-    article = "/:title/"
+article = "/:title/"
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

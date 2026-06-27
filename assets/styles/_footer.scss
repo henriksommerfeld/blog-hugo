@@ -35,7 +35,9 @@
     text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
     &:hover,
     &:focus {
-      text-shadow: 0 0 2px transparentize(black, 0.5), 0 0 30px var(--white);
+      text-shadow:
+        0 0 2px transparentize(black, 0.5),
+        0 0 30px var(--white);
     }
   }
   .icon-arrow-with-circle-up {
