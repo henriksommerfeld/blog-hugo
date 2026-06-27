@@ -13,13 +13,13 @@ timeout = 60000
 rssLimit = 10
 
 [params]
-    minifyBundles = true
-    plausibleDomain = "henriksommerfeld.se"
+minifyBundles = true
+plausibleDomain = "henriksommerfeld.se"
 
 [permalinks]
-    article = "/:title/"
+article = "/:title/"
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
