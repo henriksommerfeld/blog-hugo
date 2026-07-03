@@ -1,6 +1,6 @@
 ---
 title: My Unifi Dream Wall
-url: /my-unify-dream-wall
+url: /my-unifi-dream-wall
 date: 2023-03-31
 description: "The Unifi Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
 summary: "The Unifi Dream Wall was recently released and I've been using it as my home router since July 2022, so I thought I'd share my thoughts on it."
