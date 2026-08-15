@@ -1,4 +1,4 @@
-languageCode = "en-gb"
+locale = "en-gb"
 baseURL = "https://www.henriksommerfeld.se/"
 title = "Henrik Sommerfeld"
 canonifyURLs = false

@@ -1,5 +1,5 @@
 baseURL = "https://www.henriksommerfeld.se/"
-languageCode = "en-gb"
+locale = "en-gb"
 title = "Henrik Sommerfeld"
 canonifyURLs = false
 relativeURLs = false
