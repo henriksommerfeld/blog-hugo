@@ -30,17 +30,17 @@ To fetch all repositories I have access to, I use [GitHubs's API (list-repositor
 
 Repos can be fetch 100 a time, so I need to loop until there are no more returned. I use [🐚 zx][4] as the main glue and dump it all into a single file.
 
-{{<post-gif image="refresh-index.avif" alt="Refresh index of repositories">}}
+{{<animated-image image="refresh-index.avif" alt="Refresh index of repositories">}}
 I update my local cache whenever I can't find a repo I know exists or just occasionally
-{{</post-gif>}}
+{{</animated-image>}}
 
 ### Search local cache
 
 Searching the local file is fast and although the fzf preview can be made nicer, it works fine for me. I've added the two actions I typically need, (1) opening the repo's web page and (2) cloning it.
 
-{{<post-gif image="search.avif" alt="Search repos locally">}}
+{{<animated-image image="search.avif" alt="Search repos locally">}}
 Searching repos against local file using fzf
-{{</post-gif>}}
+{{</animated-image>}}
 
 Again, the repo is here: [Search repo][1]
 

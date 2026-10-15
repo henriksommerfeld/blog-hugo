@@ -30,9 +30,9 @@ Of course the web has evolved a bit since the Web's youth. The basic techniques 
 * [CSS variables][1]
 * [Media queries][4]
 
-{{<post-gif image="dark-mode.avif" alt="Animated image of toggling dark mode on my website from Windows dark/light mode">}}
+{{<animated-image image="dark-mode.avif" alt="Animated image of toggling dark mode on my website from Windows dark/light mode">}}
 This shows how toggling between light and dark mode in Windows 10 changes the theme on my website as well.
-{{</post-gif>}}
+{{</animated-image>}}
 
 My starting point was the extensive blog post named [_Hello darkness, my old friend_][2]. It gives a background and describes an implementation that I pretty much followed.
 
