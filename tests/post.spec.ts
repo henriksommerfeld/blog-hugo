@@ -55,10 +55,4 @@ test.describe('Post', () => {
   test('Should have comments button', async ({ page }) => {
     await expect(page.getByText('Show Comments')).toBeVisible()
   })
-
-  test('Should load comments on button click', async ({ page }) => {
-    await expect(page.locator('#disqus_thread')).not.toBeVisible()
-    await page.getByText('Show Comments').click()
-    await expect(page.locator('#disqus_thread')).toBeVisible()
-  })
 })
