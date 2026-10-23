@@ -1,0 +1,9 @@
+@import './figure.css';
+@import './image-border.css';
+@import '../modal.css';
+@import './lightbox.css';
+
+img {
+  max-width: 100%;
+  height: auto;
+}

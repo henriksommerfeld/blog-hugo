@@ -6,7 +6,7 @@
   min-width: 2em;
   display: none;
   align-items: center;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   background: var(--paging-bg-color);
   border: 1px solid var(--paging-border-color);
   color: var(--color);

@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/root/.npm \
 RUN npx playwright install
 
 FROM install AS build
-COPY playwright.config.ts config.toml config-dev.toml ./
+COPY playwright.config.ts postcss.config.js config.toml config-dev.toml ./
 COPY assets ./assets
 COPY build ./build
 COPY content ./content

@@ -1,12 +1,12 @@
-@import './_variables';
-@import './_screen-reader';
-@import './code/code-print';
-@import './_bitmoji';
-@import './_article-categories-tags';
-@import './_blockquote';
-@import './_links';
-@import './_contact-info';
-@import './_guide';
+@import './variables.css';
+@import './screen-reader.css';
+@import './code/code-print.css';
+@import './bitmoji.css';
+@import './article-categories-tags.css';
+@import './blockquote.css';
+@import './links.css';
+@import './contact-info.css';
+@import './guide.css';
 
 body {
   font-size: 11pt;
@@ -14,22 +14,22 @@ body {
 
 h1 {
   font-size: 1.3em;
-  font-family: $font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
 }
 
 h2 {
   font-size: 1.2em;
-  font-family: $font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
 }
 
 h3 {
   font-size: 1.1em;
-  font-family: $font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
 }
 
 h4 {
   font-size: 1em;
-  font-family: $font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
   font-weight: bold;
 }
 

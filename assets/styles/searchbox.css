@@ -1,26 +1,26 @@
-@import './_notch-mixin';
-
-$searchbox-breakpoint: 880px;
-$search-min-wide: 150em;
+@custom-media --searchbox-tall (min-height: 880px);
+@custom-media --searchbox-wide (min-width: 880px);
+@custom-media --search-wide (min-width: 150em);
 
 #searchbox-container {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding-top: 1rem;
-  @include notch-padding;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 
   &[open] {
     display: flex;
   }
 
-  @media (min-height: $searchbox-breakpoint) {
+  @media (--searchbox-tall) {
     padding-bottom: 0rem;
   }
 
-  @media (min-width: $medium-size-min-width) {
-    padding-left: $default-spacing;
-    padding-right: $default-spacing;
+  @media (--medium-up) {
+    padding-left: var(--default-spacing);
+    padding-right: var(--default-spacing);
   }
 
   .modal-close-button {
@@ -44,10 +44,10 @@ $search-min-wide: 150em;
   position: relative;
   width: 50rem;
   max-width: calc(100% - 20px);
-  padding: $default-spacing;
+  padding: var(--default-spacing);
   background: var(--searchbox-bg-color);
-  border-radius: $border-radius;
-  box-shadow: 0 4px 15px 5px rgba(black, 0.6);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px 5px rgba(0, 0, 0, 0.6);
   color: var(--searchbox-icon-color);
 
   &.open {
@@ -86,19 +86,19 @@ $search-min-wide: 150em;
 
 #search-output {
   color: var(--search-output-color);
-  padding-top: 2 * $default-spacing;
-  max-width: $side-column-min-width;
+  padding-top: calc(2 * var(--default-spacing));
+  max-width: 64rem;
 
-  padding: $default-spacing;
-  border-radius: $border-radius;
+  padding: var(--default-spacing);
+  border-radius: var(--border-radius);
   background: var(--search-output-bg-color);
-  margin-top: $default-spacing;
+  margin-top: var(--default-spacing);
 
-  @media (min-width: $searchbox-breakpoint) {
-    padding: 2 * $default-spacing;
-    margin-top: 2 * $default-spacing;
-    border-radius: $border-radius;
-    box-shadow: 0 4px 15px 5px rgba(black, 0.6);
+  @media (--searchbox-wide) {
+    padding: calc(2 * var(--default-spacing));
+    margin-top: calc(2 * var(--default-spacing));
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px 5px rgba(0, 0, 0, 0.6);
   }
 
   display: flex;
@@ -116,16 +116,16 @@ $search-min-wide: 150em;
     list-style-position: outside;
     padding-left: 0;
 
-    @media (min-width: $searchbox-breakpoint) {
+    @media (--searchbox-wide) {
       list-style-position: outside;
       padding-left: 2em;
     }
     li {
-      padding-bottom: $default-spacing;
+      padding-bottom: var(--default-spacing);
       h2 {
         margin-bottom: 0.2em;
         font-size: 1.2rem;
-        @media (min-width: $search-min-wide) {
+        @media (--search-wide) {
           font-size: 1.3rem;
         }
       }
@@ -133,7 +133,7 @@ $search-min-wide: 150em;
         margin: 0;
         word-wrap: break-word;
         font-size: 0.9em;
-        @media (min-width: $search-min-wide) {
+        @media (--search-wide) {
           font-size: 1.1em;
         }
       }
