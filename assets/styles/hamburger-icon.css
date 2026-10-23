@@ -1,23 +1,27 @@
 .hamburger-menu {
-  width: 27px;
-  height: 20px;
+  --bar-width: 27px;
+  --bar-height: 4px;
+  --bar-spacing: calc(var(--bar-height) * 2);
+
+  width: var(--bar-width);
+  height: calc(var(--bar-height) + var(--bar-spacing) * 2);
   margin-left: calc(var(--default-spacing) - 5px);
-}
 
-.bar,
-.bar::after,
-.bar::before {
-  width: 27px;
-  height: 4px;
-}
+  .bar,
+  .bar::after,
+  .bar::before {
+    width: var(--bar-width);
+    height: var(--bar-height);
+  }
 
-.bar {
-  position: relative;
-  transform: translateY(8px);
-  background: var(--white);
+  .bar {
+    position: relative;
+    transform: translateY(var(--bar-spacing));
+    background: var(--white);
 
-  &.animate {
-    background: transparent;
+    &.animate {
+      background: transparent;
+    }
   }
 }
 
@@ -48,7 +52,7 @@
   content: '';
   position: absolute;
   left: 0;
-  bottom: 8px;
+  bottom: var(--bar-spacing);
   background: var(--white);
   transition:
     bottom var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
@@ -59,7 +63,7 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 8px;
+  top: var(--bar-spacing);
   background: var(--white);
   transition:
     top var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
