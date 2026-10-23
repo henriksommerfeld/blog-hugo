@@ -1,0 +1,14 @@
+@custom-media --small-up (min-width: 26.25rem);
+@custom-media --medium-up (min-width: 64rem);
+@custom-media --medium-down (max-width: 64rem);
+@custom-media --below-medium (max-width: 63.9rem);
+@custom-media --side-column-up (min-width: 64rem);
+
+:root {
+  --page-max-width: 87.5rem;
+  --header-height: 138px;
+  --border-radius: 3px;
+  --default-spacing: 15px;
+  --font-family-sans-serif: 'Muli', 'Helvetica Neue', 'Segoe UI', 'Roboto', sans-serif;
+  --font-family-headings: 'Muli', 'Helvetica Neue', 'Segoe UI', 'Roboto', sans-serif;
+}

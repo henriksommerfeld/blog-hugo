@@ -1,23 +1,19 @@
-$bar-width: 27px;
-$bar-height: 4px;
-$bar-spacing: $bar-height * 2;
-
 .hamburger-menu {
-  width: $bar-width;
-  height: $bar-height + $bar-spacing * 2;
-  margin-left: $default-spacing - 5px;
+  width: 27px;
+  height: 20px;
+  margin-left: calc(var(--default-spacing) - 5px);
 }
 
 .bar,
 .bar::after,
 .bar::before {
-  width: $bar-width;
-  height: $bar-height;
+  width: 27px;
+  height: 4px;
 }
 
 .bar {
   position: relative;
-  transform: translateY($bar-spacing);
+  transform: translateY(8px);
   background: var(--white);
 
   &.animate {
@@ -31,7 +27,7 @@ $bar-spacing: $bar-height * 2;
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding: $default-spacing;
+  padding: var(--default-spacing);
   outline: none;
   border-bottom: transparent solid 1px;
   transition: border var(--hamburger-speed) ease;
@@ -52,7 +48,7 @@ $bar-spacing: $bar-height * 2;
   content: '';
   position: absolute;
   left: 0;
-  bottom: $bar-spacing;
+  bottom: 8px;
   background: var(--white);
   transition:
     bottom var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),
@@ -63,7 +59,7 @@ $bar-spacing: $bar-height * 2;
   content: '';
   position: absolute;
   left: 0;
-  top: $bar-spacing;
+  top: 8px;
   background: var(--white);
   transition:
     top var(--hamburger-bar-speed) var(--hamburger-bar-speed) cubic-bezier(0.23, 1, 0.32, 1),

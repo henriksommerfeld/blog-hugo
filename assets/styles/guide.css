@@ -1,10 +1,3 @@
-@import './_colors';
-$key-width: 50px;
-$key-width-print: 40px;
-$keycap-width-diff: 14px;
-$medium-extra-width: 20px;
-$large-extra-width: 100px;
-
 .guide {
   main {
     width: 100%;
@@ -57,14 +50,14 @@ $large-extra-width: 100px;
   }
   .key {
     font-family: 'Average Sans', sans-serif;
-    color: $gray800;
-    width: $key-width;
+    color: #2d3748;
+    width: 50px;
     @media print {
-      width: $key-width-print;
+      width: 40px;
     }
-    height: $key-width;
+    height: 50px;
     @media print {
-      height: $key-width-print;
+      height: 40px;
     }
     margin: 2px;
     border-width: 3px 7px 10px;
@@ -74,26 +67,26 @@ $large-extra-width: 100px;
     border-color: #ece8e4 #dedad6 #c9c4c4;
     float: left;
     &.medium {
-      width: $key-width + $medium-extra-width;
+      width: 70px;
       @media print {
-        width: $key-width-print + $medium-extra-width;
+        width: 60px;
       }
       .keycap {
-        width: $key-width - $keycap-width-diff + $medium-extra-width;
+        width: 56px;
         @media print {
-          width: $key-width-print + $medium-extra-width;
+          width: 60px;
         }
       }
     }
     &.large {
-      width: $key-width + $large-extra-width;
+      width: 150px;
       @media print {
-        width: $key-width-print + $large-extra-width;
+        width: 140px;
       }
       .keycap {
-        width: $key-width - $keycap-width-diff + $large-extra-width;
+        width: 136px;
         @media print {
-          width: $key-width-print + $large-extra-width;
+          width: 140px;
         }
       }
     }
@@ -101,13 +94,13 @@ $large-extra-width: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: $key-width - $keycap-width-diff;
+      width: 36px;
       @media print {
-        width: $key-width-print;
+        width: 40px;
       }
       height: 37px;
       @media print {
-        height: $key-width-print;
+        height: 40px;
       }
       font-size: 22px;
       line-height: 1;

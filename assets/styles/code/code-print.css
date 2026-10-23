@@ -1,5 +1,5 @@
-@import './code';
-@import './vs';
+@import './code.css';
+@import './vs.css';
 
 pre {
   background-color: transparent;

@@ -1,18 +1,16 @@
-@import './_theme-switcher';
-@import './animation-variables';
-@import './pygments-jellybeans';
-@import './manni';
+@import './pygments-jellybeans.css';
+@import './manni.css';
 
 article .highlight {
-  margin-bottom: $default-spacing;
+  margin-bottom: var(--default-spacing);
 }
 
 .highlight {
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   font-size: 1rem;
-  @media screen and (max-width: $medium-size-min-width) {
-    margin-left: $default-spacing * -1;
-    margin-right: $default-spacing * -1;
+  @media screen and (--medium-down) {
+    margin-left: calc(var(--default-spacing) * -1);
+    margin-right: calc(var(--default-spacing) * -1);
     border-radius: 0;
   }
   ::selection {
@@ -85,7 +83,7 @@ article .highlight {
   backface-visibility: hidden;
   max-width: calc(100vw - 40px);
   min-width: calc(100vw - 40px);
-  @media (min-width: $side-column-min-width) {
+  @media (--side-column-up) {
     min-width: calc(64rem - 40px);
     background: rgba(0, 0, 0, 0.5);
   }
@@ -101,7 +99,7 @@ article .highlight {
 .code-expanded-controls {
   display: none;
 
-  @media (min-width: $side-column-min-width) {
+  @media (--side-column-up) {
     display: flex;
     justify-content: flex-end;
     padding: 10px 20px 10px 10px;
