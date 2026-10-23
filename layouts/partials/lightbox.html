@@ -12,6 +12,6 @@
         </div>
     </div>
     <div id="lightbox" x-ref="lightbox" :class="{'open': lightbox.openImage, 'close': !lightbox.openImage}"
-        @click="lightbox.close()">
+        @click="lightbox.close()"  x-show="!lightbox.showLoading">
     </div>
 </dialog>

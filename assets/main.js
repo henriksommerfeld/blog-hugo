@@ -119,7 +119,7 @@ const lightbox = {
       downloadingImage.onload = () => {
         if (!this.cancelShowImage) {
           this.showLoading = false
-          xRefs.lightbox.append(downloadingImage)
+          xRefs.lightbox.replaceChildren(downloadingImage)
           this.openImage = true
         }
       }

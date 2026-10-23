@@ -1,4 +1,6 @@
 #lightbox-loading-container {
+  --spinner-diameter: 60px;
+  --spinner-thickness: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,14 +18,14 @@
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
   opacity: 1;
   border-radius: 100%;
-  width: 90px;
-  height: 90px;
+  width: calc(var(--spinner-diameter) * 1.5);
+  height: calc(var(--spinner-diameter) * 1.5);
   cursor: pointer;
 }
 
 .spinner {
-  height: 60px;
-  width: 60px;
+  height: var(--spinner-diameter);
+  width: var(--spinner-diameter);
   position: relative;
   display: flex;
   align-items: center;
@@ -34,7 +36,7 @@
     height: 100%;
     width: 100%;
     animation: rotation 1s linear infinite;
-    border: 3px solid var(--spinner-color);
+    border: var(--spinner-thickness) solid var(--spinner-color);
     border-top-color: transparent;
     border-radius: 100%;
     background: transparent;
