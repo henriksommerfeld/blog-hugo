@@ -42,5 +42,7 @@ for x in "${files[@]}"; do
 	mv "$x.upg" "$x"
 done
 
-# echo "Rebuilding docker image for docker-compose"
-# docker compose build
+chmod +x ./scripts/build.sh
+
+echo "Rebuilding docker image for docker-compose"
+docker compose build
