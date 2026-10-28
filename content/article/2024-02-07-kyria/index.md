@@ -139,7 +139,7 @@ rather than to solve a problem.
 A Kyria isn't something you buy pre-made from your nearest electronics store.
 You order a kit with parts, and it's not exactly cheap, then you rig your
 soldering station. But when you're done, you have a keyboard built just the way
-you like it and you get to eat your *stroopwafle*.
+you like it and you get to eat your *stroopwafel*.
 
 {{<post-image image="soldering.jpg" alt="Soldering the Kyria rev3, showing a soldering iron and the Stroopwafel mini" />}}
 
